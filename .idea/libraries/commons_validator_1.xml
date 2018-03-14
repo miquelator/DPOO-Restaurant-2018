@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="commons-validator-1">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/libs/commons-validator-1.6" />
+      <root url="file://$PROJECT_DIR$/libs/mysql-connector-java-5.1.42" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/libs/commons-validator-1.6/apidocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/libs/mysql-connector-java-5.1.42/src" />
+      <root url="file://$PROJECT_DIR$/libs/commons-validator-1.6" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/libs/commons-validator-1.6" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libs/mysql-connector-java-5.1.42" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libs/commons-validator-1.6" recursive="false" type="SOURCES" />
+  </library>
+</component>
