@@ -1,9 +1,9 @@
 package View;
 
 import Controller.MainController;
-import com.sun.javaws.util.JfxHelper;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class MainView extends JFrame {
@@ -19,19 +19,30 @@ public class MainView extends JFrame {
     public final static String SHOW_TOP_FIVE = "Mostra top 5";
     public final static String EXIT = "Sortir";
 
+    private JButton open, process;
+    private JLabel center;
+    private JScrollPane scroll;
+    private JPanel box;
+
+
     public MainView() {
         populateView();
         setSize(700, 700);
         setTitle("Administrator view");
         setLocationRelativeTo(null);
+        Dimension dimension = new Dimension();
+        dimension.height = 600;
+        dimension.width = 600;
+        setMinimumSize(dimension);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     private void populateView() {
-        JPanel principal = new JPanel(new GridLayout(6,1));
+        JPanel principal = new JPanel(new GridLayout(0,1,10,10));
+        principal.setBorder(new EmptyBorder(20,30,20,30));
 
         JLabel title = new JLabel("Servidor del restaurant");
-        title.setFont(title.getFont().deriveFont(40.0f));
+        title.setFont(title.getFont().deriveFont(45.0f));
         title.setHorizontalAlignment(JLabel.CENTER);
 
         tables = new JButton(MANAGE_TABLES);
@@ -40,38 +51,21 @@ public class MainView extends JFrame {
         topFive = new JButton(SHOW_TOP_FIVE);
         exit = new JButton(EXIT);
 
-        setButtonsSize();
-
-        JPanel tablesAux = new JPanel();
-        JPanel menuAux = new JPanel();
-        JPanel ordersAux = new JPanel();
-        JPanel topFiveAux = new JPanel();
-        JPanel exitAux = new JPanel();
-
-        tablesAux.add(tables);
-        menuAux.add(menu);
-        ordersAux.add(orders);
-        topFiveAux.add(topFive);
-        exitAux.add(exit);
-
-        tables.setActionCommand(MANAGE_TABLES);
-        menu.setActionCommand(MANAGE_MENU);
-        orders.setActionCommand(MANAGE_ORDERS);
-        topFive.setActionCommand(SHOW_TOP_FIVE);
-        exit.setActionCommand(EXIT);
+        tables.setFont(new Font("Arial", Font.PLAIN, 30));
+        menu.setFont(new Font("Arial", Font.PLAIN, 30));
+        orders.setFont(new Font("Arial", Font.PLAIN, 30));
+        topFive.setFont(new Font("Arial", Font.PLAIN, 30));
+        exit.setFont(new Font("Arial", Font.PLAIN, 30));
 
         principal.add(title);
-        principal.add(tablesAux);
-        principal.add(menuAux);
-        principal.add(ordersAux);
-        principal.add(topFiveAux);
-        principal.add(exitAux);
+        principal.add(tables);
+        principal.add(menu);
+        principal.add(orders);
+        principal.add(topFive);
+        principal.add(exit);
 
-        setContentPane(principal);
-    }
-
-    private void setButtonsSize() {
-
+        this.add(principal);
+        this.pack();
     }
 
     public void registerListeners(MainController mainController) {
@@ -81,4 +75,5 @@ public class MainView extends JFrame {
         topFive.addActionListener(mainController);
         exit.addActionListener(mainController);
     }
+
 }
