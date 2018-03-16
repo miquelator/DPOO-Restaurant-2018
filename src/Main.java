@@ -26,7 +26,6 @@ public class Main {
                         mainView.setVisible(true);
 
 
-                        //gksgnskdngojbngoqengeio
                     }
                 } catch (FileNotFoundException e) {
                     System.err.println("El fichero \"config.json\" no ha sido encontrado.");
