@@ -24,6 +24,9 @@ public class Main {
                         MainController mainController = new MainController(mainView);
                         mainView.registerListeners(mainController);
                         mainView.setVisible(true);
+
+
+                        //gksgnskdngojbngoqengeio
                     }
                 } catch (FileNotFoundException e) {
                     System.err.println("El fichero \"config.json\" no ha sido encontrado.");
