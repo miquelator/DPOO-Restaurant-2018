@@ -23,9 +23,7 @@ public class Main {
                         MainView mainView = new MainView();
                         MainController mainController = new MainController(mainView);
                         mainView.registerListeners(mainController);
-                        mainView.setVisible(true);//dsgjiwebghiwbt24
-
-
+                        mainView.setVisible(true);
                     }
                 } catch (FileNotFoundException e) {
                     System.err.println("El fichero \"config.json\" no ha sido encontrado.");

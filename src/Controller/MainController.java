@@ -15,12 +15,14 @@ public class MainController implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case MainView.MANAGE_TABLES:
-                //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES TAULES
+                //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES TAULES (Angel)
                 System.out.println("tables");
 
                 TablesView tablesView = new TablesView();
                 TablesController tablesController = new TablesController(tablesView);
-                tablesController.registerListeners(tablesView);
+                tablesView.registerListeners(tablesController);
+                mainView.setVisible(false);
+                tablesView.setVisible(true);
                 break;
             case MainView.MANAGE_MENU:
                 //TODO: IMPLEMENTAR VISTA I CONTROLADOR DEL MENU

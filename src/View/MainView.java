@@ -19,12 +19,6 @@ public class MainView extends JFrame {
     public final static String SHOW_TOP_FIVE = "Mostra top 5";
     public final static String EXIT = "Sortir";
 
-    private JButton open, process;
-    private JLabel center;
-    private JScrollPane scroll;
-    private JPanel box;
-
-
     public MainView() {
         populateView();
         setSize(700, 700);
@@ -37,6 +31,9 @@ public class MainView extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
+    /**
+     * Draws the view
+     */
     private void populateView() {
         JPanel principal = new JPanel(new GridLayout(0,1,10,10));
         principal.setBorder(new EmptyBorder(20,30,20,30));
@@ -68,6 +65,10 @@ public class MainView extends JFrame {
         this.pack();
     }
 
+    /**
+     * Adds a listener to view's components
+     * @param mainController ActionListener controller
+     */
     public void registerListeners(MainController mainController) {
         tables.addActionListener(mainController);
         menu.addActionListener(mainController);
