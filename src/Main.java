@@ -23,7 +23,7 @@ public class Main {
                         MainView mainView = new MainView();
                         MainController mainController = new MainController(mainView);
                         mainView.registerListeners(mainController);
-                        mainView.setVisible(true);
+                        mainView.setVisible(true);//dsgjiwebghiwbt24
 
 
                     }
