@@ -1,5 +1,6 @@
 import Controller.MainController;
 import Model.ConfigJson;
+import Network.ReservesSocketThread;
 import View.MainView;
 import com.google.gson.Gson;
 
@@ -24,6 +25,8 @@ public class Main {
                         MainController mainController = new MainController(mainView);
                         mainView.registerListeners(mainController);
                         mainView.setVisible(true);
+                        ReservesSocketThread reservesThread = new ReservesSocketThread();
+                        reservesThread.start();
                     }
                 } catch (FileNotFoundException e) {
                     System.err.println("El fichero \"config.json\" no ha sido encontrado.");
