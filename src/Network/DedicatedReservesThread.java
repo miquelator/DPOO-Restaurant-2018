@@ -20,8 +20,11 @@ public class DedicatedReservesThread extends Thread {
             //creem les instancies necesaries per rebre i enviar dades
             doStream = new DataOutputStream(sClient.getOutputStream());
             diStream = new DataInputStream(sClient.getInputStream());
-            String request = diStream.readUTF();
-            readRequest(request);
+            while (true){
+                String request = diStream.readUTF();
+                readRequest(request);
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,12 +32,20 @@ public class DedicatedReservesThread extends Thread {
 
     private void readRequest(String request) {
         switch (request){
-            case "hola":
-                try {
-                    doStream.writeUTF("ACK");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            case "autenticar":
+                System.out.println("autenticar");
+                break;
+
+            case "veure estat":
+                System.out.println("veure estat");
+                break;
+
+            case "pagar":
+                System.out.println("pagar");
+                break;
+
+            case "veure carta":
+                System.out.println("veure carta");
                 break;
         }
     }

@@ -1,5 +1,7 @@
 import Controller.MainController;
 import Model.ConfigJson;
+import Model.DatabaseConector;
+import Network.ReservesSocketThread;
 import View.MainView;
 import com.google.gson.Gson;
 
@@ -21,11 +23,11 @@ public class Main {
 
                     if (configJson != null){
                         MainView mainView = new MainView();
-                        MainController mainController = new MainController(mainView);
+                        MainController mainController = new MainController(mainView, configJson);
                         mainView.registerListeners(mainController);
-                        mainView.setVisible(true);//algo
-
-
+                        mainView.setVisible(true);
+                        ReservesSocketThread reservesThread = new ReservesSocketThread();
+                        reservesThread.start();
                     }
                 } catch (FileNotFoundException e) {
                     System.err.println("El fichero \"config.json\" no ha sido encontrado.");

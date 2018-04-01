@@ -4,9 +4,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class SocketThread extends Thread {
+public class RecepcioSocketThread extends Thread {
     private DedicatedRecepcioThread dedicatedRecepcioThread;
-    private DedicatedReservesThread dedicatedReservesThread;
     private Socket sClient;
 
     @Override
@@ -18,7 +17,7 @@ public class SocketThread extends Thread {
                 //esperem a la conexio d'algun usuari dins d'un bucle infinit. A cada usuari li crearem un nou servidor dedicat
                 sClient = serverSocket.accept();
                 if (sClient.isConnected()) {
-                    generaNouServidorDedicat(sClient, true);
+                    generaNouServidorDedicat(sClient);
                 }
             }
         } catch (IOException e) {
@@ -26,16 +25,9 @@ public class SocketThread extends Thread {
         }
     }
 
-    private void generaNouServidorDedicat(Socket sClient, boolean reserves){
-        if (reserves){
-            System.out.println("Generant nou socket per al client");
-            dedicatedReservesThread = new DedicatedReservesThread(sClient);
-            dedicatedReservesThread.start();
-        }else if (!reserves){
-            System.out.println("Generant nou socket per al client");
-            dedicatedRecepcioThread = new DedicatedRecepcioThread(sClient);
-            dedicatedRecepcioThread.start();
-        }
-
+    private void generaNouServidorDedicat(Socket sClient){
+        System.out.println("Generant nou socket per a la recepcio");
+        dedicatedRecepcioThread = new DedicatedRecepcioThread(sClient);
+        dedicatedRecepcioThread.start();
     }
 }
