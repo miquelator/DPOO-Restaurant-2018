@@ -1,6 +1,6 @@
 {
   "port_server":"33333",
-  "db_name":"restaurant",
+  "db_name":"DPOO_Restaurant",
   "db_user":"root",
   "db_pass":"secret",
   "db_ip":"localhost",

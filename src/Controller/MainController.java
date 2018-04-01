@@ -1,14 +1,21 @@
 package Controller;
 
+import Model.Carta;
+import Model.ConfigJson;
+import Model.DatabaseConector;
 import View.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class MainController implements ActionListener{
     private MainView mainView;
-    public MainController(MainView mainView) {
+    private DatabaseConector databaseConector;
+
+    public MainController(MainView mainView, ConfigJson configJson) {
         this.mainView = mainView;
+        databaseConector = new DatabaseConector(configJson);
     }
 
     @Override
@@ -27,6 +34,16 @@ public class MainController implements ActionListener{
             case MainView.MANAGE_MENU:
                 //TODO: IMPLEMENTAR VISTA I CONTROLADOR DEL MENU
                 System.out.println("menu");
+
+                //test per comprovar conexio correcta a la BBDD
+                ArrayList<Carta> aux = databaseConector.getCarta();
+                for (Carta c: aux){
+                    System.out.println("id: " + c.getIdPlat());
+                    System.out.println("nomPlat: " + c.getNomPlat());
+                    System.out.println("preu: " + c.getPreu());
+                    System.out.println("quantitat: " + c.getQuantitat());
+                }
+
 
                 MenuView menuView = new MenuView();
                 MenuController menuController = new MenuController(menuView);
