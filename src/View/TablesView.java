@@ -1,6 +1,8 @@
 package View;
 
 import Controller.TablesController;
+import Model.Taula;
+import com.sun.xml.internal.bind.v2.TODO;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,6 +16,7 @@ import java.util.Vector;
 public class TablesView extends JFrame {
     private JTabbedPane tabbedPane;
     private JButton addTable;
+    private JButton showTables;
     private JButton showTablesReservations;
     private JButton deleteTables;
     private JButton exit;
@@ -103,7 +106,9 @@ public class TablesView extends JFrame {
 
     private JPanel listTable() {
         JPanel listTablePanel = new JPanel();
-        JTable listOfTables = new JTable();
+        showTables = new JButton(SHOW_TABLE_LIST);
+        listTablePanel.add(showTables);
+        //JTable listOfTables = new JTable();
         //fillJTable(listOfTables);
         return listTablePanel;
     }
@@ -155,8 +160,32 @@ public class TablesView extends JFrame {
      */
     public void registerListeners(TablesController tablesController) {
         addTable.addActionListener(tablesController);
+        showTables.addActionListener(tablesController);
     //    showTablesReservations.addActionListener(tablesController);
         deleteTables.addActionListener(tablesController);
         exit.addActionListener(tablesController);
+    }
+
+    public void updateTables(ArrayList<Taula> aux) {
+
+        //TODO: QUE NO ES PUGUI EDITAR LA PUTA TAULA
+        JTable listOfTables = new JTable(0, 3);
+        DefaultTableModel model = (DefaultTableModel) listOfTables.getModel();
+        model.addRow(new Object[]{"ID", "Nombre de seients", "Ocupada"});
+        for (Taula t: aux){
+            System.out.println("id: " + t.getIdTaula());
+            System.out.println("num_seients: " + t.getNumSeients());
+            System.out.println("ocupada: " + t.isOcupada());
+            model.addRow(new Object[]{t.getIdTaula(), t.getNumSeients(), t.isOcupada()});
+        }
+
+        JPanel botoProvisional = new JPanel(new BorderLayout());
+        botoProvisional.add(listOfTables, BorderLayout.CENTER);
+        botoProvisional.add(showTables, BorderLayout.SOUTH);
+
+        tabbedPane.setComponentAt(1,botoProvisional);
+
+        //fillJTable(listOfTables);
+
     }
 }

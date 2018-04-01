@@ -26,7 +26,7 @@ public class MainController implements ActionListener{
                 System.out.println("tables");
 
                 TablesView tablesView = new TablesView();
-                TablesController tablesController = new TablesController(tablesView);
+                TablesController tablesController = new TablesController(tablesView, databaseConector);
                 tablesView.registerListeners(tablesController);
                 mainView.setVisible(false);
                 tablesView.setVisible(true);

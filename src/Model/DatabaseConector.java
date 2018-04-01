@@ -52,4 +52,28 @@ public class DatabaseConector {
         }
         return null;
     }
+
+    public ArrayList<Taula> getTaula() {
+        if (conexio()){
+            ArrayList<Taula> taules = new ArrayList<>();
+            try {
+                Statement s = connection.createStatement();
+
+                s.executeQuery("SELECT * FROM Taula");
+                ResultSet rs = s.getResultSet();
+                while (rs.next()) {
+                    int idTaula = rs.getInt("id_taula");
+                    int numSeients = rs.getInt("num_seients");
+                    boolean ocupada = rs.getBoolean("ocupada");
+                    taules.add(new Taula(idTaula,numSeients, ocupada));
+                }
+
+                connection.close();
+                return taules;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
 }
