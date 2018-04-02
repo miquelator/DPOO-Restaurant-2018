@@ -1,12 +1,15 @@
 package View;
 
+import Controller.TablesChangeController;
 import Controller.TablesController;
+import Model.JTableModel;
 import Model.Taula;
 import com.sun.xml.internal.bind.v2.TODO;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,14 +19,14 @@ import java.util.Vector;
 public class TablesView extends JFrame {
     private JTabbedPane tabbedPane;
     private JButton addTable;
-    private JButton showTables;
     private JButton showTablesReservations;
     private JButton deleteTables;
     private JButton exit;
     private JComboBox idABorrar;
+    private JTableModel jTableModel;
+    private JTable listOfTables;
 
     public final static String ADD_TABLE = "Afegir una taula";
-    public final static String SHOW_TABLE_LIST = "Mostrar llistat de taules";
     public final static String SHOW_TABLE_RESERVATIONS = "Mostrar reserves de taules";
     public final static String DELETE_TABLE = "Borrar taula";
     public final static String EXIT = "Sortir";
@@ -61,7 +64,7 @@ public class TablesView extends JFrame {
         tabbedPane.addTab("Afegir nova taula", icon, jplInnerPanel1, "Tab 1");
 
         JPanel jplInnerPanel2 = createInnerPanel(listTable());
-        tabbedPane.addTab("Mostar llistat taules", icon, jplInnerPanel2);
+        tabbedPane.addTab("Mostar llistat taules", icon, jplInnerPanel2, "Tab 2");
 
         JPanel jplInnerPanel3 = createInnerPanel(showReservations());
         tabbedPane.addTab("Mostrar reserves", icon, jplInnerPanel3, "Tab 3");
@@ -69,8 +72,7 @@ public class TablesView extends JFrame {
         JPanel jplInnerPanel4 = createInnerPanel(deleteTable());
         tabbedPane.addTab("Eliminar taula", icon, jplInnerPanel4, "Tab 4");
 
-        setLayout(new GridLayout(1, 1));
-        add(tabbedPane);
+        //add(tabbedPane);
 
         principal.add(bottom, BorderLayout.SOUTH);
         principal.add(tabbedPane, BorderLayout.CENTER);
@@ -105,11 +107,13 @@ public class TablesView extends JFrame {
     }
 
     private JPanel listTable() {
+        //TODO: FER QUE LA TAULA S'EXPANDEIXI AL MAXIM (BORDER LAYOUT NO VA...)
         JPanel listTablePanel = new JPanel();
-        showTables = new JButton(SHOW_TABLE_LIST);
-        listTablePanel.add(showTables);
-        //JTable listOfTables = new JTable();
-        //fillJTable(listOfTables);
+        jTableModel = new JTableModel();
+        listOfTables = new JTable(jTableModel);
+        listOfTables.getTableHeader().setReorderingAllowed(false);
+        JScrollPane scrollPane = new JScrollPane(listOfTables);
+        listTablePanel.add(scrollPane);
         return listTablePanel;
     }
 
@@ -119,73 +123,43 @@ public class TablesView extends JFrame {
         addTablePanel.add(addTable);
         return addTablePanel;
     }
-/*
-    private void fillJTable(JTable listOfTables){
-        //creating data to add into the JTable. Here you might want to import your proper data from elsewhere
-        Date date = new Date();
-
-        UserReplay rep1 = new UserReplay(date, 12, 13,14);
-        UserReplay rep2 = new UserReplay(date, 2,34,5);
-
-        ArrayList<UserReplay> usuaris = new ArrayList<>();
-        usuaris.add(rep1);
-        usuaris.add(rep2);
-//----Filling Jtable------
-        DefaultTableModel model = (DefaultTableModel) listOfTables.getModel();
-        model.addColumn("Fecha");
-        model.addColumn("Puntuación");
-        model.addColumn("Tiempo de duración");
-        model.addColumn("Pico máximo de espectadores");
-
-        for (int i = 0; i < usuaris.size(); i++){
-            Vector<Date> fecha = new Vector<>(Arrays.asList(usuaris.get(i).getDate()));
-            Vector<Integer> puntuacion = new Vector<>(Arrays.asList(usuaris.get(i).getPuntuacion()));
-            Vector<Integer> tiempo = new Vector<>(Arrays.asList(usuaris.get(i).getTiempo()));
-            Vector<Integer> espectadors = new Vector<>(Arrays.asList(usuaris.get(i).getTiempo()));
-
-            Vector<Object> row = new Vector<Object>();
-            row.addElement(fecha.get(0));
-            row.addElement(puntuacion.get(0));
-            row.addElement(tiempo.get(0));
-            row.addElement(espectadors.get(0));
-            model.addRow(row);
-        }
-
-    }
-*/
 
     /**
      * Adds a listener to view's components
      * @param tablesController ActionListener controller
+     * @param tablesChangeController
      */
-    public void registerListeners(TablesController tablesController) {
+    public void registerListeners(TablesController tablesController, TablesChangeController tablesChangeController) {
         addTable.addActionListener(tablesController);
-        showTables.addActionListener(tablesController);
     //    showTablesReservations.addActionListener(tablesController);
         deleteTables.addActionListener(tablesController);
         exit.addActionListener(tablesController);
+        tabbedPane.addChangeListener(tablesChangeController);
+    }
+
+    public int getTabbedPaneWindow() {
+        return tabbedPane.getSelectedIndex();
     }
 
     public void updateTables(ArrayList<Taula> aux) {
-
-        //TODO: QUE NO ES PUGUI EDITAR LA PUTA TAULA
-        JTable listOfTables = new JTable(0, 3);
         DefaultTableModel model = (DefaultTableModel) listOfTables.getModel();
-        model.addRow(new Object[]{"ID", "Nombre de seients", "Ocupada"});
-        for (Taula t: aux){
-            System.out.println("id: " + t.getIdTaula());
-            System.out.println("num_seients: " + t.getNumSeients());
-            System.out.println("ocupada: " + t.isOcupada());
-            model.addRow(new Object[]{t.getIdTaula(), t.getNumSeients(), t.isOcupada()});
+        model.setRowCount(0);
+        model.setColumnCount(0);
+
+        model.addColumn("ID");
+        model.addColumn("Nombre seients");
+        model.addColumn("Ocupada");
+
+        for (int i = 0; i < aux.size(); i++){
+            Vector<String> ID = new Vector(Arrays.asList(aux.get(i).getIdTaula()));
+            Vector<String> nombreSeients = new Vector(Arrays.asList(aux.get(i).getNumSeients()));
+            Vector<String> ocupada = new Vector(Arrays.asList(aux.get(i).isOcupada()));
+
+            Vector<Object> row = new Vector<Object>();
+            row.addElement(ID.get(0));
+            row.addElement(nombreSeients.get(0));
+            row.addElement(ocupada.get(0));
+            model.addRow(row);
         }
-
-        JPanel botoProvisional = new JPanel(new BorderLayout());
-        botoProvisional.add(listOfTables, BorderLayout.CENTER);
-        botoProvisional.add(showTables, BorderLayout.SOUTH);
-
-        tabbedPane.setComponentAt(1,botoProvisional);
-
-        //fillJTable(listOfTables);
-
     }
 }

@@ -1,34 +1,27 @@
 package Controller;
 
 import Model.DatabaseConector;
-import Model.Taula;
 import View.TablesView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class TablesController implements ActionListener {
     private TablesView tablesView;
     private DatabaseConector databaseConector;
+    private MainController parent;
 
-    public TablesController(TablesView tablesView, DatabaseConector databaseConector) {
+    public TablesController(TablesView tablesView, DatabaseConector databaseConector, MainController parent) {
         this.tablesView = tablesView;
         this.databaseConector = databaseConector;
+        this.parent = parent;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
-            //TODO: POSAR LISTENERS ALS TABS
             case TablesView.ADD_TABLE:
                 System.out.println("add tables");
-                break;
-            case TablesView.SHOW_TABLE_LIST:
-                System.out.println("show table list");
-
-                ArrayList<Taula> aux = databaseConector.getTaula();
-                tablesView.updateTables(aux);
                 break;
             case TablesView.SHOW_TABLE_RESERVATIONS:
                 System.out.println("show table reservations");
@@ -37,7 +30,8 @@ public class TablesController implements ActionListener {
                 System.out.println("delete table");
                 break;
             case TablesView.EXIT:
-                //TODO: AFEGIR A LA CLASSE EL PARENT I FER EL CANVI DE VISTA ACTUAL A VISTA PARENT
+                parent.setVisible(true);
+                tablesView.setVisible(false);
                 break;
         }
     }

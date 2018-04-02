@@ -26,8 +26,9 @@ public class MainController implements ActionListener{
                 System.out.println("tables");
 
                 TablesView tablesView = new TablesView();
-                TablesController tablesController = new TablesController(tablesView, databaseConector);
-                tablesView.registerListeners(tablesController);
+                TablesController tablesController = new TablesController(tablesView, databaseConector, this);
+                TablesChangeController tablesChangeController = new TablesChangeController(tablesView, databaseConector);
+                tablesView.registerListeners(tablesController, tablesChangeController);
                 mainView.setVisible(false);
                 tablesView.setVisible(true);
                 break;
@@ -69,5 +70,9 @@ public class MainController implements ActionListener{
                 System.exit(1);
                 break;
         }
+    }
+
+    public void setVisible(boolean visible){
+        mainView.setVisible(visible);
     }
 }

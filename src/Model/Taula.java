@@ -1,9 +1,11 @@
 package Model;
 
+import java.util.ArrayList;
+
 /**
  * Created by oriol on 1/4/2018.
  */
-public class Taula {
+public class Taula extends ArrayList {
     private int idTaula;
     private int numSeients;
     private boolean ocupada;
