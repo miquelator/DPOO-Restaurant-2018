@@ -22,6 +22,8 @@ public class TablesChangeController implements ChangeListener {
         if (tablesView.getTabbedPaneWindow() == 1){
             ArrayList<Taula> aux = databaseConector.getTaula();
             tablesView.updateTables(aux);
+        } else if (tablesView.getTabbedPaneWindow() == 2){
+            tablesView.mostraReserves(databaseConector.getReserves());
         }
     }
 }

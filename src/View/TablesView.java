@@ -3,6 +3,7 @@ package View;
 import Controller.TablesChangeController;
 import Controller.TablesController;
 import Model.JTableModel;
+import Model.Reserva;
 import Model.Taula;
 import com.sun.xml.internal.bind.v2.TODO;
 
@@ -19,12 +20,12 @@ import java.util.Vector;
 public class TablesView extends JFrame {
     private JTabbedPane tabbedPane;
     private JButton addTable;
-    private JButton showTablesReservations;
     private JButton deleteTables;
     private JButton exit;
     private JComboBox idABorrar;
     private JTableModel jTableModel;
     private JTable listOfTables;
+    private JTable listOfReserves;
 
     public final static String ADD_TABLE = "Afegir una taula";
     public final static String SHOW_TABLE_RESERVATIONS = "Mostrar reserves de taules";
@@ -59,15 +60,18 @@ public class TablesView extends JFrame {
         //creem el jTabbedPane
         ImageIcon icon = new ImageIcon("java-swing-tutorial.JPG");
         tabbedPane = new JTabbedPane();
-        //afegim 3 elements al JTabbedPane
+
+
         JPanel jplInnerPanel1 = createInnerPanel(addTable());
         tabbedPane.addTab("Afegir nova taula", icon, jplInnerPanel1, "Tab 1");
 
-        JPanel jplInnerPanel2 = createInnerPanel(listTable());
+        JPanel jplInnerPanel2 = createInnerPanel(new JPanel());
         tabbedPane.addTab("Mostar llistat taules", icon, jplInnerPanel2, "Tab 2");
+        listTable();
 
-        JPanel jplInnerPanel3 = createInnerPanel(showReservations());
+        JPanel jplInnerPanel3 = createInnerPanel(new JPanel());
         tabbedPane.addTab("Mostrar reserves", icon, jplInnerPanel3, "Tab 3");
+        showReservations();
 
         JPanel jplInnerPanel4 = createInnerPanel(deleteTable());
         tabbedPane.addTab("Eliminar taula", icon, jplInnerPanel4, "Tab 4");
@@ -99,22 +103,20 @@ public class TablesView extends JFrame {
         return deleteTablePanel;
     }
 
-    private JPanel showReservations() {
-        JPanel showBookingPanel = new JPanel();
-        showTablesReservations = new JButton(SHOW_TABLE_RESERVATIONS);
-        showBookingPanel.add(showTablesReservations);
-        return showBookingPanel;
+    private void showReservations() {
+        jTableModel = new JTableModel();
+        listOfReserves = new JTable(jTableModel);
+        listOfReserves.getTableHeader().setReorderingAllowed(false);
+        JScrollPane scrollPane = new JScrollPane(listOfReserves);
+        tabbedPane.setComponentAt(2, scrollPane);
     }
 
-    private JPanel listTable() {
-        //TODO: FER QUE LA TAULA S'EXPANDEIXI AL MAXIM (BORDER LAYOUT NO VA...)
-        JPanel listTablePanel = new JPanel();
+    private void listTable() {
         jTableModel = new JTableModel();
         listOfTables = new JTable(jTableModel);
         listOfTables.getTableHeader().setReorderingAllowed(false);
         JScrollPane scrollPane = new JScrollPane(listOfTables);
-        listTablePanel.add(scrollPane);
-        return listTablePanel;
+        tabbedPane.setComponentAt(1, scrollPane);
     }
 
     private JPanel addTable() {
@@ -131,7 +133,6 @@ public class TablesView extends JFrame {
      */
     public void registerListeners(TablesController tablesController, TablesChangeController tablesChangeController) {
         addTable.addActionListener(tablesController);
-    //    showTablesReservations.addActionListener(tablesController);
         deleteTables.addActionListener(tablesController);
         exit.addActionListener(tablesController);
         tabbedPane.addChangeListener(tablesChangeController);
@@ -159,6 +160,34 @@ public class TablesView extends JFrame {
             row.addElement(ID.get(0));
             row.addElement(nombreSeients.get(0));
             row.addElement(ocupada.get(0));
+            model.addRow(row);
+        }
+    }
+
+    public void mostraReserves(ArrayList<Reserva> reserves) {
+        DefaultTableModel model = (DefaultTableModel) listOfReserves.getModel();
+        model.setRowCount(0);
+        model.setColumnCount(0);
+
+        model.addColumn("ID Taula");
+        model.addColumn("Nom reserva");
+        model.addColumn("Contrasenya");
+        model.addColumn("Nombre comensals");
+        model.addColumn("Data reserva");
+
+        for (int i = 0; i < reserves.size(); i++){
+            Vector<String> ID = new Vector(Arrays.asList(reserves.get(i).getIdTaula()));
+            Vector<String> nomReserva = new Vector(Arrays.asList(reserves.get(i).getNomReserva()));
+            Vector<String> password = new Vector(Arrays.asList(reserves.get(i).getPassword()));
+            Vector<String> numComensals = new Vector(Arrays.asList(reserves.get(i).getNumComensals()));
+            Vector<String> dataReserva = new Vector(Arrays.asList(reserves.get(i).getDataReserva()));
+
+            Vector<Object> row = new Vector<Object>();
+            row.addElement(ID.get(0));
+            row.addElement(nomReserva.get(0));
+            row.addElement(password.get(0));
+            row.addElement(numComensals.get(0));
+            row.addElement(dataReserva.get(0));
             model.addRow(row);
         }
     }

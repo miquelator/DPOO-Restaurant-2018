@@ -22,7 +22,7 @@ public class MainController implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case MainView.MANAGE_TABLES:
-                //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES TAULES (Angel)
+                //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES TAULES
                 System.out.println("tables");
 
                 TablesView tablesView = new TablesView();

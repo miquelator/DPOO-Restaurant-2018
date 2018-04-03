@@ -76,4 +76,30 @@ public class DatabaseConector {
         }
         return null;
     }
+
+    public ArrayList<Reserva> getReserves() {
+        if (conexio()){
+            ArrayList<Reserva> reserves = new ArrayList<>();
+            try {
+                Statement s = connection.createStatement();
+
+                s.executeQuery("SELECT * FROM Reserva");
+                ResultSet rs = s.getResultSet();
+                while (rs.next()) {
+                    int idTaula = rs.getInt("id_taula");
+                    String nomReserva = rs.getString("nom_reserva");
+                    String password = rs.getString("password_");
+                    int numComensals = rs.getInt("num_comensals");
+                    Date data = rs.getDate("data_reserva");
+                    reserves.add(new Reserva(idTaula, nomReserva, password, data, numComensals));
+                }
+
+                connection.close();
+                return reserves;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
 }

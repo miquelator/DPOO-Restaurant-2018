@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="pANDO vERSION">
-      <change afterPath="$PROJECT_DIR$/src/Controller/TablesChangeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/JTableModel.java" afterDir="false" />
+    <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/bbdd.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/RandomString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Reserva.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TablesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TablesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Taula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Taula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TablesChangeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TablesChangeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DatabaseConector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DatabaseConector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/TablesView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TablesView.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="DatabaseConector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+            <state relative-caret-position="1326">
+              <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
               <folding>
                 <element signature="e#218#219#0" expanded="true" />
                 <element signature="e#262#263#0" expanded="true" />
@@ -36,11 +37,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Reserva.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Reserva.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+            <state relative-caret-position="34">
+              <caret line="24" column="69" lean-forward="true" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
               <folding>
                 <element signature="e#2979#2980#0" expanded="true" />
                 <element signature="e#3002#3003#0" expanded="true" />
@@ -49,59 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Taula.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Taula.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#363#364#0" expanded="true" />
-                <element signature="e#393#394#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#474#475#0" expanded="true" />
-                <element signature="e#508#509#0" expanded="true" />
-                <element signature="e#541#542#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-                <element signature="e#668#669#0" expanded="true" />
-                <element signature="e#698#699#0" expanded="true" />
-                <element signature="e#745#746#0" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TablesController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JTableModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/JTableModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
-              <folding>
-                <element signature="e#184#185#0" expanded="true" />
-                <element signature="e#211#212#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TablesChangeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TablesChangeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            <state relative-caret-position="243">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,12 +77,21 @@
       <file leaf-file-name="TablesView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/TablesView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            <state relative-caret-position="251">
+              <caret line="114" selection-start-line="114" selection-end-line="114" />
               <folding>
                 <element signature="e#5703#5704#0" expanded="true" />
                 <element signature="e#5736#5737#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RandomString.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/RandomString.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -170,12 +144,13 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/resources/config.json" />
         <option value="$PROJECT_DIR$/src/Model/Carta.java" />
-        <option value="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
         <option value="$PROJECT_DIR$/src/Model/JTableModel.java" />
-        <option value="$PROJECT_DIR$/src/Controller/TablesChangeController.java" />
         <option value="$PROJECT_DIR$/src/Model/Taula.java" />
-        <option value="$PROJECT_DIR$/src/Controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/Controller/TablesController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/Model/Reserva.java" />
+        <option value="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
+        <option value="$PROJECT_DIR$/src/Controller/TablesChangeController.java" />
         <option value="$PROJECT_DIR$/src/View/TablesView.java" />
       </list>
     </option>
@@ -203,6 +178,11 @@
             <path>
               <item name="Restaurant_Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Restaurant_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -216,6 +196,12 @@
               <item name="Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Restaurant_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Network" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -444,6 +430,14 @@
       <option name="presentableId" value="Default" />
       <updated>1522608601400</updated>
     </task>
+    <task id="LOCAL-00001" summary="Fet que el JTable sigui no editable. Modificar panells per a que es mostri amb tot el espai disponible. Afegida la funcionalitat de sortir a la finestra de taules.">
+      <created>1522647184315</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1522647184315</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -460,7 +454,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3290461" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32842416" />
       <window_info id="DB Browser" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.3290461" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -469,12 +463,13 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3298647" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34756994" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3460972" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298647" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26174498" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -486,7 +481,6 @@
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Properties" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
@@ -496,7 +490,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pANDO vERSION" />
-    <option name="LAST_COMMIT_MESSAGE" value="pANDO vERSION" />
+    <MESSAGE value="Fet que el JTable sigui no editable. Modificar panells per a que es mostri amb tot el espai disponible. Afegida la funcionalitat de sortir a la finestra de taules." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fet que el JTable sigui no editable. Modificar panells per a que es mostri amb tot el espai disponible. Afegida la funcionalitat de sortir a la finestra de taules." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -633,9 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/config.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -683,63 +675,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
-          <folding>
-            <element signature="e#218#219#0" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/javax/swing/JTabbedPane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="765" column="16" selection-start-line="765" selection-start-column="16" selection-end-line="765" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/JTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
-          <folding>
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#211#212#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TablesChangeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-          <folding>
-            <element signature="e#2979#2980#0" expanded="true" />
-            <element signature="e#3002#3003#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,9 +689,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Taula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="17">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#363#364#0" expanded="true" />
@@ -771,17 +717,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/RandomString.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/config.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Reserva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TablesChangeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/JTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="24" column="69" lean-forward="true" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
+          <folding>
+            <element signature="e#2979#2980#0" expanded="true" />
+            <element signature="e#3002#3003#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+          <folding>
+            <element signature="e#218#219#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/TablesView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        <state relative-caret-position="251">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
           <folding>
             <element signature="e#5703#5704#0" expanded="true" />
             <element signature="e#5736#5737#0" expanded="true" />
