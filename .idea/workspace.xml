@@ -633,7 +633,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522789783025</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Llibreries actualitzades">
+      <created>1522789808696</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1522789808696</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -689,7 +696,8 @@
     <MESSAGE value="Pando version" />
     <MESSAGE value="Apartat de la carta &quot;majoritariament&quot; fet" />
     <MESSAGE value="Apartat de la carta totalment fet la espera de les comandes a la bbdd, la vista fot puto fastig" />
-    <option name="LAST_COMMIT_MESSAGE" value="Apartat de la carta totalment fet la espera de les comandes a la bbdd, la vista fot puto fastig" />
+    <MESSAGE value="Llibreries actualitzades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Llibreries actualitzades" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
