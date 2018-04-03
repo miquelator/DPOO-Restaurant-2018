@@ -102,4 +102,25 @@ public class DatabaseConector {
         }
         return null;
     }
+
+    public boolean addDish(String nom, double preu, int quantitat) {
+        if (conexio()){
+            try {
+
+                String query = "INSERT INTO Carta(nom_plat, preu, quantitat) VALUES (?,?,?)";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setString(1, nom);
+                preparedStmt.setDouble(2, preu);
+                preparedStmt.setInt(3, quantitat);
+
+                preparedStmt.execute();
+
+                connection.close();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }

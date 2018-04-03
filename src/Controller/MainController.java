@@ -44,11 +44,12 @@ public class MainController implements ActionListener{
                     System.out.println("preu: " + c.getPreu());
                     System.out.println("quantitat: " + c.getQuantitat());
                 }
-
-
                 MenuView menuView = new MenuView();
-                MenuController menuController = new MenuController(menuView);
-                menuController.registerControllers(menuView);
+                MenuController menuController = new MenuController(menuView, databaseConector, this);
+                MenuChangeController menuChangeController = new MenuChangeController(menuView, databaseConector);
+                menuView.registerListeners(menuController, menuChangeController);
+                mainView.setVisible(false);
+                menuView.setVisible(true);
                 break;
             case MainView.MANAGE_ORDERS:
                 //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES COMANDES
