@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/mysql-connector-java-5.1.46-bin.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/mysql-connector-java-5.1.46.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/MainController.java" afterPath="$PROJECT_DIR$/src/Controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/MenuChangeController.java" afterPath="$PROJECT_DIR$/src/Controller/MenuChangeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/MenuController.java" afterPath="$PROJECT_DIR$/src/Controller/MenuController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/DatabaseConector.java" afterPath="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/DatabaseManager.java" afterPath="$PROJECT_DIR$/src/Model/DatabaseManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MenuView.java" afterPath="$PROJECT_DIR$/src/View/MenuView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,7 +51,7 @@
       <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/MenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="-756">
               <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
               <folding />
             </state>
@@ -626,7 +621,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522776390508</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Apartat de la carta totalment fet la espera de les comandes a la bbdd, la vista fot puto fastig">
+      <created>1522789649590</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1522789649590</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -681,7 +683,8 @@
     <MESSAGE value="pANDO vERSION" />
     <MESSAGE value="Pando version" />
     <MESSAGE value="Apartat de la carta &quot;majoritariament&quot; fet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Apartat de la carta &quot;majoritariament&quot; fet" />
+    <MESSAGE value="Apartat de la carta totalment fet la espera de les comandes a la bbdd, la vista fot puto fastig" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apartat de la carta totalment fet la espera de les comandes a la bbdd, la vista fot puto fastig" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1170,7 +1173,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="-756">
           <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding />
         </state>
