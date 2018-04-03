@@ -32,25 +32,54 @@ public class MenuController implements ActionListener {
                     }
                 }
                 if (found == true){
-                    menuView.confirmEntry(found);
+                    menuView.confirmEntry(1);
                 }else{
                     try{
                         double priceAux = Double.valueOf(menuView.getNewDishPrice());
                         int stockAux = Integer.valueOf(menuView.getNewDishStock());
 
                         databaseConector.addDish(menuView.getNewDishName(), priceAux, stockAux);
-                        menuView.confirmEntry(found);
+                        menuView.confirmEntry(2);
                     }catch (NumberFormatException e1){
-                        //TODO: FER FUNCIO ERROR JDIALOG
+                        menuView.confirmEntry(3);
                         e1.getMessage();
                     }
                 }
                 break;
             case MenuView.DELETE_DISH:
-                System.out.println("delete dish");
+                //TODO: QUAN ESTIGUIN INCLOSES LES COMANDES A LA BBDD COMPROVAR AL ESBORRAR PLAT
+                if(databaseConector.deleteDish(menuView.getDeletedDishName())){
+                    menuView.confirmEntry(5);
+                    ArrayList<Carta> plats = databaseConector.getCarta();
+
+                    String[] list = new String[plats.size()];
+
+                    for(int i = 0; i < plats.size();i++){
+                        list[i] = plats.get(i).getNomPlat();
+                    }
+                    menuView.populateDelete(list);
+                }else{
+                    menuView.confirmEntry(6);
+                }
+
+
                 break;
-            case MenuView.ADD_STOCK:
-                System.out.println("add stock");
+            case MenuView.UPDATE_STOCK:
+                try {
+                    int newStock = Integer.valueOf(menuView.getUpdatedStock());
+                    if (newStock < 0){
+                        menuView.confirmEntry(4);
+                    }else{
+                        if(databaseConector.updateStock(menuView.getUpdatedDishName(), newStock)){
+                            menuView.confirmEntry(7);
+                        }else{
+                            menuView.confirmEntry(8);
+                        }
+                    }
+                }catch (NumberFormatException e1){
+                    menuView.confirmEntry(4);
+                    e1.getMessage();
+                }
                 break;
             case MenuView.EXIT:
                 parent.setVisible(true);

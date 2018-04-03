@@ -8,6 +8,8 @@ public class DatabaseManager {
     private ConfigJson serverConfig;
     private Connection connection;
 
+    //TODO: AQUESTA CLASSE ES NECESSARIA? ESTÀ IMPLEMENTAT EL MATEIX A DATABASE CONECTOR
+
     public DatabaseManager(ConfigJson serverConfig) {
         this.serverConfig = serverConfig;
 

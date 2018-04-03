@@ -123,4 +123,41 @@ public class DatabaseConector {
         }
         return false;
     }
+
+    public boolean updateStock(String updatedDishName, int newStock) {
+        if (conexio()){
+            try {
+
+                String query =  "UPDATE Carta SET quantitat = ? WHERE nom_plat = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, newStock);
+                preparedStmt.setString(2, updatedDishName);
+                preparedStmt.execute();
+
+                connection.close();
+                return true;
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
+    public boolean deleteDish(String deletedDishName) {
+        if (conexio()){
+            try {
+                String query =  "DELETE FROM Carta WHERE nom_plat = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setString(1, deletedDishName);
+                preparedStmt.execute();
+
+                connection.close();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }

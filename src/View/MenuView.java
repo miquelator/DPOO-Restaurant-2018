@@ -15,11 +15,16 @@ import java.util.Vector;
 
 public class MenuView extends JFrame {
 
+
+    //TODO: ANGEL, JA VA TOT LO DE CARTA, PERO LES VISTES SON UNA MERDA, ME LES POTS ARREGLAR AL FINAL QUAN PUGUIS???
     private JTabbedPane tabbedPane;
     private JButton addDish;
     private JButton deleteDish;
+    private JButton updateDish;
     private JButton exit;
     private JComboBox idABorrar;
+    private JComboBox idStock;
+    private JTextField numStock;
     private JTableModel jTableModel;
     private JTable listOfDishes;
     private JTextField dishName;
@@ -29,7 +34,7 @@ public class MenuView extends JFrame {
 
     public final static String ADD_DISH = "Afegir un plat";
     public final static String DELETE_DISH = "Eliminar un plat";
-    public final static String ADD_STOCK = "Afegir existencies";
+    public final static String UPDATE_STOCK = "Actualitza existencies";
     public final static String EXIT = "Sortir";
 
     public MenuView() {
@@ -72,7 +77,7 @@ public class MenuView extends JFrame {
         JPanel jplInnerPanel3 = createInnerPanel(deleteDish());
         tabbedPane.addTab("Esborrar un plat del menu", icon, jplInnerPanel3, "Tab 3");
 
-        JPanel jplInnerPanel4 = createInnerPanel(deleteDish());
+        JPanel jplInnerPanel4 = createInnerPanel(updateDishStock());
         tabbedPane.addTab("Actualitzar existències", icon, jplInnerPanel4, "Tab 4");
 
 
@@ -88,19 +93,19 @@ public class MenuView extends JFrame {
         return jplPanel;
     }
 
-
     private JPanel deleteDish() {
-        JPanel deleteTablePanel = new JPanel(new FlowLayout());
-        //TODO: RECUPERAR DEL SERVIDOR UNA LLISTA DELS ID NOMS DELS PLATS I POSAR-LES EN UN JCOMBOBOX
-        String[] exempleABorrar = {"1", "2", "3", "4", "5"};
-        idABorrar = new JComboBox<>(exempleABorrar);
+        JPanel deleteDishPanel = new JPanel(new FlowLayout());
         deleteDish = new JButton(DELETE_DISH);
-        deleteTablePanel.add(idABorrar);
-        deleteTablePanel.add(Box.createRigidArea(new Dimension(10, 0)));
-        deleteTablePanel.add(deleteDish);
-        return deleteTablePanel;
+        deleteDishPanel.add(deleteDish);
+        return deleteDishPanel;
     }
 
+    private JPanel updateDishStock() {
+        JPanel updateStockPanel = new JPanel();
+        updateDish = new JButton(UPDATE_STOCK);
+        updateStockPanel.add(updateDish);
+        return updateStockPanel;
+    }
 
     private void listDish() {
         jTableModel = new JTableModel();
@@ -136,7 +141,6 @@ public class MenuView extends JFrame {
         return addDishPanel;
     }
 
-
     public int getTabbedPaneWindow() {
         return tabbedPane.getSelectedIndex();
     }
@@ -168,13 +172,43 @@ public class MenuView extends JFrame {
         }
     }
 
-    public void confirmEntry(boolean found){
-        String[] options = { "OK" };
-        if (found == true){
-            JOptionPane.showOptionDialog(this, "El plat ja existeix!", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
-        }else{
-            JOptionPane.showOptionDialog(this, "Plat inserit correctament", "INFORMATION", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
-        }
+    public void populateStock(String[] list) {
+        JPanel updateStockPanel = new JPanel(new BorderLayout());
+        JLabel numStockLabel = new JLabel("Nou nombre d'unitats: ");
+        numStock = new JTextField();
+        idStock = new JComboBox<>(list);
+        JPanel center = new JPanel(new GridLayout(2,1));
+        JPanel stockAux = new JPanel(new BorderLayout());
+        stockAux.add(numStock, BorderLayout.CENTER);
+        JPanel stockFinal = new JPanel(new BorderLayout());
+        stockFinal.add(numStockLabel, BorderLayout.WEST);
+        stockFinal.add(stockAux, BorderLayout.CENTER);
+        center.add(idStock);
+        center.add(stockFinal);
+        updateStockPanel.add(center, BorderLayout.CENTER);
+        updateStockPanel.add(updateDish, BorderLayout.SOUTH);
+        tabbedPane.setComponentAt(3, updateStockPanel);
+    }
+
+    public void populateDelete(String[] list) {
+        JPanel deleteDishPanel = new JPanel(new FlowLayout());
+        idABorrar = new JComboBox<>(list);
+        deleteDishPanel.add(idABorrar);
+        deleteDishPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+        deleteDishPanel.add(deleteDish);
+        tabbedPane.setComponentAt(2, deleteDishPanel);
+    }
+
+    public String getUpdatedDishName() {
+        return idStock.getSelectedItem().toString();
+    }
+
+    public String getUpdatedStock() {
+        return numStock.getText();
+    }
+
+    public String getDeletedDishName() {
+        return idABorrar.getSelectedItem().toString();
     }
 
     public String getNewDishName() {
@@ -189,6 +223,42 @@ public class MenuView extends JFrame {
         return dishStock.getText();
     }
 
+    public void confirmEntry(int error){
+        String[] options = { "OK" };
+        switch (error){
+            case 1:
+                JOptionPane.showOptionDialog(this, "El plat ja existeix!", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+                break;
+            case 2:
+                JOptionPane.showOptionDialog(this, "Plat inserit correctament", "INFORMATION", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                break;
+            case 3:
+                JOptionPane.showOptionDialog(this, "El format del preu/quantitat és incorrecte!", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+                break;
+            case 4:
+                JOptionPane.showOptionDialog(this, "El format de la quantitat és incorrecte!", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+                break;
+            case 5:
+                JOptionPane.showOptionDialog(this, "Plat esborrat correctament", "INFORMATION", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                break;
+            case 6:
+                JOptionPane.showOptionDialog(this, "No es pot esborrar el plat per XXXXX", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+                break;
+            case 7:
+                JOptionPane.showOptionDialog(this, "Quantitat d'existències actualitzada correctament", "INFORMATION", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                break;
+            case 8:
+                JOptionPane.showOptionDialog(this, "No es poden actualitzar les existències!", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+                break;
+        }
+    }
+
+    public void formatError() {
+        String[] options = { "OK" };
+        JOptionPane.showOptionDialog(this, "El format del preu/quantitat és incorrecte!", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+    }
+
+
     /**
      * Adds a listener to view's components
      * @param menuController ActionListener controller
@@ -197,6 +267,7 @@ public class MenuView extends JFrame {
     public void registerListeners(MenuController menuController, MenuChangeController menuChangeController) {
         addDish.addActionListener(menuController);
         deleteDish.addActionListener(menuController);
+        updateDish.addActionListener(menuController);
         exit.addActionListener(menuController);
         tabbedPane.addChangeListener(menuChangeController);
     }

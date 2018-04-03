@@ -33,17 +33,6 @@ public class MainController implements ActionListener{
                 tablesView.setVisible(true);
                 break;
             case MainView.MANAGE_MENU:
-                //TODO: IMPLEMENTAR VISTA I CONTROLADOR DEL MENU
-                System.out.println("menu");
-
-                //test per comprovar conexio correcta a la BBDD
-                ArrayList<Carta> aux = databaseConector.getCarta();
-                for (Carta c: aux){
-                    System.out.println("id: " + c.getIdPlat());
-                    System.out.println("nomPlat: " + c.getNomPlat());
-                    System.out.println("preu: " + c.getPreu());
-                    System.out.println("quantitat: " + c.getQuantitat());
-                }
                 MenuView menuView = new MenuView();
                 MenuController menuController = new MenuController(menuView, databaseConector, this);
                 MenuChangeController menuChangeController = new MenuChangeController(menuView, databaseConector);
