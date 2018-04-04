@@ -4,13 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 
-public class TopFiveGraphView extends JPanel {
+/**
+ * Created by oriol on 4/4/2018.
+ */
+public class TopFiveWeeklyGraphView extends JPanel{
     final int PAD = 70;
     private double maxComands;
     private String [] nomPlats;
     private int[] data;
 
-    public TopFiveGraphView(double maxValue, int[] data,  String[] nomPlats) {
+    public TopFiveWeeklyGraphView(double maxValue, int[] data,  String[] nomPlats) {
         this.maxComands = maxValue;
         this.nomPlats = nomPlats;
         this.data = data;
@@ -75,6 +78,6 @@ public class TopFiveGraphView extends JPanel {
         f.setSize(600,600);
         f.setLocation(800,200);
         f.setVisible(true);
-        f.setTitle("Top 5 Total Graph");
+        f.setTitle("Top 5 Weekly Graph");
     }
 }

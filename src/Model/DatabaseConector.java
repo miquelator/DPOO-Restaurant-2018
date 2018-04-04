@@ -43,6 +43,7 @@ public class DatabaseConector {
                     int quantitat = rs.getInt("quantitat");
                     int semanals = rs.getInt("semanals");
                     int totals = rs.getInt("totals");
+                    carta.add(new Carta(idPlat, nomPlat, preu, quantitat, semanals, totals));
                 }
 
                 connection.close();
@@ -189,7 +190,34 @@ public class DatabaseConector {
             try {
                 Statement s = connection.createStatement();
 
-                s.executeQuery("SELECT * FROM Carta ORDER BY totals LIMIT 5");
+                s.executeQuery("SELECT * FROM Carta ORDER BY totals DESC LIMIT 5");
+                ResultSet rs = s.getResultSet();
+                while (rs.next()) {
+                    int idPlat = rs.getInt("id_plat");
+                    String nomPlat = rs.getString("nom_plat");
+                    float preu = rs.getFloat("preu");
+                    int quantitat = rs.getInt("quantitat");
+                    int semanals = rs.getInt("semanals");
+                    int totals = rs.getInt("totals");
+                    carta.add(new Carta(idPlat, nomPlat, preu, quantitat, semanals, totals));
+                }
+
+                connection.close();
+                return carta;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<Carta> getTopFiveWeekly() {
+        if (conexio()){
+            ArrayList<Carta> carta = new ArrayList<>();
+            try {
+                Statement s = connection.createStatement();
+
+                s.executeQuery("SELECT * FROM Carta ORDER BY semanals DESC LIMIT 5");
                 ResultSet rs = s.getResultSet();
                 while (rs.next()) {
                     int idPlat = rs.getInt("id_plat");

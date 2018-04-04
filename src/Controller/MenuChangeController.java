@@ -25,10 +25,13 @@ public class MenuChangeController implements ChangeListener{
             case 0:
                 break;
             case 1:
+
                 ArrayList<Carta> aux = databaseConector.getCarta();
                 menuView.updateMenu(aux);
+
                 break;
             case 2:
+
                 ArrayList<Carta> plats = databaseConector.getCarta();
 
                 String[] list = new String[plats.size()];
@@ -37,8 +40,10 @@ public class MenuChangeController implements ChangeListener{
                     list[i] = plats.get(i).getNomPlat();
                 }
                 menuView.populateDelete(list);
+
                 break;
             case 3:
+
                 ArrayList<Carta> carta = databaseConector.getCarta();
 
                 String[] llista = new String[carta.size()];

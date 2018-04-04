@@ -29,6 +29,8 @@ CREATE TABLE Carta(
     nom_plat VARCHAR(255),
     preu FLOAT,
     quantitat INT,
+    semanals INT,
+    totals INT,
     PRIMARY KEY (id_plat)
 );
 
@@ -39,7 +41,6 @@ SELECT * FROM Carta;
 
 
 INSERT INTO Taula (num_seients, ocupada) VALUES(4,true);
-INSERT INTO Carta (nom_plat, preu, quantitat) VALUES('Bistec', 12.50, 20);
+INSERT INTO Carta (nom_plat, preu, quantitat, semanals, totals) VALUES('Bistec', 12.50, 20, 0 ,5);
 INSERT INTO Reserva (id_taula, nom_reserva, password_, num_comensals, data_reserva) VALUES(1, 'Angel', 'ABC123', 6, STR_TO_DATE('1-01-2012', '%d-%m-%Y'));
-INSERT INTO Carta (nom_plat, preu, quantitat) VALUES('Wine', 90.50, 10);
-DROP TABLE Carta;
+INSERT INTO Carta (nom_plat, preu, quantitat, semanals, totals) VALUES('Vi', 50.50, 10, 0, 9);

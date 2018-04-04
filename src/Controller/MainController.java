@@ -31,50 +31,92 @@ public class MainController implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case MainView.MANAGE_TABLES:
-                //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES TAULES
-                System.out.println("tables");
 
-                TablesView tablesView = new TablesView();
-                TablesController tablesController = new TablesController(tablesView, databaseConector, this);
-                TablesChangeController tablesChangeController = new TablesChangeController(tablesView, databaseConector);
-                tablesView.registerListeners(tablesController, tablesChangeController);
-                mainView.setVisible(false);
-                tablesView.setVisible(true);
+                manageTables();
+
                 break;
             case MainView.MANAGE_MENU:
-                MenuView menuView = new MenuView();
-                MenuController menuController = new MenuController(menuView, databaseConector, this);
-                MenuChangeController menuChangeController = new MenuChangeController(menuView, databaseConector);
-                menuView.registerListeners(menuController, menuChangeController);
-                mainView.setVisible(false);
-                menuView.setVisible(true);
+
+                manageMenu();
+
                 break;
             case MainView.MANAGE_ORDERS:
-                //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES COMANDES
-                System.out.println("orders");
 
-                OrdersView ordersView = new OrdersView();
-                OrdersControllers ordersControllers = new OrdersControllers(ordersView);
-                ordersView.registerListeners(ordersControllers);
+                manageOrders();
+
                 break;
             case MainView.SHOW_TOP_FIVE:
-                int max = 60;
-                int[] comandesPlats = {2, 3, 12, 10, 42};
-                String[] nomPlats = {"a", "b", "c", "d", "e"};
-                //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LA GRAFICA (Angel)
 
-                System.out.println("top five");
+                showGraphs();
 
-                TopFiveGraphView topFiveGraphView = new TopFiveGraphView(max, comandesPlats, nomPlats);
-                topFiveGraphView.TopFiveGraph();
-                topFiveGraphView.setVisible(true);
-                //new TopFiveGraphController(topFiveGraphView);
                 break;
             case MainView.EXIT:
+
                 System.exit(1);
+
                 break;
         }
     }
+
+    private void manageOrders() {
+        //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES COMANDES
+        System.out.println("orders");
+
+        OrdersView ordersView = new OrdersView();
+        OrdersControllers ordersControllers = new OrdersControllers(ordersView);
+        ordersView.registerListeners(ordersControllers);
+    }
+
+    private void manageTables() {
+        //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES TAULES
+        System.out.println("tables");
+
+        TablesView tablesView = new TablesView();
+        TablesController tablesController = new TablesController(tablesView, databaseConector, this);
+        TablesChangeController tablesChangeController = new TablesChangeController(tablesView, databaseConector);
+        tablesView.registerListeners(tablesController, tablesChangeController);
+        mainView.setVisible(false);
+        tablesView.setVisible(true);
+    }
+
+    private void manageMenu() {
+        MenuView menuView = new MenuView();
+        MenuController menuController = new MenuController(menuView, databaseConector, this);
+        MenuChangeController menuChangeController = new MenuChangeController(menuView, databaseConector);
+        menuView.registerListeners(menuController, menuChangeController);
+        mainView.setVisible(false);
+        menuView.setVisible(true);
+    }
+
+    private void showGraphs() {
+        //TODO: RESIZE GRAFICAS PERQUE SURTIN UNA AL COSTAT DEL ALTRE
+        ArrayList<Carta> cartaTotal = databaseConector.getTopFiveTotals();
+        ArrayList<Carta> cartaSemanal = databaseConector.getTopFiveWeekly();
+
+        int[] comandesPlatsTotals = new int[cartaTotal.size()];
+        String[] nomPlatsTotals = new String[cartaTotal.size()];
+        int[] comandesPlatsSemanals = new int[cartaSemanal.size()];
+        String[] nomPlatsSemanals = new String[cartaSemanal.size()];
+
+
+        for (int i = 0; i < cartaTotal.size(); i++){
+            nomPlatsTotals[i] = cartaTotal.get(i).getNomPlat();
+            comandesPlatsTotals[i] = cartaTotal.get(i).getTotals();
+        }
+
+        for (int x = 0; x < cartaSemanal.size(); x++){
+            nomPlatsSemanals[x] = cartaSemanal.get(x).getNomPlat();
+            comandesPlatsSemanals[x] = cartaSemanal.get(x).getSemanals();
+        }
+
+        TopFiveGraphView topFiveGraphView = new TopFiveGraphView(cartaTotal.get(0).getTotals(), comandesPlatsTotals, nomPlatsTotals);
+        topFiveGraphView.TopFiveGraph();
+        topFiveGraphView.setVisible(true);
+        TopFiveWeeklyGraphView topFiveWeeklyGraphView = new TopFiveWeeklyGraphView(cartaSemanal.get(0).getSemanals(), comandesPlatsSemanals, nomPlatsSemanals);
+        topFiveWeeklyGraphView.TopFiveGraph();
+        topFiveWeeklyGraphView.setVisible(true);
+    }
+
 
     public void setVisible(boolean visible){
         mainView.setVisible(visible);
