@@ -58,12 +58,17 @@ public class MainController implements ActionListener{
                 ordersView.registerListeners(ordersControllers);
                 break;
             case MainView.SHOW_TOP_FIVE:
+                int max = 60;
+                int[] comandesPlats = {2, 3, 12, 10, 42};
+                String[] nomPlats = {"a", "b", "c", "d", "e"};
                 //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LA GRAFICA (Angel)
 
                 System.out.println("top five");
 
-                TopFiveGraphView topFiveGraphView = new TopFiveGraphView();
-                new TopFiveGraphController(topFiveGraphView);
+                TopFiveGraphView topFiveGraphView = new TopFiveGraphView(max, comandesPlats, nomPlats);
+                topFiveGraphView.TopFiveGraph();
+                topFiveGraphView.setVisible(true);
+                //new TopFiveGraphController(topFiveGraphView);
                 break;
             case MainView.EXIT:
                 System.exit(1);
