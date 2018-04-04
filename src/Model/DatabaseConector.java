@@ -41,7 +41,8 @@ public class DatabaseConector {
                     String nomPlat = rs.getString("nom_plat");
                     float preu = rs.getFloat("preu");
                     int quantitat = rs.getInt("quantitat");
-                    carta.add(new Carta(idPlat, nomPlat, preu, quantitat));
+                    int semanals = rs.getInt("semanals");
+                    int totals = rs.getInt("totals");
                 }
 
                 connection.close();
@@ -107,11 +108,13 @@ public class DatabaseConector {
         if (conexio()){
             try {
 
-                String query = "INSERT INTO Carta(nom_plat, preu, quantitat) VALUES (?,?,?)";
+                String query = "INSERT INTO Carta(nom_plat, preu, quantitat, semanals, totals) VALUES (?,?,?,?,?)";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setString(1, nom);
                 preparedStmt.setDouble(2, preu);
                 preparedStmt.setInt(3, quantitat);
+                preparedStmt.setInt(4, 0);
+                preparedStmt.setInt(5, 0);
 
                 preparedStmt.execute();
 
@@ -159,5 +162,32 @@ public class DatabaseConector {
             }
         }
         return false;
+    }
+
+    public ArrayList<Carta> getTopFiveTotals() {
+        if (conexio()){
+            ArrayList<Carta> carta = new ArrayList<>();
+            try {
+                Statement s = connection.createStatement();
+
+                s.executeQuery("SELECT * FROM Carta ORDER BY totals LIMIT 5");
+                ResultSet rs = s.getResultSet();
+                while (rs.next()) {
+                    int idPlat = rs.getInt("id_plat");
+                    String nomPlat = rs.getString("nom_plat");
+                    float preu = rs.getFloat("preu");
+                    int quantitat = rs.getInt("quantitat");
+                    int semanals = rs.getInt("semanals");
+                    int totals = rs.getInt("totals");
+                    carta.add(new Carta(idPlat, nomPlat, preu, quantitat, semanals, totals));
+                }
+
+                connection.close();
+                return carta;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 }

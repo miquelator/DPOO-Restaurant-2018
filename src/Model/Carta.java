@@ -5,12 +5,16 @@ public class Carta {
     private String nomPlat;
     private float preu;
     private int quantitat;
+    private int semanals;
+    private int totals;
 
-    public Carta(int idPlat, String nomPlat, float preu, int quantitat){
+    public Carta(int idPlat, String nomPlat, float preu, int quantitat, int semanals, int totals){
         this.idPlat = idPlat;
         this.nomPlat = nomPlat;
         this.preu = preu;
         this.quantitat = quantitat;
+        this.semanals = semanals;
+        this.totals = totals;
     }
 
     public int getIdPlat() {
@@ -43,5 +47,21 @@ public class Carta {
 
     public void setQuantitat(int quantitat) {
         this.quantitat = quantitat;
+    }
+
+    public int getSemanals() {
+        return semanals;
+    }
+
+    public void setSemanals(int semanals) {
+        this.semanals = semanals;
+    }
+
+    public int getTotals() {
+        return totals;
+    }
+
+    public void setTotals(int totals) {
+        this.totals = totals;
     }
 }

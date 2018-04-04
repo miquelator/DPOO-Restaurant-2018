@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TopFiveGraphController.java" afterPath="$PROJECT_DIR$/src/Controller/TopFiveGraphController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Carta.java" afterPath="$PROJECT_DIR$/src/Model/Carta.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/DatabaseConector.java" afterPath="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,19 +22,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DatabaseConector.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DatabaseConector.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2562">
-              <caret line="146" column="24" lean-forward="false" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
+            <state relative-caret-position="43">
+              <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
               <folding>
-                <marker date="1522789268004" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
-                <marker date="1522789268004" expanded="true" signature="2022:2041" ph=" SELECT statement (TAULA)" />
-                <marker date="1522789268004" expanded="true" signature="2842:2863" ph=" SELECT statement (RESERVA)" />
-                <marker date="1522789268004" expanded="true" signature="3728:3787" ph=" INSERT statement (CARTA)" />
-                <marker date="1522789268004" expanded="true" signature="4406:4455" ph=" UPDATE statement (CARTA)" />
-                <marker date="1522789268004" expanded="true" signature="4412:4455" ph=" UPDATE statement (CARTA)" />
-                <marker date="1522789268004" expanded="true" signature="5020:5056" ph=" DELETE statement (CARTA)" />
+                <marker date="1522832136269" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
+                <marker date="1522832136269" expanded="true" signature="2058:2077" ph=" SELECT statement (TAULA)" />
+                <marker date="1522832136269" expanded="true" signature="2878:2899" ph=" SELECT statement (RESERVA)" />
+                <marker date="1522832136269" expanded="true" signature="3764:3845" ph=" INSERT statement (CARTA)" />
+                <marker date="1522832136269" expanded="true" signature="4550:4599" ph=" UPDATE statement (CARTA)" />
+                <marker date="1522832136269" expanded="true" signature="4556:4599" ph=" UPDATE statement (CARTA)" />
+                <marker date="1522832136269" expanded="true" signature="5164:5200" ph=" DELETE statement (CARTA)" />
+                <marker date="1522832136269" expanded="true" signature="5823:5858" ph=" SELECT statement (CARTA)" />
               </folding>
             </state>
           </provider>
@@ -40,17 +45,40 @@
         <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+              <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TopFiveGraphController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/TopFiveGraphController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding>
+                <element signature="e#207#208#0" expanded="true" />
+                <element signature="e#263#264#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TopFiveGraphView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/TopFiveGraphView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/MenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-756">
-              <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+            <state relative-caret-position="179">
+              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,7 +87,7 @@
       <file leaf-file-name="DatabaseManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
+            <state relative-caret-position="168">
               <caret line="10" column="88" lean-forward="false" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
               <folding />
             </state>
@@ -69,8 +97,8 @@
       <file leaf-file-name="Carta.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Carta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="26" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="61">
+              <caret line="10" column="96" lean-forward="false" selection-start-line="10" selection-start-column="96" selection-end-line="10" selection-end-column="96" />
               <folding />
             </state>
           </provider>
@@ -79,10 +107,9 @@
       <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/MenuView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="229" column="60" lean-forward="true" selection-start-line="229" selection-start-column="60" selection-end-line="229" selection-end-column="60" />
+            <state relative-caret-position="1680">
+              <caret line="229" column="60" lean-forward="false" selection-start-line="229" selection-start-column="60" selection-end-line="229" selection-end-column="60" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#MenuView#0;class#MenuView#0" expanded="false" />
                 <element signature="method#populateView#0;class#MenuView#0" expanded="false" />
                 <element signature="method#createInnerPanel#0;class#MenuView#0" expanded="false" />
@@ -90,9 +117,23 @@
                 <element signature="method#updateDishStock#0;class#MenuView#0" expanded="false" />
                 <element signature="method#listDish#0;class#MenuView#0" expanded="false" />
                 <element signature="method#addDish#0;class#MenuView#0" expanded="false" />
+                <element signature="e#4774#4775#0" expanded="false" />
+                <element signature="e#4826#4827#0" expanded="false" />
                 <element signature="method#updateMenu#0;class#MenuView#0" expanded="false" />
                 <element signature="method#populateStock#0;class#MenuView#0" expanded="false" />
                 <element signature="method#populateDelete#0;class#MenuView#0" expanded="false" />
+                <element signature="e#7120#7121#0" expanded="false" />
+                <element signature="e#7179#7180#0" expanded="false" />
+                <element signature="e#7218#7219#0" expanded="false" />
+                <element signature="e#7259#7260#0" expanded="false" />
+                <element signature="e#7301#7302#0" expanded="false" />
+                <element signature="e#7362#7363#0" expanded="false" />
+                <element signature="e#7400#7401#0" expanded="false" />
+                <element signature="e#7441#7442#0" expanded="false" />
+                <element signature="e#7480#7481#0" expanded="false" />
+                <element signature="e#7522#7523#0" expanded="false" />
+                <element signature="e#7561#7562#0" expanded="false" />
+                <element signature="e#7603#7604#0" expanded="false" />
                 <element signature="method#registerListeners#0;class#MenuView#0" expanded="false" />
               </folding>
             </state>
@@ -102,7 +143,7 @@
       <file leaf-file-name="bbdd.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/bbdd.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-45">
+            <state relative-caret-position="168">
               <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
               <folding />
             </state>
@@ -112,11 +153,9 @@
       <file leaf-file-name="MenuChangeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/MenuChangeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="38" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="546">
+              <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="38" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,9 +195,7 @@
         <option value="$PROJECT_DIR$/src/Network/DedicatedReservesThread.java" />
         <option value="$PROJECT_DIR$/src/Model/ConfigJson.java" />
         <option value="$PROJECT_DIR$/src/View/ManageTablesView.java" />
-        <option value="$PROJECT_DIR$/src/View/TopFiveGraphView.java" />
         <option value="$PROJECT_DIR$/src/Controller/OrdersControllers.java" />
-        <option value="$PROJECT_DIR$/src/Controller/TopFiveGraphController.java" />
         <option value="$PROJECT_DIR$/src/Network/RecepcioSocketThread.java" />
         <option value="$PROJECT_DIR$/src/Controller/MainControllerResize.java" />
         <option value="$PROJECT_DIR$/src/Network/ReservesSocketThread.java" />
@@ -167,7 +204,6 @@
         <option value="$PROJECT_DIR$/src/Model/DDBBConfiguration.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/resources/config.json" />
-        <option value="$PROJECT_DIR$/src/Model/Carta.java" />
         <option value="$PROJECT_DIR$/src/Model/Taula.java" />
         <option value="$PROJECT_DIR$/src/View/TablesView.java" />
         <option value="$PROJECT_DIR$/src/Controller/TablesController.java" />
@@ -176,9 +212,12 @@
         <option value="$PROJECT_DIR$/src/Controller/MenuChangeController.java" />
         <option value="$PROJECT_DIR$/src/Controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/Model/DatabaseManager.java" />
-        <option value="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
         <option value="$PROJECT_DIR$/src/View/MenuView.java" />
         <option value="$PROJECT_DIR$/src/Controller/MenuController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/TopFiveGraphController.java" />
+        <option value="$PROJECT_DIR$/src/View/TopFiveGraphView.java" />
+        <option value="$PROJECT_DIR$/src/Model/Carta.java" />
+        <option value="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
       </list>
     </option>
   </component>
@@ -210,9 +249,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -341,6 +377,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -647,7 +686,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522789813432</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Llibreries actualitzades">
+      <created>1522789825577</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1522789825577</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -664,35 +710,35 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27658433" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28088078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -731,22 +777,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/TablesView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3213">
-          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -768,13 +798,14 @@
         <state relative-caret-position="1092">
           <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
-            <marker date="1522789268004" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="2022:2041" ph=" SELECT statement (TAULA)" />
-            <marker date="1522789268004" expanded="true" signature="2842:2863" ph=" SELECT statement (RESERVA)" />
-            <marker date="1522789268004" expanded="true" signature="3728:3787" ph=" INSERT statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="4406:4455" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="4412:4455" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="5020:5056" ph=" DELETE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="2058:2077" ph=" SELECT statement (TAULA)" />
+            <marker date="1522832136269" expanded="true" signature="2878:2899" ph=" SELECT statement (RESERVA)" />
+            <marker date="1522832136269" expanded="true" signature="3764:3845" ph=" INSERT statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="4550:4599" ph=" UPDATE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="4556:4599" ph=" UPDATE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="5164:5200" ph=" DELETE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="5823:5858" ph=" SELECT statement (CARTA)" />
           </folding>
         </state>
       </provider>
@@ -867,13 +898,14 @@
         <state relative-caret-position="1134">
           <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
-            <marker date="1522789268004" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="2022:2041" ph=" SELECT statement (TAULA)" />
-            <marker date="1522789268004" expanded="true" signature="2842:2863" ph=" SELECT statement (RESERVA)" />
-            <marker date="1522789268004" expanded="true" signature="3728:3787" ph=" INSERT statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="4406:4455" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="4412:4455" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="5020:5056" ph=" DELETE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="2058:2077" ph=" SELECT statement (TAULA)" />
+            <marker date="1522832136269" expanded="true" signature="2878:2899" ph=" SELECT statement (RESERVA)" />
+            <marker date="1522832136269" expanded="true" signature="3764:3845" ph=" INSERT statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="4550:4599" ph=" UPDATE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="4556:4599" ph=" UPDATE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="5164:5200" ph=" DELETE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="5823:5858" ph=" SELECT statement (CARTA)" />
           </folding>
         </state>
       </provider>
@@ -958,13 +990,14 @@
         <state relative-caret-position="1155">
           <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
-            <marker date="1522789268004" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="2022:2041" ph=" SELECT statement (TAULA)" />
-            <marker date="1522789268004" expanded="true" signature="2842:2863" ph=" SELECT statement (RESERVA)" />
-            <marker date="1522789268004" expanded="true" signature="3728:3787" ph=" INSERT statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="4406:4455" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="4412:4455" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="5020:5056" ph=" DELETE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="2058:2077" ph=" SELECT statement (TAULA)" />
+            <marker date="1522832136269" expanded="true" signature="2878:2899" ph=" SELECT statement (RESERVA)" />
+            <marker date="1522832136269" expanded="true" signature="3764:3845" ph=" INSERT statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="4550:4599" ph=" UPDATE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="4556:4599" ph=" UPDATE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="5164:5200" ph=" DELETE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="5823:5858" ph=" SELECT statement (CARTA)" />
           </folding>
         </state>
       </provider>
@@ -1083,7 +1116,7 @@
         <state relative-caret-position="42">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1092,14 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2308">
           <caret line="133" column="22" lean-forward="false" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="9" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="35" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1114,7 +1139,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/bbdd.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
+        <state relative-caret-position="168">
           <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
           <folding />
         </state>
@@ -1122,52 +1147,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MenuChangeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="38" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2562">
-          <caret line="146" column="24" lean-forward="false" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
-          <folding>
-            <marker date="1522789268004" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="2022:2041" ph=" SELECT statement (TAULA)" />
-            <marker date="1522789268004" expanded="true" signature="2842:2863" ph=" SELECT statement (RESERVA)" />
-            <marker date="1522789268004" expanded="true" signature="3728:3787" ph=" INSERT statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="4406:4455" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="4412:4455" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522789268004" expanded="true" signature="5020:5056" ph=" DELETE statement (CARTA)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="10" column="88" lean-forward="false" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
+        <state relative-caret-position="546">
+          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="38" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/MenuView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="229" column="60" lean-forward="true" selection-start-line="229" selection-start-column="60" selection-end-line="229" selection-end-column="60" />
+        <state relative-caret-position="1680">
+          <caret line="229" column="60" lean-forward="false" selection-start-line="229" selection-start-column="60" selection-end-line="229" selection-end-column="60" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#MenuView#0;class#MenuView#0" expanded="false" />
             <element signature="method#populateView#0;class#MenuView#0" expanded="false" />
             <element signature="method#createInnerPanel#0;class#MenuView#0" expanded="false" />
@@ -1175,27 +1165,101 @@
             <element signature="method#updateDishStock#0;class#MenuView#0" expanded="false" />
             <element signature="method#listDish#0;class#MenuView#0" expanded="false" />
             <element signature="method#addDish#0;class#MenuView#0" expanded="false" />
+            <element signature="e#4774#4775#0" expanded="false" />
+            <element signature="e#4826#4827#0" expanded="false" />
             <element signature="method#updateMenu#0;class#MenuView#0" expanded="false" />
             <element signature="method#populateStock#0;class#MenuView#0" expanded="false" />
             <element signature="method#populateDelete#0;class#MenuView#0" expanded="false" />
+            <element signature="e#7120#7121#0" expanded="false" />
+            <element signature="e#7179#7180#0" expanded="false" />
+            <element signature="e#7218#7219#0" expanded="false" />
+            <element signature="e#7259#7260#0" expanded="false" />
+            <element signature="e#7301#7302#0" expanded="false" />
+            <element signature="e#7362#7363#0" expanded="false" />
+            <element signature="e#7400#7401#0" expanded="false" />
+            <element signature="e#7441#7442#0" expanded="false" />
+            <element signature="e#7480#7481#0" expanded="false" />
+            <element signature="e#7522#7523#0" expanded="false" />
+            <element signature="e#7561#7562#0" expanded="false" />
+            <element signature="e#7603#7604#0" expanded="false" />
             <element signature="method#registerListeners#0;class#MenuView#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Carta.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="6" selection-end-column="26" />
+        <state relative-caret-position="168">
+          <caret line="10" column="88" lean-forward="false" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-756">
-          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        <state relative-caret-position="179">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="9" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="35" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/TopFiveGraphView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TopFiveGraphController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Carta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="10" column="96" lean-forward="false" selection-start-line="10" selection-start-column="96" selection-end-line="10" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+          <folding>
+            <marker date="1522832136269" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="2058:2077" ph=" SELECT statement (TAULA)" />
+            <marker date="1522832136269" expanded="true" signature="2878:2899" ph=" SELECT statement (RESERVA)" />
+            <marker date="1522832136269" expanded="true" signature="3764:3845" ph=" INSERT statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="4550:4599" ph=" UPDATE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="4556:4599" ph=" UPDATE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="5164:5200" ph=" DELETE statement (CARTA)" />
+            <marker date="1522832136269" expanded="true" signature="5823:5858" ph=" SELECT statement (CARTA)" />
+          </folding>
         </state>
       </provider>
     </entry>
