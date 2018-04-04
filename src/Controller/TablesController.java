@@ -21,7 +21,7 @@ public class TablesController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case TablesView.ADD_TABLE:
-                System.out.println("add tables");
+                addTable();
                 break;
             case TablesView.SHOW_TABLE_RESERVATIONS:
                 System.out.println("show table reservations");
@@ -33,6 +33,23 @@ public class TablesController implements ActionListener {
                 parent.setVisible(true);
                 tablesView.setVisible(false);
                 break;
+        }
+    }
+
+    private void addTable() {
+        String numSeients = tablesView.getTableToAdd();
+        if (numSeients.matches("[0-9]+")){
+            try {
+                if (databaseConector.addTable(Integer.parseInt(numSeients))){
+                    tablesView.mostraInformacioServidor("Taula afegida correctament", "INFORMACIO");
+                    tablesView.resetNumSeients();
+                }
+
+            }catch (NumberFormatException ne){
+                tablesView.mostraErrorServidor("Error a l'hora d'afegir la taula!", "Error");
+            }
+        }else {
+            tablesView.mostraErrorServidor("Error en el format de les dades! Nomes nombres enters!", "Error");
         }
     }
 }

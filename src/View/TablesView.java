@@ -26,6 +26,7 @@ public class TablesView extends JFrame {
     private JTableModel jTableModel;
     private JTable listOfTables;
     private JTable listOfReserves;
+    private JTextField numSeients;
 
     public final static String ADD_TABLE = "Afegir una taula";
     public final static String SHOW_TABLE_RESERVATIONS = "Mostrar reserves de taules";
@@ -42,6 +43,10 @@ public class TablesView extends JFrame {
         dimension.width = 600;
         setMinimumSize(dimension);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+
+    public String getTableToAdd() {
+        return numSeients.getText();
     }
 
     /**
@@ -62,7 +67,7 @@ public class TablesView extends JFrame {
         tabbedPane = new JTabbedPane();
 
 
-        JPanel jplInnerPanel1 = createInnerPanel(addTable());
+        JPanel jplInnerPanel1 = createInnerPanel(/*addTable()*/ spinnerNumberSample());
         tabbedPane.addTab("Afegir nova taula", icon, jplInnerPanel1, "Tab 1");
 
         JPanel jplInnerPanel2 = createInnerPanel(new JPanel());
@@ -76,11 +81,31 @@ public class TablesView extends JFrame {
         JPanel jplInnerPanel4 = createInnerPanel(deleteTable());
         tabbedPane.addTab("Eliminar taula", icon, jplInnerPanel4, "Tab 4");
 
-        //add(tabbedPane);
-
         principal.add(bottom, BorderLayout.SOUTH);
         principal.add(tabbedPane, BorderLayout.CENTER);
         setContentPane(principal);
+    }
+
+    private JPanel spinnerNumberSample() {
+        JPanel addTablePanel = new JPanel(new GridLayout(1,2));
+        JPanel panel = new JPanel();
+        //TODO: LIMITAR EL SPINNER A 10 I PODER AGAFAR-LO DESDE EL CONTROLADOR
+        SpinnerModel model = new SpinnerNumberModel();
+        JSpinner spinner = new JSpinner(model);
+        Dimension d = new Dimension();
+        d.width = 50;
+        spinner.setPreferredSize(d);
+
+        JLabel label1 = new JLabel("Nombre seients");
+        JPanel panel1 = new JPanel(new BorderLayout());
+        panel1.add(label1, BorderLayout.WEST);
+        panel1.add(spinner, BorderLayout.CENTER);
+        panel.add(panel1);
+
+        addTable = new JButton(ADD_TABLE);
+        addTablePanel.add(panel);
+        addTablePanel.add(addTable);
+        return addTablePanel;
     }
 
     private JPanel createInnerPanel(JPanel innerPane) {
@@ -117,13 +142,6 @@ public class TablesView extends JFrame {
         listOfTables.getTableHeader().setReorderingAllowed(false);
         JScrollPane scrollPane = new JScrollPane(listOfTables);
         tabbedPane.setComponentAt(1, scrollPane);
-    }
-
-    private JPanel addTable() {
-        JPanel addTablePanel = new JPanel();
-        addTable = new JButton(ADD_TABLE);
-        addTablePanel.add(addTable);
-        return addTablePanel;
     }
 
     /**
@@ -190,5 +208,33 @@ public class TablesView extends JFrame {
             row.addElement(dataReserva.get(0));
             model.addRow(row);
         }
+    }
+
+    /**
+     * Displays error message on view
+     * @param message Error message to be displayed
+     * @param title Error title to be displayed
+     */
+    public void mostraErrorServidor(String message, String title) {
+        String[] options = { "OK" };
+        JOptionPane.showOptionDialog(this, message,
+                title, JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE,
+                null, options, options[0]);
+    }
+
+    /**
+     * Displays information message on view
+     * @param message Information message to be displayed
+     * @param title Information title to be displayed
+     */
+    public void mostraInformacioServidor(String message, String title) {
+        String[] options = { "OK" };
+        JOptionPane.showOptionDialog(this, message,
+                title, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
+                null, options, options[0]);
+    }
+
+    public void resetNumSeients() {
+        numSeients.setText("");
     }
 }

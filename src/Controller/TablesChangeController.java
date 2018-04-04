@@ -20,7 +20,7 @@ public class TablesChangeController implements ChangeListener {
     @Override
     public void stateChanged(ChangeEvent e) {
         if (tablesView.getTabbedPaneWindow() == 1){
-            ArrayList<Taula> aux = databaseConector.getTaula();
+            ArrayList<Taula>  aux = databaseConector.getTaula();
             tablesView.updateTables(aux);
         } else if (tablesView.getTabbedPaneWindow() == 2){
             tablesView.mostraReserves(databaseConector.getReserves());

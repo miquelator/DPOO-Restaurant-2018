@@ -106,7 +106,6 @@ public class DatabaseConector {
     public boolean addDish(String nom, double preu, int quantitat) {
         if (conexio()){
             try {
-
                 String query = "INSERT INTO Carta(nom_plat, preu, quantitat) VALUES (?,?,?)";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setString(1, nom);
@@ -127,7 +126,6 @@ public class DatabaseConector {
     public boolean updateStock(String updatedDishName, int newStock) {
         if (conexio()){
             try {
-
                 String query =  "UPDATE Carta SET quantitat = ? WHERE nom_plat = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setInt(1, newStock);
@@ -150,6 +148,25 @@ public class DatabaseConector {
                 String query =  "DELETE FROM Carta WHERE nom_plat = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setString(1, deletedDishName);
+                preparedStmt.execute();
+
+                connection.close();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
+    public boolean addTable(int numSeients) {
+        if (conexio()){
+            try {
+                String query = "INSERT INTO Taula(num_seients, ocupada) VALUES (?,?)";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, numSeients);
+                preparedStmt.setBoolean(2, false);
+
                 preparedStmt.execute();
 
                 connection.close();
