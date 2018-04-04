@@ -3,6 +3,8 @@ package Controller;
 import Model.Carta;
 import Model.ConfigJson;
 import Model.DatabaseConector;
+import Network.RecepcioSocketThread;
+import Network.ReservesSocketThread;
 import View.*;
 
 import java.awt.event.ActionEvent;
@@ -12,10 +14,17 @@ import java.util.ArrayList;
 public class MainController implements ActionListener{
     private MainView mainView;
     private DatabaseConector databaseConector;
+    private RecepcioSocketThread recepcioThread;
+    private ReservesSocketThread reservesThread;
 
-    public MainController(MainView mainView, ConfigJson configJson) {
+    public MainController(MainView mainView, ConfigJson configJson, RecepcioSocketThread rec, ReservesSocketThread res) {
         this.mainView = mainView;
         databaseConector = new DatabaseConector(configJson);
+        recepcioThread = rec;
+        reservesThread = res;
+        recepcioThread.setController(this);
+        reservesThread.setController(this);
+
     }
 
     @Override
