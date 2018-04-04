@@ -1,6 +1,8 @@
 package Model;
 
-public class Carta {
+import java.io.Serializable;
+
+public class Carta implements Serializable{
     private int idPlat;
     private String nomPlat;
     private float preu;

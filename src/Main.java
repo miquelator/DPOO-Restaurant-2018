@@ -1,6 +1,7 @@
 import Controller.MainController;
 import Model.ConfigJson;
 import Model.DatabaseConector;
+import Network.RecepcioSocketThread;
 import Network.ReservesSocketThread;
 import View.MainView;
 import com.google.gson.Gson;
@@ -23,10 +24,11 @@ public class Main {
 
                     if (configJson != null){
                         MainView mainView = new MainView();
-                        MainController mainController = new MainController(mainView, configJson);
+                        ReservesSocketThread reservesThread = new ReservesSocketThread();
+                        RecepcioSocketThread recepcioThread = new RecepcioSocketThread();
+                        MainController mainController = new MainController(mainView, configJson,recepcioThread,reservesThread);
                         mainView.registerListeners(mainController);
                         mainView.setVisible(true);
-                        ReservesSocketThread reservesThread = new ReservesSocketThread();
                         reservesThread.start();
                     }
                 } catch (FileNotFoundException e) {
