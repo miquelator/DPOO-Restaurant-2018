@@ -3,7 +3,9 @@ package Controller;
 import View.TopFiveGraphView;
 
 public class TopFiveGraphController {
-    public TopFiveGraphController(TopFiveGraphView topFiveGraphView) {
+    private TopFiveGraphView topFiveGraphView;
 
+    public TopFiveGraphController(TopFiveGraphView topFiveGraphView) {
+        this.topFiveGraphView = topFiveGraphView;
     }
 }
