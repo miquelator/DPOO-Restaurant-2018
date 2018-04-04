@@ -19,11 +19,23 @@ public class TablesChangeController implements ChangeListener {
 
     @Override
     public void stateChanged(ChangeEvent e) {
-        if (tablesView.getTabbedPaneWindow() == 1){
-            ArrayList<Taula>  aux = databaseConector.getTaula();
-            tablesView.updateTables(aux);
-        } else if (tablesView.getTabbedPaneWindow() == 2){
-            tablesView.mostraReserves(databaseConector.getReserves());
+        switch (tablesView.getTabbedPaneWindow()){
+            case 1:
+                ArrayList<Taula> aux = databaseConector.getTaula();
+                tablesView.updateTables(aux);
+                break;
+            case 2:
+                tablesView.mostraReserves(databaseConector.getReserves());
+                break;
+            case 3:
+                ArrayList<Taula> auxDelete = databaseConector.getTaula();
+                int size = auxDelete.size();
+                ArrayList<Integer> ID = new ArrayList<>();
+                for (int i = 0; i < size; i++){
+                    ID.add(auxDelete.get(i).getIdTaula());
+                }
+                tablesView.loadTablesID(ID);
+                break;
         }
     }
 }

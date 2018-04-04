@@ -5,16 +5,12 @@ import Controller.TablesController;
 import Model.JTableModel;
 import Model.Reserva;
 import Model.Taula;
-import com.sun.xml.internal.bind.v2.TODO;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Vector;
 
 public class TablesView extends JFrame {
@@ -26,10 +22,9 @@ public class TablesView extends JFrame {
     private JTableModel jTableModel;
     private JTable listOfTables;
     private JTable listOfReserves;
-    private JTextField numSeients;
+    private JSpinner spinner;
 
     public final static String ADD_TABLE = "Afegir una taula";
-    public final static String SHOW_TABLE_RESERVATIONS = "Mostrar reserves de taules";
     public final static String DELETE_TABLE = "Borrar taula";
     public final static String EXIT = "Sortir";
 
@@ -45,8 +40,8 @@ public class TablesView extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
-    public String getTableToAdd() {
-        return numSeients.getText();
+    public Object getTableToAdd() {
+        return spinner.getValue();
     }
 
     /**
@@ -91,7 +86,7 @@ public class TablesView extends JFrame {
         JPanel panel = new JPanel();
         //TODO: LIMITAR EL SPINNER A 10 I PODER AGAFAR-LO DESDE EL CONTROLADOR
         SpinnerModel model = new SpinnerNumberModel();
-        JSpinner spinner = new JSpinner(model);
+        spinner = new JSpinner(model);
         Dimension d = new Dimension();
         d.width = 50;
         spinner.setPreferredSize(d);
@@ -118,9 +113,7 @@ public class TablesView extends JFrame {
 
     private JPanel deleteTable() {
         JPanel deleteTablePanel = new JPanel(new FlowLayout());
-        //TODO: RECUPERAR DEL SERVIDOR UNA LLISTA DELS ID DE LES TAULES I POSAR-LES EN UN JCOMBOBOX
-        String[] exempleABorrar = {"1", "2", "3", "4", "5"};
-        idABorrar = new JComboBox<>(exempleABorrar);
+        idABorrar = new JComboBox<>();
         deleteTables = new JButton(DELETE_TABLE);
         deleteTablePanel.add(idABorrar);
         deleteTablePanel.add(Box.createRigidArea(new Dimension(10, 0)));
@@ -235,6 +228,17 @@ public class TablesView extends JFrame {
     }
 
     public void resetNumSeients() {
-        numSeients.setText("");
+        spinner.setValue(0);
+    }
+
+    public void loadTablesID(ArrayList<Integer> id) {
+        int size = id.size();
+        for (int i = 0; i < size; i++) {
+            idABorrar.addItem(id.get(i));
+        }
+    }
+
+    public int getTableToDelete() {
+        return idABorrar.getSelectedIndex();
     }
 }

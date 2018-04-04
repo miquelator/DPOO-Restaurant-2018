@@ -237,4 +237,21 @@ public class DatabaseConector {
         }
         return null;
     }
+
+    public boolean deleteTable(int tableToDelete) {
+        if (conexio()){
+            try {
+                String query =  "DELETE FROM Taula WHERE id_taula = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, tableToDelete);
+                preparedStmt.execute();
+
+                connection.close();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }

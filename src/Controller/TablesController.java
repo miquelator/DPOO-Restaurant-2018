@@ -23,11 +23,8 @@ public class TablesController implements ActionListener {
             case TablesView.ADD_TABLE:
                 addTable();
                 break;
-            case TablesView.SHOW_TABLE_RESERVATIONS:
-                System.out.println("show table reservations");
-                break;
             case TablesView.DELETE_TABLE:
-                System.out.println("delete table");
+                deleteTable();
                 break;
             case TablesView.EXIT:
                 parent.setVisible(true);
@@ -36,20 +33,25 @@ public class TablesController implements ActionListener {
         }
     }
 
-    private void addTable() {
-        String numSeients = tablesView.getTableToAdd();
-        if (numSeients.matches("[0-9]+")){
-            try {
-                if (databaseConector.addTable(Integer.parseInt(numSeients))){
-                    tablesView.mostraInformacioServidor("Taula afegida correctament", "INFORMACIO");
-                    tablesView.resetNumSeients();
-                }
-
-            }catch (NumberFormatException ne){
-                tablesView.mostraErrorServidor("Error a l'hora d'afegir la taula!", "Error");
-            }
+    private void deleteTable() {
+        if (databaseConector.deleteTable(tablesView.getTableToDelete() + 1)){
+            tablesView.mostraInformacioServidor("Taula esborrada correctament.", "INFORMACIO");
+            //TODO: ACTUALITZAR EL JCOMBOX DELS INDEX DE BORRAR DESPRES DE BORRAR
         }else {
-            tablesView.mostraErrorServidor("Error en el format de les dades! Nomes nombres enters!", "Error");
+            tablesView.mostraErrorServidor("Error al esborrar la taula!", "ERROR");
+        }
+
+    }
+
+    private void addTable() {
+        int numSeients = (int) tablesView.getTableToAdd();
+        try {
+            if (databaseConector.addTable(numSeients)){
+                tablesView.mostraInformacioServidor("Taula afegida correctament", "INFORMACIO");
+                tablesView.resetNumSeients();
+            }
+        }catch (NumberFormatException ne){
+            tablesView.mostraErrorServidor("Error a l'hora d'afegir la taula!", "Error");
         }
     }
 }
