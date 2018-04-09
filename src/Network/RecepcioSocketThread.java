@@ -1,7 +1,5 @@
 package Network;
 
-import Controller.MainController;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -9,8 +7,6 @@ import java.net.Socket;
 public class RecepcioSocketThread extends Thread {
     private DedicatedRecepcioThread dedicatedRecepcioThread;
     private Socket sClient;
-    private MainController controller;
-
 
     @Override
     public void run() {
@@ -35,8 +31,4 @@ public class RecepcioSocketThread extends Thread {
         dedicatedRecepcioThread.start();
     }
 
-    public void setController (MainController c){
-        controller = c;
-
-    }
 }

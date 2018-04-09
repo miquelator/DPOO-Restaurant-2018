@@ -1,5 +1,7 @@
 package Network;
 
+import Controller.MainController;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -9,9 +11,11 @@ public class DedicatedReservesThread extends Thread {
     private Socket sClient;
     private DataOutputStream doStream;
     private DataInputStream diStream;
+    private MainController mainController;
 
     public DedicatedReservesThread(Socket sClient) {
         this.sClient = sClient;
+        this.mainController = mainController;
     }
 
     @Override
@@ -24,9 +28,7 @@ public class DedicatedReservesThread extends Thread {
                 String request = diStream.readUTF();
                 readRequest(request);
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
     }
 

@@ -22,9 +22,6 @@ public class MainController implements ActionListener{
         databaseConector = new DatabaseConector(configJson);
         recepcioThread = rec;
         reservesThread = res;
-        recepcioThread.setController(this);
-        reservesThread.setController(this);
-
     }
 
     @Override
