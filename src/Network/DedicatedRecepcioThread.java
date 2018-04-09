@@ -41,6 +41,7 @@ public class DedicatedRecepcioThread extends Thread {
                 String nomReserva = diStream.readUTF();
                 int comensals = diStream.readInt();
                 Object date = oiStream.readObject();
+                //TODO: GUARDAR A LA BBDD LA INFO DE LA RESERVA I RETORNAR UN BOOLEA SEGONS SI S'HA POGUT FER O NO
                 System.out.println(nomReserva);
                 System.out.println(comensals);
                 System.out.println(date);

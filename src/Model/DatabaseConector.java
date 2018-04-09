@@ -1,7 +1,5 @@
 package Model;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
-
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -13,11 +11,11 @@ public class DatabaseConector {
         this.configJson = configJson;
     }
 
+    /**
+     * Connects to database
+     * @return true if connected, false if not
+     */
     private boolean conexio() {
-        /*
-        System.out.println("Accessing database...");
-        System.out.println("User: " + configJson.getDb_user());
-*/
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://" + configJson.getDb_ip() + ":" + configJson.getDb_port() + "/" + configJson.getDb_name() + "?autoReconnect=true&useSSL=false",
@@ -30,6 +28,10 @@ public class DatabaseConector {
         }
     }
 
+    /**
+     * Gets menu list from DDBB.
+     * @return ArrayList<Carta> containing all items from the menu.
+     */
     public ArrayList<Carta> getCarta() {
         if (conexio()){
             ArrayList<Carta> carta = new ArrayList<>();
@@ -57,6 +59,10 @@ public class DatabaseConector {
         return null;
     }
 
+    /**
+     * Gets Table's info from DDBB.
+     * @return ArrayList<Taula> containing all items from Taula.
+     */
     public ArrayList<Taula> getTaula() {
         if (conexio()){
             ArrayList<Taula> taules = new ArrayList<>();
@@ -81,6 +87,10 @@ public class DatabaseConector {
         return null;
     }
 
+    /**
+     * Gets Reserve's info from DDBB.
+     * @return ArrayList<Reserva> containing all items from Reserva.
+     */
     public ArrayList<Reserva> getReserves() {
         if (conexio()){
             ArrayList<Reserva> reserves = new ArrayList<>();

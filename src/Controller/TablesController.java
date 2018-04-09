@@ -13,12 +13,22 @@ public class TablesController implements ActionListener {
     private DatabaseConector databaseConector;
     private MainController parent;
 
+    /**
+     * Contructor for current class
+     * @param tablesView Instance of TablesView
+     * @param databaseConector Instance of DatabaseConector
+     * @param parent Instance of MainController
+     */
     public TablesController(TablesView tablesView, DatabaseConector databaseConector, MainController parent) {
         this.tablesView = tablesView;
         this.databaseConector = databaseConector;
         this.parent = parent;
     }
 
+    /**
+     * Executes upon action performed by view's element
+     * @param e Event launched by the view
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){

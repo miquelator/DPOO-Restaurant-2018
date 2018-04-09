@@ -8,6 +8,9 @@ public class ConfigJson {
     private String db_ip;
     private int db_port;
 
+
+    //Getters i Setters
+
     int getPort_server() {
         return port_server;
     }

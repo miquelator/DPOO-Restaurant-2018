@@ -13,12 +13,22 @@ public class MenuController implements ActionListener {
     private DatabaseConector databaseConector;
     private MainController parent;
 
+    /**
+     * Constructor for current class
+     * @param menuView Instance of MenuView
+     * @param databaseConector Instance of DatabaseConector
+     * @param parent Instance of MainController
+     */
     public MenuController(MenuView menuView, DatabaseConector databaseConector, MainController parent) {
         this.menuView = menuView;
         this.databaseConector = databaseConector;
         this.parent = parent;
     }
 
+    /**
+     * Executes upon action performed by view's element
+     * @param e Event launched by the view
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
@@ -51,9 +61,7 @@ public class MenuController implements ActionListener {
                 if(databaseConector.deleteDish(menuView.getDeletedDishName())){
                     menuView.confirmEntry(5);
                     ArrayList<Carta> plats = databaseConector.getCarta();
-
                     String[] list = new String[plats.size()];
-
                     for(int i = 0; i < plats.size();i++){
                         list[i] = plats.get(i).getNomPlat();
                     }
@@ -61,8 +69,6 @@ public class MenuController implements ActionListener {
                 }else{
                     menuView.confirmEntry(6);
                 }
-
-
                 break;
             case MenuView.UPDATE_STOCK:
                 try {

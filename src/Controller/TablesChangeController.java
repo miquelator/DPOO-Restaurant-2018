@@ -12,11 +12,20 @@ public class TablesChangeController implements ChangeListener {
     private TablesView tablesView;
     private DatabaseConector databaseConector;
 
+    /**
+     * Constructor for current class
+     * @param tablesView Instance of TablesView
+     * @param databaseConector Instance of DatabaseConector
+     */
     public TablesChangeController(TablesView tablesView, DatabaseConector databaseConector) {
         this.tablesView = tablesView;
         this.databaseConector = databaseConector;
     }
 
+    /**
+     * Executes depending upon selected window
+     * @param e Event thrown when window is changed
+     */
     @Override
     public void stateChanged(ChangeEvent e) {
         switch (tablesView.getTabbedPaneWindow()){

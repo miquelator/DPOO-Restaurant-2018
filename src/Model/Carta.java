@@ -10,6 +10,15 @@ public class Carta implements Serializable{
     private int semanals;
     private int totals;
 
+    /**
+     * Constructor for current class
+     * @param idPlat Value for idPlat variable.
+     * @param nomPlat Value for nomPlat variable.
+     * @param preu Value for preu variable.
+     * @param quantitat Value for quantitat variable.
+     * @param semanals Value for semanals value.
+     * @param totals Value for totals value.
+     */
     public Carta(int idPlat, String nomPlat, float preu, int quantitat, int semanals, int totals){
         this.idPlat = idPlat;
         this.nomPlat = nomPlat;
@@ -18,6 +27,8 @@ public class Carta implements Serializable{
         this.semanals = semanals;
         this.totals = totals;
     }
+
+    //Getters i Setters
 
     public int getIdPlat() {
         return idPlat;
