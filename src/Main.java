@@ -26,10 +26,11 @@ public class Main {
                         MainView mainView = new MainView();
                         ReservesSocketThread reservesThread = new ReservesSocketThread();
                         RecepcioSocketThread recepcioThread = new RecepcioSocketThread();
-                        MainController mainController = new MainController(mainView, configJson,recepcioThread,reservesThread);
+                        MainController mainController = new MainController(mainView, configJson, recepcioThread, reservesThread);
                         mainView.registerListeners(mainController);
                         mainView.setVisible(true);
                         reservesThread.start();
+                        recepcioThread.start();
                     }
                 } catch (FileNotFoundException e) {
                     System.err.println("El fichero \"config.json\" no ha sido encontrado.");
