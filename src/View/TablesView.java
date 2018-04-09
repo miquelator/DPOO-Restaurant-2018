@@ -232,6 +232,7 @@ public class TablesView extends JFrame {
     }
 
     public void loadTablesID(ArrayList<Integer> id) {
+        idABorrar.removeAllItems();
         int size = id.size();
         for (int i = 0; i < size; i++) {
             idABorrar.addItem(id.get(i));
@@ -239,6 +240,6 @@ public class TablesView extends JFrame {
     }
 
     public int getTableToDelete() {
-        return idABorrar.getSelectedIndex();
+        return Integer.parseInt(String.valueOf(idABorrar.getSelectedItem())) - 1;
     }
 }

@@ -1,10 +1,12 @@
 package Controller;
 
 import Model.DatabaseConector;
+import Model.Taula;
 import View.TablesView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class TablesController implements ActionListener {
     private TablesView tablesView;
@@ -35,6 +37,13 @@ public class TablesController implements ActionListener {
 
     private void deleteTable() {
         if (databaseConector.deleteTable(tablesView.getTableToDelete() + 1)){
+            ArrayList<Taula> auxDelete = databaseConector.getTaula();
+            int size = auxDelete.size();
+            ArrayList<Integer> ID = new ArrayList<>();
+            for (int i = 0; i < size; i++){
+                ID.add(auxDelete.get(i).getIdTaula());
+            }
+            tablesView.loadTablesID(ID);
             tablesView.mostraInformacioServidor("Taula esborrada correctament.", "INFORMACIO");
             //TODO: ACTUALITZAR EL JCOMBOX DELS INDEX DE BORRAR DESPRES DE BORRAR
         }else {

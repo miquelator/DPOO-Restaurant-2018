@@ -1,5 +1,7 @@
 package Model;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -240,18 +242,54 @@ public class DatabaseConector {
 
     public boolean deleteTable(int tableToDelete) {
         if (conexio()){
-            try {
-                String query =  "DELETE FROM Taula WHERE id_taula = ?";
-                PreparedStatement preparedStmt = connection.prepareStatement(query);
-                preparedStmt.setInt(1, tableToDelete);
-                preparedStmt.execute();
+            if (checkReservation(tableToDelete)){
+                try {
+                    String query = "DELETE FROM Reserva WHERE id_taula = ?; DELETE FROM Taula WHERE id_taula = ?;";
+                    PreparedStatement preparedStmt = connection.prepareStatement(query);
+                    preparedStmt.setInt(1, tableToDelete);
+                    System.out.println(preparedStmt.toString());
+                    preparedStmt.execute();
 
-                connection.close();
-                return true;
-            } catch (SQLException e) {
+                    connection.close();
+                    return true;
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }else {
+                try {
+                    String query = "DELETE FROM Taula WHERE id_taula = ?";
+                    PreparedStatement preparedStmt = connection.prepareStatement(query);
+                    preparedStmt.setInt(1, tableToDelete);
+                    System.out.println(preparedStmt.toString());
+                    preparedStmt.execute();
+
+                    connection.close();
+                    return true;
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+        return false;
+    }
+
+    private boolean checkReservation(int tableToDelete) {
+        if (conexio()){
+            try {
+                Statement s = connection.createStatement();
+
+                s.executeQuery("SELECT IF( EXISTS(SELECT * FROM Reserva WHERE `id_taula` = " + tableToDelete + "), 1, 0)");
+                ResultSet rs = s.getResultSet();
+                if (rs.getInt("aux") == 0){
+                    return false;
+                }else if (rs.getInt("aux") == 1){
+                    return true;
+                }
+            }catch (SQLException e){
                 e.printStackTrace();
             }
         }
-        return false;
+        return true;
     }
 }
