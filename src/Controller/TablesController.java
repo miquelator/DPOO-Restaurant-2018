@@ -1,10 +1,12 @@
 package Controller;
 
 import Model.DatabaseConector;
+import Model.Taula;
 import View.TablesView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class TablesController implements ActionListener {
     private TablesView tablesView;
@@ -34,21 +36,60 @@ public class TablesController implements ActionListener {
     }
 
     private void deleteTable() {
-        if (databaseConector.deleteTable(tablesView.getTableToDelete() + 1)){
-            tablesView.mostraInformacioServidor("Taula esborrada correctament.", "INFORMACIO");
-            //TODO: ACTUALITZAR EL JCOMBOX DELS INDEX DE BORRAR DESPRES DE BORRAR
-        }else {
-            tablesView.mostraErrorServidor("Error al esborrar la taula!", "ERROR");
+        if (tablesView.getTableToDelete() != -1){
+            if (databaseConector.getTableReserve(tablesView.getTableToDelete())) {
+                if (databaseConector.deleteTable(tablesView.getTableToDelete())) {
+                    tablesView.mostraInformacioServidor("Taula esborrada correctament.", "INFORMACIO");
+                    updateDeleteTables();
+
+                } else {
+                    tablesView.mostraErrorServidor("Error al esborrar la taula!", "ERROR");
+                }
+
+
+            }else{
+                if (tablesView.showDeleteWarning()) {
+                    if (databaseConector.deleteReserveTable(tablesView.getTableToDelete())){
+                        if (databaseConector.deleteTable(tablesView.getTableToDelete())) {
+                            tablesView.mostraInformacioServidor("Taula esborrada correctament.", "INFORMACIO");
+                            updateDeleteTables();
+                        } else {
+                            tablesView.mostraErrorServidor("Error al esborrar la taula!", "ERROR");
+                        }
+                    }
+                    else {
+                        tablesView.mostraErrorServidor("Error al esborrar la taula!", "ERROR");
+                    }
+                }else{
+                    tablesView.mostraInformacioServidor("Esborrat de taula cancelat.", "INFORMACIO");                }
+            }
+        }else{
+            tablesView.mostraErrorServidor("No hi ha taules registrades!", "ERROR");
         }
 
     }
 
+    private void updateDeleteTables() {
+        ArrayList<Taula> auxDelete = databaseConector.getTaula();
+        int size = auxDelete.size();
+        ArrayList<Integer> ID = new ArrayList<>();
+        for (int i = 0; i < size; i++){
+            ID.add(auxDelete.get(i).getIdTaula());
+        }
+        tablesView.loadTablesID(ID);
+    }
+
     private void addTable() {
         int numSeients = (int) tablesView.getTableToAdd();
+
         try {
-            if (databaseConector.addTable(numSeients)){
-                tablesView.mostraInformacioServidor("Taula afegida correctament", "INFORMACIO");
-                tablesView.resetNumSeients();
+            if (numSeients == 0){
+                tablesView.mostraErrorServidor("El nombre de comensals no pot ser 0!", "Error");
+            }else{
+                if (databaseConector.addTable(numSeients)){
+                    tablesView.mostraInformacioServidor("Taula afegida correctament", "INFORMACIO");
+                    tablesView.resetNumSeients();
+                }
             }
         }catch (NumberFormatException ne){
             tablesView.mostraErrorServidor("Error a l'hora d'afegir la taula!", "Error");

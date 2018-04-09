@@ -254,4 +254,52 @@ public class DatabaseConector {
         }
         return false;
     }
+
+
+    public boolean getTableReserve(int tableToDelete) {
+        if (conexio()){
+            try {
+
+                String query =  "SELECT COUNT(id_taula) AS rowCount FROM Reserva WHERE id_taula = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, tableToDelete);
+                preparedStmt.execute();
+
+                ResultSet rs = preparedStmt.getResultSet();
+                int rowCount = 0;
+                while (rs.next()) {
+                    rowCount = rs.getInt("rowCount");
+                }
+                System.out.println(rowCount);
+                if(rowCount == 0){
+                    connection.close();
+                    return true;
+                }else{
+                    connection.close();
+                    return false;
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
+    public boolean deleteReserveTable(int tableToDelete) {
+        if (conexio()){
+            try {
+                String query =  "DELETE FROM Reserva WHERE id_taula = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, tableToDelete);
+                preparedStmt.execute();
+
+                connection.close();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }
