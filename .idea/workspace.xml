@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="Grafiques fetes i canvis a la bbdd">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/TopFiveWeeklyGraphView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
+    <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/bbdd.sql" afterPath="$PROJECT_DIR$/resources/bbdd.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/MainController.java" afterPath="$PROJECT_DIR$/src/Controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/MenuChangeController.java" afterPath="$PROJECT_DIR$/src/Controller/MenuChangeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/DatabaseConector.java" afterPath="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/TopFiveGraphView.java" afterPath="$PROJECT_DIR$/src/View/TopFiveGraphView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Network/DedicatedRecepcioThread.java" afterPath="$PROJECT_DIR$/src/Network/DedicatedRecepcioThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Network/ReservesSocketThread.java" afterPath="$PROJECT_DIR$/src/Network/ReservesSocketThread.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,62 +23,60 @@
       <file leaf-file-name="DatabaseConector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="812">
+            <state relative-caret-position="334">
               <caret line="45" column="90" lean-forward="false" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="90" />
               <folding>
-                <marker date="1522834719663" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
-                <marker date="1522834719663" expanded="true" signature="2152:2171" ph=" SELECT statement (TAULA)" />
-                <marker date="1522834719663" expanded="true" signature="2972:2993" ph=" SELECT statement (RESERVA)" />
-                <marker date="1522834719663" expanded="true" signature="3858:3939" ph=" INSERT statement (CARTA)" />
-                <marker date="1522834719663" expanded="true" signature="4644:4693" ph=" UPDATE statement (CARTA)" />
-                <marker date="1522834719663" expanded="true" signature="5258:5294" ph=" DELETE statement (CARTA)" />
-                <marker date="1522834719663" expanded="true" signature="5797:5849" ph=" INSERT statement (TAULA)" />
-                <marker date="1522834719663" expanded="true" signature="6516:6551" ph=" SELECT statement (CARTA)" />
-                <marker date="1522834719663" expanded="true" signature="6516:6556" ph=" SELECT statement (CARTA)" />
-                <marker date="1522834719663" expanded="true" signature="7544:7586" ph=" SELECT statement (CARTA)" />
+                <marker date="1523279473959" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
+                <marker date="1523279473959" expanded="true" signature="2152:2171" ph=" SELECT statement (TAULA)" />
+                <marker date="1523279473959" expanded="true" signature="2972:2993" ph=" SELECT statement (RESERVA)" />
+                <marker date="1523279473959" expanded="true" signature="3858:3939" ph=" INSERT statement (CARTA)" />
+                <marker date="1523279473959" expanded="true" signature="4644:4693" ph=" UPDATE statement (CARTA)" />
+                <marker date="1523279473959" expanded="true" signature="5258:5294" ph=" DELETE statement (CARTA)" />
+                <marker date="1523279473959" expanded="true" signature="5797:5849" ph=" INSERT statement (TAULA)" />
+                <marker date="1523279473959" expanded="true" signature="6516:6551" ph=" SELECT statement (CARTA)" />
+                <marker date="1523279473959" expanded="true" signature="6516:6556" ph=" SELECT statement (CARTA)" />
+                <marker date="1523279473959" expanded="true" signature="7544:7586" ph=" SELECT statement (CARTA)" />
+                <marker date="1523279473959" expanded="true" signature="8461:8497" ph=" DELETE statement (TAULA)" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
+      <file leaf-file-name="DedicatedRecepcioThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Network/DedicatedRecepcioThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1029">
-              <caret line="91" column="69" lean-forward="false" selection-start-line="91" selection-start-column="69" selection-end-line="91" selection-end-column="69" />
+            <state relative-caret-position="298">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TopFiveGraphController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TopFiveGraphController.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-              <folding>
-                <element signature="e#207#208#0" expanded="true" />
-                <element signature="e#263#264#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TablesController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="9" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="35" selection-end-column="9" />
+            <state relative-caret-position="42">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MenuController.java">
+      <file leaf-file-name="DedicatedReservesThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Network/DedicatedReservesThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1061">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="-275">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecepcioSocketThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Network/RecepcioSocketThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -92,8 +85,18 @@
       <file leaf-file-name="TablesChangeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TablesChangeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="32" />
+            <state relative-caret-position="252">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/MainView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="30" column="64" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="30" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -102,11 +105,11 @@
       <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/MenuView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="919">
-              <caret line="229" column="60" lean-forward="false" selection-start-line="229" selection-start-column="60" selection-end-line="229" selection-end-column="60" />
+            <state relative-caret-position="354">
+              <caret line="62" column="31" lean-forward="false" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#MenuView#0;class#MenuView#0" expanded="false" />
+                <element signature="e#5627#5635#0" expanded="true" />
                 <element signature="method#populateStock#0;class#MenuView#0" expanded="false" />
                 <element signature="method#populateDelete#0;class#MenuView#0" expanded="false" />
                 <element signature="method#registerListeners#0;class#MenuView#0" expanded="false" />
@@ -115,23 +118,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bbdd.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bbdd.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/bbdd.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="480">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuChangeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MenuChangeController.java">
+      <file leaf-file-name="ReservesSocketThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Network/ReservesSocketThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1185#1186#0" expanded="true" />
+                <element signature="e#1215#1216#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,6 +160,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -164,14 +173,12 @@
         <option value="$PROJECT_DIR$/src/Network/RecepcionSocketThread.java" />
         <option value="$PROJECT_DIR$/src/Network/SocketThread.java" />
         <option value="$PROJECT_DIR$/src/Model/JsonReader.java" />
-        <option value="$PROJECT_DIR$/src/Network/DedicatedRecepcioThread.java" />
         <option value="$PROJECT_DIR$/src/Network/DedicatedReservesThread.java" />
         <option value="$PROJECT_DIR$/src/Model/ConfigJson.java" />
         <option value="$PROJECT_DIR$/src/View/ManageTablesView.java" />
         <option value="$PROJECT_DIR$/src/Controller/OrdersControllers.java" />
         <option value="$PROJECT_DIR$/src/Network/RecepcioSocketThread.java" />
         <option value="$PROJECT_DIR$/src/Controller/MainControllerResize.java" />
-        <option value="$PROJECT_DIR$/src/Network/ReservesSocketThread.java" />
         <option value="$PROJECT_DIR$/src/View/MainView.java" />
         <option value="$PROJECT_DIR$/src/Model/RandomString.java" />
         <option value="$PROJECT_DIR$/src/Model/DDBBConfiguration.java" />
@@ -193,6 +200,9 @@
         <option value="$PROJECT_DIR$/src/Controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/Controller/MenuChangeController.java" />
         <option value="$PROJECT_DIR$/resources/bbdd.sql" />
+        <option value="$USER_HOME$/vagrant/Homestead/Homestead.yaml" />
+        <option value="$PROJECT_DIR$/src/Network/ReservesSocketThread.java" />
+        <option value="$PROJECT_DIR$/src/Network/DedicatedRecepcioThread.java" />
       </list>
     </option>
   </component>
@@ -204,10 +214,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1098" />
+    <option name="x" value="-8" />
+    <option name="width" value="976" />
+    <option name="height" value="1088" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -224,6 +233,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -336,34 +347,131 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Restaurant_Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DPOO-Restaurant-Servidor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/mysql-connector-java-5.1.46-bin.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Recepcio/DPOO-Restaurant-Recepcio" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Controller/TablesChangeController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Controller/TablesController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/DatabaseConector.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/View/TablesView.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -682,7 +790,21 @@
       <option name="project" value="LOCAL" />
       <updated>1522832252312</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Grafiques fetes i canvis a la bbdd">
+      <created>1522835211544</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1522835211544</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Esborrat un controller inutil">
+      <created>1522836013456</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1522836013456</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -695,39 +817,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
+    <frame x="-8" y="0" width="976" height="1088" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33261105" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20444444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28088078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -766,7 +888,8 @@
     <MESSAGE value="Apartat de la carta totalment fet la espera de les comandes a la bbdd, la vista fot puto fastig" />
     <MESSAGE value="Llibreries actualitzades" />
     <MESSAGE value="Grafiques fetes i canvis a la bbdd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Grafiques fetes i canvis a la bbdd" />
+    <MESSAGE value="Esborrat un controller inutil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Esborrat un controller inutil" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -793,96 +916,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-          <folding>
-            <marker date="1522834719663" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="2152:2171" ph=" SELECT statement (TAULA)" />
-            <marker date="1522834719663" expanded="true" signature="2972:2993" ph=" SELECT statement (RESERVA)" />
-            <marker date="1522834719663" expanded="true" signature="3858:3939" ph=" INSERT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="4644:4693" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="5258:5294" ph=" DELETE statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="5797:5849" ph=" INSERT statement (TAULA)" />
-            <marker date="1522834719663" expanded="true" signature="6516:6551" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="6516:6556" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="7544:7586" ph=" SELECT statement (CARTA)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ConfigJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Carta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <marker date="1522832213830" expanded="false" signature="564:575" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="589:595" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="634:645" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="666:672" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="704:715" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="730:736" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="780:791" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="814:820" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="848:859" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="871:877" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="914:925" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="942:948" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="979:990" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1007:1013" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1058:1069" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1096:1102" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1132:1143" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1159:1165" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1208:1219" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1244:1250" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1278:1289" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1303:1309" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Taula.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <element signature="e#715#716#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/OrdersControllers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
+          <folding>
+            <marker date="1523279473956" expanded="true" signature="1854:1883" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -894,14 +934,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java" />
     <entry file="file://$PROJECT_DIR$/resources/bbdd.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -923,16 +956,17 @@
         <state relative-caret-position="1134">
           <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
-            <marker date="1522834719663" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="2152:2171" ph=" SELECT statement (TAULA)" />
-            <marker date="1522834719663" expanded="true" signature="2972:2993" ph=" SELECT statement (RESERVA)" />
-            <marker date="1522834719663" expanded="true" signature="3858:3939" ph=" INSERT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="4644:4693" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="5258:5294" ph=" DELETE statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="5797:5849" ph=" INSERT statement (TAULA)" />
-            <marker date="1522834719663" expanded="true" signature="6516:6551" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="6516:6556" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="7544:7586" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="2152:2171" ph=" SELECT statement (TAULA)" />
+            <marker date="1523279473959" expanded="true" signature="2972:2993" ph=" SELECT statement (RESERVA)" />
+            <marker date="1523279473959" expanded="true" signature="3858:3939" ph=" INSERT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="4644:4693" ph=" UPDATE statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="5258:5294" ph=" DELETE statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="5797:5849" ph=" INSERT statement (TAULA)" />
+            <marker date="1523279473959" expanded="true" signature="6516:6551" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="6516:6556" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="7544:7586" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="8461:8497" ph=" DELETE statement (TAULA)" />
           </folding>
         </state>
       </provider>
@@ -957,30 +991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="26" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <marker date="1522832213830" expanded="false" signature="564:575" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="589:595" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="634:645" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="666:672" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="704:715" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="730:736" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="780:791" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="814:820" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="848:859" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="871:877" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="914:925" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="942:948" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="979:990" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1007:1013" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1058:1069" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1096:1102" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1132:1143" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1159:1165" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1208:1219" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1244:1250" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1278:1289" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1303:1309" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -988,10 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <element signature="e#715#716#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -999,7 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,19 +1016,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java" />
     <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
+          <folding>
+            <marker date="1523279473956" expanded="true" signature="1854:1883" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,16 +1040,17 @@
         <state relative-caret-position="1155">
           <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
-            <marker date="1522834719663" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="2152:2171" ph=" SELECT statement (TAULA)" />
-            <marker date="1522834719663" expanded="true" signature="2972:2993" ph=" SELECT statement (RESERVA)" />
-            <marker date="1522834719663" expanded="true" signature="3858:3939" ph=" INSERT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="4644:4693" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="5258:5294" ph=" DELETE statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="5797:5849" ph=" INSERT statement (TAULA)" />
-            <marker date="1522834719663" expanded="true" signature="6516:6551" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="6516:6556" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="7544:7586" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="2152:2171" ph=" SELECT statement (TAULA)" />
+            <marker date="1523279473959" expanded="true" signature="2972:2993" ph=" SELECT statement (RESERVA)" />
+            <marker date="1523279473959" expanded="true" signature="3858:3939" ph=" INSERT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="4644:4693" ph=" UPDATE statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="5258:5294" ph=" DELETE statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="5797:5849" ph=" INSERT statement (TAULA)" />
+            <marker date="1523279473959" expanded="true" signature="6516:6551" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="6516:6556" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="7544:7586" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="8461:8497" ph=" DELETE statement (TAULA)" />
           </folding>
         </state>
       </provider>
@@ -1074,30 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="26" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <marker date="1522832213830" expanded="false" signature="564:575" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="589:595" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="634:645" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="666:672" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="704:715" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="730:736" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="780:791" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="814:820" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="848:859" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="871:877" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="914:925" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="942:948" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="979:990" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1007:1013" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1058:1069" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1096:1102" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1132:1143" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1159:1165" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1208:1219" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1244:1250" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1278:1289" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1303:1309" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1105,10 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <element signature="e#715#716#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1116,7 +1089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,19 +1100,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java" />
     <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
+          <folding>
+            <marker date="1523279473956" expanded="true" signature="1854:1883" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,14 +1115,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,10 +1130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <element signature="e#715#716#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1182,7 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1190,9 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1204,64 +1155,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="10" column="88" lean-forward="false" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/TopFiveWeeklyGraph.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="919">
-          <caret line="229" column="60" lean-forward="false" selection-start-line="229" selection-start-column="60" selection-end-line="229" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MenuView#0;class#MenuView#0" expanded="false" />
-            <element signature="method#populateStock#0;class#MenuView#0" expanded="false" />
-            <element signature="method#populateDelete#0;class#MenuView#0" expanded="false" />
-            <element signature="method#registerListeners#0;class#MenuView#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java" />
+    <entry file="file://$PROJECT_DIR$/src/View/TopFiveWeeklyGraph.kt" />
     <entry file="file://$PROJECT_DIR$/src/Model/Carta.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
           <caret line="12" column="96" lean-forward="false" selection-start-line="12" selection-start-column="96" selection-end-line="12" selection-end-column="96" />
-          <folding>
-            <marker date="1522832213830" expanded="false" signature="564:575" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="589:595" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="634:645" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="666:672" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="704:715" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="730:736" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="780:791" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="814:820" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="848:859" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="871:877" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="914:925" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="942:948" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="979:990" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1007:1013" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1058:1069" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1096:1102" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1132:1143" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1159:1165" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1208:1219" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1244:1250" ph=" }" />
-            <marker date="1522832213830" expanded="false" signature="1278:1289" ph=" { " />
-            <marker date="1522832213830" expanded="false" signature="1303:1309" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1269,9 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="77" column="37" lean-forward="false" selection-start-line="77" selection-start-column="37" selection-end-line="77" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1279,26 +1175,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TopFiveGraphController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#207#208#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
+        <state relative-caret-position="1722">
           <caret line="91" column="69" lean-forward="false" selection-start-line="91" selection-start-column="69" selection-end-line="91" selection-end-column="69" />
           <folding />
         </state>
@@ -1306,50 +1188,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="9" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="35" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="45" column="90" lean-forward="false" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="90" />
+        <state relative-caret-position="588">
+          <caret line="32" column="9" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="25" selection-end-column="28" />
           <folding>
-            <marker date="1522834719663" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="2152:2171" ph=" SELECT statement (TAULA)" />
-            <marker date="1522834719663" expanded="true" signature="2972:2993" ph=" SELECT statement (RESERVA)" />
-            <marker date="1522834719663" expanded="true" signature="3858:3939" ph=" INSERT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="4644:4693" ph=" UPDATE statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="5258:5294" ph=" DELETE statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="5797:5849" ph=" INSERT statement (TAULA)" />
-            <marker date="1522834719663" expanded="true" signature="6516:6551" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="6516:6556" ph=" SELECT statement (CARTA)" />
-            <marker date="1522834719663" expanded="true" signature="7544:7586" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473956" expanded="true" signature="1854:1883" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TablesChangeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1061">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MenuChangeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
+        <state relative-caret-position="777">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1357,10 +1206,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1218">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TopFiveGraphController.java" />
+    <entry file="file://$PROJECT_DIR$/src/View/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="30" column="64" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="30" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/MenuView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="62" column="31" lean-forward="false" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5627#5635#0" expanded="true" />
+            <element signature="method#populateStock#0;class#MenuView#0" expanded="false" />
+            <element signature="method#populateDelete#0;class#MenuView#0" expanded="false" />
+            <element signature="method#registerListeners#0;class#MenuView#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="45" column="90" lean-forward="false" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="90" />
+          <folding>
+            <marker date="1523279473959" expanded="true" signature="1160:1179" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="2152:2171" ph=" SELECT statement (TAULA)" />
+            <marker date="1523279473959" expanded="true" signature="2972:2993" ph=" SELECT statement (RESERVA)" />
+            <marker date="1523279473959" expanded="true" signature="3858:3939" ph=" INSERT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="4644:4693" ph=" UPDATE statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="5258:5294" ph=" DELETE statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="5797:5849" ph=" INSERT statement (TAULA)" />
+            <marker date="1523279473959" expanded="true" signature="6516:6551" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="6516:6556" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="7544:7586" ph=" SELECT statement (CARTA)" />
+            <marker date="1523279473959" expanded="true" signature="8461:8497" ph=" DELETE statement (TAULA)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/bbdd.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        <state relative-caret-position="480">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Network/ReservesSocketThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+          <folding>
+            <element signature="e#1185#1186#0" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Network/DedicatedReservesThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-275">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Network/RecepcioSocketThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/vagrant/Homestead/Homestead.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TablesChangeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Network/DedicatedRecepcioThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>

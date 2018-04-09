@@ -28,6 +28,7 @@ public class DedicatedRecepcioThread extends Thread {
     }
 
     private void readRequest(String request) {
+        System.out.println(request);
         switch (request){
             case "hola":
                 try {

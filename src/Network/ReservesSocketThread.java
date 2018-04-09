@@ -37,6 +37,5 @@ public class ReservesSocketThread extends Thread{
 
     public void setController (MainController c){
         controller = c;
-
     }
 }
