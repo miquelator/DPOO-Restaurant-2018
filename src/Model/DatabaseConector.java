@@ -253,55 +253,19 @@ public class DatabaseConector {
 
     public boolean deleteTable(int tableToDelete) {
         if (conexio()){
-            if (checkReservation(tableToDelete)){
-                try {
-                    String query = "DELETE FROM Reserva WHERE id_taula = ?; DELETE FROM Taula WHERE id_taula = ?;";
-                    PreparedStatement preparedStmt = connection.prepareStatement(query);
-                    preparedStmt.setInt(1, tableToDelete);
-                    System.out.println(preparedStmt.toString());
-                    preparedStmt.execute();
-
-                    connection.close();
-                    return true;
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }else {
-                try {
-                    String query = "DELETE FROM Taula WHERE id_taula = ?";
-                    PreparedStatement preparedStmt = connection.prepareStatement(query);
-                    preparedStmt.setInt(1, tableToDelete);
-                    System.out.println(preparedStmt.toString());
-                    preparedStmt.execute();
-
-                    connection.close();
-                    return true;
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        }
-        return false;
-    }
-
-    private boolean checkReservation(int tableToDelete) {
-        if (conexio()){
             try {
-                Statement s = connection.createStatement();
+                String query = "DELETE FROM Taula WHERE id_taula = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, tableToDelete);
+                preparedStmt.execute();
 
-                s.executeQuery("SELECT IF( EXISTS(SELECT * FROM Reserva WHERE `id_taula` = " + tableToDelete + "), 1, 0)");
-                ResultSet rs = s.getResultSet();
-                if (rs.getInt("aux") == 0){
-                    return false;
-                }else if (rs.getInt("aux") == 1){
-                    return true;
-                }
-            }catch (SQLException e){
+                connection.close();
+                return true;
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        return true;
+        return false;
     }
 
 
@@ -319,7 +283,6 @@ public class DatabaseConector {
                 while (rs.next()) {
                     rowCount = rs.getInt("rowCount");
                 }
-                System.out.println(rowCount);
                 if(rowCount == 0){
                     connection.close();
                     return true;
@@ -352,7 +315,8 @@ public class DatabaseConector {
         return false;
     }
 
-    public int isTableOcuped(int comensals, Object date) {
+    public ArrayList<Integer> isTableOcuped(int comensals, Object date) {
+        ArrayList<Integer> taulesLliures = new ArrayList<Integer>();
         if (conexio()){
             try {
 
@@ -363,7 +327,7 @@ public class DatabaseConector {
 
                 ResultSet rs = preparedStmt.getResultSet();
                 int idTaulaaux = 0;
-                ArrayList<Integer> taulesLliures = new ArrayList<Integer>();
+
                 while (rs.next()) {
                     boolean found = false;
 
@@ -387,12 +351,40 @@ public class DatabaseConector {
                     }
                 }
 
-                System.out.println(taulesLliures);
+                return taulesLliures;
 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        return 0;
+        return taulesLliures;
+    }
+
+    public String addReserve(String nomReserva, Object date, String s, Integer integer, int comensals) {
+        if (conexio()){
+            try {
+                SimpleDateFormat mdyFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+                String dmy = mdyFormat.format(date);
+
+                String format = "%d-%m-%Y %H:%i:%s";
+                String query = "INSERT INTO Reserva(id_taula, nom_reserva, password_, num_comensals, data_reserva) VALUES (?,?,?,?,STR_TO_DATE(?, ?))";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, integer);
+                preparedStmt.setString(2, nomReserva);
+                preparedStmt.setString(3, s);
+                preparedStmt.setInt(4, comensals);
+                preparedStmt.setString(5, dmy.toString());
+                preparedStmt.setString(6, format);
+
+                preparedStmt.execute();
+
+                connection.close();
+                return s;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return "Error al afegir la nova reserva!";
+
     }
 }

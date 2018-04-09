@@ -46,17 +46,16 @@ public class DedicatedRecepcioThread extends Thread {
                 int comensals = diStream.readInt();
                 Object date = oiStream.readObject();
 
-                System.out.println(nomReserva);
-                System.out.println(comensals);
-                System.out.println(date);
-                //TODO: GUARDAR A LA BBDD LA INFO DE LA RESERVA I RETORNAR UN BOOLEA SEGONS SI S'HA POGUT FER O NO
-                if (mainController.checkAndAddReserves(nomReserva, comensals, date)){
-                    doStream.writeBoolean(true);
-                    doStream.writeUTF(randomString.nextString());
-                }else{
+                String random = mainController.checkAndAddReserves(nomReserva, comensals, date);
+                if (random.equals("No hi ha taules disponibles!") || random.equals("Error al afegir la nova reserva!")){
                     doStream.writeBoolean(false);
-                    doStream.writeUTF("Error al reservar taula!");
+                    doStream.writeUTF(random);
+
+                }else{
+                    doStream.writeBoolean(true);
+                    doStream.writeUTF(random);
                 }
+
 
 
                 break;

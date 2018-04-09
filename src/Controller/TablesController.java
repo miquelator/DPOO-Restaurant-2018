@@ -56,7 +56,6 @@ public class TablesController implements ActionListener {
                     tablesView.mostraErrorServidor("Error al esborrar la taula!", "ERROR");
                 }
 
-
             }else{
                 if (tablesView.showDeleteWarning()) {
                     if (databaseConector.deleteReserveTable(tablesView.getTableToDelete())){
@@ -93,13 +92,11 @@ public class TablesController implements ActionListener {
         int numSeients = (int) tablesView.getTableToAdd();
 
         try {
-            if (numSeients == 0){
-                tablesView.mostraErrorServidor("El nombre de comensals no pot ser 0!", "Error");
+            if (databaseConector.addTable(numSeients)){
+                tablesView.mostraInformacioServidor("Taula afegida correctament", "INFORMACIO");
+                tablesView.resetNumSeients();
             }else{
-                if (databaseConector.addTable(numSeients)){
-                    tablesView.mostraInformacioServidor("Taula afegida correctament", "INFORMACIO");
-                    tablesView.resetNumSeients();
-                }
+                tablesView.mostraErrorServidor("Error a l'hora d'afegir la taula!", "Error");
             }
         }catch (NumberFormatException ne){
             tablesView.mostraErrorServidor("Error a l'hora d'afegir la taula!", "Error");

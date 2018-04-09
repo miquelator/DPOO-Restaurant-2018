@@ -3,6 +3,7 @@ package Controller;
 import Model.Carta;
 import Model.ConfigJson;
 import Model.DatabaseConector;
+import Model.RandomString;
 import Network.RecepcioSocketThread;
 import Network.ReservesSocketThread;
 import View.*;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public class MainController implements ActionListener{
     private MainView mainView;
     private DatabaseConector databaseConector;
+    private RandomString randomString;
     private RecepcioSocketThread recepcioThread;
     private ReservesSocketThread reservesThread;
 
@@ -117,12 +119,15 @@ public class MainController implements ActionListener{
         mainView.setVisible(visible);
     }
 
-    public boolean checkAndAddReserves(String nomReserva, int comensals, Object date) {
-         if(databaseConector.isTableOcuped(comensals, date) == 0){
-             return false;
+    public String checkAndAddReserves(String nomReserva, int comensals, Object date) {
+        ArrayList<Integer> taules = databaseConector.isTableOcuped(comensals, date);
+         if(taules.size() == 0){
+             return "No hi ha taules disponibles!";
          }else{
-             //databaseConector.addReserve(nomReserva, date);
-             return true;
+             randomString = new RandomString();
+             //TODO: ACTUALITZAR TAULA RESERVES
+             return databaseConector.addReserve(nomReserva, date, randomString.nextString(), taules.get(0), comensals);
+
          }
     }
 }

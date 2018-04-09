@@ -84,9 +84,9 @@ public class TablesView extends JFrame {
     private JPanel spinnerNumberSample() {
         JPanel addTablePanel = new JPanel(new GridLayout(1,2));
         JPanel panel = new JPanel();
-        //TODO: LIMITAR EL SPINNER A 10 I PODER AGAFAR-LO DESDE EL CONTROLADOR
-        SpinnerModel model = new SpinnerNumberModel();
+        SpinnerModel model = new SpinnerNumberModel(1,1,10,1);
         spinner = new JSpinner(model);
+        ((JSpinner.DefaultEditor) spinner.getEditor()).getTextField().setEditable(false);
         Dimension d = new Dimension();
         d.width = 50;
         spinner.setPreferredSize(d);
@@ -228,7 +228,7 @@ public class TablesView extends JFrame {
     }
 
     public void resetNumSeients() {
-        spinner.setValue(0);
+        spinner.setValue(1);
     }
 
     public void loadTablesID(ArrayList<Integer> id) {

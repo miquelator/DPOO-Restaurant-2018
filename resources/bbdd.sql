@@ -1,9 +1,11 @@
 -- CREATE DATABASE DPOO_Restaurant;
 USE DPOO_Restaurant;
 
+DROP TABLE IF EXISTS Carta CASCADE;
+DROP TABLE IF EXISTS Comanda CASCADE;
 DROP TABLE IF EXISTS Reserva CASCADE;
 DROP TABLE IF EXISTS Taula CASCADE;
-DROP TABLE IF EXISTS Carta CASCADE;
+
 
 
 CREATE TABLE Taula(
@@ -19,8 +21,7 @@ CREATE TABLE Reserva(
     nom_reserva VARCHAR(255),
     password_ VARCHAR(255),
     num_comensals INT,
-    data_reserva DATE,
-    PRIMARY KEY (nom_reserva),
+    data_reserva DATETIME,
     FOREIGN KEY (id_taula) REFERENCES Taula(id_taula)
 );
 
@@ -34,21 +35,22 @@ CREATE TABLE Carta(
     PRIMARY KEY (id_plat)
 );
 
+CREATE TABLE Comanda(
+	id_comanda INT NOT NULL AUTO_INCREMENT,
+    id_plat INT NOT NULL,
+    id_taula INT NOT NULL,
+    PRIMARY KEY (id_comanda),
+    FOREIGN KEY (id_taula) REFERENCES Taula(id_taula)
+);
 
+
+
+
+
+INSERT INTO Taula (num_seients, ocupada) VALUES(4,true);
+INSERT INTO Carta (nom_plat, preu, quantitat, semanals, totals) VALUES('Bistec', 12.50, 20, 0 ,5);
+INSERT INTO Reserva (id_taula, nom_reserva, password_, num_comensals, data_reserva) VALUES(1, 'Angel', 'ABC123', 4, STR_TO_DATE('09-04-2018  23:11:00', '%d-%m-%Y %H:%i:%s'));
+INSERT INTO Carta (nom_plat, preu, quantitat, semanals, totals) VALUES('Vi', 50.50, 10, 0, 9);
 SELECT * FROM Taula;
 SELECT * FROM Reserva;
 SELECT * FROM Carta;
-
-	SELECT IF( EXISTS(
-				 SELECT *
-				 FROM Reserva
-				 WHERE `id_taula` =  11), 1, 0) AS aux;
-
-DELETE FROM Reserva WHERE id_taula = 1;
-DELETE FROM Taula WHERE id_taula = 1;
-
-
-INSERT INTO Taula (num_seients, ocupada) VALUES(2,true);
-INSERT INTO Carta (nom_plat, preu, quantitat, semanals, totals) VALUES('Bistec', 12.50, 20, 0 ,5);
-INSERT INTO Reserva (id_taula, nom_reserva, password_, num_comensals, data_reserva) VALUES(15, 'Angel', 'ABC123', 6, STR_TO_DATE('1-01-2012', '%d-%m-%Y'));
-INSERT INTO Carta (nom_plat, preu, quantitat, semanals, totals) VALUES('Vi', 50.50, 10, 0, 9);
