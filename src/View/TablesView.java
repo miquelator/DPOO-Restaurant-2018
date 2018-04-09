@@ -254,7 +254,7 @@ public class TablesView extends JFrame {
             Object[] options1 = { "Esborrar igualment", "Cancelar"};
 
             JPanel panel = new JPanel();
-            panel.add(new JLabel("Existeixen reserves amb la taula que bol esborrar!"));
+            panel.add(new JLabel("Existeixen reserves amb la taula que vol esborrar!"));
 
             int result = JOptionPane.showOptionDialog(null, panel, "Settings",
                     JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE,

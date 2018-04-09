@@ -1,6 +1,7 @@
 package Model;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class DatabaseConector {
@@ -349,5 +350,49 @@ public class DatabaseConector {
             }
         }
         return false;
+    }
+
+    public int isTableOcuped(int comensals, Object date) {
+        if (conexio()){
+            try {
+
+                String query =  "SELECT id_taula FROM Taula WHERE num_seients = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, comensals);
+                preparedStmt.execute();
+
+                ResultSet rs = preparedStmt.getResultSet();
+                int idTaulaaux = 0;
+                ArrayList<Integer> taulesLliures = new ArrayList<Integer>();
+                while (rs.next()) {
+                    boolean found = false;
+
+                    idTaulaaux = rs.getInt("id_taula");
+                    query =  "SELECT data_reserva FROM Reserva WHERE id_taula = ?";
+                    PreparedStatement preparedStmt2 = connection.prepareStatement(query);
+                    preparedStmt2.setInt(1, idTaulaaux);
+                    preparedStmt2.execute();
+
+                    ResultSet rs2 = preparedStmt2.getResultSet();
+                    while (rs2.next()) {
+                        SimpleDateFormat mdyFormat = new SimpleDateFormat("yyyy-MM-dd");
+                        String dmy = mdyFormat.format(date);
+
+                        if (rs2.getDate("data_reserva").toString().equals(dmy)){
+                            found = true;
+                        }
+                    }
+                    if (!found){
+                        taulesLliures.add(idTaulaaux);
+                    }
+                }
+
+                System.out.println(taulesLliures);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;
     }
 }

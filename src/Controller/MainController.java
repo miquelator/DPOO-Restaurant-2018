@@ -116,4 +116,13 @@ public class MainController implements ActionListener{
     public void setVisible(boolean visible){
         mainView.setVisible(visible);
     }
+
+    public boolean checkAndAddReserves(String nomReserva, int comensals, Object date) {
+         if(databaseConector.isTableOcuped(comensals, date) == 0){
+             return false;
+         }else{
+             //databaseConector.addReserve(nomReserva, date);
+             return true;
+         }
+    }
 }

@@ -105,4 +105,5 @@ public class TablesController implements ActionListener {
             tablesView.mostraErrorServidor("Error a l'hora d'afegir la taula!", "Error");
         }
     }
+
 }

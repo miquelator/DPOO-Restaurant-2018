@@ -74,9 +74,11 @@ public class MenuView extends JFrame {
         tabbedPane.addTab("Mostar la carta", icon, jplInnerPanel2, "Tab 2");
         listDish();
 
+        //TODO: FER-HO NUMBER SPINNER
         JPanel jplInnerPanel3 = createInnerPanel(deleteDish());
         tabbedPane.addTab("Esborrar un plat del menu", icon, jplInnerPanel3, "Tab 3");
 
+        //TODO: FER-HO NUMBER SPINNER
         JPanel jplInnerPanel4 = createInnerPanel(updateDishStock());
         tabbedPane.addTab("Actualitzar existències", icon, jplInnerPanel4, "Tab 4");
 

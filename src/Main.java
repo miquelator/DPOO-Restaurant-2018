@@ -27,6 +27,7 @@ public class Main {
                         ReservesSocketThread reservesThread = new ReservesSocketThread();
                         RecepcioSocketThread recepcioThread = new RecepcioSocketThread();
                         MainController mainController = new MainController(mainView, configJson, recepcioThread, reservesThread);
+                        recepcioThread.registerController(mainController);
                         mainView.registerListeners(mainController);
                         mainView.setVisible(true);
                         reservesThread.start();
