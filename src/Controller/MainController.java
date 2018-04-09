@@ -68,8 +68,6 @@ public class MainController implements ActionListener{
     }
 
     private void manageTables() {
-        //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES TAULES
-        System.out.println("tables");
 
         TablesView tablesView = new TablesView();
         TablesController tablesController = new TablesController(tablesView, databaseConector, this);

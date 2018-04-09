@@ -232,14 +232,37 @@ public class TablesView extends JFrame {
     }
 
     public void loadTablesID(ArrayList<Integer> id) {
-        idABorrar.removeAllItems();
         int size = id.size();
+        idABorrar.removeAllItems();
         for (int i = 0; i < size; i++) {
             idABorrar.addItem(id.get(i));
         }
     }
 
     public int getTableToDelete() {
-        return Integer.parseInt(String.valueOf(idABorrar.getSelectedItem())) - 1;
+        try{
+            return (int)idABorrar.getSelectedItem();
+
+        }catch (NullPointerException e){
+            return -1;
+        }
+    }
+    /**
+     * Displays initial settings window
+     */
+    public boolean showDeleteWarning() {
+            Object[] options1 = { "Esborrar igualment", "Cancelar"};
+
+            JPanel panel = new JPanel();
+            panel.add(new JLabel("Existeixen reserves amb la taula que bol esborrar!"));
+
+            int result = JOptionPane.showOptionDialog(null, panel, "Settings",
+                    JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE,
+                    null, options1, null);
+            if (result == JOptionPane.YES_OPTION){
+                return true;
+            }else{
+                return false;
+            }
     }
 }
