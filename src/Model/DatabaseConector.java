@@ -320,9 +320,13 @@ public class DatabaseConector {
         if (conexio()){
             try {
 
-                String query =  "SELECT id_taula FROM Taula WHERE num_seients = ?";
+                String query =  "SELECT id_taula FROM Taula WHERE (num_seients = ? OR num_seients = ? + 1 OR num_seients = ? + 2) ORDER BY num_seients";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setInt(1, comensals);
+                preparedStmt.setInt(2, comensals);
+                preparedStmt.setInt(3, comensals);
+
+
                 preparedStmt.execute();
 
                 ResultSet rs = preparedStmt.getResultSet();
@@ -332,6 +336,7 @@ public class DatabaseConector {
                     boolean found = false;
 
                     idTaulaaux = rs.getInt("id_taula");
+                    System.out.println(idTaulaaux);
                     query =  "SELECT data_reserva FROM Reserva WHERE id_taula = ?";
                     PreparedStatement preparedStmt2 = connection.prepareStatement(query);
                     preparedStmt2.setInt(1, idTaulaaux);
@@ -339,9 +344,11 @@ public class DatabaseConector {
 
                     ResultSet rs2 = preparedStmt2.getResultSet();
                     while (rs2.next()) {
+
                         SimpleDateFormat mdyFormat = new SimpleDateFormat("yyyy-MM-dd");
                         String dmy = mdyFormat.format(date);
-
+                        System.out.println(dmy);
+                        System.out.println(rs2.getDate("data_reserva").toString());
                         if (rs2.getDate("data_reserva").toString().equals(dmy)){
                             found = true;
                         }
@@ -350,7 +357,7 @@ public class DatabaseConector {
                         taulesLliures.add(idTaulaaux);
                     }
                 }
-
+                System.out.println(taulesLliures);
                 return taulesLliures;
 
             } catch (SQLException e) {

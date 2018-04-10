@@ -45,7 +45,7 @@ public class DedicatedRecepcioThread extends Thread {
                 String nomReserva = diStream.readUTF();
                 int comensals = diStream.readInt();
                 Object date = oiStream.readObject();
-
+                //TODO: COMPROVACIONS DE LA RECEPCIÓ QUE HA FET L'ENRIQUE
                 String random = mainController.checkAndAddReserves(nomReserva, comensals, date);
                 if (random.equals("No hi ha taules disponibles!") || random.equals("Error al afegir la nova reserva!")){
                     doStream.writeBoolean(false);
