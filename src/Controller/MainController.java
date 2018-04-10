@@ -109,6 +109,7 @@ public class MainController implements ActionListener{
         TopFiveGraphView topFiveGraphView = new TopFiveGraphView(cartaTotal.get(0).getTotals(), comandesPlatsTotals, nomPlatsTotals);
         topFiveGraphView.TopFiveGraph();
         topFiveGraphView.setVisible(true);
+
         TopFiveWeeklyGraphView topFiveWeeklyGraphView = new TopFiveWeeklyGraphView(cartaSemanal.get(0).getSemanals(), comandesPlatsSemanals, nomPlatsSemanals);
         topFiveWeeklyGraphView.TopFiveGraph();
         topFiveWeeklyGraphView.setVisible(true);

@@ -17,11 +17,13 @@ CREATE TABLE Taula(
 
 
 CREATE TABLE Reserva(
+    id_reserva INT NOT NULL AUTO_INCREMENT,
 	id_taula INT,
     nom_reserva VARCHAR(255),
     password_ VARCHAR(255),
     num_comensals INT,
     data_reserva DATETIME,
+    PRIMARY KEY (id_reserva),
     FOREIGN KEY (id_taula) REFERENCES Taula(id_taula)
 );
 
@@ -42,6 +44,8 @@ CREATE TABLE Comanda(
     PRIMARY KEY (id_comanda),
     FOREIGN KEY (id_taula) REFERENCES Taula(id_taula)
 );
+
+SELECT * FROM Carta ORDER BY totals DESC LIMIT 5;
 
 
 
