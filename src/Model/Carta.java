@@ -77,4 +77,16 @@ public class Carta implements Serializable{
     public void setTotals(int totals) {
         this.totals = totals;
     }
+
+    @Override
+    public String toString() {
+        return "Carta{" +
+                "idPlat=" + idPlat +
+                ", nomPlat='" + nomPlat + '\'' +
+                ", preu=" + preu +
+                ", quantitat=" + quantitat +
+                ", semanals=" + semanals +
+                ", totals=" + totals +
+                '}';
+    }
 }

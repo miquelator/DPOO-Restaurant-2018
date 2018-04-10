@@ -24,6 +24,7 @@ public class MainController implements ActionListener{
         databaseConector = new DatabaseConector(configJson);
         recepcioThread = rec;
         reservesThread = res;
+        reservesThread.addMainController(this);
     }
 
     @Override
@@ -64,6 +65,7 @@ public class MainController implements ActionListener{
         OrdersView ordersView = new OrdersView();
         OrdersControllers ordersControllers = new OrdersControllers(ordersView);
         ordersView.registerListeners(ordersControllers);
+        ordersView.setVisible(true);
     }
 
     private void manageTables() {
@@ -130,5 +132,9 @@ public class MainController implements ActionListener{
              return databaseConector.addReserve(nomReserva, date, randomString.nextString(), taules.get(0), comensals);
 
          }
+    }
+
+    public ArrayList<Carta> getMenu() {
+         return databaseConector.getCarta();
     }
 }

@@ -1,19 +1,22 @@
 package Network;
 
 import Controller.MainController;
+import Model.Carta;
+import Model.DatabaseConector;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class DedicatedReservesThread extends Thread {
     private Socket sClient;
     private DataOutputStream doStream;
     private DataInputStream diStream;
+    private ObjectOutputStream ooStream;
+    private ObjectInputStream oiStream;
     private MainController mainController;
 
-    public DedicatedReservesThread(Socket sClient) {
+    public DedicatedReservesThread(Socket sClient, MainController mainController) {
         this.sClient = sClient;
         this.mainController = mainController;
     }
@@ -24,6 +27,8 @@ public class DedicatedReservesThread extends Thread {
             //creem les instancies necesaries per rebre i enviar dades
             doStream = new DataOutputStream(sClient.getOutputStream());
             diStream = new DataInputStream(sClient.getInputStream());
+            ooStream = new ObjectOutputStream(sClient.getOutputStream());
+            oiStream = new ObjectInputStream(sClient.getInputStream());
             while (true){
                 String request = diStream.readUTF();
                 readRequest(request);
@@ -32,22 +37,28 @@ public class DedicatedReservesThread extends Thread {
         }
     }
 
-    private void readRequest(String request) {
+    private void readRequest(String request) throws IOException {
         switch (request){
-            case "autenticar":
-                System.out.println("autenticar");
+            case "AUTHENTICATE":
+                System.out.println("AUTHENTICATE");
                 break;
 
-            case "veure estat":
-                System.out.println("veure estat");
+            case "SHOW_STATUS":
+                System.out.println("SHOW_STATUS");
                 break;
 
-            case "pagar":
-                System.out.println("pagar");
+            case "PAY":
+                System.out.println("PAY");
                 break;
 
-            case "veure carta":
-                System.out.println("veure carta");
+            case "SHOW_MENU":
+                ArrayList<Carta> menu = mainController.getMenu();
+
+                System.out.println(menu.size());
+                for (int i = 0; i < menu.size(); i++){
+                    System.out.println(menu.get(i).toString());
+                }
+                ooStream.writeObject(menu);
                 break;
         }
     }

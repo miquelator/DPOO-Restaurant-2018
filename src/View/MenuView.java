@@ -46,7 +46,7 @@ public class MenuView extends JFrame {
         dimension.height = 400;
         dimension.width = 600;
         setMinimumSize(dimension);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     /**

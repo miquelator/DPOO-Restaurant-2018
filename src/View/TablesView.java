@@ -37,7 +37,7 @@ public class TablesView extends JFrame {
         dimension.height = 400;
         dimension.width = 600;
         setMinimumSize(dimension);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     public Object getTableToAdd() {
@@ -137,17 +137,6 @@ public class TablesView extends JFrame {
         tabbedPane.setComponentAt(1, scrollPane);
     }
 
-    /**
-     * Adds a listener to view's components
-     * @param tablesController ActionListener controller
-     * @param tablesChangeController
-     */
-    public void registerListeners(TablesController tablesController, TablesChangeController tablesChangeController) {
-        addTable.addActionListener(tablesController);
-        deleteTables.addActionListener(tablesController);
-        exit.addActionListener(tablesController);
-        tabbedPane.addChangeListener(tablesChangeController);
-    }
 
     public int getTabbedPaneWindow() {
         return tabbedPane.getSelectedIndex();
@@ -264,5 +253,18 @@ public class TablesView extends JFrame {
             }else{
                 return false;
             }
+    }
+
+
+    /**
+     * Adds a listener to view's components
+     * @param tablesController ActionListener controller
+     * @param tablesChangeController
+     */
+    public void registerListeners(TablesController tablesController, TablesChangeController tablesChangeController) {
+        addTable.addActionListener(tablesController);
+        deleteTables.addActionListener(tablesController);
+        exit.addActionListener(tablesController);
+        tabbedPane.addChangeListener(tablesChangeController);
     }
 }

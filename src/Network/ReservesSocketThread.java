@@ -1,5 +1,7 @@
 package Network;
 
+import Controller.MainController;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -8,6 +10,7 @@ public class ReservesSocketThread extends Thread{
 
     private DedicatedReservesThread dedicatedReservesThread;
     private Socket sClient;
+    private MainController mainController;
 
     @Override
     public void run() {
@@ -28,8 +31,12 @@ public class ReservesSocketThread extends Thread{
 
     private void generaNouServidorDedicat(Socket sClient){
         System.out.println("Generant nou socket per a la recepcio");
-        dedicatedReservesThread = new DedicatedReservesThread(sClient);
+        dedicatedReservesThread = new DedicatedReservesThread(sClient, mainController);
         dedicatedReservesThread.start();
     }
 
+
+    public void addMainController(MainController mainController) {
+        this.mainController = mainController;
+    }
 }
