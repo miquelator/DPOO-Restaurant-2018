@@ -87,6 +87,7 @@ public class TablesView extends JFrame {
         SpinnerModel model = new SpinnerNumberModel(1,1,10,1);
         spinner = new JSpinner(model);
         ((JSpinner.DefaultEditor) spinner.getEditor()).getTextField().setEditable(false);
+        ((JSpinner.DefaultEditor) spinner.getEditor()).getTextField().setBackground(Color.white);
         Dimension d = new Dimension();
         d.width = 50;
         spinner.setPreferredSize(d);

@@ -7,6 +7,8 @@ import View.MenuView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MenuController implements ActionListener {
     private MenuView menuView;
@@ -35,26 +37,32 @@ public class MenuController implements ActionListener {
             case MenuView.ADD_DISH:
                 ArrayList<Carta> aux = databaseConector.getCarta();
                 boolean found = false;
-                for (Carta c: aux){
-                    //TODO: FER REGEX DEL NOM
-                    if (c.getNomPlat().equals(menuView.getNewDishName())){
-                        found = true;
-                    }
-                }
-                if (found == true){
-                    menuView.confirmEntry(1);
+                Pattern pattern = Pattern.compile("['\"*$]");
+                Matcher matcher = pattern.matcher(menuView.getNewDishName());
+                if (menuView.getNewDishName().contains("\"") || menuView.getNewDishName().equals(" ") || menuView.getNewDishName().equals("") || matcher.find()){
+                    menuView.confirmEntry(9);
                 }else{
-                    try{
-                        double priceAux = Double.valueOf(menuView.getNewDishPrice());
-                        int stockAux = Integer.valueOf(menuView.getNewDishStock());
+                    for (Carta c: aux){
+                        if (c.getNomPlat().equals(menuView.getNewDishName())){
+                            found = true;
+                        }
+                    }
+                    if (found == true){
+                        menuView.confirmEntry(1);
+                    }else{
+                        try{
+                            double priceAux = Double.valueOf(menuView.getNewDishPrice());
+                            int stockAux = Integer.valueOf(menuView.getNewDishStock());
 
-                        databaseConector.addDish(menuView.getNewDishName(), priceAux, stockAux);
-                        menuView.confirmEntry(2);
-                    }catch (NumberFormatException e1){
-                        menuView.confirmEntry(3);
-                        e1.getMessage();
+                            databaseConector.addDish(menuView.getNewDishName(), priceAux, stockAux);
+                            menuView.confirmEntry(2);
+                        }catch (NumberFormatException e1){
+                            menuView.confirmEntry(3);
+                            e1.getMessage();
+                        }
                     }
                 }
+
                 break;
             case MenuView.DELETE_DISH:
                 //TODO: QUAN ESTIGUIN INCLOSES LES COMANDES A LA BBDD COMPROVAR AL ESBORRAR PLAT

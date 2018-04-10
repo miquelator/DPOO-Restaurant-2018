@@ -252,6 +252,9 @@ public class MenuView extends JFrame {
             case 8:
                 JOptionPane.showOptionDialog(this, "No es poden actualitzar les existències!", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
                 break;
+            case 9:
+                JOptionPane.showOptionDialog(this, "Format del nom del plat incorrecte!", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+                break;
         }
     }
 
