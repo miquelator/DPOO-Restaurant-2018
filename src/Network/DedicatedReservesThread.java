@@ -52,14 +52,20 @@ public class DedicatedReservesThread extends Thread {
                 break;
 
             case "SHOW_MENU":
-                ArrayList<Carta> menu = mainController.getMenu();
+                int seleccio = diStream.readInt();
+                returnSelection(seleccio);
 
-                System.out.println(menu.size());
-                for (int i = 0; i < menu.size(); i++){
-                    System.out.println(menu.get(i).toString());
-                }
-                ooStream.writeObject(menu);
                 break;
         }
+    }
+
+    private void returnSelection(int seleccio) throws IOException {
+        ArrayList<Carta> menu = mainController.getMenu();
+        //TODO: MODIFICAR BASE DE DADES DE LA CARTA PER AFEGIR TIPUS DE PLAT SI "PRIMER" = 1, "SEGON" = 2, "POSTRE" = 3 I "BEGUDES" = 4. AQUI RETORNAR A LES RESERVES EL TIPUS DE PLAT QUE ENS DEMANEN SEGONS EL PARAMETRE SELECCIO
+        System.out.println(menu.size());
+        for (int i = 0; i < menu.size(); i++){
+            System.out.println(menu.get(i).toString());
+        }
+        ooStream.writeObject(menu);
     }
 }

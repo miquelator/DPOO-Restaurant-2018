@@ -62,7 +62,7 @@ public class TablesView extends JFrame {
         tabbedPane = new JTabbedPane();
 
 
-        JPanel jplInnerPanel1 = createInnerPanel(/*addTable()*/ spinnerNumberSample());
+        JPanel jplInnerPanel1 = createInnerPanel(spinnerNumberSample());
         tabbedPane.addTab("Afegir nova taula", icon, jplInnerPanel1, "Tab 1");
 
         JPanel jplInnerPanel2 = createInnerPanel(new JPanel());
