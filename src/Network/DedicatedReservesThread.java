@@ -41,6 +41,10 @@ public class DedicatedReservesThread extends Thread {
         switch (request){
             case "AUTHENTICATE":
                 System.out.println("AUTHENTICATE");
+                String user = diStream.readUTF();
+                String password = diStream.readUTF();
+                doStream.writeBoolean(mainController.autenticar(user,password));
+
                 break;
 
             case "SHOW_STATUS":

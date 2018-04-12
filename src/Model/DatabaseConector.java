@@ -31,6 +31,35 @@ public class DatabaseConector {
 
     /**
      * Gets menu list from DDBB.
+     * @return boolean whether the user exists.
+     */
+    public boolean autenticar(String user, String password) {
+
+        boolean trobat = false;
+        if (conexio()){
+            try {
+                Statement s = connection.createStatement();
+                s.executeQuery("SELECT * FROM Reserva");
+                ResultSet rs = s.getResultSet();
+                while (rs.next()) {
+                    if ( rs.getString("nom_reserva").equals(user)&&rs.getString("password_").equals(password)){
+                        trobat = true;
+                        ;
+                    }
+                }
+
+                connection.close();
+                return trobat;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return trobat;
+    }
+
+
+    /**
+     * Gets menu list from DDBB.
      * @return ArrayList<Carta> containing all items from the menu.
      */
     public ArrayList<Carta> getCarta() {
