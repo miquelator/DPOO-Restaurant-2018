@@ -8,13 +8,15 @@ public class Reserva {
     private String password;
     private Date dataReserva;
     private int numComensals;
+    private boolean conectat;
 
-    public Reserva(int idTaula, String nomReserva, String password, Date dataReserva, int numComensals){
+    public Reserva(int idTaula, String nomReserva, String password, Date dataReserva, int numComensals, boolean conectat){
         this.idTaula = idTaula;
         this.nomReserva = nomReserva;
         this.password = password;
         this.dataReserva = dataReserva;
         this.numComensals = numComensals;
+        this.conectat = conectat;
     }
 
     public int getIdTaula() {
@@ -27,6 +29,10 @@ public class Reserva {
 
     public String getPassword() {
         return password;
+    }
+
+    public boolean getConectat() {
+        return conectat;
     }
 
     public void setPassword(String password) {

@@ -44,7 +44,7 @@ public class DatabaseConector {
                 while (rs.next()) {
                     if ( rs.getString("nom_reserva").equals(user)&&rs.getString("password_").equals(password)){
                         trobat = true;
-                        ;
+
                     }
                 }
 
@@ -135,7 +135,8 @@ public class DatabaseConector {
                     String password = rs.getString("password_");
                     int numComensals = rs.getInt("num_comensals");
                     Date data = rs.getDate("data_reserva");
-                    reserves.add(new Reserva(idTaula, nomReserva, password, data, numComensals));
+                    boolean conectat = rs.getBoolean("conectat");
+                    reserves.add(new Reserva(idTaula, nomReserva, password, data, numComensals, conectat));
                 }
 
                 connection.close();
@@ -403,7 +404,7 @@ public class DatabaseConector {
                 String dmy = mdyFormat.format(date);
 
                 String format = "%d-%m-%Y %H:%i:%s";
-                String query = "INSERT INTO Reserva(id_taula, nom_reserva, password_, num_comensals, data_reserva) VALUES (?,?,?,?,STR_TO_DATE(?, ?))";
+                String query = "INSERT INTO Reserva(id_taula, nom_reserva, password_, num_comensals, data_reserva, conectat) VALUES (?,?,?,?,STR_TO_DATE(?, ?), ?)";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setInt(1, integer);
                 preparedStmt.setString(2, nomReserva);
@@ -411,6 +412,7 @@ public class DatabaseConector {
                 preparedStmt.setInt(4, comensals);
                 preparedStmt.setString(5, dmy.toString());
                 preparedStmt.setString(6, format);
+                preparedStmt.setBoolean(7, false);
 
                 preparedStmt.execute();
 
