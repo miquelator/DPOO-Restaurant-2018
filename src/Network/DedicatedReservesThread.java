@@ -2,7 +2,6 @@ package Network;
 
 import Controller.MainController;
 import Model.Carta;
-import Model.DatabaseConector;
 
 import java.io.*;
 import java.net.Socket;
@@ -65,11 +64,29 @@ public class DedicatedReservesThread extends Thread {
 
     private void returnSelection(int seleccio) throws IOException {
         ArrayList<Carta> menu = mainController.getMenu();
-        //TODO: MODIFICAR BASE DE DADES DE LA CARTA PER AFEGIR TIPUS DE PLAT SI "PRIMER" = 1, "SEGON" = 2, "POSTRE" = 3 I "BEGUDES" = 4. AQUI RETORNAR A LES RESERVES EL TIPUS DE PLAT QUE ENS DEMANEN SEGONS EL PARAMETRE SELECCIO
-        System.out.println(menu.size());
-        for (int i = 0; i < menu.size(); i++){
-            System.out.println(menu.get(i).toString());
+        //TODO: RETORNAR A LES RESERVES EL TIPUS DE PLAT QUE ENS DEMANEN SEGONS EL PARAMETRE SELECCIO
+        ArrayList<Carta> peticio = new ArrayList<>();
+        int size = menu.size();
+        for (int i = 0; i < size; i++){
+            if (menu.get(i).getTipus().equals(tipusDefinition(seleccio))){
+                peticio.add(menu.get(i));
+                System.out.println(menu.get(i).toString());
+            }
         }
-        ooStream.writeObject(menu);
+        ooStream.writeObject(peticio);
+    }
+
+    private String tipusDefinition(int tipus) {
+        switch (tipus){
+            case 1:
+                return "Primer";
+            case 2:
+                return "Segon";
+            case 3:
+                return "Postre";
+            case 4:
+                return "Begudes";
+        }
+        return null;
     }
 }

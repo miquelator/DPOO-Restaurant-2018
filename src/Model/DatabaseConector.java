@@ -73,11 +73,12 @@ public class DatabaseConector {
                 while (rs.next()) {
                     int idPlat = rs.getInt("id_plat");
                     String nomPlat = rs.getString("nom_plat");
+                    int tipus = rs.getInt("tipus_plat");
                     float preu = rs.getFloat("preu");
                     int quantitat = rs.getInt("quantitat");
                     int semanals = rs.getInt("semanals");
                     int totals = rs.getInt("totals");
-                    carta.add(new Carta(idPlat, nomPlat, preu, quantitat, semanals, totals));
+                    carta.add(new Carta(idPlat, tipusDefinition(tipus), nomPlat, preu, quantitat, semanals, totals));
                 }
 
                 connection.close();
@@ -85,6 +86,20 @@ public class DatabaseConector {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }
+        return null;
+    }
+
+    private String tipusDefinition(int tipus) {
+        switch (tipus){
+            case 1:
+                return "Primer";
+            case 2:
+                return "Segon";
+            case 3:
+                return "Postre";
+            case 4:
+                return "Begudes";
         }
         return null;
     }
@@ -238,11 +253,12 @@ public class DatabaseConector {
                 while (rs.next()) {
                     int idPlat = rs.getInt("id_plat");
                     String nomPlat = rs.getString("nom_plat");
+                    int tipus = rs.getInt("tipus_plat");
                     float preu = rs.getFloat("preu");
                     int quantitat = rs.getInt("quantitat");
                     int semanals = rs.getInt("semanals");
                     int totals = rs.getInt("totals");
-                    carta.add(new Carta(idPlat, nomPlat, preu, quantitat, semanals, totals));
+                    carta.add(new Carta(idPlat, tipusDefinition(tipus), nomPlat, preu, quantitat, semanals, totals));
                 }
 
                 connection.close();
@@ -265,11 +281,12 @@ public class DatabaseConector {
                 while (rs.next()) {
                     int idPlat = rs.getInt("id_plat");
                     String nomPlat = rs.getString("nom_plat");
+                    int tipus = rs.getInt("tipus_plat");
                     float preu = rs.getFloat("preu");
                     int quantitat = rs.getInt("quantitat");
                     int semanals = rs.getInt("semanals");
                     int totals = rs.getInt("totals");
-                    carta.add(new Carta(idPlat, nomPlat, preu, quantitat, semanals, totals));
+                    carta.add(new Carta(idPlat, tipusDefinition(tipus), nomPlat, preu, quantitat, semanals, totals));
                 }
 
                 connection.close();

@@ -30,6 +30,7 @@ CREATE TABLE Reserva(
 
 CREATE TABLE Carta(
 	id_plat INT NOT NULL AUTO_INCREMENT,
+	tipus_plat INT,
     nom_plat VARCHAR(255),
     preu FLOAT,
     quantitat INT,

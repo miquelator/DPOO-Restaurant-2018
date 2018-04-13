@@ -154,21 +154,24 @@ public class MenuView extends JFrame {
 
         model.addColumn("ID");
         model.addColumn("Nom del plat");
+        model.addColumn("Tipus");
         model.addColumn("Preu");
         model.addColumn("Quantitat disponible");
 
 
         for (int i = 0; i < aux.size(); i++){
             Vector<String> ID = new Vector(Arrays.asList(aux.get(i).getIdPlat()));
-            Vector<String> nombreSeients = new Vector(Arrays.asList(aux.get(i).getNomPlat()));
-            Vector<String> ocupada = new Vector(Arrays.asList(aux.get(i).getPreu()));
+            Vector<String> nombPlat = new Vector(Arrays.asList(aux.get(i).getNomPlat()));
+            Vector<String> tipus = new Vector(Arrays.asList(aux.get(i).getTipus()));
+            Vector<String> preu = new Vector(Arrays.asList(aux.get(i).getPreu()));
             Vector<String> quantitat = new Vector(Arrays.asList(aux.get(i).getQuantitat()));
 
 
             Vector<Object> row = new Vector<Object>();
             row.addElement(ID.get(0));
-            row.addElement(nombreSeients.get(0));
-            row.addElement(ocupada.get(0));
+            row.addElement(nombPlat.get(0));
+            row.addElement(tipus.get(0));
+            row.addElement(preu.get(0));
             row.addElement(quantitat.get(0));
             model.addRow(row);
         }

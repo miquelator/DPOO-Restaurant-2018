@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Carta implements Serializable{
     private int idPlat;
     private String nomPlat;
+    private String tipus;
     private float preu;
     private int quantitat;
     private int semanals;
@@ -19,9 +20,10 @@ public class Carta implements Serializable{
      * @param semanals Value for semanals value.
      * @param totals Value for totals value.
      */
-    public Carta(int idPlat, String nomPlat, float preu, int quantitat, int semanals, int totals){
+    public Carta(int idPlat, String tipus, String nomPlat, float preu, int quantitat, int semanals, int totals){
         this.idPlat = idPlat;
         this.nomPlat = nomPlat;
+        this.tipus = tipus;
         this.preu = preu;
         this.quantitat = quantitat;
         this.semanals = semanals;
@@ -44,6 +46,14 @@ public class Carta implements Serializable{
 
     public void setNomPlat(String nomPlat) {
         this.nomPlat = nomPlat;
+    }
+
+    public String getTipus() {
+        return tipus;
+    }
+
+    public void setTipus(String tipus) {
+        this.tipus = tipus;
     }
 
     public float getPreu() {
