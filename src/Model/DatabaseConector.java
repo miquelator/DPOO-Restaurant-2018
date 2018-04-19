@@ -33,9 +33,9 @@ public class DatabaseConector {
      * Gets menu list from DDBB.
      * @return boolean whether the user exists.
      */
-    public boolean autenticar(String user, String password) {
+    public int autenticar(String user, String password) {
 
-        boolean trobat = false;
+        int trobat = -1;
         if (conexio()){
             try {
                 Statement s = connection.createStatement();
@@ -43,7 +43,8 @@ public class DatabaseConector {
                 ResultSet rs = s.getResultSet();
                 while (rs.next()) {
                     if ( rs.getString("nom_reserva").equals(user)&&rs.getString("password_").equals(password)){
-                        trobat = true;
+                        trobat = rs.getInt("id_taula");
+                        updateConectedReserva(true, trobat);
 
                     }
                 }
@@ -163,6 +164,31 @@ public class DatabaseConector {
         return null;
     }
 
+
+
+    public boolean updateConectedReserva(boolean b, int id) {
+        if (conexio()){
+            try {
+
+                String query = "UPDATE Reserva SET conectat = ? WHERE id_reserva = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                preparedStmt.setBoolean(1, b);
+                preparedStmt.setInt(2, id);
+
+
+                preparedStmt.execute();
+
+                connection.close();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+
+    }
+
     public boolean addDish(String nom, double preu, int quantitat) {
         if (conexio()){
             try {
@@ -205,6 +231,24 @@ public class DatabaseConector {
         }
         return false;
     }
+
+    public boolean deleteComanda(int id_taula) {
+        if (conexio()){
+            try {
+                String query =  "DELETE FROM Comanda WHERE id_taula = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, id_taula);
+                preparedStmt.execute();
+
+                connection.close();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
 
     public boolean deleteDish(String deletedDishName) {
         if (conexio()){

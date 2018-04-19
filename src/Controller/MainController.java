@@ -134,9 +134,13 @@ public class MainController implements ActionListener{
          }
     }
 
-    public boolean autenticar (String user, String password){
+    public int autenticar (String user, String password){
         return databaseConector.autenticar(user,password);
 
+    }
+
+    public void pay (int id_taula){
+        databaseConector.deleteComanda(id_taula);
     }
 
     public ArrayList<Carta> getMenu() {

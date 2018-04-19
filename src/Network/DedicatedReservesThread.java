@@ -14,10 +14,12 @@ public class DedicatedReservesThread extends Thread {
     private ObjectOutputStream ooStream;
     private ObjectInputStream oiStream;
     private MainController mainController;
+    private int idtaula;
 
     public DedicatedReservesThread(Socket sClient, MainController mainController) {
         this.sClient = sClient;
         this.mainController = mainController;
+        idtaula = -1;
     }
 
     @Override
@@ -42,7 +44,14 @@ public class DedicatedReservesThread extends Thread {
                 System.out.println("AUTHENTICATE");
                 String user = diStream.readUTF();
                 String password = diStream.readUTF();
-                doStream.writeBoolean(mainController.autenticar(user,password));
+                idtaula = mainController.autenticar(user,password);
+                if (idtaula == -1){
+                    doStream.writeBoolean(false);
+                }else{
+                    doStream.writeBoolean(true);
+                };
+
+
 
                 break;
 
@@ -52,6 +61,7 @@ public class DedicatedReservesThread extends Thread {
 
             case "PAY":
                 System.out.println("PAY");
+                mainController.pay(idtaula);
                 break;
 
             case "SHOW_MENU":

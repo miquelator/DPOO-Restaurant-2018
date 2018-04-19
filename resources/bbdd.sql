@@ -39,13 +39,15 @@ CREATE TABLE Carta(
     PRIMARY KEY (id_plat)
 );
 
+
+
 CREATE TABLE Comanda(
-	id_comanda INT NOT NULL AUTO_INCREMENT,
-    id_plat INT NOT NULL,
-    id_taula INT NOT NULL,
+    id_comanda INT NOT NULL AUTO_INCREMENT,
+    id_plat INT NOT NULL, id_taula INT NOT NULL,
+    servit BOOL DEFAULT FALSE,
     PRIMARY KEY (id_comanda),
     FOREIGN KEY (id_taula) REFERENCES Taula(id_taula)
-);
+    );
 
 SELECT * FROM Carta ORDER BY totals DESC LIMIT 5;
 
