@@ -58,7 +58,17 @@ SELECT * FROM Carta ORDER BY totals DESC LIMIT 5;
 INSERT INTO Taula (num_seients, ocupada) VALUES(4,true);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(1,'Bistec', 12.50, 20, 0 ,5);
 INSERT INTO Reserva (id_taula, nom_reserva, password_, num_comensals, data_reserva, conectat) VALUES(1, 'Angel', 'ABC123', 4, STR_TO_DATE('09-04-2018  23:11:00', '%d-%m-%Y %H:%i:%s'), false);
-INSERT INTO Carta (nom_plat, preu, quantitat, semanals, totals) VALUES('Vi', 50.50, 10, 0, 9);
+INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(4, 'Vi', 50.50, 10, 0, 9);
 SELECT * FROM Taula;
 SELECT * FROM Reserva;
 SELECT * FROM Carta;
+
+DELIMITER $$
+DROP EVENT IF EXISTS updateWeekly $$
+CREATE EVENT IF	NOT	EXISTS updateWeekly
+ON SCHEDULE EVERY 1 WEEK
+STARTS '2018-05-23	00:00:00'
+DO BEGIN
+UPDATE Carta SET semanals = 0;
+END	$$
+DELIMITER ;

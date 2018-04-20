@@ -1,6 +1,5 @@
 import Controller.MainController;
 import Model.ConfigJson;
-import Model.DatabaseConector;
 import Network.RecepcioSocketThread;
 import Network.ReservesSocketThread;
 import View.MainView;
