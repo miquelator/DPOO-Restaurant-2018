@@ -249,7 +249,6 @@ public class DatabaseConector {
         return false;
     }
 
-
     public boolean deleteDish(String deletedDishName) {
         if (conexio()){
             try {
@@ -341,6 +340,7 @@ public class DatabaseConector {
         }
         return null;
     }
+
 
     public boolean deleteTable(int tableToDelete) {
         if (conexio()){

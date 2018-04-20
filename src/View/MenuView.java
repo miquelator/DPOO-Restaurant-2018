@@ -178,20 +178,54 @@ public class MenuView extends JFrame {
     }
 
     public void populateStock(String[] list) {
+        // create panel type
         JPanel updateStockPanel = new JPanel(new BorderLayout());
-        JLabel numStockLabel = new JLabel("Nou nombre d'unitats: ");
-        numStock = new JTextField();
+
+        // create upper view objects
         idStock = new JComboBox<>(list);
-        JPanel center = new JPanel(new GridLayout(2,1));
+        JLabel numStockLabel = new JLabel("Nou nombre d'unitats:    ");
+        numStock = new JTextField();
+
+        // create a grid bag layout and create the standard constraints
+        JPanel center = new JPanel(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 0;
+        c.gridy = 0;
+        c.weightx = 1;
+        c.insets = new Insets(10,20,10,0);
+        c.gridwidth = 1;
+
+        // add stock
+        center.add(idStock, c);
+
+        // add label for chooseing
+        c.gridwidth = 2;
+        c.gridy = 1;
+        center.add(numStockLabel, c);
+
+        // add textfield
+        c.gridwidth = 1;
+        c.weightx = 0.5;
+        c.gridx = 1;
+        center.add(numStock, c);
+
+
+        /*
         JPanel stockAux = new JPanel(new BorderLayout());
         stockAux.add(numStock, BorderLayout.CENTER);
         JPanel stockFinal = new JPanel(new BorderLayout());
+
+        // add the components to the tabed panel
         stockFinal.add(numStockLabel, BorderLayout.WEST);
         stockFinal.add(stockAux, BorderLayout.CENTER);
-        center.add(idStock);
-        center.add(stockFinal);
+        center.add(idStock, c);
+        center.add(stockFinal, c);
+        */
         updateStockPanel.add(center, BorderLayout.CENTER);
         updateStockPanel.add(updateDish, BorderLayout.SOUTH);
+
+        // add the tabed panel to the view
         tabbedPane.setComponentAt(3, updateStockPanel);
     }
 
