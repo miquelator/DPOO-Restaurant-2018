@@ -9,6 +9,7 @@ public class TopFiveGraphView extends JPanel {
     private double maxComands;
     private String [] nomPlats;
     private int[] data;
+    private final Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
 
     public TopFiveGraphView(double maxValue, int[] data,  String[] nomPlats) {
         this.maxComands = maxValue;
@@ -73,7 +74,7 @@ public class TopFiveGraphView extends JPanel {
         JFrame f = new JFrame();
         f.getContentPane().add(new TopFiveGraphView(maxComands, data, nomPlats));
         f.setSize(600,600);
-        f.setLocation(800,200);
+        f.setLocation(20 + pantalla.width/2,pantalla.height/4);
         f.setVisible(true);
         f.setTitle("Top 5 Total Graph");
     }

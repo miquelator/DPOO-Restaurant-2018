@@ -1,5 +1,6 @@
 package View;
 
+import Controller.SeatsSpinController;
 import Controller.TablesChangeController;
 import Controller.TablesController;
 import Model.JTableModel;
@@ -27,6 +28,7 @@ public class TablesView extends JFrame {
     public final static String ADD_TABLE = "Afegir una taula";
     public final static String DELETE_TABLE = "Borrar taula";
     public final static String EXIT = "Sortir";
+    public final static int MAX_SEATS = 10;
 
     public TablesView() {
         populateView();
@@ -63,18 +65,19 @@ public class TablesView extends JFrame {
 
 
         JPanel jplInnerPanel1 = createInnerPanel(spinnerNumberSample());
-        tabbedPane.addTab("Afegir nova taula", icon, jplInnerPanel1, "Tab 1");
+        tabbedPane.addTab("Afegir nova taula", icon, jplInnerPanel1);
+
 
         JPanel jplInnerPanel2 = createInnerPanel(new JPanel());
-        tabbedPane.addTab("Mostar llistat taules", icon, jplInnerPanel2, "Tab 2");
+        tabbedPane.addTab("Mostar llistat taules", icon, jplInnerPanel2);
         listTable();
 
         JPanel jplInnerPanel3 = createInnerPanel(new JPanel());
-        tabbedPane.addTab("Mostrar reserves", icon, jplInnerPanel3, "Tab 3");
+        tabbedPane.addTab("Mostrar reserves", icon, jplInnerPanel3);
         showReservations();
 
         JPanel jplInnerPanel4 = createInnerPanel(deleteTable());
-        tabbedPane.addTab("Eliminar taula", icon, jplInnerPanel4, "Tab 4");
+        tabbedPane.addTab("Eliminar taula", icon, jplInnerPanel4);
 
         principal.add(bottom, BorderLayout.SOUTH);
         principal.add(tabbedPane, BorderLayout.CENTER);
@@ -84,7 +87,7 @@ public class TablesView extends JFrame {
     private JPanel spinnerNumberSample() {
         JPanel addTablePanel = new JPanel(new GridLayout(1,2));
         JPanel panel = new JPanel();
-        SpinnerModel model = new SpinnerNumberModel(1,1,10,1);
+        SpinnerModel model = new SpinnerNumberModel(1,1,MAX_SEATS,1);
         spinner = new JSpinner(model);
         ((JSpinner.DefaultEditor) spinner.getEditor()).getTextField().setEditable(false);
         ((JSpinner.DefaultEditor) spinner.getEditor()).getTextField().setBackground(Color.white);
@@ -221,6 +224,10 @@ public class TablesView extends JFrame {
         spinner.setValue(1);
     }
 
+    public int getNumSeients(){
+        return (int) spinner.getValue();
+    }
+
     public void loadTablesID(ArrayList<Integer> id) {
         int size = id.size();
         idABorrar.removeAllItems();
@@ -261,11 +268,18 @@ public class TablesView extends JFrame {
      * Adds a listener to view's components
      * @param tablesController ActionListener controller
      * @param tablesChangeController
+     * @param seatsSpinController
      */
-    public void registerListeners(TablesController tablesController, TablesChangeController tablesChangeController) {
+    public void registerListeners(TablesController tablesController, TablesChangeController tablesChangeController, SeatsSpinController seatsSpinController) {
         addTable.addActionListener(tablesController);
         deleteTables.addActionListener(tablesController);
         exit.addActionListener(tablesController);
         tabbedPane.addChangeListener(tablesChangeController);
+        spinner.addMouseWheelListener(seatsSpinController);
+    }
+
+    public void addSeients(int i) {
+        int old = (int) spinner.getValue();
+        spinner.setValue(i + old);
     }
 }

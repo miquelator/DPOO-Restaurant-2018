@@ -13,6 +13,8 @@ public class TopFiveWeeklyGraphView extends JPanel{
     private String [] nomPlats;
     private int[] data;
 
+    private final Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+
     public TopFiveWeeklyGraphView(double maxValue, int[] data,  String[] nomPlats) {
         this.maxComands = maxValue;
         this.nomPlats = nomPlats;
@@ -76,7 +78,8 @@ public class TopFiveWeeklyGraphView extends JPanel{
         JFrame f = new JFrame();
         f.getContentPane().add(new TopFiveGraphView(maxComands, data, nomPlats));
         f.setSize(600,600);
-        f.setLocation(800,200);
+
+        f.setLocation(pantalla.width/5,pantalla.height/4);
         f.setVisible(true);
         f.setTitle("Top 5 Weekly Graph");
     }

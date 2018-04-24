@@ -68,19 +68,19 @@ public class MenuView extends JFrame {
 
 
         JPanel jplInnerPanel1 = createInnerPanel(addDish());
-        tabbedPane.addTab("Afegir nou plat", icon, jplInnerPanel1, "Tab 1");
+        tabbedPane.addTab("Afegir nou plat", icon, jplInnerPanel1);
 
         JPanel jplInnerPanel2 = createInnerPanel(new JPanel());
-        tabbedPane.addTab("Mostar la carta", icon, jplInnerPanel2, "Tab 2");
+        tabbedPane.addTab("Mostar la carta", icon, jplInnerPanel2);
         listDish();
 
         //TODO: FER-HO NUMBER SPINNER
         JPanel jplInnerPanel3 = createInnerPanel(deleteDish());
-        tabbedPane.addTab("Esborrar un plat del menu", icon, jplInnerPanel3, "Tab 3");
+        tabbedPane.addTab("Esborrar un plat del menu", icon, jplInnerPanel3);
 
         //TODO: FER-HO NUMBER SPINNER
         JPanel jplInnerPanel4 = createInnerPanel(updateDishStock());
-        tabbedPane.addTab("Actualitzar existències", icon, jplInnerPanel4, "Tab 4");
+        tabbedPane.addTab("Actualitzar existències", icon, jplInnerPanel4);
 
 
         principal.add(bottom, BorderLayout.SOUTH);
@@ -183,7 +183,7 @@ public class MenuView extends JFrame {
 
         // create upper view objects
         idStock = new JComboBox<>(list);
-        JLabel numStockLabel = new JLabel("Nou nombre d'unitats:    ");
+        JLabel numStockLabel = new JLabel("Nou nombre d'unitats:");
         numStock = new JTextField();
 
         // create a grid bag layout and create the standard constraints
@@ -192,49 +192,50 @@ public class MenuView extends JFrame {
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
-        c.weightx = 1;
-        c.insets = new Insets(10,20,10,0);
-        c.gridwidth = 1;
+        c.insets = new Insets(10,0,10,0);
+        c.gridwidth = 3;
 
         // add stock
         center.add(idStock, c);
 
-        // add label for chooseing
-        c.gridwidth = 2;
+        // add label for choosing
+        c.gridwidth = 1;
         c.gridy = 1;
+        c.gridx = 0;
+        c.ipadx = (10);
         center.add(numStockLabel, c);
 
         // add textfield
-        c.gridwidth = 1;
-        c.weightx = 0.5;
+        c.gridwidth = 2;
         c.gridx = 1;
         center.add(numStock, c);
 
 
-        /*
-        JPanel stockAux = new JPanel(new BorderLayout());
-        stockAux.add(numStock, BorderLayout.CENTER);
-        JPanel stockFinal = new JPanel(new BorderLayout());
+        c.gridy = 2;
+        c.gridx = 0;
+        c.gridwidth = 3;
+        center.add(updateDish, c);
 
-        // add the components to the tabed panel
-        stockFinal.add(numStockLabel, BorderLayout.WEST);
-        stockFinal.add(stockAux, BorderLayout.CENTER);
-        center.add(idStock, c);
-        center.add(stockFinal, c);
-        */
         updateStockPanel.add(center, BorderLayout.CENTER);
-        updateStockPanel.add(updateDish, BorderLayout.SOUTH);
+
 
         // add the tabed panel to the view
         tabbedPane.setComponentAt(3, updateStockPanel);
     }
 
     public void populateDelete(String[] list) {
-        JPanel deleteDishPanel = new JPanel(new FlowLayout());
+
+        // set the panel and the layout and it's constraints
+        JPanel deleteDishPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+
+        // create and add items
         idABorrar = new JComboBox<>(list);
         deleteDishPanel.add(idABorrar);
-        deleteDishPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-        deleteDishPanel.add(deleteDish);
+        c.insets = new Insets(0,10,0,0);
+        deleteDishPanel.add(deleteDish, c);
+
+        // add to the tabbed pane
         tabbedPane.setComponentAt(2, deleteDishPanel);
     }
 

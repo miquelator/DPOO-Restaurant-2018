@@ -73,7 +73,8 @@ public class MainController implements ActionListener{
         TablesView tablesView = new TablesView();
         TablesController tablesController = new TablesController(tablesView, databaseConector, this);
         TablesChangeController tablesChangeController = new TablesChangeController(tablesView, databaseConector);
-        tablesView.registerListeners(tablesController, tablesChangeController);
+        SeatsSpinController seatsSpinController = new SeatsSpinController(tablesView);
+        tablesView.registerListeners(tablesController, tablesChangeController, seatsSpinController);
         mainView.setVisible(false);
         tablesView.setVisible(true);
     }
