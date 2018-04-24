@@ -91,6 +91,7 @@ public class DatabaseConector {
         return null;
     }
 
+
     private String tipusDefinition(int tipus) {
         switch (tipus){
             case 1:
