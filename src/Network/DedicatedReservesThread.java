@@ -2,6 +2,7 @@ package Network;
 
 import Controller.MainController;
 import Model.Carta;
+import Model.CartaSelection;
 
 import java.io.*;
 import java.net.Socket;
@@ -30,6 +31,7 @@ public class DedicatedReservesThread extends Thread {
             diStream = new DataInputStream(sClient.getInputStream());
             ooStream = new ObjectOutputStream(sClient.getOutputStream());
             oiStream = new ObjectInputStream(sClient.getInputStream());
+
             while (true){
                 String request = diStream.readUTF();
                 readRequest(request);
@@ -52,6 +54,21 @@ public class DedicatedReservesThread extends Thread {
                 };
 
 
+
+                break;
+
+            case "SEND_COMANDA":
+
+                try {
+
+
+                    ArrayList<CartaSelection> carta = (ArrayList<CartaSelection>) oiStream.readObject();
+
+                    //TODO: Fer que cada cartaselection es guardi com una comanda
+
+                }catch (ClassNotFoundException e){
+                    System.out.println("error al rebre CartaSelection");
+                }
 
                 break;
 
