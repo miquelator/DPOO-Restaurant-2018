@@ -534,21 +534,24 @@ public class DatabaseConector {
         if (conexio()){
             try {
 
-                String query =  "SELECT SUM(p.preu) AS total FROM Comanda AS c, Plat AS p WHERE p.id_taula = ? AND p.id_plat = c.id_plat";
+                String query =  "SELECT SUM(p.preu) AS total FROM Comanda, Carta WHERE Comanda.id_taula = ? AND Carta.id_plat = Comanda.id_plat";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setInt(1, idtaula);
                 preparedStmt.execute();
 
                 ResultSet rs = preparedStmt.getResultSet();
-
+                float total = 0;
                 while (rs.next()) {
-                    System.out.println(rs.getInt("total"));
+                    System.out.println(rs.getFloat("total"));
+                    total = rs.getFloat("total");
                 }
 
                 connection.close();
+                return total;
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
+        return -1;
     }
 }
