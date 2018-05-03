@@ -43,7 +43,6 @@ CREATE TABLE Comanda(
     id_comanda INT NOT NULL AUTO_INCREMENT,
     id_plat INT NOT NULL,
     id_taula INT NOT NULL,
-    quantitat_demanada INT NOT NULL,
     servit BOOL DEFAULT FALSE,
     PRIMARY KEY (id_comanda),
     FOREIGN KEY (id_taula) REFERENCES Taula(id_taula)
@@ -55,8 +54,8 @@ INSERT INTO Taula (num_seients, ocupada) VALUES(4,true);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(1,'Bistec', 12.50, 20, 0 ,5);
 INSERT INTO Reserva (id_taula, nom_reserva, password_, num_comensals, data_reserva, conectat) VALUES(1, 'Angel', 'ABC123', 4, STR_TO_DATE('09-04-2018  23:11:00', '%d-%m-%Y %H:%i:%s'), false);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(4, 'Vi', 50.50, 10, 0, 9);
-INSERT INTO Comanda (id_comanda, id_plat, id_taula, quantitat_demanada,servit) VALUES (1, 4, 1, 6, false);
-INSERT INTO Comanda (id_comanda, id_plat, id_taula, quantitat_demanada,servit) VALUES (4, 6, 1, 2, true);
+INSERT INTO Comanda (id_comanda, id_plat, id_taula, servit) VALUES (1, 4, 1, false);
+INSERT INTO Comanda (id_comanda, id_plat, id_taula, servit) VALUES (4, 6, 1, true);
 
 
 SELECT * FROM Taula;

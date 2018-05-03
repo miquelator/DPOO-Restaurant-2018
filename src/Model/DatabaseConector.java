@@ -507,43 +507,44 @@ public class DatabaseConector {
         }
     }
 
-    public void getTotalPrice(int id_taula) {
+    public void saveOrder(ArrayList<CartaSelection> cartaSelection, int idtaula) {
         if (conexio()){
             try {
-                //String query =  "SELECT preu * (SELECT ) FROM Carta WHERE id_plat = (SELECT id_plat FROM Comanda WHERE id_taula = ?)";
-                String query = "";
-                PreparedStatement preparedStmt = connection.prepareStatement(query);
-                preparedStmt.setInt(1, id_taula);
-                preparedStmt.execute();
+                for (CartaSelection c : cartaSelection) {
 
-                ResultSet rs = preparedStmt.getResultSet();
-                while (rs.next()){
-                    int total = rs.getInt("Total");
-                    System.out.println("Ha de pagar un total de " + total);
+                    for (int i = 0; i < c.getUnitatsDemanades(); i++){
+
+                        String query = "INSERT INTO Comanda (id_plat, id_taula, servit) VALUES (?, ?, ?);";
+                        PreparedStatement preparedStmt = connection.prepareStatement(query);
+                        preparedStmt.setInt(1, 1);
+                        preparedStmt.setInt(2, idtaula);
+                        preparedStmt.setBoolean(3, false);
+
+                        preparedStmt.execute();
+                    }
                 }
-
+                connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void saveOrder(ArrayList<CartaSelection> cartaSelection, int idtaula) {
+    public float getTotalPrice(int idtaula) {
         if (conexio()){
             try {
-                for (CartaSelection c : cartaSelection) {
 
-                        String query = "INSERT INTO Comanda (id_plat, id_taula, quantitat_demanada, servit) VALUES (?, ?, ?, ?);";
-                        PreparedStatement preparedStmt = connection.prepareStatement(query);
-                        preparedStmt.setInt(1, 1);
-                        preparedStmt.setInt(2, idtaula);
-                        preparedStmt.setInt(3, c.getUnitatsDemanades());
-                        preparedStmt.setBoolean(4, false);
+                String query =  "SELECT SUM(p.preu) AS total FROM Comanda AS c, Plat AS p WHERE p.id_taula = ? AND p.id_plat = c.id_plat";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, idtaula);
+                preparedStmt.execute();
 
-                        preparedStmt.execute();
+                ResultSet rs = preparedStmt.getResultSet();
 
-
+                while (rs.next()) {
+                    System.out.println(rs.getInt("total"));
                 }
+
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
