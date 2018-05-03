@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="  .">
+    <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/MainController.java" afterPath="$PROJECT_DIR$/src/Controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/MenuChangeController.java" afterPath="$PROJECT_DIR$/src/Controller/MenuChangeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/MenuController.java" afterPath="$PROJECT_DIR$/src/Controller/MenuController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/OrdersControllers.java" afterPath="$PROJECT_DIR$/src/Controller/OrdersControllers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/SeatsSpinController.java" afterPath="$PROJECT_DIR$/src/Controller/SeatsSpinController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TablesChangeController.java" afterPath="$PROJECT_DIR$/src/Controller/TablesChangeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TablesController.java" afterPath="$PROJECT_DIR$/src/Controller/TablesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Carta.java" afterPath="$PROJECT_DIR$/src/Model/Carta.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/CartaSelection.java" afterPath="$PROJECT_DIR$/src/Model/CartaSelection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ConfigJson.java" afterPath="$PROJECT_DIR$/src/Model/ConfigJson.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/DatabaseConector.java" afterPath="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,56 +35,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5557#5558#0" expanded="true" />
-                <element signature="e#5601#5602#0" expanded="true" />
-                <element signature="e#6962#6963#0" expanded="true" />
-                <element signature="e#7013#7014#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/MenuView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2684">
-              <caret line="133" column="46" lean-forward="false" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
-              <folding>
-                <marker date="1525378458729" expanded="true" signature="3376:3565" ph="{...}" />
-                <marker date="1525378458729" expanded="true" signature="3596:4587" ph="{...}" />
-                <marker date="1525378458729" expanded="false" signature="4625:4636" ph=" { " />
-                <marker date="1525378458729" expanded="false" signature="4673:4679" ph=" }" />
-                <marker date="1525378458729" expanded="true" signature="4730:5861" ph="{...}" />
-                <marker date="1525378458729" expanded="true" signature="5908:7126" ph="{...}" />
-                <marker date="1525378458729" expanded="true" signature="7174:7657" ph="{...}" />
-                <marker date="1525378458729" expanded="false" signature="7697:7708" ph=" { " />
-                <marker date="1525378458729" expanded="false" signature="7752:7758" ph=" }" />
-                <marker date="1525378458729" expanded="false" signature="7795:7806" ph=" { " />
-                <marker date="1525378458729" expanded="false" signature="7832:7838" ph=" }" />
-                <marker date="1525378458729" expanded="false" signature="7878:7889" ph=" { " />
-                <marker date="1525378458729" expanded="false" signature="7935:7941" ph=" }" />
-                <marker date="1525378458729" expanded="false" signature="7977:7988" ph=" { " />
-                <marker date="1525378458729" expanded="false" signature="8014:8020" ph=" }" />
-                <marker date="1525378458729" expanded="false" signature="8057:8068" ph=" { " />
-                <marker date="1525378458729" expanded="false" signature="8095:8101" ph=" }" />
-                <marker date="1525378458729" expanded="false" signature="8138:8149" ph=" { " />
-                <marker date="1525378458729" expanded="false" signature="8176:8182" ph=" }" />
-                <marker date="1525378458729" expanded="true" signature="8223:10361" ph="{...}" />
-                <marker date="1525378458729" expanded="true" signature="10393:10619" ph="{...}" />
-                <marker date="1525378458729" expanded="true" signature="10626:10771" ph="/**...*/" />
-                <marker date="1525378458729" expanded="true" signature="10880:11154" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OrdersControllers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/OrdersControllers.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,16 +49,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrdersView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/OrdersView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="29" column="67" lean-forward="false" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/MenuController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,38 +56,6 @@
               <caret line="127" column="69" lean-forward="false" selection-start-line="127" selection-start-column="69" selection-end-line="127" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseConector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9580">
-              <caret line="461" column="24" lean-forward="false" selection-start-line="461" selection-start-column="24" selection-end-line="461" selection-end-column="24" />
-              <folding>
-                <marker date="1525378458725" expanded="true" signature="1238:1259" ph="SELECT * FRO... Reserva" />
-                <marker date="1525378458725" expanded="true" signature="2166:2185" ph="SELECT * FRO... Carta" />
-                <marker date="1525378458725" expanded="true" signature="3679:3698" ph="SELECT * FRO... Taula" />
-                <marker date="1525378458725" expanded="true" signature="4622:4643" ph="SELECT * FRO... Reserva" />
-                <marker date="1525378458725" expanded="true" signature="5579:5631" ph="UPDATE Reser... " />
-                <marker date="1525378458725" expanded="true" signature="6193:6274" ph="INSERT INTO Carta... " />
-                <marker date="1525378458725" expanded="true" signature="6979:7028" ph="UPDATE Carta... " />
-                <marker date="1525378458725" expanded="true" signature="7586:7624" ph="DELETE FROM " />
-                <marker date="1525378458725" expanded="true" signature="8128:8164" ph="DELETE FROM " />
-                <marker date="1525378458725" expanded="true" signature="8667:8719" ph="INSERT INTO Taula... " />
-                <marker date="1525378458725" expanded="true" signature="9386:9434" ph="SELECT * FRO... Carta" />
-                <marker date="1525378458725" expanded="true" signature="10495:10545" ph="SELECT * FRO... Carta" />
-                <marker date="1525378458725" expanded="true" signature="11493:11529" ph="DELETE FROM " />
-                <marker date="1525378458725" expanded="true" signature="12040:12106" ph="SELECT COUNT... Reserva" />
-                <marker date="1525378458725" expanded="true" signature="12979:13017" ph="DELETE FROM " />
-                <marker date="1525378458725" expanded="true" signature="13614:13731" ph="SELECT id_ta... Taula" />
-                <marker date="1525378458725" expanded="true" signature="14330:14381" ph="SELECT data_... Reserva" />
-                <marker date="1525378458725" expanded="true" signature="15870:16000" ph="INSERT INTO Reserva... " />
-                <marker date="1525378458725" expanded="true" signature="16835:16875" ph="SELECT * FRO... Comanda" />
-                <marker date="1525378458725" expanded="true" signature="17589:17653" ph="INSERT INTO Comanda... " />
-                <marker date="1525378458725" expanded="true" signature="18271:18379" ph="SELECT SUM(p... Comanda" />
               </folding>
             </state>
           </provider>
@@ -182,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TablesController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TablesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="410">
@@ -190,6 +95,69 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseConector.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1525384838213" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
+                <marker date="1525384838213" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
+                <marker date="1525384838213" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
+                <marker date="1525384838213" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
+                <marker date="1525384838213" expanded="true" signature="6138:6190" ph="UPDATE Reser... " />
+                <marker date="1525384838213" expanded="true" signature="6752:6833" ph="INSERT INTO Carta... " />
+                <marker date="1525384838213" expanded="true" signature="7538:7587" ph="UPDATE Carta... " />
+                <marker date="1525384838213" expanded="true" signature="8145:8183" ph="DELETE FROM " />
+                <marker date="1525384838213" expanded="true" signature="8687:8723" ph="DELETE FROM " />
+                <marker date="1525384838213" expanded="true" signature="9226:9278" ph="INSERT INTO Taula... " />
+                <marker date="1525384838213" expanded="true" signature="9945:9993" ph="SELECT * FRO... Carta" />
+                <marker date="1525384838213" expanded="true" signature="11054:11104" ph="SELECT * FRO... Carta" />
+                <marker date="1525384838213" expanded="true" signature="12052:12088" ph="DELETE FROM " />
+                <marker date="1525384838213" expanded="true" signature="12599:12665" ph="SELECT COUNT... Reserva" />
+                <marker date="1525384838213" expanded="true" signature="13538:13576" ph="DELETE FROM " />
+                <marker date="1525384838213" expanded="true" signature="14173:14290" ph="SELECT id_ta... Taula" />
+                <marker date="1525384838213" expanded="true" signature="14889:14940" ph="SELECT data_... Reserva" />
+                <marker date="1525384838213" expanded="true" signature="16429:16559" ph="INSERT INTO Reserva... " />
+                <marker date="1525384838213" expanded="true" signature="17394:17434" ph="SELECT * FRO... Comanda" />
+                <marker date="1525384838213" expanded="true" signature="18148:18212" ph="INSERT INTO Comanda... " />
+                <marker date="1525384838213" expanded="true" signature="18830:18938" ph="SELECT SUM(p... Comanda" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Carta.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Carta.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="100" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CartaSelection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/CartaSelection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="66" column="7" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigJson.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/ConfigJson.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -241,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/Network/SocketThread.java" />
         <option value="$PROJECT_DIR$/src/Model/JsonReader.java" />
         <option value="$PROJECT_DIR$/src/Network/DedicatedReservesThread.java" />
-        <option value="$PROJECT_DIR$/src/Model/ConfigJson.java" />
         <option value="$PROJECT_DIR$/src/View/ManageTablesView.java" />
         <option value="$PROJECT_DIR$/src/Controller/MainControllerResize.java" />
         <option value="$PROJECT_DIR$/src/Model/DDBBConfiguration.java" />
@@ -250,7 +217,6 @@
         <option value="$PROJECT_DIR$/src/View/OrdersView.java" />
         <option value="$PROJECT_DIR$/src/Model/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/Controller/TopFiveGraphController.java" />
-        <option value="$PROJECT_DIR$/src/Model/Carta.java" />
         <option value="$PROJECT_DIR$/src/View/TopFiveWeeklyGraph.kt" />
         <option value="$USER_HOME$/vagrant/Homestead/Homestead.yaml" />
         <option value="$PROJECT_DIR$/src/Network/ReservesSocketThread.java" />
@@ -260,7 +226,6 @@
         <option value="$PROJECT_DIR$/resources/bbdd.sql" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Network/DedicatedRecepcioThread.java" />
-        <option value="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
         <option value="$PROJECT_DIR$/src/View/MainView.java" />
         <option value="$PROJECT_DIR$/src/View/TablesView.java" />
         <option value="$PROJECT_DIR$/src/View/TopFiveWeeklyGraphView.java" />
@@ -273,6 +238,10 @@
         <option value="$PROJECT_DIR$/src/Controller/SeatsSpinController.java" />
         <option value="$PROJECT_DIR$/src/Controller/TablesChangeController.java" />
         <option value="$PROJECT_DIR$/src/Controller/TablesController.java" />
+        <option value="$PROJECT_DIR$/src/Model/Carta.java" />
+        <option value="$PROJECT_DIR$/src/Model/CartaSelection.java" />
+        <option value="$PROJECT_DIR$/src/Model/ConfigJson.java" />
+        <option value="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
       </list>
     </option>
   </component>
@@ -740,7 +709,7 @@
       <workItem from="1524592544656" duration="9658000" />
       <workItem from="1525242915518" duration="1867000" />
       <workItem from="1525297483341" duration="897000" />
-      <workItem from="1525377752446" duration="4323000" />
+      <workItem from="1525377752446" duration="4862000" />
     </task>
     <task id="LOCAL-00001" summary="Pando version">
       <created>1522615397521</created>
@@ -875,11 +844,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524605555934</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="controllers commented">
+      <created>1525384318626</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1525384318626</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17286000" />
+    <option name="totallyTimeSpent" value="17825000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -979,20 +955,21 @@
     <MESSAGE value="vista principal comentada" />
     <MESSAGE value="vistes millorades amb gridbags" />
     <MESSAGE value="  ." />
-    <option name="LAST_COMMIT_MESSAGE" value="  ." />
+    <MESSAGE value="controllers commented" />
+    <option name="LAST_COMMIT_MESSAGE" value="controllers commented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Model/ConfigJson.java</url>
-          <line>14</line>
+          <line>20</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Model/ConfigJson.java</url>
-          <line>28</line>
+          <line>34</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -1006,13 +983,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/Carta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Taula.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1087,27 +1057,28 @@
         <state relative-caret-position="1155">
           <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
-            <marker date="1525378458725" expanded="true" signature="1238:1259" ph="SELECT * FRO... Reserva" />
-            <marker date="1525378458725" expanded="true" signature="2166:2185" ph="SELECT * FRO... Carta" />
-            <marker date="1525378458725" expanded="true" signature="3679:3698" ph="SELECT * FRO... Taula" />
-            <marker date="1525378458725" expanded="true" signature="4622:4643" ph="SELECT * FRO... Reserva" />
-            <marker date="1525378458725" expanded="true" signature="5579:5631" ph="UPDATE Reser... " />
-            <marker date="1525378458725" expanded="true" signature="6193:6274" ph="INSERT INTO Carta... " />
-            <marker date="1525378458725" expanded="true" signature="6979:7028" ph="UPDATE Carta... " />
-            <marker date="1525378458725" expanded="true" signature="7586:7624" ph="DELETE FROM " />
-            <marker date="1525378458725" expanded="true" signature="8128:8164" ph="DELETE FROM " />
-            <marker date="1525378458725" expanded="true" signature="8667:8719" ph="INSERT INTO Taula... " />
-            <marker date="1525378458725" expanded="true" signature="9386:9434" ph="SELECT * FRO... Carta" />
-            <marker date="1525378458725" expanded="true" signature="10495:10545" ph="SELECT * FRO... Carta" />
-            <marker date="1525378458725" expanded="true" signature="11493:11529" ph="DELETE FROM " />
-            <marker date="1525378458725" expanded="true" signature="12040:12106" ph="SELECT COUNT... Reserva" />
-            <marker date="1525378458725" expanded="true" signature="12979:13017" ph="DELETE FROM " />
-            <marker date="1525378458725" expanded="true" signature="13614:13731" ph="SELECT id_ta... Taula" />
-            <marker date="1525378458725" expanded="true" signature="14330:14381" ph="SELECT data_... Reserva" />
-            <marker date="1525378458725" expanded="true" signature="15870:16000" ph="INSERT INTO Reserva... " />
-            <marker date="1525378458725" expanded="true" signature="16835:16875" ph="SELECT * FRO... Comanda" />
-            <marker date="1525378458725" expanded="true" signature="17589:17653" ph="INSERT INTO Comanda... " />
-            <marker date="1525378458725" expanded="true" signature="18271:18379" ph="SELECT SUM(p... Comanda" />
+            <element signature="imports" expanded="true" />
+            <marker date="1525384838213" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
+            <marker date="1525384838213" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
+            <marker date="1525384838213" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
+            <marker date="1525384838213" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
+            <marker date="1525384838213" expanded="true" signature="6138:6190" ph="UPDATE Reser... " />
+            <marker date="1525384838213" expanded="true" signature="6752:6833" ph="INSERT INTO Carta... " />
+            <marker date="1525384838213" expanded="true" signature="7538:7587" ph="UPDATE Carta... " />
+            <marker date="1525384838213" expanded="true" signature="8145:8183" ph="DELETE FROM " />
+            <marker date="1525384838213" expanded="true" signature="8687:8723" ph="DELETE FROM " />
+            <marker date="1525384838213" expanded="true" signature="9226:9278" ph="INSERT INTO Taula... " />
+            <marker date="1525384838213" expanded="true" signature="9945:9993" ph="SELECT * FRO... Carta" />
+            <marker date="1525384838213" expanded="true" signature="11054:11104" ph="SELECT * FRO... Carta" />
+            <marker date="1525384838213" expanded="true" signature="12052:12088" ph="DELETE FROM " />
+            <marker date="1525384838213" expanded="true" signature="12599:12665" ph="SELECT COUNT... Reserva" />
+            <marker date="1525384838213" expanded="true" signature="13538:13576" ph="DELETE FROM " />
+            <marker date="1525384838213" expanded="true" signature="14173:14290" ph="SELECT id_ta... Taula" />
+            <marker date="1525384838213" expanded="true" signature="14889:14940" ph="SELECT data_... Reserva" />
+            <marker date="1525384838213" expanded="true" signature="16429:16559" ph="INSERT INTO Reserva... " />
+            <marker date="1525384838213" expanded="true" signature="17394:17434" ph="SELECT * FRO... Comanda" />
+            <marker date="1525384838213" expanded="true" signature="18148:18212" ph="INSERT INTO Comanda... " />
+            <marker date="1525384838213" expanded="true" signature="18830:18938" ph="SELECT SUM(p... Comanda" />
           </folding>
         </state>
       </provider>
@@ -1202,14 +1173,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ConfigJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Taula.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1219,13 +1182,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/DatabaseManager.java" />
     <entry file="file://$PROJECT_DIR$/src/View/TopFiveWeeklyGraph.kt" />
-    <entry file="file://$PROJECT_DIR$/src/Model/Carta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="12" column="96" lean-forward="false" selection-start-line="12" selection-start-column="96" selection-end-line="12" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TopFiveGraphController.java" />
     <entry file="file://$PROJECT_DIR$/src/Network/ReservesSocketThread.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1419,36 +1375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9580">
-          <caret line="461" column="24" lean-forward="false" selection-start-line="461" selection-start-column="24" selection-end-line="461" selection-end-column="24" />
-          <folding>
-            <marker date="1525378458725" expanded="true" signature="1238:1259" ph="SELECT * FRO... Reserva" />
-            <marker date="1525378458725" expanded="true" signature="2166:2185" ph="SELECT * FRO... Carta" />
-            <marker date="1525378458725" expanded="true" signature="3679:3698" ph="SELECT * FRO... Taula" />
-            <marker date="1525378458725" expanded="true" signature="4622:4643" ph="SELECT * FRO... Reserva" />
-            <marker date="1525378458725" expanded="true" signature="5579:5631" ph="UPDATE Reser... " />
-            <marker date="1525378458725" expanded="true" signature="6193:6274" ph="INSERT INTO Carta... " />
-            <marker date="1525378458725" expanded="true" signature="6979:7028" ph="UPDATE Carta... " />
-            <marker date="1525378458725" expanded="true" signature="7586:7624" ph="DELETE FROM " />
-            <marker date="1525378458725" expanded="true" signature="8128:8164" ph="DELETE FROM " />
-            <marker date="1525378458725" expanded="true" signature="8667:8719" ph="INSERT INTO Taula... " />
-            <marker date="1525378458725" expanded="true" signature="9386:9434" ph="SELECT * FRO... Carta" />
-            <marker date="1525378458725" expanded="true" signature="10495:10545" ph="SELECT * FRO... Carta" />
-            <marker date="1525378458725" expanded="true" signature="11493:11529" ph="DELETE FROM " />
-            <marker date="1525378458725" expanded="true" signature="12040:12106" ph="SELECT COUNT... Reserva" />
-            <marker date="1525378458725" expanded="true" signature="12979:13017" ph="DELETE FROM " />
-            <marker date="1525378458725" expanded="true" signature="13614:13731" ph="SELECT id_ta... Taula" />
-            <marker date="1525378458725" expanded="true" signature="14330:14381" ph="SELECT data_... Reserva" />
-            <marker date="1525378458725" expanded="true" signature="15870:16000" ph="INSERT INTO Reserva... " />
-            <marker date="1525378458725" expanded="true" signature="16835:16875" ph="SELECT * FRO... Comanda" />
-            <marker date="1525378458725" expanded="true" signature="17589:17653" ph="INSERT INTO Comanda... " />
-            <marker date="1525378458725" expanded="true" signature="18271:18379" ph="SELECT SUM(p... Comanda" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
@@ -1523,6 +1449,61 @@
           <caret line="108" column="31" lean-forward="false" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Carta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="100" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/CartaSelection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="66" column="7" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ConfigJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1525384838213" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
+            <marker date="1525384838213" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
+            <marker date="1525384838213" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
+            <marker date="1525384838213" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
+            <marker date="1525384838213" expanded="true" signature="6138:6190" ph="UPDATE Reser... " />
+            <marker date="1525384838213" expanded="true" signature="6752:6833" ph="INSERT INTO Carta... " />
+            <marker date="1525384838213" expanded="true" signature="7538:7587" ph="UPDATE Carta... " />
+            <marker date="1525384838213" expanded="true" signature="8145:8183" ph="DELETE FROM " />
+            <marker date="1525384838213" expanded="true" signature="8687:8723" ph="DELETE FROM " />
+            <marker date="1525384838213" expanded="true" signature="9226:9278" ph="INSERT INTO Taula... " />
+            <marker date="1525384838213" expanded="true" signature="9945:9993" ph="SELECT * FRO... Carta" />
+            <marker date="1525384838213" expanded="true" signature="11054:11104" ph="SELECT * FRO... Carta" />
+            <marker date="1525384838213" expanded="true" signature="12052:12088" ph="DELETE FROM " />
+            <marker date="1525384838213" expanded="true" signature="12599:12665" ph="SELECT COUNT... Reserva" />
+            <marker date="1525384838213" expanded="true" signature="13538:13576" ph="DELETE FROM " />
+            <marker date="1525384838213" expanded="true" signature="14173:14290" ph="SELECT id_ta... Taula" />
+            <marker date="1525384838213" expanded="true" signature="14889:14940" ph="SELECT data_... Reserva" />
+            <marker date="1525384838213" expanded="true" signature="16429:16559" ph="INSERT INTO Reserva... " />
+            <marker date="1525384838213" expanded="true" signature="17394:17434" ph="SELECT * FRO... Comanda" />
+            <marker date="1525384838213" expanded="true" signature="18148:18212" ph="INSERT INTO Comanda... " />
+            <marker date="1525384838213" expanded="true" signature="18830:18938" ph="SELECT SUM(p... Comanda" />
           </folding>
         </state>
       </provider>

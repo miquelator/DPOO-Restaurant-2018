@@ -1,8 +1,15 @@
+// packages where it bellongs
 package Model;
 
+// import java classes
 import java.io.Serializable;
 
+/***
+ * This class contains the carta info
+ */
 public class Carta implements Serializable{
+
+    // attributes
     private int idPlat;
     private String nomPlat;
     private String tipus;
@@ -30,7 +37,7 @@ public class Carta implements Serializable{
         this.totals = totals;
     }
 
-    //Getters i Setters
+    //Getters and Setters
 
     public int getIdPlat() {
         return idPlat;
@@ -88,6 +95,10 @@ public class Carta implements Serializable{
         this.totals = totals;
     }
 
+    /***
+     * Method that overrides supper to string to create a custom string
+     * @return String representation of the class
+     */
     @Override
     public String toString() {
         return "Carta{" +

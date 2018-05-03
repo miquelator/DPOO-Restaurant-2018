@@ -1,6 +1,12 @@
+// package where it belongs
 package Model;
 
+/***
+ * This class has the information of config.json file
+ */
 public class ConfigJson {
+
+    // attributes
     private int port_server;
     private String db_name;
     private String db_user;

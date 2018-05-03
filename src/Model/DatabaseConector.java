@@ -1,13 +1,24 @@
+// package where it bellongs
 package Model;
 
+// import java classes
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/***
+ * This class has and manage the information with the database
+ */
 public class DatabaseConector {
+
+    // atributes
     private Connection connection;
     private ConfigJson configJson;
 
+    /***
+     * Constructor of the class
+     * @param configJson ConfigJson variable with the information of the JSON file
+     */
     public DatabaseConector(ConfigJson configJson) {
         this.configJson = configJson;
     }
@@ -92,6 +103,11 @@ public class DatabaseConector {
     }
 
 
+    /***
+     * Method that returns the name representation for a dish with a given value
+     * @param tipus integer variable with the number of the dish
+     * @return String varaible with the name representation of the dish
+     */
     private String tipusDefinition(int tipus) {
         switch (tipus){
             case 1:
@@ -103,6 +119,7 @@ public class DatabaseConector {
             case 4:
                 return "Begudes";
         }
+        // TODO: fer-ho en el default del switch?
         return null;
     }
 
