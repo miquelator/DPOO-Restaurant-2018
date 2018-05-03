@@ -534,7 +534,7 @@ public class DatabaseConector {
         if (conexio()){
             try {
 
-                String query =  "SELECT SUM(p.preu) AS total FROM Comanda, Carta WHERE Comanda.id_taula = ? AND Carta.id_plat = Comanda.id_plat";
+                String query =  "SELECT SUM(preu) AS total FROM Comanda, Carta WHERE Comanda.id_taula = ? AND Carta.id_plat = Comanda.id_plat";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setInt(1, idtaula);
                 preparedStmt.execute();

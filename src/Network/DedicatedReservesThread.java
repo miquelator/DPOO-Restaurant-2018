@@ -43,7 +43,6 @@ public class DedicatedReservesThread extends Thread {
     private void readRequest(String request) throws IOException {
         switch (request){
             case "AUTHENTICATE":
-                System.out.println("AUTHENTICATE");
                 String user = diStream.readUTF();
                 String password = diStream.readUTF();
                 idtaula = mainController.autenticar(user,password);
