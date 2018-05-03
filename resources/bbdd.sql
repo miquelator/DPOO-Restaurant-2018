@@ -39,11 +39,11 @@ CREATE TABLE Carta(
     PRIMARY KEY (id_plat)
 );
 
-
-
 CREATE TABLE Comanda(
     id_comanda INT NOT NULL AUTO_INCREMENT,
-    id_plat INT NOT NULL, id_taula INT NOT NULL,
+    id_plat INT NOT NULL,
+    id_taula INT NOT NULL,
+    quantitat_demanada INT NOT NULL,
     servit BOOL DEFAULT FALSE,
     PRIMARY KEY (id_comanda),
     FOREIGN KEY (id_taula) REFERENCES Taula(id_taula)
@@ -51,17 +51,21 @@ CREATE TABLE Comanda(
 
 SELECT * FROM Carta ORDER BY totals DESC LIMIT 5;
 
-
-
-
-
 INSERT INTO Taula (num_seients, ocupada) VALUES(4,true);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(1,'Bistec', 12.50, 20, 0 ,5);
 INSERT INTO Reserva (id_taula, nom_reserva, password_, num_comensals, data_reserva, conectat) VALUES(1, 'Angel', 'ABC123', 4, STR_TO_DATE('09-04-2018  23:11:00', '%d-%m-%Y %H:%i:%s'), false);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(4, 'Vi', 50.50, 10, 0, 9);
+INSERT INTO Comanda (id_comanda, id_plat, id_taula, quantitat_demanada,servit) VALUES (1, 4, 1, 6, false);
+INSERT INTO Comanda (id_comanda, id_plat, id_taula, quantitat_demanada,servit) VALUES (4, 6, 1, 2, true);
+
+
 SELECT * FROM Taula;
 SELECT * FROM Reserva;
 SELECT * FROM Carta;
+SELECT * FROM Comanda;
+
+SELECT preu * (SELECT quantitat_demanada FROM Comanda WHERE id_taula = 1) FROM Carta WHERE id_plat = (SELECT id_plat FROM Comanda WHERE id_taula = 1);
+SELECT ((SELECT preu FROM Carta WHERE id_plat = (SELECT id_plat FROM Comanda WHERE id_taula = 1)) * (SELECT quantitat_demanada FROM Comanda WHERE id_taula = 1)) AS Total;
 
 DELIMITER $$
 DROP EVENT IF EXISTS updateWeekly $$

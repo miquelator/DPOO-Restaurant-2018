@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.Carta;
-import Model.ConfigJson;
-import Model.DatabaseConector;
-import Model.RandomString;
+import Model.*;
 import Network.RecepcioSocketThread;
 import Network.ReservesSocketThread;
 import View.*;
@@ -27,6 +24,11 @@ public class MainController implements ActionListener{
         reservesThread.addMainController(this);
     }
 
+
+    /**
+     * Executes depending upon selected window
+     * @param e Event thrown when window is changed
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
@@ -141,10 +143,19 @@ public class MainController implements ActionListener{
     }
 
     public void pay (int id_taula){
+        databaseConector.getTotalPrice(id_taula);
         databaseConector.deleteComanda(id_taula);
     }
 
     public ArrayList<Carta> getMenu() {
          return databaseConector.getCarta();
+    }
+
+    public void getOrderStatus(int idtaula) {
+        databaseConector.getOrderStatus(idtaula);
+    }
+
+    public void saveOrder(ArrayList<CartaSelection> cartaSelection, int idtaula) {
+        databaseConector.saveOrder(cartaSelection, idtaula);
     }
 }

@@ -51,10 +51,7 @@ public class DedicatedReservesThread extends Thread {
                     doStream.writeBoolean(false);
                 }else{
                     doStream.writeBoolean(true);
-                };
-
-
-
+                }
                 break;
 
             case "SEND_COMANDA":
@@ -74,6 +71,7 @@ public class DedicatedReservesThread extends Thread {
 
             case "SHOW_STATUS":
                 System.out.println("SHOW_STATUS");
+                mainController.getOrderStatus(idtaula);
                 break;
 
             case "PAY":
@@ -84,7 +82,18 @@ public class DedicatedReservesThread extends Thread {
             case "SHOW_MENU":
                 int seleccio = diStream.readInt();
                 returnSelection(seleccio);
+                break;
 
+            case "ORDER":
+                System.out.println("Comanda de l'usuari!");
+                try {
+                    ArrayList<CartaSelection> cartaSelection = (ArrayList<CartaSelection>) oiStream.readObject();
+                    System.out.println(cartaSelection.toString());
+                    mainController.saveOrder(cartaSelection, idtaula);
+
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
                 break;
         }
     }

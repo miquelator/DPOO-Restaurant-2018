@@ -487,4 +487,67 @@ public class DatabaseConector {
         return "Error al afegir la nova reserva!";
 
     }
+
+    public void getOrderStatus(int idtaula) {
+        if (conexio()){
+            try {
+
+                String query =  "SELECT * FROM Comanda WHERE id_taula = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, idtaula);
+                preparedStmt.execute();
+
+                ResultSet rs = preparedStmt.getResultSet();
+
+                //TODO: RETORNAR L'ESTAT DE LES COMANDES DELS USUARIS.
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void getTotalPrice(int id_taula) {
+        if (conexio()){
+            try {
+                //String query =  "SELECT preu * (SELECT ) FROM Carta WHERE id_plat = (SELECT id_plat FROM Comanda WHERE id_taula = ?)";
+                String query = "";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, id_taula);
+                preparedStmt.execute();
+
+                ResultSet rs = preparedStmt.getResultSet();
+                while (rs.next()){
+                    int total = rs.getInt("Total");
+                    System.out.println("Ha de pagar un total de " + total);
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void saveOrder(ArrayList<CartaSelection> cartaSelection, int idtaula) {
+        if (conexio()){
+            try {
+                for (CartaSelection c : cartaSelection) {
+
+                        String query = "INSERT INTO Comanda (id_plat, id_taula, quantitat_demanada, servit) VALUES (?, ?, ?, ?);";
+                        PreparedStatement preparedStmt = connection.prepareStatement(query);
+                        preparedStmt.setInt(1, 1);
+                        preparedStmt.setInt(2, idtaula);
+                        preparedStmt.setInt(3, c.getUnitatsDemanades());
+                        preparedStmt.setBoolean(4, false);
+
+                        preparedStmt.execute();
+
+
+                }
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

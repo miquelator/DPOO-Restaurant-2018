@@ -9,7 +9,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-/***
+/**
  * This class MainView, crates and control the principal window of the program
  */
 public class MainView extends JFrame {
@@ -28,7 +28,8 @@ public class MainView extends JFrame {
     public final static String SHOW_TOP_FIVE = "Mostra top 5";
     public final static String EXIT = "Sortir";
 
-    /***
+    /**
+     *
      * Constructor without parameters of the class. Generates the view
      */
     public MainView() {
@@ -40,7 +41,6 @@ public class MainView extends JFrame {
         setTitle("Administrator view");
         setLocationRelativeTo(null);
         setMinimumSize(new Dimension(600, 600));
-        //TODO: Fa falta que es tanqui a la creueta?
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }

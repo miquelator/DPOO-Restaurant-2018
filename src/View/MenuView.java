@@ -16,7 +16,6 @@ import java.util.Vector;
 public class MenuView extends JFrame {
 
 
-    //TODO: ANGEL, JA VA TOT LO DE CARTA, PERO LES VISTES SON UNA MERDA, ME LES POTS ARREGLAR AL FINAL QUAN PUGUIS???
     private JTabbedPane tabbedPane;
     private JButton addDish;
     private JButton deleteDish;
@@ -25,7 +24,6 @@ public class MenuView extends JFrame {
     private JComboBox idABorrar;
     private JComboBox idStock;
     private JTextField numStock;
-    private JTableModel jTableModel;
     private JTable listOfDishes;
     private JTextField dishName;
     private JTextField dishPrice;
@@ -82,7 +80,6 @@ public class MenuView extends JFrame {
         JPanel jplInnerPanel4 = createInnerPanel(updateDishStock());
         tabbedPane.addTab("Actualitzar existències", icon, jplInnerPanel4);
 
-
         principal.add(bottom, BorderLayout.SOUTH);
         principal.add(tabbedPane, BorderLayout.CENTER);
         setContentPane(principal);
@@ -110,8 +107,7 @@ public class MenuView extends JFrame {
     }
 
     private void listDish() {
-        jTableModel = new JTableModel();
-        listOfDishes = new JTable(jTableModel);
+        listOfDishes = new JTable(new JTableModel());
         listOfDishes.getTableHeader().setReorderingAllowed(false);
         JScrollPane scrollPane = new JScrollPane(listOfDishes);
         tabbedPane.setComponentAt(1, scrollPane);
