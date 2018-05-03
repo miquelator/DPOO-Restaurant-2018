@@ -1,16 +1,24 @@
+// packacge where it belongs
 package Controller;
 
+// import our classes
 import Model.Carta;
 import Model.DatabaseConector;
 import View.MenuView;
 
+// import java classes
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/***
+ * This class controls the menu
+ */
 public class MenuController implements ActionListener {
+
+    // instance attributes
     private MenuView menuView;
     private DatabaseConector databaseConector;
     private MainController parent;
@@ -50,7 +58,14 @@ public class MenuController implements ActionListener {
         }
     }
 
+    /***
+     * This method updates the stock of the dishes
+     */
     private void updateStock() {
+
+        // updates the stock of the items and
+        // looks if the stock is bigger than zero or if it's not an integer, in that case raises and exception
+        // and shows error message on input data
         try {
             int newStock = Integer.valueOf(menuView.getUpdatedStock());
             if (newStock < 0){
@@ -68,8 +83,11 @@ public class MenuController implements ActionListener {
         }
     }
 
+
     private void deleteDish() {
         //TODO: QUAN ESTIGUIN INCLOSES LES COMANDES A LA BBDD COMPROVAR AL ESBORRAR PLAT
+
+
         if(databaseConector.deleteDish(menuView.getDeletedDishName())){
             menuView.confirmEntry(5);
             ArrayList<Carta> plats = databaseConector.getCarta();
@@ -84,6 +102,9 @@ public class MenuController implements ActionListener {
     }
 
 
+    /***
+     * Method that adds a dish from window settings
+     */
     private void addDish() {
         ArrayList<Carta> aux = databaseConector.getCarta();
         boolean found = false;
@@ -104,6 +125,7 @@ public class MenuController implements ActionListener {
                     double priceAux = Double.valueOf(menuView.getNewDishPrice());
                     int stockAux = Integer.valueOf(menuView.getNewDishStock());
 
+                    // if there isn't any error of entry add the dish
                     databaseConector.addDish(menuView.getNewDishName(), priceAux, stockAux);
                     menuView.confirmEntry(2);
                 }catch (NumberFormatException e1){

@@ -1,13 +1,19 @@
+// package where it bellongs
 package Controller;
 
+// import our classes
 import Model.DatabaseConector;
 import Model.Taula;
 import View.TablesView;
 
+// import java classes
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.util.ArrayList;
 
+/***
+ * This class controls the changing of tables view
+ */
 public class TablesChangeController implements ChangeListener {
     private TablesView tablesView;
     private DatabaseConector databaseConector;

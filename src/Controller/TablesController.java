@@ -1,14 +1,22 @@
+// package where it belongs
 package Controller;
 
+// import our classes
 import Model.DatabaseConector;
 import Model.Taula;
 import View.TablesView;
 
+// import java classes
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/***
+ * Class that manages the tables view and data
+ */
 public class TablesController implements ActionListener {
+
+    // instance attributes
     private TablesView tablesView;
     private DatabaseConector databaseConector;
     private MainController parent;
@@ -45,7 +53,13 @@ public class TablesController implements ActionListener {
         }
     }
 
+    /***
+     * Method that deletes a selected table
+     */
     private void deleteTable() {
+        //TODO:CANVIAR PER TRY/CATCH?
+
+        // delates a table if there is a error shows the error
         if (tablesView.getTableToDelete() != -1){
             if (databaseConector.getTableReserve(tablesView.getTableToDelete())) {
                 if (databaseConector.deleteTable(tablesView.getTableToDelete())) {
@@ -78,6 +92,9 @@ public class TablesController implements ActionListener {
 
     }
 
+    /***
+     * Method that updates the delate tables
+     */
     private void updateDeleteTables() {
         ArrayList<Taula> auxDelete = databaseConector.getTaula();
         int size = auxDelete.size();
@@ -88,6 +105,9 @@ public class TablesController implements ActionListener {
         tablesView.loadTablesID(ID);
     }
 
+    /***
+     * Method that adds a table
+     */
     private void addTable() {
         int numSeients = (int) tablesView.getTableToAdd();
 

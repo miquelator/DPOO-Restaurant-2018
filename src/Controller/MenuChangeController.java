@@ -1,16 +1,21 @@
 package Controller;
 
+// import our classes
 import Model.Carta;
 import Model.DatabaseConector;
 import View.MenuView;
+
+// import java classes
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.util.ArrayList;
 
-/**
- * Created by oriol on 3/4/2018.
+/***
+ * This class manages the menu
  */
 public class MenuChangeController implements ChangeListener{
+
+    // instance attributes
     private MenuView menuView;
     private DatabaseConector databaseConector;
 
