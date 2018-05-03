@@ -183,6 +183,8 @@ public class DatabaseConector {
     }
 
 
+    // TODO: Pando guarro comenta el codi :D, ja ho fare jo ...
+
 
     public boolean updateConectedReserva(boolean b, int id) {
         if (conexio()){

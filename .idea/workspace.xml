@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Carta.java" afterPath="$PROJECT_DIR$/src/Model/Carta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/CartaSelection.java" afterPath="$PROJECT_DIR$/src/Model/CartaSelection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ConfigJson.java" afterPath="$PROJECT_DIR$/src/Model/ConfigJson.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/DatabaseConector.java" afterPath="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -102,31 +99,31 @@
       <file leaf-file-name="DatabaseConector.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="185" column="63" lean-forward="false" selection-start-line="185" selection-start-column="63" selection-end-line="185" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1525384838213" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
-                <marker date="1525384838213" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
-                <marker date="1525384838213" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
-                <marker date="1525384838213" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
-                <marker date="1525384838213" expanded="true" signature="6138:6190" ph="UPDATE Reser... " />
-                <marker date="1525384838213" expanded="true" signature="6752:6833" ph="INSERT INTO Carta... " />
-                <marker date="1525384838213" expanded="true" signature="7538:7587" ph="UPDATE Carta... " />
-                <marker date="1525384838213" expanded="true" signature="8145:8183" ph="DELETE FROM " />
-                <marker date="1525384838213" expanded="true" signature="8687:8723" ph="DELETE FROM " />
-                <marker date="1525384838213" expanded="true" signature="9226:9278" ph="INSERT INTO Taula... " />
-                <marker date="1525384838213" expanded="true" signature="9945:9993" ph="SELECT * FRO... Carta" />
-                <marker date="1525384838213" expanded="true" signature="11054:11104" ph="SELECT * FRO... Carta" />
-                <marker date="1525384838213" expanded="true" signature="12052:12088" ph="DELETE FROM " />
-                <marker date="1525384838213" expanded="true" signature="12599:12665" ph="SELECT COUNT... Reserva" />
-                <marker date="1525384838213" expanded="true" signature="13538:13576" ph="DELETE FROM " />
-                <marker date="1525384838213" expanded="true" signature="14173:14290" ph="SELECT id_ta... Taula" />
-                <marker date="1525384838213" expanded="true" signature="14889:14940" ph="SELECT data_... Reserva" />
-                <marker date="1525384838213" expanded="true" signature="16429:16559" ph="INSERT INTO Reserva... " />
-                <marker date="1525384838213" expanded="true" signature="17394:17434" ph="SELECT * FRO... Comanda" />
-                <marker date="1525384838213" expanded="true" signature="18148:18212" ph="INSERT INTO Comanda... " />
-                <marker date="1525384838213" expanded="true" signature="18830:18938" ph="SELECT SUM(p... Comanda" />
+                <marker date="1525384900168" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
+                <marker date="1525384900168" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
+                <marker date="1525384900168" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
+                <marker date="1525384900168" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
+                <marker date="1525384900168" expanded="true" signature="6203:6255" ph="UPDATE Reser... " />
+                <marker date="1525384900168" expanded="true" signature="6817:6898" ph="INSERT INTO Carta... " />
+                <marker date="1525384900168" expanded="true" signature="7603:7652" ph="UPDATE Carta... " />
+                <marker date="1525384900168" expanded="true" signature="8210:8248" ph="DELETE FROM " />
+                <marker date="1525384900168" expanded="true" signature="8752:8788" ph="DELETE FROM " />
+                <marker date="1525384900168" expanded="true" signature="9291:9343" ph="INSERT INTO Taula... " />
+                <marker date="1525384900168" expanded="true" signature="10010:10058" ph="SELECT * FRO... Carta" />
+                <marker date="1525384900168" expanded="true" signature="11119:11169" ph="SELECT * FRO... Carta" />
+                <marker date="1525384900168" expanded="true" signature="12117:12153" ph="DELETE FROM " />
+                <marker date="1525384900168" expanded="true" signature="12664:12730" ph="SELECT COUNT... Reserva" />
+                <marker date="1525384900168" expanded="true" signature="13603:13641" ph="DELETE FROM " />
+                <marker date="1525384900168" expanded="true" signature="14238:14355" ph="SELECT id_ta... Taula" />
+                <marker date="1525384900168" expanded="true" signature="14954:15005" ph="SELECT data_... Reserva" />
+                <marker date="1525384900168" expanded="true" signature="16494:16624" ph="INSERT INTO Reserva... " />
+                <marker date="1525384900168" expanded="true" signature="17459:17499" ph="SELECT * FRO... Comanda" />
+                <marker date="1525384900168" expanded="true" signature="18213:18277" ph="INSERT INTO Comanda... " />
+                <marker date="1525384900168" expanded="true" signature="18895:19003" ph="SELECT SUM(p... Comanda" />
               </folding>
             </state>
           </provider>
@@ -709,7 +706,7 @@
       <workItem from="1524592544656" duration="9658000" />
       <workItem from="1525242915518" duration="1867000" />
       <workItem from="1525297483341" duration="897000" />
-      <workItem from="1525377752446" duration="4862000" />
+      <workItem from="1525377752446" duration="4921000" />
     </task>
     <task id="LOCAL-00001" summary="Pando version">
       <created>1522615397521</created>
@@ -851,11 +848,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525384318626</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="model commented">
+      <created>1525384853913</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1525384853913</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17825000" />
+    <option name="totallyTimeSpent" value="17884000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -956,7 +960,8 @@
     <MESSAGE value="vistes millorades amb gridbags" />
     <MESSAGE value="  ." />
     <MESSAGE value="controllers commented" />
-    <option name="LAST_COMMIT_MESSAGE" value="controllers commented" />
+    <MESSAGE value="model commented" />
+    <option name="LAST_COMMIT_MESSAGE" value="model commented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1058,27 +1063,27 @@
           <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1525384838213" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
-            <marker date="1525384838213" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
-            <marker date="1525384838213" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
-            <marker date="1525384838213" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
-            <marker date="1525384838213" expanded="true" signature="6138:6190" ph="UPDATE Reser... " />
-            <marker date="1525384838213" expanded="true" signature="6752:6833" ph="INSERT INTO Carta... " />
-            <marker date="1525384838213" expanded="true" signature="7538:7587" ph="UPDATE Carta... " />
-            <marker date="1525384838213" expanded="true" signature="8145:8183" ph="DELETE FROM " />
-            <marker date="1525384838213" expanded="true" signature="8687:8723" ph="DELETE FROM " />
-            <marker date="1525384838213" expanded="true" signature="9226:9278" ph="INSERT INTO Taula... " />
-            <marker date="1525384838213" expanded="true" signature="9945:9993" ph="SELECT * FRO... Carta" />
-            <marker date="1525384838213" expanded="true" signature="11054:11104" ph="SELECT * FRO... Carta" />
-            <marker date="1525384838213" expanded="true" signature="12052:12088" ph="DELETE FROM " />
-            <marker date="1525384838213" expanded="true" signature="12599:12665" ph="SELECT COUNT... Reserva" />
-            <marker date="1525384838213" expanded="true" signature="13538:13576" ph="DELETE FROM " />
-            <marker date="1525384838213" expanded="true" signature="14173:14290" ph="SELECT id_ta... Taula" />
-            <marker date="1525384838213" expanded="true" signature="14889:14940" ph="SELECT data_... Reserva" />
-            <marker date="1525384838213" expanded="true" signature="16429:16559" ph="INSERT INTO Reserva... " />
-            <marker date="1525384838213" expanded="true" signature="17394:17434" ph="SELECT * FRO... Comanda" />
-            <marker date="1525384838213" expanded="true" signature="18148:18212" ph="INSERT INTO Comanda... " />
-            <marker date="1525384838213" expanded="true" signature="18830:18938" ph="SELECT SUM(p... Comanda" />
+            <marker date="1525384900168" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
+            <marker date="1525384900168" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
+            <marker date="1525384900168" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
+            <marker date="1525384900168" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
+            <marker date="1525384900168" expanded="true" signature="6203:6255" ph="UPDATE Reser... " />
+            <marker date="1525384900168" expanded="true" signature="6817:6898" ph="INSERT INTO Carta... " />
+            <marker date="1525384900168" expanded="true" signature="7603:7652" ph="UPDATE Carta... " />
+            <marker date="1525384900168" expanded="true" signature="8210:8248" ph="DELETE FROM " />
+            <marker date="1525384900168" expanded="true" signature="8752:8788" ph="DELETE FROM " />
+            <marker date="1525384900168" expanded="true" signature="9291:9343" ph="INSERT INTO Taula... " />
+            <marker date="1525384900168" expanded="true" signature="10010:10058" ph="SELECT * FRO... Carta" />
+            <marker date="1525384900168" expanded="true" signature="11119:11169" ph="SELECT * FRO... Carta" />
+            <marker date="1525384900168" expanded="true" signature="12117:12153" ph="DELETE FROM " />
+            <marker date="1525384900168" expanded="true" signature="12664:12730" ph="SELECT COUNT... Reserva" />
+            <marker date="1525384900168" expanded="true" signature="13603:13641" ph="DELETE FROM " />
+            <marker date="1525384900168" expanded="true" signature="14238:14355" ph="SELECT id_ta... Taula" />
+            <marker date="1525384900168" expanded="true" signature="14954:15005" ph="SELECT data_... Reserva" />
+            <marker date="1525384900168" expanded="true" signature="16494:16624" ph="INSERT INTO Reserva... " />
+            <marker date="1525384900168" expanded="true" signature="17459:17499" ph="SELECT * FRO... Comanda" />
+            <marker date="1525384900168" expanded="true" signature="18213:18277" ph="INSERT INTO Comanda... " />
+            <marker date="1525384900168" expanded="true" signature="18895:19003" ph="SELECT SUM(p... Comanda" />
           </folding>
         </state>
       </provider>
@@ -1479,31 +1484,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+        <state relative-caret-position="528">
+          <caret line="185" column="63" lean-forward="false" selection-start-line="185" selection-start-column="63" selection-end-line="185" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1525384838213" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
-            <marker date="1525384838213" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
-            <marker date="1525384838213" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
-            <marker date="1525384838213" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
-            <marker date="1525384838213" expanded="true" signature="6138:6190" ph="UPDATE Reser... " />
-            <marker date="1525384838213" expanded="true" signature="6752:6833" ph="INSERT INTO Carta... " />
-            <marker date="1525384838213" expanded="true" signature="7538:7587" ph="UPDATE Carta... " />
-            <marker date="1525384838213" expanded="true" signature="8145:8183" ph="DELETE FROM " />
-            <marker date="1525384838213" expanded="true" signature="8687:8723" ph="DELETE FROM " />
-            <marker date="1525384838213" expanded="true" signature="9226:9278" ph="INSERT INTO Taula... " />
-            <marker date="1525384838213" expanded="true" signature="9945:9993" ph="SELECT * FRO... Carta" />
-            <marker date="1525384838213" expanded="true" signature="11054:11104" ph="SELECT * FRO... Carta" />
-            <marker date="1525384838213" expanded="true" signature="12052:12088" ph="DELETE FROM " />
-            <marker date="1525384838213" expanded="true" signature="12599:12665" ph="SELECT COUNT... Reserva" />
-            <marker date="1525384838213" expanded="true" signature="13538:13576" ph="DELETE FROM " />
-            <marker date="1525384838213" expanded="true" signature="14173:14290" ph="SELECT id_ta... Taula" />
-            <marker date="1525384838213" expanded="true" signature="14889:14940" ph="SELECT data_... Reserva" />
-            <marker date="1525384838213" expanded="true" signature="16429:16559" ph="INSERT INTO Reserva... " />
-            <marker date="1525384838213" expanded="true" signature="17394:17434" ph="SELECT * FRO... Comanda" />
-            <marker date="1525384838213" expanded="true" signature="18148:18212" ph="INSERT INTO Comanda... " />
-            <marker date="1525384838213" expanded="true" signature="18830:18938" ph="SELECT SUM(p... Comanda" />
+            <marker date="1525384900168" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
+            <marker date="1525384900168" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
+            <marker date="1525384900168" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
+            <marker date="1525384900168" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
+            <marker date="1525384900168" expanded="true" signature="6203:6255" ph="UPDATE Reser... " />
+            <marker date="1525384900168" expanded="true" signature="6817:6898" ph="INSERT INTO Carta... " />
+            <marker date="1525384900168" expanded="true" signature="7603:7652" ph="UPDATE Carta... " />
+            <marker date="1525384900168" expanded="true" signature="8210:8248" ph="DELETE FROM " />
+            <marker date="1525384900168" expanded="true" signature="8752:8788" ph="DELETE FROM " />
+            <marker date="1525384900168" expanded="true" signature="9291:9343" ph="INSERT INTO Taula... " />
+            <marker date="1525384900168" expanded="true" signature="10010:10058" ph="SELECT * FRO... Carta" />
+            <marker date="1525384900168" expanded="true" signature="11119:11169" ph="SELECT * FRO... Carta" />
+            <marker date="1525384900168" expanded="true" signature="12117:12153" ph="DELETE FROM " />
+            <marker date="1525384900168" expanded="true" signature="12664:12730" ph="SELECT COUNT... Reserva" />
+            <marker date="1525384900168" expanded="true" signature="13603:13641" ph="DELETE FROM " />
+            <marker date="1525384900168" expanded="true" signature="14238:14355" ph="SELECT id_ta... Taula" />
+            <marker date="1525384900168" expanded="true" signature="14954:15005" ph="SELECT data_... Reserva" />
+            <marker date="1525384900168" expanded="true" signature="16494:16624" ph="INSERT INTO Reserva... " />
+            <marker date="1525384900168" expanded="true" signature="17459:17499" ph="SELECT * FRO... Comanda" />
+            <marker date="1525384900168" expanded="true" signature="18213:18277" ph="INSERT INTO Comanda... " />
+            <marker date="1525384900168" expanded="true" signature="18895:19003" ph="SELECT SUM(p... Comanda" />
           </folding>
         </state>
       </provider>
