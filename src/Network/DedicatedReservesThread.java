@@ -75,7 +75,8 @@ public class DedicatedReservesThread extends Thread {
 
             case "PAY":
                 System.out.println("PAY");
-                mainController.pay(idtaula);
+                double totalPagar = mainController.pay(idtaula);
+                doStream.writeDouble(totalPagar);
                 break;
 
             case "SHOW_MENU":

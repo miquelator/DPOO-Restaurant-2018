@@ -197,10 +197,11 @@ public class MainController implements ActionListener{
     }
 
 
-    public void pay (int id_taula){
+    public double pay (int id_taula){
         // TODO: No hauria de retornar algo?
-        databaseConector.getTotalPrice(id_taula);
+        double totalPagar = databaseConector.getTotalPrice(id_taula);
         databaseConector.deleteComanda(id_taula);
+        return totalPagar;
     }
 
     /***

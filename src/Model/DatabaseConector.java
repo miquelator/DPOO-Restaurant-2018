@@ -529,13 +529,25 @@ public class DatabaseConector {
     public void saveOrder(ArrayList<CartaSelection> cartaSelection, int idtaula) {
         if (conexio()){
             try {
+
+                String query =  "SELECT id_plat FROM Carta WHERE nom_plat = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setString(1, cartaSelection.get(0).getNomPlat());
+                preparedStmt.execute();
+
+                ResultSet rs = preparedStmt.getResultSet();
+                int id = 0;
+                while (rs.next()) {
+                    System.out.println(rs.getInt("id_plat"));
+                    id = rs.getInt("id_plat");
+                }
                 for (CartaSelection c : cartaSelection) {
 
                     for (int i = 0; i < c.getUnitatsDemanades(); i++){
 
-                        String query = "INSERT INTO Comanda (id_plat, id_taula, servit) VALUES (?, ?, ?);";
-                        PreparedStatement preparedStmt = connection.prepareStatement(query);
-                        preparedStmt.setInt(1, 1);
+                        query = "INSERT INTO Comanda (id_plat, id_taula, servit) VALUES (?, ?, ?);";
+                        preparedStmt = connection.prepareStatement(query);
+                        preparedStmt.setInt(1, id);
                         preparedStmt.setInt(2, idtaula);
                         preparedStmt.setBoolean(3, false);
 
