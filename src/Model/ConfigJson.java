@@ -15,7 +15,7 @@ public class ConfigJson {
     private int db_port;
 
 
-    //Getters i Setters
+    //Getters and Setters
 
     int getPort_server() {
         return port_server;

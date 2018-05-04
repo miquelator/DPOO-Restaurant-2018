@@ -184,24 +184,35 @@ public class DatabaseConector {
 
 
     // TODO: Pando guarro comenta el codi :D, ja ho fare jo ...
+    // TODO: Sudar del error i no pintar el stack trace
 
-
+    /***
+     * This method updates the state of the connected value on the data base, with given values
+     * @param b boolean with the state of the connexion
+     * @param id integer with the value of the table id
+     * @return boolean with the information if the process is achieved or not
+     */
     public boolean updateConectedReserva(boolean b, int id) {
+
+        // generate connection
         if (conexio()){
             try {
 
+                // generate the new query string
                 String query = "UPDATE Reserva SET conectat = ? WHERE id_reserva = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
 
+                // fill the arguments
                 preparedStmt.setBoolean(1, b);
                 preparedStmt.setInt(2, id);
 
-
+                // send the order
                 preparedStmt.execute();
 
+                // close connection after usage
                 connection.close();
                 return true;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exception
                 e.printStackTrace();
             }
         }
@@ -209,23 +220,37 @@ public class DatabaseConector {
 
     }
 
+    /***
+     * This method adds a Dish information to the data base
+     * @param nom String with the name of the dish
+     * @param preu double with the value of the price
+     * @param quantitat integer with the quantity of available dishes
+     * @return boolean if it's achieved or not
+     */
     public boolean addDish(String nom, double preu, int quantitat) {
+
+        // stables connection, end if it's not achieved
         if (conexio()){
             try {
 
+                // prepare the mysql order
                 String query = "INSERT INTO Carta(nom_plat, preu, quantitat, semanals, totals) VALUES (?,?,?,?,?)";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                // fill the msql order
                 preparedStmt.setString(1, nom);
                 preparedStmt.setDouble(2, preu);
                 preparedStmt.setInt(3, quantitat);
                 preparedStmt.setInt(4, 0);
                 preparedStmt.setInt(5, 0);
 
+                // execute the order
                 preparedStmt.execute();
 
+                // close connection
                 connection.close();
                 return true;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manges exception
                 e.printStackTrace();
             }
         }
@@ -233,58 +258,103 @@ public class DatabaseConector {
 
     }
 
+    /***
+     * This method updates the stock of a given dish
+     * @param updatedDishName String with the name of the dish
+     * @param newStock integer with the value of the stock
+     * @return boolean if it's achieved or not
+     */
     public boolean updateStock(String updatedDishName, int newStock) {
+
+        // stables the connection with the data basel, end if not
         if (conexio()){
             try {
+
+                // create the mysql order
                 String query =  "UPDATE Carta SET quantitat = ? WHERE nom_plat = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                // fill the mysql order
                 preparedStmt.setInt(1, newStock);
                 preparedStmt.setString(2, updatedDishName);
+
+                // execute the mysql order
                 preparedStmt.execute();
 
+                // close connection
                 connection.close();
                 return true;
 
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manages exception
                 e.printStackTrace();
             }
         }
         return false;
     }
 
+
+    /***
+     * This method deletes a command form the data base with a given name
+     * @param id_taula integer with the table id to delete
+     * @return boolean if success true, otherwise false
+     */
     public boolean deleteComanda(int id_taula) {
+
+        // stables connection with the data base
         if (conexio()){
             try {
+
+                // create the mysql order
                 String query =  "DELETE FROM Comanda WHERE id_taula = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                // fill the mysql order
                 preparedStmt.setInt(1, id_taula);
+
+                // execute the order
                 preparedStmt.execute();
 
+                // close connection
                 connection.close();
                 return true;
-            } catch (SQLException e) {
+            } catch (SQLException e) { //
                 e.printStackTrace();
             }
         }
         return false;
     }
 
+    /***
+     * This method deletes a given dish from the data base
+     * @param deletedDishName String with the dish name
+     * @return boolean if success true, if not false
+     */
     public boolean deleteDish(String deletedDishName) {
+
+        // stables connection with the data base
         if (conexio()){
             try {
+
+                // creates mysql order
                 String query =  "DELETE FROM Carta WHERE nom_plat = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                // fill the mysql order
                 preparedStmt.setString(1, deletedDishName);
+
+                // execute order
                 preparedStmt.execute();
 
+                // close connection
                 connection.close();
                 return true;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manages exception
                 e.printStackTrace();
             }
         }
         return false;
     }
+
 
     public boolean addTable(int numSeients) {
         if (conexio()){
