@@ -74,7 +74,6 @@ public class DedicatedReservesThread extends Thread {
                 break;
 
             case "PAY":
-                System.out.println("PAY");
                 double totalPagar = mainController.pay(idtaula);
                 doStream.writeDouble(totalPagar);
                 break;
@@ -106,7 +105,6 @@ public class DedicatedReservesThread extends Thread {
         for (int i = 0; i < size; i++){
             if (menu.get(i).getTipus().equals(tipusDefinition(seleccio))){
                 peticio.add(menu.get(i));
-                System.out.println(menu.get(i).toString());
             }
         }
         ooStream.writeObject(peticio);
