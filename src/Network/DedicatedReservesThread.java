@@ -60,6 +60,7 @@ public class DedicatedReservesThread extends Thread {
 
                     ArrayList<CartaSelection> carta = (ArrayList<CartaSelection>) oiStream.readObject();
 
+                    System.out.println(carta.size()+" yoo");
                     //TODO: Fer que cada cartaselection es guardi com una comanda
 
                 }catch (ClassNotFoundException e){
