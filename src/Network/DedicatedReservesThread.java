@@ -3,6 +3,7 @@ package Network;
 import Controller.MainController;
 import Model.Carta;
 import Model.CartaSelection;
+import javafx.beans.binding.BooleanBinding;
 
 import java.io.*;
 import java.net.Socket;
@@ -84,12 +85,27 @@ public class DedicatedReservesThread extends Thread {
                 returnSelection(seleccio);
                 break;
 
+            case "DISCONNECT":
+                mainController.disconnect(idtaula);
+
             case "ORDER":
                 System.out.println("Comanda de l'usuari!");
                 try {
                     ArrayList<CartaSelection> cartaSelection = (ArrayList<CartaSelection>) oiStream.readObject();
                     System.out.println(cartaSelection.toString());
-                    mainController.saveOrder(cartaSelection, idtaula);
+
+                    //Fem check de si hi han suficients
+
+                    Boolean b = mainController.checkQuantityOrder(cartaSelection);
+                    if (b){
+                        System.out.println("OK");
+                        mainController.saveOrder(cartaSelection, idtaula);
+                        doStream.writeBoolean(true);
+                    }else{
+                        System.out.println("NAIN");
+
+                        doStream.writeBoolean(false);
+                    }
 
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();

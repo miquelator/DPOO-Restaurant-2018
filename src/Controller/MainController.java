@@ -226,4 +226,17 @@ public class MainController implements ActionListener{
     public void saveOrder(ArrayList<CartaSelection> cartaSelection, int idtaula) {
         databaseConector.saveOrder(cartaSelection, idtaula);
     }
+
+    public void disconnect (int id_taula){
+        databaseConector.disconnect(id_taula);
+    }
+
+    public boolean checkQuantityOrder(ArrayList<CartaSelection> cartaSelection){
+        for(CartaSelection cartaSelect: cartaSelection){
+            if (!databaseConector.checkQuantityPlat(cartaSelect)){
+                return false;
+            }
+        }
+        return true;
+    }
 }

@@ -577,10 +577,38 @@ public class DatabaseConector {
 
     }
 
+    public boolean checkQuantityPlat(CartaSelection cartaSelection){
+        if (conexio()) {
+            try {
+                String query = "SELECT * FROM Carta WHERE nom_plat = ?";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setString(1, cartaSelection.getNomPlat());
+                preparedStmt.execute();
+
+                ResultSet rs = preparedStmt.getResultSet();
+
+                int quantitat = 0;
+                while (rs.next()) {
+                    quantitat = rs.getInt("quantitat");
+                }
+
+                if (quantitat < cartaSelection.getUnitatsDemanades()) {
+                    return false;
+                } else {
+                    return true;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+
+    }
+
     public void getOrderStatus(int idtaula) {
         if (conexio()){
-            try {
 
+            try{
                 String query =  "SELECT * FROM Comanda WHERE id_taula = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setInt(1, idtaula);
@@ -596,19 +624,42 @@ public class DatabaseConector {
         }
     }
 
+    public void disconnect(int id_taula){
+
+        if (conexio()){
+
+            try {
+
+                String query = "delete from Reserva where id_taula = ? and conectat = true";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1,id_taula);
+                preparedStmt.execute();
+
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
     public void saveOrder(ArrayList<CartaSelection> cartaSelection, int idtaula) {
         if (conexio()){
             try {
                 for (CartaSelection c : cartaSelection) {
-                    String query =  "SELECT id_plat FROM Carta WHERE nom_plat = ?";
+                    String query =  "SELECT id_plat,quantitat FROM Carta WHERE nom_plat = ?";
                     PreparedStatement preparedStmt = connection.prepareStatement(query);
                     preparedStmt.setString(1, c.getNomPlat());
                     preparedStmt.execute();
 
                     ResultSet rs = preparedStmt.getResultSet();
                     int id = 0;
+                    int quantitat = 0;
                     while (rs.next()) {
                         id = rs.getInt("id_plat");
+                        quantitat = rs.getInt("quantitat");
+                        System.out.println("quantitat trobada = "+quantitat);
                     }
 
                     for (int i = 0; i < c.getUnitatsDemanades(); i++){
@@ -621,6 +672,16 @@ public class DatabaseConector {
 
                         preparedStmt.execute();
                     }
+
+
+                    query ="UPDATE Carta SET quantitat=? WHERE id_plat=?";
+
+                    quantitat = quantitat-c.getUnitatsDemanades();
+                    preparedStmt = connection.prepareStatement(query);
+                    preparedStmt.setInt(1, quantitat);
+                    preparedStmt.setInt(2, id);
+                    preparedStmt.execute();
+
                 }
                 connection.close();
             } catch (SQLException e) {
