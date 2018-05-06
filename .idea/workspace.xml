@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="model commented">
+    <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ConfigJson.java" afterPath="$PROJECT_DIR$/src/Model/ConfigJson.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/DatabaseConector.java" afterPath="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -59,18 +58,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuChangeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MenuChangeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SeatsSpinController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/SeatsSpinController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,7 +75,7 @@
       <file leaf-file-name="TablesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2222">
+            <state relative-caret-position="828">
               <caret line="108" column="31" lean-forward="false" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -100,33 +87,47 @@
       <file leaf-file-name="DatabaseConector.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="357" column="0" lean-forward="false" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="0" />
+            <state relative-caret-position="702">
+              <caret line="907" column="39" lean-forward="true" selection-start-line="907" selection-start-column="39" selection-end-line="907" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1525419564037" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
-                <marker date="1525419564037" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
-                <marker date="1525419564037" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
-                <marker date="1525419564037" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
-                <marker date="1525419564037" expanded="true" signature="6642:6694" ph="UPDATE Reser... " />
-                <marker date="1525419564037" expanded="true" signature="7794:7875" ph="INSERT INTO Carta... " />
-                <marker date="1525419564037" expanded="true" signature="9062:9111" ph="UPDATE Carta... " />
-                <marker date="1525419564037" expanded="true" signature="10111:10149" ph="DELETE FROM " />
-                <marker date="1525419564037" expanded="true" signature="11046:11082" ph="DELETE FROM " />
-                <marker date="1525419564037" expanded="true" signature="11718:11770" ph="INSERT INTO Taula... " />
-                <marker date="1525419564037" expanded="true" signature="12437:12485" ph="SELECT * FRO... Carta" />
-                <marker date="1525419564037" expanded="true" signature="13546:13596" ph="SELECT * FRO... Carta" />
-                <marker date="1525419564037" expanded="true" signature="14544:14580" ph="DELETE FROM " />
-                <marker date="1525419564037" expanded="true" signature="15091:15157" ph="SELECT COUNT... Reserva" />
-                <marker date="1525419564037" expanded="true" signature="16030:16068" ph="DELETE FROM " />
-                <marker date="1525419564037" expanded="true" signature="16665:16782" ph="SELECT id_ta... Taula" />
-                <marker date="1525419564037" expanded="true" signature="17381:17432" ph="SELECT data_... Reserva" />
-                <marker date="1525419564037" expanded="true" signature="18921:19051" ph="INSERT INTO Reserva... " />
-                <marker date="1525419564037" expanded="true" signature="19886:19926" ph="SELECT * FRO... Comanda" />
-                <marker date="1525419564037" expanded="true" signature="20564:20608" ph="SELECT id_pl... Carta" />
-                <marker date="1525419564037" expanded="true" signature="21123:21187" ph="INSERT INTO Comanda... " />
-                <marker date="1525419564037" expanded="true" signature="21788:21896" ph="SELECT SUM(p... Comanda" />
+                <element signature="e#20115#20124#0" expanded="true" />
+                <marker date="1525639080815" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
+                <marker date="1525639080815" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
+                <marker date="1525639080815" expanded="true" signature="4359:4378" ph="SELECT * FRO... Taula" />
+                <marker date="1525639080815" expanded="true" signature="5601:5622" ph="SELECT * FRO... Reserva" />
+                <marker date="1525639080815" expanded="true" signature="7207:7259" ph="UPDATE Reser... " />
+                <marker date="1525639080815" expanded="true" signature="8403:8484" ph="INSERT INTO Carta... " />
+                <marker date="1525639080815" expanded="true" signature="9671:9720" ph="UPDATE Carta... " />
+                <marker date="1525639080815" expanded="true" signature="10764:10802" ph="DELETE FROM " />
+                <marker date="1525639080815" expanded="true" signature="11760:11796" ph="DELETE FROM " />
+                <marker date="1525639080815" expanded="true" signature="12735:12787" ph="INSERT INTO Taula... " />
+                <marker date="1525639080815" expanded="true" signature="13875:13923" ph="SELECT * FRO... Carta" />
+                <marker date="1525639080815" expanded="true" signature="14928:14978" ph="SELECT * FRO... Carta" />
+                <marker date="1525639080815" expanded="true" signature="16704:16740" ph="DELETE FROM " />
+                <marker date="1525639080815" expanded="true" signature="17589:17655" ph="SELECT COUNT... Reserva" />
+                <marker date="1525639080815" expanded="true" signature="18947:18985" ph="DELETE FROM " />
+                <marker date="1525639080815" expanded="true" signature="20276:20393" ph="SELECT id_ta... Taula" />
+                <marker date="1525639080815" expanded="true" signature="21209:21260" ph="SELECT data_... Reserva" />
+                <marker date="1525639080815" expanded="true" signature="23472:23602" ph="INSERT INTO Reserva... " />
+                <marker date="1525639080815" expanded="true" signature="24944:24982" ph="SELECT * FRO... Carta" />
+                <marker date="1525639080815" expanded="true" signature="26072:26112" ph="SELECT * FRO... Comanda" />
+                <marker date="1525639080815" expanded="true" signature="26878:26936" ph="delete from " />
+                <marker date="1525639080815" expanded="true" signature="27970:28024" ph="SELECT id_pl... Carta" />
+                <marker date="1525639080815" expanded="true" signature="28969:29033" ph="INSERT INTO Comanda... " />
+                <marker date="1525639080815" expanded="true" signature="29448:29492" ph="UPDATE Carta... " />
+                <marker date="1525639080815" expanded="true" signature="30449:30557" ph="SELECT SUM(p... Comanda" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="76" column="10" lean-forward="false" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,7 +145,7 @@
       <file leaf-file-name="CartaSelection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/CartaSelection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
+            <state relative-caret-position="1100">
               <caret line="66" column="7" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
               <folding />
             </state>
@@ -195,6 +196,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -254,11 +260,11 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1939" />
-    <option name="height" value="1099" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1098" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -275,6 +281,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -325,10 +333,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,6 +346,118 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Controller/MainController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/DatabaseConector.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Network/DedicatedReservesThread.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -589,7 +707,8 @@
       <workItem from="1525242915518" duration="1867000" />
       <workItem from="1525297483341" duration="897000" />
       <workItem from="1525377752446" duration="4952000" />
-      <workItem from="1525415064561" duration="2935000" />
+      <workItem from="1525415064561" duration="3557000" />
+      <workItem from="1525633019397" duration="4931000" />
     </task>
     <task id="LOCAL-00001" summary="Pando version">
       <created>1522615397521</created>
@@ -745,11 +864,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525384905614</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="data base comented 50">
+      <created>1525419589054</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1525419589054</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20850000" />
+    <option name="totallyTimeSpent" value="26403000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -761,31 +887,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33226153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848233" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33152175" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27173913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27173913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18550107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18743344" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Maya Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -795,9 +921,9 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848233" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -851,7 +977,8 @@
     <MESSAGE value="  ." />
     <MESSAGE value="controllers commented" />
     <MESSAGE value="model commented" />
-    <option name="LAST_COMMIT_MESSAGE" value="model commented" />
+    <MESSAGE value="data base comented 50" />
+    <option name="LAST_COMMIT_MESSAGE" value="data base comented 50" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -955,28 +1082,32 @@
           <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1525419564037" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
-            <marker date="1525419564037" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
-            <marker date="1525419564037" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
-            <marker date="1525419564037" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
-            <marker date="1525419564037" expanded="true" signature="6642:6694" ph="UPDATE Reser... " />
-            <marker date="1525419564037" expanded="true" signature="7794:7875" ph="INSERT INTO Carta... " />
-            <marker date="1525419564037" expanded="true" signature="9062:9111" ph="UPDATE Carta... " />
-            <marker date="1525419564037" expanded="true" signature="10111:10149" ph="DELETE FROM " />
-            <marker date="1525419564037" expanded="true" signature="11046:11082" ph="DELETE FROM " />
-            <marker date="1525419564037" expanded="true" signature="11718:11770" ph="INSERT INTO Taula... " />
-            <marker date="1525419564037" expanded="true" signature="12437:12485" ph="SELECT * FRO... Carta" />
-            <marker date="1525419564037" expanded="true" signature="13546:13596" ph="SELECT * FRO... Carta" />
-            <marker date="1525419564037" expanded="true" signature="14544:14580" ph="DELETE FROM " />
-            <marker date="1525419564037" expanded="true" signature="15091:15157" ph="SELECT COUNT... Reserva" />
-            <marker date="1525419564037" expanded="true" signature="16030:16068" ph="DELETE FROM " />
-            <marker date="1525419564037" expanded="true" signature="16665:16782" ph="SELECT id_ta... Taula" />
-            <marker date="1525419564037" expanded="true" signature="17381:17432" ph="SELECT data_... Reserva" />
-            <marker date="1525419564037" expanded="true" signature="18921:19051" ph="INSERT INTO Reserva... " />
-            <marker date="1525419564037" expanded="true" signature="19886:19926" ph="SELECT * FRO... Comanda" />
-            <marker date="1525419564037" expanded="true" signature="20564:20608" ph="SELECT id_pl... Carta" />
-            <marker date="1525419564037" expanded="true" signature="21123:21187" ph="INSERT INTO Comanda... " />
-            <marker date="1525419564037" expanded="true" signature="21788:21896" ph="SELECT SUM(p... Comanda" />
+            <element signature="e#20115#20124#0" expanded="true" />
+            <marker date="1525639080815" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
+            <marker date="1525639080815" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
+            <marker date="1525639080815" expanded="true" signature="4359:4378" ph="SELECT * FRO... Taula" />
+            <marker date="1525639080815" expanded="true" signature="5601:5622" ph="SELECT * FRO... Reserva" />
+            <marker date="1525639080815" expanded="true" signature="7207:7259" ph="UPDATE Reser... " />
+            <marker date="1525639080815" expanded="true" signature="8403:8484" ph="INSERT INTO Carta... " />
+            <marker date="1525639080815" expanded="true" signature="9671:9720" ph="UPDATE Carta... " />
+            <marker date="1525639080815" expanded="true" signature="10764:10802" ph="DELETE FROM " />
+            <marker date="1525639080815" expanded="true" signature="11760:11796" ph="DELETE FROM " />
+            <marker date="1525639080815" expanded="true" signature="12735:12787" ph="INSERT INTO Taula... " />
+            <marker date="1525639080815" expanded="true" signature="13875:13923" ph="SELECT * FRO... Carta" />
+            <marker date="1525639080815" expanded="true" signature="14928:14978" ph="SELECT * FRO... Carta" />
+            <marker date="1525639080815" expanded="true" signature="16704:16740" ph="DELETE FROM " />
+            <marker date="1525639080815" expanded="true" signature="17589:17655" ph="SELECT COUNT... Reserva" />
+            <marker date="1525639080815" expanded="true" signature="18947:18985" ph="DELETE FROM " />
+            <marker date="1525639080815" expanded="true" signature="20276:20393" ph="SELECT id_ta... Taula" />
+            <marker date="1525639080815" expanded="true" signature="21209:21260" ph="SELECT data_... Reserva" />
+            <marker date="1525639080815" expanded="true" signature="23472:23602" ph="INSERT INTO Reserva... " />
+            <marker date="1525639080815" expanded="true" signature="24944:24982" ph="SELECT * FRO... Carta" />
+            <marker date="1525639080815" expanded="true" signature="26072:26112" ph="SELECT * FRO... Comanda" />
+            <marker date="1525639080815" expanded="true" signature="26878:26936" ph="delete from " />
+            <marker date="1525639080815" expanded="true" signature="27970:28024" ph="SELECT id_pl... Carta" />
+            <marker date="1525639080815" expanded="true" signature="28969:29033" ph="INSERT INTO Comanda... " />
+            <marker date="1525639080815" expanded="true" signature="29448:29492" ph="UPDATE Carta... " />
+            <marker date="1525639080815" expanded="true" signature="30449:30557" ph="SELECT SUM(p... Comanda" />
           </folding>
         </state>
       </provider>
@@ -993,11 +1124,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5557#5558#0" expanded="false" />
-            <element signature="e#5601#5602#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,18 +1386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5557#5558#0" expanded="false" />
-            <element signature="e#5601#5602#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MenuChangeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1325,16 +1440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2222">
-          <caret line="108" column="31" lean-forward="false" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Carta.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1518">
@@ -1345,7 +1450,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/CartaSelection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
+        <state relative-caret-position="1100">
           <caret line="66" column="7" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
           <folding />
         </state>
@@ -1359,34 +1464,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="357" column="0" lean-forward="false" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="0" />
+        <state relative-caret-position="196">
+          <caret line="76" column="10" lean-forward="false" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TablesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="108" column="31" lean-forward="false" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1525419564037" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
-            <marker date="1525419564037" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
-            <marker date="1525419564037" expanded="true" signature="4238:4257" ph="SELECT * FRO... Taula" />
-            <marker date="1525419564037" expanded="true" signature="5181:5202" ph="SELECT * FRO... Reserva" />
-            <marker date="1525419564037" expanded="true" signature="6642:6694" ph="UPDATE Reser... " />
-            <marker date="1525419564037" expanded="true" signature="7794:7875" ph="INSERT INTO Carta... " />
-            <marker date="1525419564037" expanded="true" signature="9062:9111" ph="UPDATE Carta... " />
-            <marker date="1525419564037" expanded="true" signature="10111:10149" ph="DELETE FROM " />
-            <marker date="1525419564037" expanded="true" signature="11046:11082" ph="DELETE FROM " />
-            <marker date="1525419564037" expanded="true" signature="11718:11770" ph="INSERT INTO Taula... " />
-            <marker date="1525419564037" expanded="true" signature="12437:12485" ph="SELECT * FRO... Carta" />
-            <marker date="1525419564037" expanded="true" signature="13546:13596" ph="SELECT * FRO... Carta" />
-            <marker date="1525419564037" expanded="true" signature="14544:14580" ph="DELETE FROM " />
-            <marker date="1525419564037" expanded="true" signature="15091:15157" ph="SELECT COUNT... Reserva" />
-            <marker date="1525419564037" expanded="true" signature="16030:16068" ph="DELETE FROM " />
-            <marker date="1525419564037" expanded="true" signature="16665:16782" ph="SELECT id_ta... Taula" />
-            <marker date="1525419564037" expanded="true" signature="17381:17432" ph="SELECT data_... Reserva" />
-            <marker date="1525419564037" expanded="true" signature="18921:19051" ph="INSERT INTO Reserva... " />
-            <marker date="1525419564037" expanded="true" signature="19886:19926" ph="SELECT * FRO... Comanda" />
-            <marker date="1525419564037" expanded="true" signature="20564:20608" ph="SELECT id_pl... Carta" />
-            <marker date="1525419564037" expanded="true" signature="21123:21187" ph="INSERT INTO Comanda... " />
-            <marker date="1525419564037" expanded="true" signature="21788:21896" ph="SELECT SUM(p... Comanda" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DatabaseConector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="907" column="39" lean-forward="true" selection-start-line="907" selection-start-column="39" selection-end-line="907" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#20115#20124#0" expanded="true" />
+            <marker date="1525639080815" expanded="true" signature="1512:1533" ph="SELECT * FRO... Reserva" />
+            <marker date="1525639080815" expanded="true" signature="2440:2459" ph="SELECT * FRO... Carta" />
+            <marker date="1525639080815" expanded="true" signature="4359:4378" ph="SELECT * FRO... Taula" />
+            <marker date="1525639080815" expanded="true" signature="5601:5622" ph="SELECT * FRO... Reserva" />
+            <marker date="1525639080815" expanded="true" signature="7207:7259" ph="UPDATE Reser... " />
+            <marker date="1525639080815" expanded="true" signature="8403:8484" ph="INSERT INTO Carta... " />
+            <marker date="1525639080815" expanded="true" signature="9671:9720" ph="UPDATE Carta... " />
+            <marker date="1525639080815" expanded="true" signature="10764:10802" ph="DELETE FROM " />
+            <marker date="1525639080815" expanded="true" signature="11760:11796" ph="DELETE FROM " />
+            <marker date="1525639080815" expanded="true" signature="12735:12787" ph="INSERT INTO Taula... " />
+            <marker date="1525639080815" expanded="true" signature="13875:13923" ph="SELECT * FRO... Carta" />
+            <marker date="1525639080815" expanded="true" signature="14928:14978" ph="SELECT * FRO... Carta" />
+            <marker date="1525639080815" expanded="true" signature="16704:16740" ph="DELETE FROM " />
+            <marker date="1525639080815" expanded="true" signature="17589:17655" ph="SELECT COUNT... Reserva" />
+            <marker date="1525639080815" expanded="true" signature="18947:18985" ph="DELETE FROM " />
+            <marker date="1525639080815" expanded="true" signature="20276:20393" ph="SELECT id_ta... Taula" />
+            <marker date="1525639080815" expanded="true" signature="21209:21260" ph="SELECT data_... Reserva" />
+            <marker date="1525639080815" expanded="true" signature="23472:23602" ph="INSERT INTO Reserva... " />
+            <marker date="1525639080815" expanded="true" signature="24944:24982" ph="SELECT * FRO... Carta" />
+            <marker date="1525639080815" expanded="true" signature="26072:26112" ph="SELECT * FRO... Comanda" />
+            <marker date="1525639080815" expanded="true" signature="26878:26936" ph="delete from " />
+            <marker date="1525639080815" expanded="true" signature="27970:28024" ph="SELECT id_pl... Carta" />
+            <marker date="1525639080815" expanded="true" signature="28969:29033" ph="INSERT INTO Comanda... " />
+            <marker date="1525639080815" expanded="true" signature="29448:29492" ph="UPDATE Carta... " />
+            <marker date="1525639080815" expanded="true" signature="30449:30557" ph="SELECT SUM(p... Comanda" />
           </folding>
         </state>
       </provider>

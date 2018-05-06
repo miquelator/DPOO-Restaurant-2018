@@ -128,13 +128,19 @@ public class DatabaseConector {
      * @return ArrayList<Taula> containing all items from Taula.
      */
     public ArrayList<Taula> getTaula() {
+
+        // stables connection
         if (conexio()){
+
+            // create recipient to fill
             ArrayList<Taula> taules = new ArrayList<>();
             try {
+                // create the connection statment
                 Statement s = connection.createStatement();
-
                 s.executeQuery("SELECT * FROM Taula");
                 ResultSet rs = s.getResultSet();
+
+                // fill the table array with the proper values
                 while (rs.next()) {
                     int idTaula = rs.getInt("id_taula");
                     int numSeients = rs.getInt("num_seients");
@@ -142,9 +148,11 @@ public class DatabaseConector {
                     taules.add(new Taula(idTaula,numSeients, ocupada));
                 }
 
+                // close msql connection and return tables
                 connection.close();
                 return taules;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
@@ -156,13 +164,21 @@ public class DatabaseConector {
      * @return ArrayList<Reserva> containing all items from Reserva.
      */
     public ArrayList<Reserva> getReserves() {
+
+        // stables connection
         if (conexio()){
+
+            // create the item to fill
             ArrayList<Reserva> reserves = new ArrayList<>();
             try {
+
+                // create the statement
                 Statement s = connection.createStatement();
 
                 s.executeQuery("SELECT * FROM Reserva");
                 ResultSet rs = s.getResultSet();
+
+                // fill the reserve array with proper values form data base
                 while (rs.next()) {
                     int idTaula = rs.getInt("id_taula");
                     String nomReserva = rs.getString("nom_reserva");
@@ -173,9 +189,11 @@ public class DatabaseConector {
                     reserves.add(new Reserva(idTaula, nomReserva, password, data, numComensals, conectat));
                 }
 
+                // close mysql connection and return the array item
                 connection.close();
                 return reserves;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
@@ -183,7 +201,6 @@ public class DatabaseConector {
     }
 
 
-    // TODO: Pando guarro comenta el codi :D, ja ho fare jo ...
     // TODO: Sudar del error i no pintar el stack trace
 
     /***
@@ -213,6 +230,7 @@ public class DatabaseConector {
                 connection.close();
                 return true;
             } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
@@ -286,6 +304,7 @@ public class DatabaseConector {
                 return true;
 
             } catch (SQLException e) { // manages exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
@@ -317,7 +336,8 @@ public class DatabaseConector {
                 // close connection
                 connection.close();
                 return true;
-            } catch (SQLException e) { //
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
@@ -349,6 +369,7 @@ public class DatabaseConector {
                 connection.close();
                 return true;
             } catch (SQLException e) { // manages exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
@@ -356,93 +377,155 @@ public class DatabaseConector {
     }
 
 
+    /***
+     * This method adds a table with a given number of seats
+     * @param numSeients integer with the number of seats
+     * @return boolean if success true, if not false
+     */
     public boolean addTable(int numSeients) {
+
+        // stables connection
         if (conexio()){
             try {
+
+                // create mysql order
                 String query = "INSERT INTO Taula(num_seients, ocupada) VALUES (?,?)";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                // populate the statement
                 preparedStmt.setInt(1, numSeients);
                 preparedStmt.setBoolean(2, false);
 
+                // execute the order
                 preparedStmt.execute();
 
+                // close connection
                 connection.close();
                 return true;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exceptions
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
         return false;
     }
 
+    /***
+     * This method look for the top five dishes
+     * @return ArrayList of Carta with the top 5 global
+     */
     public ArrayList<Carta> getTopFiveTotals() {
+
+        // stables connection
         if (conexio()){
+
+            // create recipient to fill
             ArrayList<Carta> carta = new ArrayList<>();
             try {
-                Statement s = connection.createStatement();
 
+                // create connection statement
+                Statement s = connection.createStatement();
                 s.executeQuery("SELECT * FROM Carta ORDER BY totals DESC LIMIT 5");
                 ResultSet rs = s.getResultSet();
+
+                // fill the recipient with database data
                 while (rs.next()) {
-                    int idPlat = rs.getInt("id_plat");
-                    String nomPlat = rs.getString("nom_plat");
-                    int tipus = rs.getInt("tipus_plat");
-                    float preu = rs.getFloat("preu");
-                    int quantitat = rs.getInt("quantitat");
-                    int semanals = rs.getInt("semanals");
-                    int totals = rs.getInt("totals");
-                    carta.add(new Carta(idPlat, tipusDefinition(tipus), nomPlat, preu, quantitat, semanals, totals));
+                    carta.add(fillCartaData(rs));
                 }
 
+                // close connection and return the data
                 connection.close();
                 return carta;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
         return null;
     }
 
+    /***
+     * This method look for the top five dishes
+     * @return ArrayList of Carta with the top 5 weekly
+     */
     public ArrayList<Carta> getTopFiveWeekly() {
+
+        // stables connection
         if (conexio()){
+
+            // create recipient to fill
             ArrayList<Carta> carta = new ArrayList<>();
             try {
+                // create query statement
                 Statement s = connection.createStatement();
 
                 s.executeQuery("SELECT * FROM Carta ORDER BY semanals DESC LIMIT 5");
                 ResultSet rs = s.getResultSet();
+
+                // fill the recipient
                 while (rs.next()) {
-                    int idPlat = rs.getInt("id_plat");
-                    String nomPlat = rs.getString("nom_plat");
-                    int tipus = rs.getInt("tipus_plat");
-                    float preu = rs.getFloat("preu");
-                    int quantitat = rs.getInt("quantitat");
-                    int semanals = rs.getInt("semanals");
-                    int totals = rs.getInt("totals");
-                    carta.add(new Carta(idPlat, tipusDefinition(tipus), nomPlat, preu, quantitat, semanals, totals));
+                    carta.add(fillCartaData(rs));
                 }
 
+                // close msql connection and send the result
                 connection.close();
                 return carta;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
         return null;
     }
 
+    /***
+     * This method fills a Carta item with a given result set variable
+     * @param rs ResultSet variable with the information to fill
+     * @return Carta object with the data filled
+     * @throws SQLException SQL Exception is throw if something goes wrong
+     */
+    private Carta fillCartaData(ResultSet rs) throws SQLException {
 
+        // read items
+        int idPlat = rs.getInt("id_plat");
+        String nomPlat = rs.getString("nom_plat");
+        int tipus = rs.getInt("tipus_plat");
+        float preu = rs.getFloat("preu");
+        int quantitat = rs.getInt("quantitat");
+        int semanals = rs.getInt("semanals");
+        int totals = rs.getInt("totals");
+
+        // fill and return item
+        return new Carta(idPlat, tipusDefinition(tipus), nomPlat, preu, quantitat, semanals, totals);
+    }
+
+    /***
+     * This method deletes a table with a given number
+     * @param tableToDelete integer with the table to delete
+     * @return boolean if success true, if not false
+     */
     public boolean deleteTable(int tableToDelete) {
+
+        // stables connection
         if (conexio()){
             try {
+
+                // create query string
                 String query = "DELETE FROM Taula WHERE id_taula = ?";
+
+                // complete the query statment
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setInt(1, tableToDelete);
+
+                // execute the statement
                 preparedStmt.execute();
 
+                // close connection and return result
                 connection.close();
                 return true;
-            } catch (SQLException e) {
+
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
@@ -450,13 +533,22 @@ public class DatabaseConector {
     }
 
 
+
+    // TODO: ACABAR LA FUNCIO? es un getter? que retorna?
     public boolean getTableReserve(int tableToDelete) {
+
+        // stables connection
         if (conexio()){
             try {
 
+                // create query string
                 String query =  "SELECT COUNT(id_taula) AS rowCount FROM Reserva WHERE id_taula = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                // fill query string
                 preparedStmt.setInt(1, tableToDelete);
+
+                // execute the command
                 preparedStmt.execute();
 
                 ResultSet rs = preparedStmt.getResultSet();
@@ -472,52 +564,86 @@ public class DatabaseConector {
                     return false;
                 }
 
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
         return false;
     }
 
+    /***
+     * This method delates a reserve table form a given number
+     * @param tableToDelete number of the table to delete
+     * @return boolean if success true, if not false
+     */
     public boolean deleteReserveTable(int tableToDelete) {
+
+        // stables connection
         if (conexio()){
             try {
+
+                // create sql command to delete table
                 String query =  "DELETE FROM Reserva WHERE id_taula = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                // fill the string command
                 preparedStmt.setInt(1, tableToDelete);
+
+                // execute the command
                 preparedStmt.execute();
 
+                // close connection and return the result
                 connection.close();
                 return true;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
         return false;
     }
 
+    /***
+     * Method that looks if there is a available table for a given number of people
+     * and a given date. And returns an array list of integer with the id of the available tables.
+     * @param comensals integer with the number of people
+     * @param date Date with a reservation date
+     * @return ArrayList of integers with the id of the available tables
+     */
     public ArrayList<Integer> isTableOcuped(int comensals, Object date) {
+
+        // create recipient to fill
         ArrayList<Integer> taulesLliures = new ArrayList<Integer>();
+
+        // stables connection
         if (conexio()){
             try {
 
+                // set the query command
                 String query =  "SELECT id_taula FROM Taula WHERE (num_seients = ? OR num_seients = ? + 1 OR num_seients = ? + 2) ORDER BY num_seients";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                // fill the statement
                 preparedStmt.setInt(1, comensals);
                 preparedStmt.setInt(2, comensals);
                 preparedStmt.setInt(3, comensals);
 
-
+                // execute the statement
                 preparedStmt.execute();
 
+                // get the result
                 ResultSet rs = preparedStmt.getResultSet();
                 int idTaulaaux = 0;
 
+                // look on all tables
                 while (rs.next()) {
                     boolean found = false;
 
                     idTaulaaux = rs.getInt("id_taula");
                     System.out.println(idTaulaaux);
+
+                    // look if the table is occupied on the date
                     query =  "SELECT data_reserva FROM Reserva WHERE id_taula = ?";
                     PreparedStatement preparedStmt2 = connection.prepareStatement(query);
                     preparedStmt2.setInt(1, idTaulaaux);
@@ -534,23 +660,41 @@ public class DatabaseConector {
                             found = true;
                         }
                     }
+
+                    // if it's not occupied append it to the list
                     if (!found){
                         taulesLliures.add(idTaulaaux);
                     }
                 }
                 System.out.println(taulesLliures);
+
+                // return the list of available tables
                 return taulesLliures;
 
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
         return taulesLliures;
     }
 
+    /***
+     * This method adds a reserve to the data base with a given values
+     * @param nomReserva String with the name of the reservation
+     * @param date Date where the reservation will be held
+     * @param s String with the password
+     * @param integer integer with the id of the table
+     * @param comensals integer with the number of people
+     * @return String with the password
+     */
     public String addReserve(String nomReserva, Object date, String s, Integer integer, int comensals) {
+
+        // stables connection
         if (conexio()){
             try {
+
+                // create and fill the mysql statement to add a reservation item to the data base
                 SimpleDateFormat mdyFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
                 String dmy = mdyFormat.format(date);
 
@@ -565,11 +709,14 @@ public class DatabaseConector {
                 preparedStmt.setString(6, format);
                 preparedStmt.setBoolean(7, false);
 
+                // execute the command
                 preparedStmt.execute();
 
+                // close connection and return the password
                 connection.close();
                 return s;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
@@ -577,16 +724,32 @@ public class DatabaseConector {
 
     }
 
+    /***
+     * This method looks if there is available stock from a dish
+     * @param cartaSelection CartaSelection with the info of the selected dish
+     * @return boolean, true if there is more quantity than the demand, false if not
+     */
     public boolean checkQuantityPlat(CartaSelection cartaSelection){
+
+        // stables connection
         if (conexio()) {
             try {
+
+                // create the query command
                 String query = "SELECT * FROM Carta WHERE nom_plat = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                // fill the query command
                 preparedStmt.setString(1, cartaSelection.getNomPlat());
+
+                // execute the command
                 preparedStmt.execute();
 
+                // get the result of the query
                 ResultSet rs = preparedStmt.getResultSet();
 
+
+                // look if there is available stock
                 int quantitat = 0;
                 while (rs.next()) {
                     quantitat = rs.getInt("quantitat");
@@ -597,13 +760,16 @@ public class DatabaseConector {
                 } else {
                     return true;
                 }
-            } catch (SQLException e) {
+
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
         return false;
 
     }
+
 
     public void getOrderStatus(int idtaula) {
         if (conexio()){
@@ -624,19 +790,26 @@ public class DatabaseConector {
         }
     }
 
+    /***
+     * This method disconnects from the database a given table
+     * @param id_taula integer with the id of the table
+     */
     public void disconnect(int id_taula){
 
+        // stables connection
         if (conexio()){
-
             try {
 
+                // create, set and execute the set data command
                 String query = "delete from Reserva where id_taula = ? and conectat = true";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setInt(1,id_taula);
                 preparedStmt.execute();
 
+                // close connection
                 connection.close();
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exceptions
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
 
@@ -644,16 +817,30 @@ public class DatabaseConector {
 
     }
 
+    /***
+     * This method saves a order of a given table and it's command
+     * @param cartaSelection ArrayList of CartaSelection with the order of the table
+     * @param idtaula integer with the id of the table
+     */
     public void saveOrder(ArrayList<CartaSelection> cartaSelection, int idtaula) {
+
+        // stables connection
         if (conexio()){
             try {
+
+                // save into the database all the order information
                 for (CartaSelection c : cartaSelection) {
+
+                    // create, set and execute the query command
                     String query =  "SELECT id_plat,quantitat FROM Carta WHERE nom_plat = ?";
                     PreparedStatement preparedStmt = connection.prepareStatement(query);
                     preparedStmt.setString(1, c.getNomPlat());
                     preparedStmt.execute();
 
+                    // get the result form database
                     ResultSet rs = preparedStmt.getResultSet();
+
+                    // look if there is enough quantity of stock
                     int id = 0;
                     int quantitat = 0;
                     while (rs.next()) {
@@ -662,8 +849,10 @@ public class DatabaseConector {
                         System.out.println("quantitat trobada = "+quantitat);
                     }
 
+                    // add all the ordered units of a dish
                     for (int i = 0; i < c.getUnitatsDemanades(); i++){
 
+                        // create the set statement, fill it and execute it
                         query = "INSERT INTO Comanda (id_plat, id_taula, servit) VALUES (?, ?, ?);";
                         preparedStmt = connection.prepareStatement(query);
                         preparedStmt.setInt(1, id);
@@ -674,8 +863,8 @@ public class DatabaseConector {
                     }
 
 
+                    // update the quantity of available dish stock
                     query ="UPDATE Carta SET quantitat=? WHERE id_plat=?";
-
                     quantitat = quantitat-c.getUnitatsDemanades();
                     preparedStmt = connection.prepareStatement(query);
                     preparedStmt.setInt(1, quantitat);
@@ -683,32 +872,51 @@ public class DatabaseConector {
                     preparedStmt.execute();
 
                 }
+
+                // close connection
                 connection.close();
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exception
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
     }
 
+    /***
+     * This method gets the total price to pay with a given table id
+     * @param idtaula integer with the id of the table
+     * @return float with the amount of cost of a table (-1 if error)
+     */
     public float getTotalPrice(int idtaula) {
+
+        // stables connection
         if (conexio()){
             try {
 
+                // set the query statment
                 String query =  "SELECT SUM(preu) AS total FROM Comanda, Carta WHERE Comanda.id_taula = ? AND Carta.id_plat = Comanda.id_plat";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
+                // fill the query statement
                 preparedStmt.setInt(1, idtaula);
+
+                // execute the statement
                 preparedStmt.execute();
 
+                // get the result and place it to total
                 ResultSet rs = preparedStmt.getResultSet();
+                // crete info recipient
                 float total = 0;
                 while (rs.next()) {
                     System.out.println(rs.getFloat("total"));
                     total = rs.getFloat("total");
                 }
 
+                // close connection and return result
                 connection.close();
                 return total;
-            } catch (SQLException e) {
+            } catch (SQLException e) { // manage exceptions
+                // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
             }
         }
