@@ -771,7 +771,7 @@ public class DatabaseConector {
     }
 
 
-    public void getOrderStatus(int idtaula) {
+    public ArrayList<CartaStatus> getOrderStatus(int idtaula) {
         if (conexio()){
 
             try{
@@ -782,12 +782,35 @@ public class DatabaseConector {
 
                 ResultSet rs = preparedStmt.getResultSet();
 
-                //TODO: RETORNAR L'ESTAT DE LES COMANDES DELS USUARIS.
+                ArrayList<CartaStatus > resultat = new ArrayList<CartaStatus>();
+                while (rs.next()) {
+                  CartaStatus c = new CartaStatus();
+                        c.setIdPlat(rs.getInt("id_plat"));
+                        c.setServit(rs.getBoolean("servit"));
+                        resultat.add(c);
+                }
+
+                for (CartaStatus cartaStatus : resultat){
+
+                    query =  "SELECT nom_plat FROM Carta WHERE id_plat = ?";
+                    preparedStmt = connection.prepareStatement(query);
+                    preparedStmt.setInt(1, cartaStatus.getIdPlat());
+                    preparedStmt.execute();
+                    rs = preparedStmt.getResultSet();
+
+                    while (rs.next()){
+                        cartaStatus.setNomPlat(rs.getString("nom_plat"));
+                    }
+
+                }
+
+                return resultat;
 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
+        return null;
     }
 
     /***

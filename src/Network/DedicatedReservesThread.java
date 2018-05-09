@@ -94,7 +94,7 @@ public class DedicatedReservesThread extends Thread {
 
             case "SHOW_STATUS":
                 System.out.println("SHOW_STATUS");
-                mainController.getOrderStatus(idtaula);
+                ooStream.writeObject(mainController.getOrderStatus(idtaula));
                 break;
 
             case "PAY":

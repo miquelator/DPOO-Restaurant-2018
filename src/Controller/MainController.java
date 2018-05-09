@@ -209,9 +209,8 @@ public class MainController implements ActionListener{
     }
 
 
-    public void getOrderStatus(int idtaula) {
-        //TODO:QUE RETORNA AIXO?
-        databaseConector.getOrderStatus(idtaula);
+    public ArrayList<CartaStatus> getOrderStatus(int idtaula) {
+       return databaseConector.getOrderStatus(idtaula);
     }
 
     /***
