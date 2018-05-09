@@ -92,24 +92,6 @@ public class DedicatedReservesThread extends Thread {
                 }
                 break;
 
-
-            case "SEND_COMANDA":
-
-                try {
-
-                    // get user data of order
-                    ArrayList<CartaSelection> carta = (ArrayList<CartaSelection>) oiStream.readObject();
-
-                    System.out.println(carta.size()+" yoo");
-                    //TODO: Fer que cada cartaselection es guardi com una comanda
-                    // TODO: I comentar un xic el codi :D
-
-                }catch (ClassNotFoundException e){ // manage exceptions
-                    // TODO: manage exception
-                    System.out.println("error al rebre CartaSelection");
-                }
-                break;
-
             case "SHOW_STATUS":
                 System.out.println("SHOW_STATUS");
                 mainController.getOrderStatus(idtaula);
@@ -129,21 +111,14 @@ public class DedicatedReservesThread extends Thread {
                 mainController.disconnect(idtaula);
 
             case "ORDER":
-                System.out.println("Comanda de l'usuari!");
                 try {
                     ArrayList<CartaSelection> cartaSelection = (ArrayList<CartaSelection>) oiStream.readObject();
-                    System.out.println(cartaSelection.toString());
-
-                    //Fem check de si hi han suficients
-
-                    Boolean b = mainController.checkQuantityOrder(cartaSelection);
-                    if (b){
-                        System.out.println("OK");
-                        mainController.saveOrder(cartaSelection, idtaula);
+                    //classe primitiva de Boolean i no boolean??
+                    Boolean enoughItems = mainController.checkQuantityOrder(cartaSelection);
+                    if (enoughItems){
+                        mainController.saveOrderUpdateStock(cartaSelection, idtaula);
                         doStream.writeBoolean(true);
                     }else{
-                        System.out.println("NAIN");
-
                         doStream.writeBoolean(false);
                     }
 
@@ -156,7 +131,6 @@ public class DedicatedReservesThread extends Thread {
 
     private void returnSelection(int seleccio) throws IOException {
         ArrayList<Carta> menu = mainController.getMenu();
-        //TODO: RETORNAR A LES RESERVES EL TIPUS DE PLAT QUE ENS DEMANEN SEGONS EL PARAMETRE SELECCIO
         ArrayList<Carta> peticio = new ArrayList<>();
         int size = menu.size();
         for (int i = 0; i < size; i++){

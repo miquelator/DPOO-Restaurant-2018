@@ -61,7 +61,9 @@ INSERT INTO Comanda (id_comanda, id_plat, id_taula, servit) VALUES (4, 6, 1, tru
 SELECT * FROM Taula;
 SELECT * FROM Reserva;
 SELECT * FROM Carta;
-    SELECT * FROM Comanda;
+SELECT * FROM Comanda;
+
+SELECT SUM(preu) AS total FROM Comanda, Carta WHERE Comanda.id_taula = 1 AND Carta.id_plat = Comanda.id_plat;
 
 SELECT preu * (SELECT quantitat_demanada FROM Comanda WHERE id_taula = 1) FROM Carta WHERE id_plat = (SELECT id_plat FROM Comanda WHERE id_taula = 1);
 SELECT ((SELECT preu FROM Carta WHERE id_plat = (SELECT id_plat FROM Comanda WHERE id_taula = 1)) * (SELECT quantitat_demanada FROM Comanda WHERE id_taula = 1)) AS Total;

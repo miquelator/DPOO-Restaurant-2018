@@ -74,9 +74,6 @@ public class MainController implements ActionListener{
     }
 
     private void manageOrders() {
-        //TODO: IMPLEMENTAR VISTA I CONTROLADOR DE LES COMANDES
-        System.out.println("orders");
-
         OrdersView ordersView = new OrdersView();
         OrdersControllers ordersControllers = new OrdersControllers(ordersView);
         ordersView.registerListeners(ordersControllers);
@@ -198,7 +195,6 @@ public class MainController implements ActionListener{
 
 
     public double pay (int id_taula){
-        // TODO: No hauria de retornar algo?
         double totalPagar = databaseConector.getTotalPrice(id_taula);
         databaseConector.deleteComanda(id_taula);
         return totalPagar;
@@ -219,12 +215,12 @@ public class MainController implements ActionListener{
     }
 
     /***
-     * Method that saves the order into the database
+     * Method that saves the order into the database and updates available stock
      * @param cartaSelection Arraylist of cartaSelection with a selection of dishes
      * @param idtaula integer varaible with the id of the table
      */
-    public void saveOrder(ArrayList<CartaSelection> cartaSelection, int idtaula) {
-        databaseConector.saveOrder(cartaSelection, idtaula);
+    public void saveOrderUpdateStock(ArrayList<CartaSelection> cartaSelection, int idtaula) {
+        databaseConector.saveOrderUpdateStock(cartaSelection, idtaula);
     }
 
     public void disconnect (int id_taula){

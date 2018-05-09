@@ -818,12 +818,11 @@ public class DatabaseConector {
     }
 
     /***
-     * This method saves a order of a given table and it's command
+     * This method saves a order of a given table, it's command and updates available units
      * @param cartaSelection ArrayList of CartaSelection with the order of the table
      * @param idtaula integer with the id of the table
      */
-    public void saveOrder(ArrayList<CartaSelection> cartaSelection, int idtaula) {
-
+    public void saveOrderUpdateStock(ArrayList<CartaSelection> cartaSelection, int idtaula) {
         // stables connection
         if (conexio()){
             try {
@@ -832,7 +831,7 @@ public class DatabaseConector {
                 for (CartaSelection c : cartaSelection) {
 
                     // create, set and execute the query command
-                    String query =  "SELECT id_plat,quantitat FROM Carta WHERE nom_plat = ?";
+                    String query = "SELECT id_plat,quantitat FROM Carta WHERE nom_plat = ?";
                     PreparedStatement preparedStmt = connection.prepareStatement(query);
                     preparedStmt.setString(1, c.getNomPlat());
                     preparedStmt.execute();
@@ -846,7 +845,6 @@ public class DatabaseConector {
                     while (rs.next()) {
                         id = rs.getInt("id_plat");
                         quantitat = rs.getInt("quantitat");
-                        System.out.println("quantitat trobada = "+quantitat);
                     }
 
                     // add all the ordered units of a dish
@@ -862,15 +860,18 @@ public class DatabaseConector {
                         preparedStmt.execute();
                     }
 
-
+                    /*
+                    System.out.println("executo update de unitats");
+                    System.out.println("quantitat = " + quantitat);
+                    System.out.println("unitats demanades = " + c.getUnitatsDemanades());
+                    */
                     // update the quantity of available dish stock
-                    query ="UPDATE Carta SET quantitat=? WHERE id_plat=?";
-                    quantitat = quantitat-c.getUnitatsDemanades();
+                    query = "UPDATE Carta SET quantitat=? WHERE id_plat=?";
+                    quantitat = quantitat - c.getUnitatsDemanades();
                     preparedStmt = connection.prepareStatement(query);
                     preparedStmt.setInt(1, quantitat);
                     preparedStmt.setInt(2, id);
                     preparedStmt.execute();
-
                 }
 
                 // close connection
