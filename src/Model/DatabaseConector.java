@@ -894,6 +894,16 @@ public class DatabaseConector {
                         preparedStmt.execute();
                     }
 
+                    // update the quantity weekly and total
+                    query = "UPDATE Carta SET totals = totals + ?, semanals = semanals + ? WHERE id_plat=?";
+                    quantitat = c.getUnitatsDemanades();
+                    preparedStmt = connection.prepareStatement(query);
+                    preparedStmt.setInt(1, quantitat);
+                    preparedStmt.setInt(2, quantitat);
+
+                    preparedStmt.setInt(3, id);
+                    preparedStmt.execute();
+
                     // update the quantity of available dish stock
                     query = "UPDATE Carta SET quantitat=? WHERE id_plat=?";
                     quantitat = quantitat - c.getUnitatsDemanades();
