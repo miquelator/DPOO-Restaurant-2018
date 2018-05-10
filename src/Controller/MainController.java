@@ -75,7 +75,7 @@ public class MainController implements ActionListener{
 
     private void manageOrders() {
         OrdersView ordersView = new OrdersView();
-        OrdersControllers ordersControllers = new OrdersControllers(ordersView);
+        OrdersController ordersControllers = new OrdersController(ordersView, databaseConector);
         ordersView.registerListeners(ordersControllers);
         ordersView.setVisible(true);
     }

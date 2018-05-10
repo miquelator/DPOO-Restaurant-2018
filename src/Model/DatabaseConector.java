@@ -824,9 +824,9 @@ public class DatabaseConector {
             try {
 
                 // create, set and execute the set data command
-                String query = "delete from Reserva where id_taula = ? and conectat = true";
+                String query = "DELETE FROM Reserva WHERE id_taula = ? AND conectat = true;";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
-                preparedStmt.setInt(1,id_taula);
+                preparedStmt.setInt(1, id_taula);
                 preparedStmt.execute();
 
                 // close connection
@@ -849,18 +849,28 @@ public class DatabaseConector {
         // stables connection
         if (conexio()){
             try {
-
+                //TODO: ACTUALITZAR SEMANALS I TOTALS - PANDO
                 // save into the database all the order information
                 for (CartaSelection c : cartaSelection) {
 
-                    // create, set and execute the query command
-                    String query = "SELECT id_plat,quantitat FROM Carta WHERE nom_plat = ?";
+                    String query = "SELECT id_reserva FROM Reserva WHERE id_taula = ?;";
                     PreparedStatement preparedStmt = connection.prepareStatement(query);
+                    preparedStmt.setInt(1, idtaula);
+                    preparedStmt.execute();
+                    ResultSet rs = preparedStmt.getResultSet();
+                    int idreserva = -1;
+                    while (rs.next()){
+                        idreserva = rs.getInt("id_reserva");
+                    }
+
+                    // create, set and execute the query command
+                    query = "SELECT id_plat,quantitat FROM Carta WHERE nom_plat = ?";
+                    preparedStmt = connection.prepareStatement(query);
                     preparedStmt.setString(1, c.getNomPlat());
                     preparedStmt.execute();
 
                     // get the result form database
-                    ResultSet rs = preparedStmt.getResultSet();
+                    rs = preparedStmt.getResultSet();
 
                     // look if there is enough quantity of stock
                     int id = 0;
@@ -874,20 +884,16 @@ public class DatabaseConector {
                     for (int i = 0; i < c.getUnitatsDemanades(); i++){
 
                         // create the set statement, fill it and execute it
-                        query = "INSERT INTO Comanda (id_plat, id_taula, servit) VALUES (?, ?, ?);";
+                        query = "INSERT INTO Comanda (id_plat, id_taula, id_reserva, servit) VALUES (?, ?, ?, ?);";
                         preparedStmt = connection.prepareStatement(query);
                         preparedStmt.setInt(1, id);
                         preparedStmt.setInt(2, idtaula);
-                        preparedStmt.setBoolean(3, false);
+                        preparedStmt.setInt(3, idreserva);
+                        preparedStmt.setBoolean(4, false);
 
                         preparedStmt.execute();
                     }
 
-                    /*
-                    System.out.println("executo update de unitats");
-                    System.out.println("quantitat = " + quantitat);
-                    System.out.println("unitats demanades = " + c.getUnitatsDemanades());
-                    */
                     // update the quantity of available dish stock
                     query = "UPDATE Carta SET quantitat=? WHERE id_plat=?";
                     quantitat = quantitat - c.getUnitatsDemanades();
@@ -945,5 +951,39 @@ public class DatabaseConector {
             }
         }
         return -1;
+    }
+
+    public void getOrders() {
+        if (conexio()){
+            String query =  "SELECT * FROM Comanda;";
+            PreparedStatement preparedStmt = null;
+            try {
+                preparedStmt = connection.prepareStatement(query);
+                preparedStmt.execute();
+                ResultSet rs = preparedStmt.getResultSet();
+                ArrayList<Order> orders = new ArrayList<>();
+                ArrayList<Integer> comanda = new ArrayList();
+                while (rs.next()){
+                    if (comanda.isEmpty()){
+                        comanda.add(rs.getInt("id_comanda"));
+                    }else {
+                        for (int i = 0; i < comanda.size(); i++){
+                            if (comanda.get(i) == rs.getInt("id_comanda")){
+                                break;
+                            }else{
+                                comanda.add(rs.getInt("id_comanda"));
+                            }
+                        }
+                    }
+
+                    orders.add(new Order(rs.getInt("id_plat"), rs.getInt("id_taula"),
+                            rs.getInt("id_reserva"), rs.getInt("servit")));
+
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 }
