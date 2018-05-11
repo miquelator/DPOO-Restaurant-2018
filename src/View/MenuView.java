@@ -87,8 +87,8 @@ public class MenuView extends JFrame {
 
     private JPanel createInnerPanel(JPanel innerPane) {
         JPanel jplPanel = new JPanel();
-        jplPanel.setLayout(new GridBagLayout());
-        jplPanel.add(innerPane);
+        jplPanel.setLayout(new BorderLayout());
+        jplPanel.add(innerPane, BorderLayout.CENTER);
         return jplPanel;
     }
 
@@ -114,6 +114,56 @@ public class MenuView extends JFrame {
     }
 
     private JPanel addDish() {
+
+
+        JPanel addDishPanel = new JPanel();
+
+        addDishPanel.setLayout(new GridBagLayout());
+        GridBagConstraints constraints = new GridBagConstraints();
+
+        JLabel jlName = new JLabel("Nom:   ");
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.gridwidth = 1;
+        constraints.anchor = GridBagConstraints.LINE_START;
+        addDishPanel.add(jlName, constraints);
+
+        dishName = new JTextField("");
+        constraints.gridx = 1;
+        constraints.gridwidth = 2;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        addDishPanel.add(dishName, constraints);
+
+        JLabel jlPrice = new JLabel("Preu:  ");
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        constraints.gridwidth = 1;
+        addDishPanel.add(jlPrice, constraints);
+
+        dishPrice = new JTextField("");
+        constraints.gridx = 1;
+        constraints.gridwidth = 2;
+        addDishPanel.add(dishPrice, constraints);
+
+        JLabel jlQuantity = new JLabel("Quantitat:  ");
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        constraints.gridwidth = 1;
+        addDishPanel.add(jlQuantity, constraints);
+
+        dishStock = new JTextField("");
+        constraints.gridx = 1;
+        constraints.gridwidth = 2;
+        addDishPanel.add(dishStock, constraints);
+
+        addDish = new JButton(ADD_DISH);
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        constraints.gridwidth = 3;
+        addDishPanel.add(addDish, constraints);
+
+        /*
+
         JPanel addDishPanel = new JPanel(new BorderLayout());
         JPanel center = new JPanel(new GridLayout(3,2));
         JPanel namePanel = new JPanel(new BorderLayout());
@@ -136,6 +186,9 @@ public class MenuView extends JFrame {
 
         addDishPanel.add(center, BorderLayout.CENTER);
         addDishPanel.add(addDish, BorderLayout.SOUTH);
+
+        */
+
         return addDishPanel;
     }
 
