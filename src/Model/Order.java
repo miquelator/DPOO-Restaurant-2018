@@ -1,16 +1,21 @@
 package Model;
 
 
+import java.sql.Date;
 
 public class Order {
     private int idPlat;
-    private String date;
+    private int idTaula;
+    private java.sql.Date hora;
     private boolean served;
+    private int idComanda;
 
-    public Order(int id_plat, int id_taula, int id_reserva, int servit) {
+    public Order(int idPlat, int idTaula, Date hora, boolean served, int idComanda) {
         this.idPlat = idPlat;
-        this.date = date;
+        this.idTaula = idTaula;
+        this.hora = hora;
         this.served = served;
+        this.idComanda = idComanda;
     }
 
     public int getIdPlat() {
@@ -21,12 +26,20 @@ public class Order {
         this.idPlat = idPlat;
     }
 
-    public String getDate() {
-        return date;
+    public int getIdTaula() {
+        return idTaula;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setIdTaula(int idTaula) {
+        this.idTaula = idTaula;
+    }
+
+    public Date getHora() {
+        return hora;
+    }
+
+    public void setHora(Date hora) {
+        this.hora = hora;
     }
 
     public boolean isServed() {
@@ -35,5 +48,13 @@ public class Order {
 
     public void setServed(boolean served) {
         this.served = served;
+    }
+
+    public int getIdComanda() {
+        return idComanda;
+    }
+
+    public void setIdComanda(int idComanda) {
+        this.idComanda = idComanda;
     }
 }

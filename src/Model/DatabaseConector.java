@@ -948,7 +948,6 @@ public class DatabaseConector {
                 // crete info recipient
                 float total = 0;
                 while (rs.next()) {
-                    System.out.println(rs.getFloat("total"));
                     total = rs.getFloat("total");
                 }
 
@@ -963,37 +962,68 @@ public class DatabaseConector {
         return -1;
     }
 
-    public void getOrders() {
+    public ArrayList<Integer> getOrders() {
         if (conexio()){
-            String query =  "SELECT * FROM Comanda;";
+            String query =  "SELECT DISTINCT (id_reserva) FROM Comanda;";
             PreparedStatement preparedStmt = null;
+            ArrayList<Integer> comanda = new ArrayList<>();
             try {
                 preparedStmt = connection.prepareStatement(query);
                 preparedStmt.execute();
                 ResultSet rs = preparedStmt.getResultSet();
-                ArrayList<Order> orders = new ArrayList<>();
-                ArrayList<Integer> comanda = new ArrayList();
                 while (rs.next()){
                     if (comanda.isEmpty()){
-                        comanda.add(rs.getInt("id_comanda"));
+                        comanda.add(rs.getInt("id_reserva"));
                     }else {
                         for (int i = 0; i < comanda.size(); i++){
-                            if (comanda.get(i) == rs.getInt("id_comanda")){
+                            if (comanda.get(i) == rs.getInt("id_reserva")){
                                 break;
                             }else{
-                                comanda.add(rs.getInt("id_comanda"));
+                                comanda.add(rs.getInt("id_reserva"));
                             }
                         }
                     }
-
-                    orders.add(new Order(rs.getInt("id_plat"), rs.getInt("id_taula"),
-                            rs.getInt("id_reserva"), rs.getInt("servit")));
-
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+            return comanda;
+        }
+        return null;
+    }
 
+    public ArrayList<Order> getOrdersInfo(int idReserva) {
+        if (conexio()){
+            ArrayList<Order> orders = new ArrayList<>();
+            String query = "SELECT id_plat, id_taula, hora, servit, id_comanda FROM Comanda WHERE id_reserva = ?";
+            //TODO: EN COMPTES DE AGAFAR ID_PLAT, FER QUERY QUE AGAFI EL NOM DEL PLAT
+            PreparedStatement preparedStmt = null;
+            try {
+                preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, idReserva);
+                preparedStmt.execute();
+                ResultSet rs = preparedStmt.getResultSet();
+                while (rs.next()){
+                    orders.add(new Order(rs.getInt("id_plat"), rs.getInt("id_taula"), new java.sql.Date(rs.getDate("hora").getTime()), rs.getBoolean("servit"), rs.getInt("id_comanda")));
+                }
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+            return orders;
+        }
+        return null;
+    }
+
+    public void setServed(int order) {
+        if (conexio()){
+            String query = "UPDATE Comanda SET servit = true WHERE id_comanda = " + order;
+            PreparedStatement preparedStmt = null;
+            try {
+                preparedStmt = connection.prepareStatement(query);
+                preparedStmt.execute();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
         }
     }
 }

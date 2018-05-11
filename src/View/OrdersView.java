@@ -1,9 +1,10 @@
 package View;
 
 import Controller.OrdersController;
+import Controller.OrdersMouseController;
 import Model.Carta;
-import Model.CartaSelection;
 import Model.JTableModel;
+import Model.Order;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -55,7 +56,7 @@ public class OrdersView extends JFrame{
         createEmptyWestTable();
 
         jSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, westScroll, east);
-        jSplitPane.setDividerLocation(500);
+        jSplitPane.setDividerLocation(300);
         setContentPane(jSplitPane);
     }
 
@@ -69,8 +70,23 @@ public class OrdersView extends JFrame{
         model.addColumn("Servit");
     }
 
-    public void populateWestTable() {
+    public void populateWestTable(ArrayList<Integer> orders) {
+        DefaultTableModel model = (DefaultTableModel) westTable.getModel();
+        model.setRowCount(0);
+        model.setColumnCount(0);
+        westTable.setRowHeight(30);
+        westTable.setFont(new Font("Serif", Font.BOLD, 20));
 
+        model.addColumn("Comanda");
+
+        int size = orders.size();
+        for (int i = 0; i < size; i++){
+            Vector<String> preuPlat = new Vector(Arrays.asList(orders.get(i)));
+
+            Vector<Object> row = new Vector<Object>();
+            row.addElement("Comandes de la reserva nº " + String.valueOf(preuPlat.get(0)));
+            model.addRow(row);
+        }
     }
 
     /**
@@ -126,46 +142,10 @@ public class OrdersView extends JFrame{
         }
     }
 
-    public void registerListeners(OrdersController controller){
+    public void registerListeners(OrdersController controller, OrdersMouseController ordersMouseController){
         this.controller = controller;
         serve.addActionListener(controller);
-    }
-
-    
-    public void addDishToOrder(ArrayList<CartaSelection> selectedItems) {
-
-        DefaultTableModel model = (DefaultTableModel) eastTable.getModel();
-        model.setRowCount(0);
-        model.setColumnCount(0);
-
-        model.addColumn("Nom del plat");
-        model.addColumn("Nombre d'unitats");
-        model.addColumn("Preu unitari");
-
-        for (int i = 0; i < selectedItems.size(); i++){
-            Vector<String> nomPlat = new Vector(Arrays.asList(selectedItems.get(i).getNomPlat()));
-            Vector<String> unitats = new Vector(Arrays.asList(selectedItems.get(i).getUnitatsDemanades()));
-            Vector<String> preuPlat = new Vector(Arrays.asList(selectedItems.get(i).getPreu()));
-
-            Vector<Object> row = new Vector<Object>();
-            row.addElement(nomPlat.get(0));
-            row.addElement(unitats.get(0));
-            row.addElement(String.valueOf(preuPlat.get(0)) + "€");
-            model.addRow(row);
-        }
-    }
-
-    public CartaSelection getSelectedOrder() {
-        try {
-            return new CartaSelection(eastTable.getModel().getValueAt(eastTable.getSelectedRow(), 0).toString(),
-                    Float.parseFloat(eastTable.getModel().getValueAt(eastTable.getSelectedRow(), 2).toString().replace("€", "")),
-                    Integer.parseInt(eastTable.getModel().getValueAt(eastTable.getSelectedRow(), 1).toString()),
-                    Float.parseFloat(eastTable.getModel().getValueAt(eastTable.getSelectedRow(), 3).toString().replace("€", "")));
-
-        }catch (ArrayIndexOutOfBoundsException ignored){
-
-        }
-        return null;
+        westTable.addMouseListener(ordersMouseController);
     }
 
     public int getSelectedOrderIndex() {
@@ -197,4 +177,34 @@ public class OrdersView extends JFrame{
                 null, options, options[0]);
     }
 
+    public int getSelectedOrder() {
+        return eastTable.getSelectedRow() + 1;
+    }
+
+    public int getSelectedReservation() {
+        return Integer.parseInt(westTable.getValueAt(westTable.getSelectedRow(), 0).toString().split("nº ")[1]);
+    }
+
+    public void populateEastTable(ArrayList<Order> ordersInfo) {
+        DefaultTableModel model = (DefaultTableModel) eastTable.getModel();
+        model.setRowCount(0);
+        model.setColumnCount(0);
+
+        model.addColumn("Plat");
+        model.addColumn("Hora de comanda");
+        model.addColumn("Servit");
+
+        int size = ordersInfo.size();
+        for (int i = 0; i < size; i++) {
+            Vector<String> idPlat = new Vector(Arrays.asList(ordersInfo.get(i).getIdPlat()));
+            Vector<String> hora = new Vector(Arrays.asList(ordersInfo.get(i).getHora()));
+            Vector<String> served = new Vector(Arrays.asList(ordersInfo.get(i).isServed()));
+
+            Vector<Object> row = new Vector<Object>();
+            row.addElement(idPlat.get(0));
+            row.addElement(hora.get(0));
+            row.addElement(String.valueOf(served.get(0)));
+            model.addRow(row);
+        }
+    }
 }
