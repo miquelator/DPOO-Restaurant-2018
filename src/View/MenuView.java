@@ -65,7 +65,7 @@ public class MenuView extends JFrame {
         tabbedPane = new JTabbedPane();
 
 
-        JPanel jplInnerPanel1 = createInnerPanel(addDish());
+        JPanel jplInnerPanel1 = addDish();
         tabbedPane.addTab("Afegir nou plat", icon, jplInnerPanel1);
 
         JPanel jplInnerPanel2 = createInnerPanel(new JPanel());
@@ -114,8 +114,6 @@ public class MenuView extends JFrame {
     }
 
     private JPanel addDish() {
-
-
         JPanel addDishPanel = new JPanel();
 
         addDishPanel.setLayout(new GridBagLayout());
@@ -126,11 +124,12 @@ public class MenuView extends JFrame {
         constraints.gridy = 0;
         constraints.gridwidth = 1;
         constraints.anchor = GridBagConstraints.LINE_START;
+        constraints.insets = new Insets(5,0,5,0);
         addDishPanel.add(jlName, constraints);
 
         dishName = new JTextField("");
         constraints.gridx = 1;
-        constraints.gridwidth = 2;
+        constraints.gridwidth = 4;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         addDishPanel.add(dishName, constraints);
 
@@ -142,7 +141,7 @@ public class MenuView extends JFrame {
 
         dishPrice = new JTextField("");
         constraints.gridx = 1;
-        constraints.gridwidth = 2;
+        constraints.gridwidth = 4;
         addDishPanel.add(dishPrice, constraints);
 
         JLabel jlQuantity = new JLabel("Quantitat:  ");
@@ -153,13 +152,13 @@ public class MenuView extends JFrame {
 
         dishStock = new JTextField("");
         constraints.gridx = 1;
-        constraints.gridwidth = 2;
+        constraints.gridwidth = 4;
         addDishPanel.add(dishStock, constraints);
 
-        addDish = new JButton(ADD_DISH);
+        addDish = new JButton("            " + ADD_DISH  + "            " );
         constraints.gridx = 0;
         constraints.gridy = 3;
-        constraints.gridwidth = 3;
+        constraints.gridwidth = 5;
         addDishPanel.add(addDish, constraints);
 
         /*
