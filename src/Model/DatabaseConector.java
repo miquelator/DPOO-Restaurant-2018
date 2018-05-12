@@ -2,6 +2,8 @@
 package Model;
 
 // import java classes
+import com.sun.org.apache.regexp.internal.RE;
+
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -972,15 +974,21 @@ public class DatabaseConector {
                 preparedStmt.execute();
                 ResultSet rs = preparedStmt.getResultSet();
                 while (rs.next()){
+                    int aux = rs.getInt("id_reserva");
                     if (comanda.isEmpty()){
-                        comanda.add(rs.getInt("id_reserva"));
+                        comanda.add(aux);
                     }else {
-                        for (int i = 0; i < comanda.size(); i++){
-                            if (comanda.get(i) == rs.getInt("id_reserva")){
+                        int size = comanda.size();
+                        boolean flag = false;
+                        for (int i = 0; i < size; i++){
+                            if (comanda.get(i) == aux){
+                                flag = true;
                                 break;
-                            }else{
-                                comanda.add(rs.getInt("id_reserva"));
                             }
+                        }
+
+                        if (!flag){
+                            comanda.add(aux);
                         }
                     }
                 }
@@ -1014,13 +1022,25 @@ public class DatabaseConector {
         return null;
     }
 
-    public void setServed(int order) {
+    public void setServed(int order, int reserva) {
         if (conexio()){
-            String query = "UPDATE Comanda SET servit = true WHERE id_comanda = " + order;
+            String auxQuery = "SELECT id_comanda FROM Comanda WHERE id_reserva  = ? LIMIT 1 OFFSET ?;";
+            String query = "UPDATE Comanda SET servit = TRUE WHERE id_reserva = ? AND id_comanda = ?;";
             PreparedStatement preparedStmt = null;
             try {
-                preparedStmt = connection.prepareStatement(query);
+                preparedStmt = connection.prepareStatement(auxQuery);
+                preparedStmt.setInt(1, reserva);
+                preparedStmt.setInt(2, order - 1);
                 preparedStmt.execute();
+                ResultSet rs = preparedStmt.getResultSet();
+                rs.next();
+                int idComanda = rs.getInt("id_comanda");
+
+                preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setInt(1, reserva);
+                preparedStmt.setInt(2, idComanda);
+                preparedStmt.execute();
+
             }catch (SQLException e){
                 e.printStackTrace();
             }

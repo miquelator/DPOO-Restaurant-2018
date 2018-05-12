@@ -23,6 +23,7 @@ public class MainController implements ActionListener{
     private RandomString randomString;
     private RecepcioSocketThread recepcioThread;
     private ReservesSocketThread reservesThread;
+    private OrdersMouseController ordersMouseController;
 
     /***
      * Constructor with parameters of the controller
@@ -75,7 +76,7 @@ public class MainController implements ActionListener{
 
     private void manageOrders() {
         OrdersView ordersView = new OrdersView();
-        OrdersMouseController ordersMouseController = new OrdersMouseController(ordersView, databaseConector);
+        ordersMouseController = new OrdersMouseController(ordersView, databaseConector);
         OrdersController ordersControllers = new OrdersController(ordersView, databaseConector, ordersMouseController);
         ordersView.registerListeners(ordersControllers, ordersMouseController);
         ordersView.setVisible(true);
@@ -234,5 +235,9 @@ public class MainController implements ActionListener{
             }
         }
         return true;
+    }
+
+    public void updateOrdersView() {
+        ordersMouseController.updateTables();
     }
 }

@@ -21,6 +21,7 @@ public class OrdersMouseController implements MouseListener {
         if (e.getClickCount() == 2) {
             reserva = ordersView.getSelectedReservation();
             ordersView.populateEastTable(databaseConector.getOrdersInfo(reserva));
+            ordersView.updateTableLabel(reserva);
         }
     }
 
@@ -46,5 +47,10 @@ public class OrdersMouseController implements MouseListener {
 
     public int getIdReserva() {
         return reserva;
+    }
+
+    public void updateTables() {
+        ordersView.populateEastTable(databaseConector.getOrdersInfo(reserva));
+        ordersView.populateWestTable(databaseConector.getOrders());
     }
 }

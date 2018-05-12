@@ -93,7 +93,6 @@ public class DedicatedReservesThread extends Thread {
                 break;
 
             case "SHOW_STATUS":
-                System.out.println("SHOW_STATUS");
                 ooStream.writeObject(mainController.getOrderStatus(idtaula));
                 break;
 
@@ -118,6 +117,7 @@ public class DedicatedReservesThread extends Thread {
                     if (enoughItems){
                         mainController.saveOrderUpdateStock(cartaSelection, idtaula);
                         doStream.writeBoolean(true);
+                        mainController.updateOrdersView();
                     }else{
                         doStream.writeBoolean(false);
                     }

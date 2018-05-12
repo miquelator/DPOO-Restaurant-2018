@@ -8,6 +8,7 @@ import View.OrdersView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /***
  * This class controls the Orders
@@ -29,19 +30,15 @@ public class OrdersController implements ActionListener {
         this.ordersView = ordersView;
         this.databaseConector = databaseConector;
         this.ordersMouseController = ordersMouseController;
-        displayOrders();
-    }
-
-    private void displayOrders() {
         ordersView.populateWestTable(databaseConector.getOrders());
-
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case OrdersView.SERVE:
-                databaseConector.setServed(ordersView.getSelectedOrder());
+                databaseConector.getOrdersInfo(ordersMouseController.getIdReserva());
+                databaseConector.setServed(ordersView.getSelectedOrder(), ordersView.getSelectedReservation());
                 ordersView.populateEastTable(databaseConector.getOrdersInfo(ordersMouseController.getIdReserva()));
                 break;
         }
