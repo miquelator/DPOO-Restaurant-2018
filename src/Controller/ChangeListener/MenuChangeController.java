@@ -1,4 +1,4 @@
-package Controller;
+package Controller.ChangeListener;
 
 // import our classes
 import Model.Carta;

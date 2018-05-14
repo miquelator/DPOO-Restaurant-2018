@@ -1,5 +1,5 @@
 // package where it belongs
-package Controller;
+package Controller.ActionListener;
 
 // import our classes
 import Model.DatabaseConector;

@@ -2,7 +2,7 @@
 package Network;
 
 // import our classes
-import Controller.MainController;
+import Controller.ActionListener.MainController;
 //TODO: crec que no hauria de estar linkat amb el model
 import Model.Carta;
 import Model.CartaSelection;

@@ -1013,11 +1013,12 @@ public class DatabaseConector {
                 preparedStmt.execute();
                 ResultSet rs = preparedStmt.getResultSet();
                 while (rs.next()){
-                    query = "SELECT nom_plat FROM ComCartaanda WHERE id_plat = ?";
+                    query = "SELECT nom_plat FROM Carta WHERE id_plat = ?";
                     preparedStmt = connection.prepareStatement(query);
                     preparedStmt.setInt(1, rs.getInt("id_plat"));
                     preparedStmt.execute();
                     ResultSet rs2 = preparedStmt.getResultSet();
+                    rs2.next();
                     orders.add(new Order(rs.getInt("id_plat"), rs2.getString("nom_plat"), rs.getInt("id_taula"), new java.sql.Date(rs.getDate("hora").getTime()), rs.getBoolean("servit"), rs.getInt("id_comanda")));
                 }
             }catch (SQLException e){

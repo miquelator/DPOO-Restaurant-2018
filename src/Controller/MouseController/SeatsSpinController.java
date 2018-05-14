@@ -1,5 +1,5 @@
 // package where it belongs
-package Controller;
+package Controller.MouseController;
 
 // import our classes
 import View.TablesView;

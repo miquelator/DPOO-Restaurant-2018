@@ -1,8 +1,9 @@
 package View;
 
-import Controller.SeatsSpinController;
-import Controller.TablesChangeController;
-import Controller.TablesController;
+import Controller.MouseController.SeatsSpinController;
+import Controller.ChangeListener.TablesChangeController;
+import Controller.ActionListener.TablesController;
+import Controller.WindowAdapter.TableWindowClosing;
 import Model.JTableModel;
 import Model.Reserva;
 import Model.Taula;
@@ -10,7 +11,6 @@ import Model.Taula;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Vector;
@@ -40,7 +40,6 @@ public class TablesView extends JFrame {
         dimension.height = 400;
         dimension.width = 600;
         setMinimumSize(dimension);
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     public Object getTableToAdd() {
@@ -270,13 +269,15 @@ public class TablesView extends JFrame {
      * @param tablesController ActionListener controller
      * @param tablesChangeController
      * @param seatsSpinController
+     * @param windowListener
      */
-    public void registerListeners(TablesController tablesController, TablesChangeController tablesChangeController, SeatsSpinController seatsSpinController) {
+    public void registerListeners(TablesController tablesController, TablesChangeController tablesChangeController, SeatsSpinController seatsSpinController, TableWindowClosing windowListener) {
         addTable.addActionListener(tablesController);
         deleteTables.addActionListener(tablesController);
         exit.addActionListener(tablesController);
         tabbedPane.addChangeListener(tablesChangeController);
         spinner.addMouseWheelListener(seatsSpinController);
+        this.addWindowListener(windowListener);
     }
 
     public void addSeients(int i) {

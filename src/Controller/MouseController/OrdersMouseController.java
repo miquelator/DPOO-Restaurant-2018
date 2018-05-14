@@ -1,4 +1,4 @@
-package Controller;
+package Controller.MouseController;
 
 import Model.DatabaseConector;
 import View.OrdersView;

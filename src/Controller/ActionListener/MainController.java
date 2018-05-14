@@ -1,7 +1,14 @@
 // this class belongs to controller package
-package Controller;
+package Controller.ActionListener;
 
 // import our classes (model, view, network)
+import Controller.ChangeListener.MenuChangeController;
+import Controller.ChangeListener.TablesChangeController;
+import Controller.MouseController.OrdersMouseController;
+import Controller.MouseController.SeatsSpinController;
+import Controller.WindowAdapter.MenuWindowClosing;
+import Controller.WindowAdapter.OrderWindowClosing;
+import Controller.WindowAdapter.TableWindowClosing;
 import Model.*;
 import Network.RecepcioSocketThread;
 import Network.ReservesSocketThread;
@@ -79,9 +86,11 @@ public class MainController implements ActionListener{
      */
     private void manageOrders() {
         OrdersView ordersView = new OrdersView();
+        OrderWindowClosing windowClosing = new OrderWindowClosing(mainView, ordersView);
         ordersMouseController = new OrdersMouseController(ordersView, databaseConector);
         OrdersController ordersControllers = new OrdersController(ordersView, databaseConector, ordersMouseController);
-        ordersView.registerListeners(ordersControllers, ordersMouseController);
+        ordersView.registerListeners(ordersControllers, ordersMouseController, windowClosing);
+        mainView.setVisible(false);
         ordersView.setVisible(true);
     }
 
@@ -89,17 +98,17 @@ public class MainController implements ActionListener{
      * This method creates the tables view and the controllers that manages those classes
      */
     private void manageTables() {
-
         // create view
         TablesView tablesView = new TablesView();
 
         // create controllers
+        TableWindowClosing tableWindowClosing = new TableWindowClosing(mainView, tablesView);
         TablesController tablesController = new TablesController(tablesView, databaseConector, this);
         TablesChangeController tablesChangeController = new TablesChangeController(tablesView, databaseConector);
         SeatsSpinController seatsSpinController = new SeatsSpinController(tablesView);
 
         //register controllers
-        tablesView.registerListeners(tablesController, tablesChangeController, seatsSpinController);
+        tablesView.registerListeners(tablesController, tablesChangeController, seatsSpinController, tableWindowClosing);
 
         // change window visibility
         mainView.setVisible(false);
@@ -115,11 +124,12 @@ public class MainController implements ActionListener{
         MenuView menuView = new MenuView();
 
         // create controllers
+        MenuWindowClosing menuWindowClosing = new MenuWindowClosing(mainView, menuView);
         MenuController menuController = new MenuController(menuView, databaseConector, this);
         MenuChangeController menuChangeController = new MenuChangeController(menuView, databaseConector);
 
         // register controllers
-        menuView.registerListeners(menuController, menuChangeController);
+        menuView.registerListeners(menuController, menuChangeController, menuWindowClosing);
 
         // change window visibility
         mainView.setVisible(false);

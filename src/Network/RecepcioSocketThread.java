@@ -2,7 +2,7 @@
 package Network;
 
 // import our classes
-import Controller.MainController;
+import Controller.ActionListener.MainController;
 
 // import java classes
 import java.io.IOException;

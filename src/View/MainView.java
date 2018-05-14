@@ -2,7 +2,7 @@
 package View;
 
 // import our connector classes
-import Controller.MainController;
+import Controller.ActionListener.MainController;
 
 // import java classes
 import javax.swing.*;

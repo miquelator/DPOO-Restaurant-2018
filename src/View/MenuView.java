@@ -1,7 +1,8 @@
 package View;
 
-import Controller.MenuChangeController;
-import Controller.MenuController;
+import Controller.ChangeListener.MenuChangeController;
+import Controller.ActionListener.MenuController;
+import Controller.WindowAdapter.MenuWindowClosing;
 import Model.Carta;
 import Model.JTableModel;
 
@@ -47,7 +48,6 @@ public class MenuView extends JFrame {
         dimension.height = 400;
         dimension.width = 600;
         setMinimumSize(dimension);
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -341,12 +341,14 @@ public class MenuView extends JFrame {
      * Adds a listener to view's components
      * @param menuController ActionListener controller
      * @param menuChangeController
+     * @param windowListener
      */
-    public void registerListeners(MenuController menuController, MenuChangeController menuChangeController) {
+    public void registerListeners(MenuController menuController, MenuChangeController menuChangeController, MenuWindowClosing windowListener) {
         addDish.addActionListener(menuController);
         deleteDish.addActionListener(menuController);
         updateDish.addActionListener(menuController);
         exit.addActionListener(menuController);
         tabbedPane.addChangeListener(menuChangeController);
+        this.addWindowListener(windowListener);
     }
 }

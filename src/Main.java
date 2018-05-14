@@ -1,4 +1,4 @@
-import Controller.MainController;
+import Controller.ActionListener.MainController;
 import Model.ConfigJson;
 import Network.RecepcioSocketThread;
 import Network.ReservesSocketThread;

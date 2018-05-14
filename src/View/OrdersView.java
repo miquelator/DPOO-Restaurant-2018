@@ -1,8 +1,8 @@
 package View;
 
-import Controller.OrdersController;
-import Controller.OrdersMouseController;
-import Model.Carta;
+import Controller.WindowAdapter.OrderWindowClosing;
+import Controller.ActionListener.OrdersController;
+import Controller.MouseController.OrdersMouseController;
 import Model.JTableModel;
 import Model.Order;
 
@@ -26,7 +26,6 @@ public class OrdersView extends JFrame{
     public OrdersView(){
         setSize(1000,500);
         setTitle("Gestor de comandes");
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         setLocationRelativeTo(null);
         populateView();
     }
@@ -100,9 +99,10 @@ public class OrdersView extends JFrame{
         model.addColumn("Comanda");
     }
 
-    public void registerListeners(OrdersController controller, OrdersMouseController ordersMouseController){
+    public void registerListeners(OrdersController controller, OrdersMouseController ordersMouseController, OrderWindowClosing windowListener){
         serve.addActionListener(controller);
         westTable.addMouseListener(ordersMouseController);
+        this.addWindowListener(windowListener);
     }
 
     public int getSelectedReservation() {
