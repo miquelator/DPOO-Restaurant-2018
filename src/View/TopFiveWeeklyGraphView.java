@@ -59,7 +59,7 @@ public class TopFiveWeeklyGraphView extends JPanel{
         g2.drawString(String.valueOf((int) (maxComands * 0.5)), 10, (int) ((yScale/7)* 4 * maxComands + PAD));
         g2.drawString(String.valueOf((int) (maxComands * 0.35)), 10, (int) ((yScale/7)* 5 * maxComands + PAD));
         g2.drawString(String.valueOf((int) (maxComands * 0.2)), 10, (int) ((yScale/7)* 6 * maxComands + PAD));
-        g2.drawString("0", 10, (int) ((yScale/6)* 7 * maxComands + PAD));
+        g2.drawString("0", 10, (int) ((yScale/7)* 7 * maxComands + PAD));
 
         for (int i = 0; i < data.length; i++){
             if (nomPlats[i] == null){
@@ -80,7 +80,8 @@ public class TopFiveWeeklyGraphView extends JPanel{
         f.setSize(600,600);
 
         f.setLocation(pantalla.width/5,pantalla.height/4);
-        f.setVisible(true);
         f.setTitle("Top 5 Weekly Graph");
+        f.setMinimumSize(new Dimension(500, 500));
+        f.setVisible(true);
     }
 }

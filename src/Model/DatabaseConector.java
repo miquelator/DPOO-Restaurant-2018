@@ -536,23 +536,17 @@ public class DatabaseConector {
 
 
 
-    // TODO: ACABAR LA FUNCIO? es un getter? que retorna?
     public boolean getTableReserve(int tableToDelete) {
-
         // stables connection
         if (conexio()){
             try {
-
                 // create query string
                 String query =  "SELECT COUNT(id_taula) AS rowCount FROM Reserva WHERE id_taula = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
-
                 // fill query string
                 preparedStmt.setInt(1, tableToDelete);
-
                 // execute the command
                 preparedStmt.execute();
-
                 ResultSet rs = preparedStmt.getResultSet();
                 int rowCount = 0;
                 while (rs.next()) {
@@ -565,7 +559,6 @@ public class DatabaseConector {
                     connection.close();
                     return false;
                 }
-
             } catch (SQLException e) { // manage exception
                 // TODO: GESTIONAR EXCEPCIO
                 e.printStackTrace();
@@ -964,7 +957,11 @@ public class DatabaseConector {
         return -1;
     }
 
-    public ArrayList<Integer> getOrders() {
+    /**
+     * Retrieves reservation's id from DDBB
+     * @return ArrayList containing all distinct id
+     */
+    public ArrayList<Integer> getReservation() {
         if (conexio()){
             String query =  "SELECT DISTINCT (id_reserva) FROM Comanda;";
             PreparedStatement preparedStmt = null;
@@ -974,21 +971,21 @@ public class DatabaseConector {
                 preparedStmt.execute();
                 ResultSet rs = preparedStmt.getResultSet();
                 while (rs.next()){
-                    int aux = rs.getInt("id_reserva");
+                    int idReserva = rs.getInt("id_reserva");
                     if (comanda.isEmpty()){
-                        comanda.add(aux);
+                        comanda.add(idReserva);
                     }else {
                         int size = comanda.size();
                         boolean flag = false;
                         for (int i = 0; i < size; i++){
-                            if (comanda.get(i) == aux){
+                            if (comanda.get(i) == idReserva){
                                 flag = true;
                                 break;
                             }
                         }
 
                         if (!flag){
-                            comanda.add(aux);
+                            comanda.add(idReserva);
                         }
                     }
                 }
@@ -1000,7 +997,12 @@ public class DatabaseConector {
         return null;
     }
 
-    public ArrayList<Order> getOrdersInfo(int idReserva) {
+    /**
+     * Retrieves detailed info of the orders from a reservation
+     * @param idReserva id that specifies which reservation
+     * @return ArrayList containing all necessary fields data from a reservation
+     */
+    public ArrayList<Order> getOrderInfo(int idReserva) {
         if (conexio()){
             ArrayList<Order> orders = new ArrayList<>();
             String query = "SELECT id_plat, id_taula, hora, servit, id_comanda FROM Comanda WHERE id_reserva = ?";
@@ -1022,6 +1024,11 @@ public class DatabaseConector {
         return null;
     }
 
+    /**
+     * Changes served status in an order
+     * @param order Order to be modifiec
+     * @param reserva Reservation to which this order belongs
+     */
     public void setServed(int order, int reserva) {
         if (conexio()){
             String auxQuery = "SELECT id_comanda FROM Comanda WHERE id_reserva  = ? LIMIT 1 OFFSET ?;";

@@ -83,11 +83,10 @@ public class MenuController implements ActionListener {
         }
     }
 
-
+    /**
+     * Deletes a dish from the DDBB
+     */
     private void deleteDish() {
-        //TODO: QUAN ESTIGUIN INCLOSES LES COMANDES A LA BBDD COMPROVAR AL ESBORRAR PLAT
-
-
         if(databaseConector.deleteDish(menuView.getDeletedDishName())){
             menuView.confirmEntry(5);
             ArrayList<Carta> plats = databaseConector.getCarta();
@@ -136,5 +135,4 @@ public class MenuController implements ActionListener {
         }
 
     }
-
 }

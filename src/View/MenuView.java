@@ -35,6 +35,9 @@ public class MenuView extends JFrame {
     public final static String UPDATE_STOCK = "Actualitza existencies";
     public final static String EXIT = "Sortir";
 
+    /**
+     * Constructor without parameters of the class. Generates the view
+     */
     public MenuView() {
         populateView();
         setSize(700, 500);
@@ -85,6 +88,11 @@ public class MenuView extends JFrame {
         setContentPane(principal);
     }
 
+    /**
+     * Fills a tabbed pane panel
+     * @param innerPane Panel to be filled
+     * @return panel with layouts created
+     */
     private JPanel createInnerPanel(JPanel innerPane) {
         JPanel jplPanel = new JPanel();
         jplPanel.setLayout(new BorderLayout());
@@ -92,6 +100,10 @@ public class MenuView extends JFrame {
         return jplPanel;
     }
 
+    /**
+     * Creates component for the delete of a dish
+     * @return Panel with all components
+     */
     private JPanel deleteDish() {
         JPanel deleteDishPanel = new JPanel(new FlowLayout());
         deleteDish = new JButton(DELETE_DISH);
@@ -99,6 +111,10 @@ public class MenuView extends JFrame {
         return deleteDishPanel;
     }
 
+    /**
+     * Creates component for the update of a dish's stock
+     * @return Panel with all components
+     */
     private JPanel updateDishStock() {
         JPanel updateStockPanel = new JPanel();
         updateDish = new JButton(UPDATE_STOCK);
@@ -160,33 +176,6 @@ public class MenuView extends JFrame {
         constraints.gridy = 3;
         constraints.gridwidth = 5;
         addDishPanel.add(addDish, constraints);
-
-        /*
-
-        JPanel addDishPanel = new JPanel(new BorderLayout());
-        JPanel center = new JPanel(new GridLayout(3,2));
-        JPanel namePanel = new JPanel(new BorderLayout());
-        dishName = new JTextField();
-        namePanel.add(dishName, BorderLayout.CENTER);
-        JPanel pricePanel = new JPanel(new BorderLayout());
-        dishPrice = new JTextField();
-        pricePanel.add(dishPrice, BorderLayout.CENTER);
-        JPanel stockPanel = new JPanel(new BorderLayout());
-        dishStock = new JTextField();
-        stockPanel.add(dishStock, BorderLayout.CENTER);
-        addDish = new JButton(ADD_DISH);
-
-        center.add(new JLabel("Nom: "));
-        center.add(namePanel);
-        center.add(new JLabel("Preu: "));
-        center.add(pricePanel);
-        center.add(new JLabel("Quantitat: "));
-        center.add(stockPanel);
-
-        addDishPanel.add(center, BorderLayout.CENTER);
-        addDishPanel.add(addDish, BorderLayout.SOUTH);
-
-        */
 
         return addDishPanel;
     }
@@ -265,7 +254,6 @@ public class MenuView extends JFrame {
         center.add(updateDish, c);
 
         updateStockPanel.add(center, BorderLayout.CENTER);
-
 
         // add the tabed panel to the view
         tabbedPane.setComponentAt(3, updateStockPanel);
@@ -348,7 +336,6 @@ public class MenuView extends JFrame {
         String[] options = { "OK" };
         JOptionPane.showOptionDialog(this, "El format del preu/quantitat és incorrecte!", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
     }
-
 
     /**
      * Adds a listener to view's components

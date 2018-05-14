@@ -22,7 +22,7 @@ public class RandomString {
     private final char[] buf;
 
 
-    /***
+    /**
      *Generate a random string.
      */
 

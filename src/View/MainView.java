@@ -29,7 +29,6 @@ public class MainView extends JFrame {
     public final static String EXIT = "Sortir";
 
     /**
-     *
      * Constructor without parameters of the class. Generates the view
      */
     public MainView() {

@@ -74,6 +74,9 @@ public class MainController implements ActionListener{
         }
     }
 
+    /**
+     * Initialises order's view and controllers
+     */
     private void manageOrders() {
         OrdersView ordersView = new OrdersView();
         ordersMouseController = new OrdersMouseController(ordersView, databaseConector);
@@ -177,7 +180,6 @@ public class MainController implements ActionListener{
              return "No hi ha taules disponibles!";
          }else{
              randomString = new RandomString();
-             //TODO: ACTUALITZAR TAULA RESERVES
              return databaseConector.addReserve(nomReserva, date, randomString.nextString(), taules.get(0), comensals);
 
          }
@@ -196,6 +198,11 @@ public class MainController implements ActionListener{
     }
 
 
+    /**
+     * Indicates user wants to pay
+     * @param id_taula table which wishes to pay
+     * @return amount to be payed
+     */
     public double pay (int id_taula){
         double totalPagar = databaseConector.getTotalPrice(id_taula);
         databaseConector.deleteComanda(id_taula);
@@ -224,10 +231,19 @@ public class MainController implements ActionListener{
         databaseConector.saveOrderUpdateStock(cartaSelection, idtaula);
     }
 
+    /**
+     * Disconects the specified table from the DDBB
+     * @param id_taula id from the table to be disconnected
+     */
     public void disconnect (int id_taula){
         databaseConector.disconnect(id_taula);
     }
 
+    /**
+     * Checks if there is enough quantity of a product before accepting the order
+     * @param cartaSelection User's selection from the menu
+     * @return true if there is enough quantity, false otherwise
+     */
     public boolean checkQuantityOrder(ArrayList<CartaSelection> cartaSelection){
         for(CartaSelection cartaSelect: cartaSelection){
             if (!databaseConector.checkQuantityPlat(cartaSelect)){
@@ -237,6 +253,9 @@ public class MainController implements ActionListener{
         return true;
     }
 
+    /**
+     * Redraws the orders view
+     */
     public void updateOrdersView() {
         ordersMouseController.updateTables();
     }

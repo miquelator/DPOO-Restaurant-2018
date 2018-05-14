@@ -41,8 +41,8 @@ public class DedicatedReservesThread extends Thread {
         idtaula = -1;
     }
 
-    /***
-     * Thos method is triggered when the server is started
+    /**
+     * This method is triggered when the server is started
      */
     @Override
     public void run() {
@@ -141,6 +141,11 @@ public class DedicatedReservesThread extends Thread {
         ooStream.writeObject(peticio);
     }
 
+    /**
+     * Makes cast from integer to dish category
+     * @param tipus integer to be casted
+     * @return String name of category
+     */
     private String tipusDefinition(int tipus) {
         switch (tipus){
             case 1:
