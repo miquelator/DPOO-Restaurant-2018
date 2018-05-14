@@ -121,7 +121,6 @@ public class DatabaseConector {
             case 4:
                 return "Begudes";
         }
-        // TODO: fer-ho en el default del switch?
         return null;
     }
 
@@ -203,7 +202,6 @@ public class DatabaseConector {
     }
 
 
-    // TODO: Sudar del error i no pintar el stack trace
 
     /***
      * This method updates the state of the connected value on the data base, with given values
