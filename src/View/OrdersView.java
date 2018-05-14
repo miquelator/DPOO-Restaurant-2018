@@ -120,7 +120,7 @@ public class OrdersView extends JFrame{
 
         int size = ordersInfo.size();
         for (int i = 0; i < size; i++) {
-            Vector<String> idPlat = new Vector(Arrays.asList(ordersInfo.get(i).getIdPlat()));
+            Vector<String> idPlat = new Vector(Arrays.asList(ordersInfo.get(i).getNomPlat()));
             Vector<String> hora = new Vector(Arrays.asList(ordersInfo.get(i).getHora()));
             Vector<String> served = new Vector(Arrays.asList(ordersInfo.get(i).isServed()));
 

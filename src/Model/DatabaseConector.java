@@ -1006,7 +1006,6 @@ public class DatabaseConector {
         if (conexio()){
             ArrayList<Order> orders = new ArrayList<>();
             String query = "SELECT id_plat, id_taula, hora, servit, id_comanda FROM Comanda WHERE id_reserva = ?";
-            //TODO: EN COMPTES DE AGAFAR ID_PLAT, FER QUERY QUE AGAFI EL NOM DEL PLAT
             PreparedStatement preparedStmt = null;
             try {
                 preparedStmt = connection.prepareStatement(query);
@@ -1014,7 +1013,12 @@ public class DatabaseConector {
                 preparedStmt.execute();
                 ResultSet rs = preparedStmt.getResultSet();
                 while (rs.next()){
-                    orders.add(new Order(rs.getInt("id_plat"), rs.getInt("id_taula"), new java.sql.Date(rs.getDate("hora").getTime()), rs.getBoolean("servit"), rs.getInt("id_comanda")));
+                    query = "SELECT nom_plat FROM ComCartaanda WHERE id_plat = ?";
+                    preparedStmt = connection.prepareStatement(query);
+                    preparedStmt.setInt(1, rs.getInt("id_plat"));
+                    preparedStmt.execute();
+                    ResultSet rs2 = preparedStmt.getResultSet();
+                    orders.add(new Order(rs.getInt("id_plat"), rs2.getString("nom_plat"), rs.getInt("id_taula"), new java.sql.Date(rs.getDate("hora").getTime()), rs.getBoolean("servit"), rs.getInt("id_comanda")));
                 }
             }catch (SQLException e){
                 e.printStackTrace();
