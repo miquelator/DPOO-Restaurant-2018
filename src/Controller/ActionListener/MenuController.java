@@ -67,7 +67,7 @@ public class MenuController implements ActionListener {
         // looks if the stock is bigger than zero or if it's not an integer, in that case raises and exception
         // and shows error message on input data
         try {
-            int newStock = Integer.valueOf(menuView.getUpdatedStock());
+            int newStock = menuView.getUpdatedStock();
             if (newStock < 0){
                 menuView.confirmEntry(4);
             }else{
@@ -121,8 +121,8 @@ public class MenuController implements ActionListener {
                 menuView.confirmEntry(1);
             }else{
                 try{
-                    double priceAux = Double.valueOf(menuView.getNewDishPrice());
-                    int stockAux = Integer.valueOf(menuView.getNewDishStock());
+                    double priceAux = menuView.getNewDishPrice();
+                    int stockAux = menuView.getNewDishStock();
 
                     // if there isn't any error of entry add the dish
                     databaseConector.addDish(menuView.getNewDishName(), priceAux, stockAux);
@@ -133,6 +133,8 @@ public class MenuController implements ActionListener {
                 }
             }
         }
+
+        menuView.clearAddDish();
 
     }
 }

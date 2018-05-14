@@ -95,7 +95,7 @@ public class TablesView extends JFrame {
         d.width = 50;
         spinner.setPreferredSize(d);
 
-        JLabel label1 = new JLabel("Nombre seients");
+        JLabel label1 = new JLabel("Nombre seients: ");
         JPanel panel1 = new JPanel(new BorderLayout());
         panel1.add(label1, BorderLayout.WEST);
         panel1.add(spinner, BorderLayout.CENTER);

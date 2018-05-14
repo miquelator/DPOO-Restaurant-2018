@@ -24,11 +24,11 @@ public class MenuView extends JFrame {
     private JButton exit;
     private JComboBox idABorrar;
     private JComboBox idStock;
-    private JTextField numStock;
     private JTable listOfDishes;
     private JTextField dishName;
-    private JTextField dishPrice;
-    private JTextField dishStock;
+    private JSpinner spinPrice;
+    private JSpinner spinAmount;
+    private JSpinner spinNewAmount;
 
 
     public final static String ADD_DISH = "Afegir un plat";
@@ -117,7 +117,9 @@ public class MenuView extends JFrame {
      */
     private JPanel updateDishStock() {
         JPanel updateStockPanel = new JPanel();
-        updateDish = new JButton(UPDATE_STOCK);
+        updateDish = new JButton("            "+
+                UPDATE_STOCK
+                + "            ");
         updateStockPanel.add(updateDish);
         return updateStockPanel;
     }
@@ -140,41 +142,57 @@ public class MenuView extends JFrame {
         constraints.gridy = 0;
         constraints.gridwidth = 1;
         constraints.anchor = GridBagConstraints.LINE_START;
-        constraints.insets = new Insets(5,0,5,0);
+        constraints.insets = new Insets(5,50,5,0);
         addDishPanel.add(jlName, constraints);
 
         dishName = new JTextField("");
         constraints.gridx = 1;
         constraints.gridwidth = 4;
         constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.insets = new Insets(5,0,5,50);
         addDishPanel.add(dishName, constraints);
 
         JLabel jlPrice = new JLabel("Preu:  ");
         constraints.gridx = 0;
         constraints.gridy = 1;
         constraints.gridwidth = 1;
+        constraints.insets = new Insets(5,50,5,0);
         addDishPanel.add(jlPrice, constraints);
 
-        dishPrice = new JTextField("");
+        SpinnerModel modelPrice = new SpinnerNumberModel(1,0.01,Double.MAX_VALUE,0.1);
+        spinPrice = new JSpinner(modelPrice);
+        ((JSpinner.DefaultEditor) spinPrice.getEditor()).getTextField().setEditable(true);
+        ((JSpinner.DefaultEditor) spinPrice.getEditor()).getTextField().setBackground(Color.white);
+        spinPrice.setPreferredSize(new Dimension(2,20));
         constraints.gridx = 1;
         constraints.gridwidth = 4;
-        addDishPanel.add(dishPrice, constraints);
+        constraints.insets = new Insets(5,0,5,50);
+        addDishPanel.add(spinPrice, constraints);
 
         JLabel jlQuantity = new JLabel("Quantitat:  ");
         constraints.gridx = 0;
         constraints.gridy = 2;
         constraints.gridwidth = 1;
+        constraints.insets = new Insets(5,50,5,0);
         addDishPanel.add(jlQuantity, constraints);
 
-        dishStock = new JTextField("");
+        SpinnerModel modelAmount = new SpinnerNumberModel(1,0,Integer.MAX_VALUE,1);
+        spinAmount = new JSpinner(modelAmount);
+        ((JSpinner.DefaultEditor) spinAmount.getEditor()).getTextField().setEditable(true);
+        ((JSpinner.DefaultEditor) spinAmount.getEditor()).getTextField().setBackground(Color.white);
+        spinAmount.setPreferredSize(new Dimension(2,20));
         constraints.gridx = 1;
         constraints.gridwidth = 4;
-        addDishPanel.add(dishStock, constraints);
+        constraints.insets = new Insets(5,0,5,50);
+        addDishPanel.add(spinAmount, constraints);
 
-        addDish = new JButton("            " + ADD_DISH  + "            " );
+        addDish = new JButton("            "
+                + ADD_DISH
+                + "            " );
         constraints.gridx = 0;
         constraints.gridy = 3;
         constraints.gridwidth = 5;
+        constraints.insets = new Insets(5,50,5,50);
         addDishPanel.add(addDish, constraints);
 
         return addDishPanel;
@@ -221,7 +239,11 @@ public class MenuView extends JFrame {
         // create upper view objects
         idStock = new JComboBox<>(list);
         JLabel numStockLabel = new JLabel("Nou nombre d'unitats:");
-        numStock = new JTextField();
+        SpinnerModel modelNewAmount = new SpinnerNumberModel(1,0,Integer.MAX_VALUE,1);
+        spinNewAmount = new JSpinner(modelNewAmount);
+        ((JSpinner.DefaultEditor) spinNewAmount.getEditor()).getTextField().setEditable(true);
+        ((JSpinner.DefaultEditor) spinNewAmount.getEditor()).getTextField().setBackground(Color.white);
+        spinNewAmount.setPreferredSize(new Dimension(2,20));
 
         // create a grid bag layout and create the standard constraints
         JPanel center = new JPanel(new GridBagLayout());
@@ -245,7 +267,7 @@ public class MenuView extends JFrame {
         // add textfield
         c.gridwidth = 2;
         c.gridx = 1;
-        center.add(numStock, c);
+        center.add(spinNewAmount, c);
 
 
         c.gridy = 2;
@@ -279,8 +301,8 @@ public class MenuView extends JFrame {
         return idStock.getSelectedItem().toString();
     }
 
-    public String getUpdatedStock() {
-        return numStock.getText();
+    public int getUpdatedStock() {
+        return Integer.parseInt(spinNewAmount.getValue().toString());
     }
 
     public String getDeletedDishName() {
@@ -291,12 +313,12 @@ public class MenuView extends JFrame {
         return dishName.getText();
     }
 
-    public String getNewDishPrice() {
-        return dishPrice.getText();
+    public double getNewDishPrice() {
+        return Double.parseDouble(spinPrice.getValue().toString());
     }
 
-    public String getNewDishStock() {
-        return dishStock.getText();
+    public int getNewDishStock() {
+        return Integer.parseInt(spinAmount.getValue().toString());
     }
 
     public void confirmEntry(int error){
@@ -344,11 +366,24 @@ public class MenuView extends JFrame {
      * @param windowListener
      */
     public void registerListeners(MenuController menuController, MenuChangeController menuChangeController, MenuWindowClosing windowListener) {
+        addDish.setActionCommand(ADD_DISH);
         addDish.addActionListener(menuController);
+        deleteDish.setActionCommand(DELETE_DISH);
         deleteDish.addActionListener(menuController);
+        updateDish.setActionCommand(UPDATE_STOCK);
         updateDish.addActionListener(menuController);
+        exit.setActionCommand(EXIT);
         exit.addActionListener(menuController);
         tabbedPane.addChangeListener(menuChangeController);
         this.addWindowListener(windowListener);
+    }
+
+    /***
+     * This method clears the enter of a dish data
+     */
+    public void clearAddDish(){
+        dishName.setText("");
+        spinAmount.setValue(1);
+        spinPrice.setValue(1.0);
     }
 }
