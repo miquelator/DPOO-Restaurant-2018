@@ -84,7 +84,7 @@ public class DedicatedReservesThread extends Thread {
 
                 // look if the credentials are correct and send result to the client
                 try {
-                    mainController.autenticar(user,password);
+                    idtaula = mainController.autenticar(user,password);
                     doStream.writeBoolean(true);
                 } catch (DataBaseException de) {
                     doStream.writeBoolean(false);

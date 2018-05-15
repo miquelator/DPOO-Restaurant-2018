@@ -217,8 +217,8 @@ public class MainController implements ActionListener{
      * @param password String with the password
      * @return integer that's -1 if the user do not exits and 1 if it exists
      */
-    public void autenticar (String user, String password) throws DataBaseException {
-        databaseConector.autenticar(user,password);
+    public int  autenticar (String user, String password) throws DataBaseException {
+        return databaseConector.autenticar(user,password);
 
     }
 
@@ -275,7 +275,7 @@ public class MainController implements ActionListener{
         try {
             databaseConector.saveOrderUpdateStock(cartaSelection, idtaula);
         } catch (DataBaseException de) {
-            mainView.showPopError(de.getMessage());
+            mainView.showPopError(de.getMessage() + "Peto!");
         }
     }
 
