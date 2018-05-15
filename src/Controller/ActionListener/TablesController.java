@@ -2,6 +2,9 @@
 package Controller.ActionListener;
 
 // import our classes
+import Exceptions.DataBaseException;
+import Exceptions.TablesException;
+import Exceptions.ViewNullException;
 import Model.DatabaseConector;
 import Model.Taula;
 import View.TablesView;
@@ -57,52 +60,50 @@ public class TablesController implements ActionListener {
      * Method that deletes a selected table
      */
     private void deleteTable() {
-        //TODO:CANVIAR PER TRY/CATCH?
 
-        // delates a table if there is a error shows the error
-        if (tablesView.getTableToDelete() != -1){
-            if (databaseConector.getTableReserve(tablesView.getTableToDelete())) {
-                if (databaseConector.deleteTable(tablesView.getTableToDelete())) {
-                    tablesView.mostraInformacioServidor("Taula esborrada correctament.", "INFORMACIO");
-                    updateDeleteTables();
+        // deletes a table if there is a error shows the error
+        try{
+            databaseConector.getTableReserve(tablesView.getTableToDelete());
+            databaseConector.deleteTable((tablesView.getTableToDelete()));
+            tablesView.mostraInformacioServidor("Taula esborrada correctament.");
+            updateDeleteTables();
+        }catch (ViewNullException | DataBaseException e){
+            tablesView.mostraErrorServidor(e.getMessage());
 
-                } else {
-                    tablesView.mostraErrorServidor("Error al esborrar la taula!", "ERROR");
-                }
-
-            }else{
+        }catch (TablesException te){
+            try {
                 if (tablesView.showDeleteWarning()) {
-                    if (databaseConector.deleteReserveTable(tablesView.getTableToDelete())){
-                        if (databaseConector.deleteTable(tablesView.getTableToDelete())) {
-                            tablesView.mostraInformacioServidor("Taula esborrada correctament.", "INFORMACIO");
-                            updateDeleteTables();
-                        } else {
-                            tablesView.mostraErrorServidor("Error al esborrar la taula!", "ERROR");
-                        }
-                    }
-                    else {
-                        tablesView.mostraErrorServidor("Error al esborrar la taula!", "ERROR");
-                    }
-                }else{
-                    tablesView.mostraInformacioServidor("Esborrat de taula cancelat.", "INFORMACIO");                }
+                    databaseConector.deleteReserveTable(tablesView.getTableToDelete());
+                    databaseConector.deleteTable(tablesView.getTableToDelete());
+                    tablesView.mostraInformacioServidor("Taula esborrada correctament.");
+                    updateDeleteTables();
+                }
+            }catch (ViewNullException | DataBaseException e){
+                tablesView.mostraErrorServidor(e.getMessage());
             }
-        }else{
-            tablesView.mostraErrorServidor("No hi ha taules registrades!", "ERROR");
+
         }
 
     }
+
 
     /***
      * Method that updates the delate tables
      */
     private void updateDeleteTables() {
-        ArrayList<Taula> auxDelete = databaseConector.getTaula();
-        int size = auxDelete.size();
-        ArrayList<Integer> ID = new ArrayList<>();
-        for (int i = 0; i < size; i++){
-            ID.add(auxDelete.get(i).getIdTaula());
+
+        try {
+            ArrayList<Taula> auxDelete = databaseConector.getTaula();
+            int size = auxDelete.size();
+            ArrayList<Integer> ID = new ArrayList<>();
+            for (int i = 0; i < size; i++){
+                ID.add(auxDelete.get(i).getIdTaula());
+            }
+            tablesView.loadTablesID(ID);
+        } catch (DataBaseException de) {
+            tablesView.mostraErrorServidor(de.getMessage());
         }
-        tablesView.loadTablesID(ID);
+
     }
 
     /***
@@ -112,14 +113,14 @@ public class TablesController implements ActionListener {
         int numSeients = (int) tablesView.getTableToAdd();
 
         try {
-            if (databaseConector.addTable(numSeients)){
-                tablesView.mostraInformacioServidor("Taula afegida correctament", "INFORMACIO");
-                tablesView.resetNumSeients();
-            }else{
-                tablesView.mostraErrorServidor("Error a l'hora d'afegir la taula!", "Error");
-            }
+            databaseConector.addTable(numSeients);
+            tablesView.mostraInformacioServidor("Taula afegida correctament");
+            tablesView.resetNumSeients();
+
         }catch (NumberFormatException ne){
-            tablesView.mostraErrorServidor("Error a l'hora d'afegir la taula!", "Error");
+            tablesView.mostraErrorServidor("Error a l'hora d'afegir la taula!");
+        } catch (DataBaseException de) {
+            tablesView.mostraErrorServidor(de.getMessage());
         }
     }
 }

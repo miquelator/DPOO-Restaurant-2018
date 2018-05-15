@@ -4,6 +4,7 @@ import Controller.MouseController.SeatsSpinController;
 import Controller.ChangeListener.TablesChangeController;
 import Controller.ActionListener.TablesController;
 import Controller.WindowAdapter.TableWindowClosing;
+import Exceptions.ViewNullException;
 import Model.JTableModel;
 import Model.Reserva;
 import Model.Taula;
@@ -201,10 +202,10 @@ public class TablesView extends JFrame {
      * @param message Error message to be displayed
      * @param title Error title to be displayed
      */
-    public void mostraErrorServidor(String message, String title) {
+    public void mostraErrorServidor(String message) {
         String[] options = { "OK" };
         JOptionPane.showOptionDialog(this, message,
-                title, JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE,
+                "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE,
                 null, options, options[0]);
     }
 
@@ -213,10 +214,10 @@ public class TablesView extends JFrame {
      * @param message Information message to be displayed
      * @param title Information title to be displayed
      */
-    public void mostraInformacioServidor(String message, String title) {
+    public void mostraInformacioServidor(String message) {
         String[] options = { "OK" };
         JOptionPane.showOptionDialog(this, message,
-                title, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
+                "INFORMATION", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
                 null, options, options[0]);
     }
 
@@ -236,12 +237,12 @@ public class TablesView extends JFrame {
         }
     }
 
-    public int getTableToDelete() {
+    public int getTableToDelete() throws ViewNullException {
         try{
             return (int)idABorrar.getSelectedItem();
 
         }catch (NullPointerException e){
-            return -1;
+            throw new ViewNullException("No hi ha taules registrades!");
         }
     }
     /**

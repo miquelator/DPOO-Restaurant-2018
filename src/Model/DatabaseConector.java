@@ -2,6 +2,8 @@
 package Model;
 
 // import java classes
+import Exceptions.DataBaseException;
+import Exceptions.TablesException;
 import com.sun.org.apache.regexp.internal.RE;
 
 import java.sql.*;
@@ -16,6 +18,7 @@ public class DatabaseConector {
     // atributes
     private Connection connection;
     private ConfigJson configJson;
+    private String ERROR_BBDD = "Error en la base de dades";
 
     /***
      * Constructor of the class
@@ -46,7 +49,7 @@ public class DatabaseConector {
      * Gets menu list from DDBB.
      * @return boolean whether the user exists.
      */
-    public int autenticar(String user, String password) {
+    public void autenticar(String user, String password) throws DataBaseException {
 
         int trobat = -1;
         if (conexio()){
@@ -63,12 +66,10 @@ public class DatabaseConector {
                 }
 
                 connection.close();
-                return trobat;
             } catch (SQLException e) {
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
-        return trobat;
     }
 
 
@@ -76,7 +77,7 @@ public class DatabaseConector {
      * Gets menu list from DDBB.
      * @return ArrayList<Carta> containing all items from the menu.
      */
-    public ArrayList<Carta> getCarta() {
+    public ArrayList<Carta> getCarta() throws DataBaseException {
         if (conexio()){
             ArrayList<Carta> carta = new ArrayList<>();
             try {
@@ -98,7 +99,7 @@ public class DatabaseConector {
                 connection.close();
                 return carta;
             } catch (SQLException e) {
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return null;
@@ -128,7 +129,7 @@ public class DatabaseConector {
      * Gets Table's info from DDBB.
      * @return ArrayList<Taula> containing all items from Taula.
      */
-    public ArrayList<Taula> getTaula() {
+    public ArrayList<Taula> getTaula() throws DataBaseException {
 
         // stables connection
         if (conexio()){
@@ -153,8 +154,7 @@ public class DatabaseConector {
                 connection.close();
                 return taules;
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return null;
@@ -164,7 +164,7 @@ public class DatabaseConector {
      * Gets Reserve's info from DDBB.
      * @return ArrayList<Reserva> containing all items from Reserva.
      */
-    public ArrayList<Reserva> getReserves() {
+    public ArrayList<Reserva> getReserves() throws DataBaseException {
 
         // stables connection
         if (conexio()){
@@ -194,8 +194,7 @@ public class DatabaseConector {
                 connection.close();
                 return reserves;
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return null;
@@ -209,7 +208,7 @@ public class DatabaseConector {
      * @param id integer with the value of the table id
      * @return boolean with the information if the process is achieved or not
      */
-    public boolean updateConectedReserva(boolean b, int id) {
+    public boolean updateConectedReserva(boolean b, int id) throws DataBaseException {
 
         // generate connection
         if (conexio()){
@@ -230,9 +229,8 @@ public class DatabaseConector {
                 connection.close();
                 return true;
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
-            }
+                throw new DataBaseException(ERROR_BBDD);
+        }
         }
         return false;
 
@@ -245,7 +243,7 @@ public class DatabaseConector {
      * @param quantitat integer with the quantity of available dishes
      * @return boolean if it's achieved or not
      */
-    public boolean addDish(String nom, double preu, int quantitat) {
+    public boolean addDish(String nom, double preu, int quantitat) throws DataBaseException {
 
         // stables connection, end if it's not achieved
         if (conexio()){
@@ -269,7 +267,7 @@ public class DatabaseConector {
                 connection.close();
                 return true;
             } catch (SQLException e) { // manges exception
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return false;
@@ -282,7 +280,7 @@ public class DatabaseConector {
      * @param newStock integer with the value of the stock
      * @return boolean if it's achieved or not
      */
-    public boolean updateStock(String updatedDishName, int newStock) {
+    public boolean updateStock(String updatedDishName, int newStock) throws DataBaseException {
 
         // stables the connection with the data basel, end if not
         if (conexio()){
@@ -304,8 +302,7 @@ public class DatabaseConector {
                 return true;
 
             } catch (SQLException e) { // manages exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return false;
@@ -317,7 +314,7 @@ public class DatabaseConector {
      * @param id_taula integer with the table id to delete
      * @return boolean if success true, otherwise false
      */
-    public boolean deleteComanda(int id_taula) {
+    public boolean deleteComanda(int id_taula) throws DataBaseException {
 
         // stables connection with the data base
         if (conexio()){
@@ -337,8 +334,7 @@ public class DatabaseConector {
                 connection.close();
                 return true;
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return false;
@@ -349,7 +345,7 @@ public class DatabaseConector {
      * @param deletedDishName String with the dish name
      * @return boolean if success true, if not false
      */
-    public boolean deleteDish(String deletedDishName) {
+    public boolean deleteDish(String deletedDishName) throws DataBaseException {
 
         // stables connection with the data base
         if (conexio()){
@@ -369,8 +365,7 @@ public class DatabaseConector {
                 connection.close();
                 return true;
             } catch (SQLException e) { // manages exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return false;
@@ -382,7 +377,7 @@ public class DatabaseConector {
      * @param numSeients integer with the number of seats
      * @return boolean if success true, if not false
      */
-    public boolean addTable(int numSeients) {
+    public void addTable(int numSeients) throws DataBaseException {
 
         // stables connection
         if (conexio()){
@@ -401,20 +396,17 @@ public class DatabaseConector {
 
                 // close connection
                 connection.close();
-                return true;
             } catch (SQLException e) { // manage exceptions
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException("Error a l'hora d'afegir la taula!");
             }
         }
-        return false;
     }
 
     /***
      * This method look for the top five dishes
      * @return ArrayList of Carta with the top 5 global
      */
-    public ArrayList<Carta> getTopFiveTotals() {
+    public ArrayList<Carta> getTopFiveTotals() throws DataBaseException {
 
         // stables connection
         if (conexio()){
@@ -437,8 +429,7 @@ public class DatabaseConector {
                 connection.close();
                 return carta;
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return null;
@@ -448,7 +439,7 @@ public class DatabaseConector {
      * This method look for the top five dishes
      * @return ArrayList of Carta with the top 5 weekly
      */
-    public ArrayList<Carta> getTopFiveWeekly() {
+    public ArrayList<Carta> getTopFiveWeekly() throws DataBaseException {
 
         // stables connection
         if (conexio()){
@@ -471,8 +462,7 @@ public class DatabaseConector {
                 connection.close();
                 return carta;
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return null;
@@ -504,7 +494,7 @@ public class DatabaseConector {
      * @param tableToDelete integer with the table to delete
      * @return boolean if success true, if not false
      */
-    public boolean deleteTable(int tableToDelete) {
+    public void deleteTable(int tableToDelete) throws DataBaseException {
 
         // stables connection
         if (conexio()){
@@ -522,19 +512,16 @@ public class DatabaseConector {
 
                 // close connection and return result
                 connection.close();
-                return true;
 
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException("Error al esborrar la taula!");
             }
         }
-        return false;
     }
 
 
 
-    public boolean getTableReserve(int tableToDelete) {
+    public void getTableReserve(int tableToDelete) throws DataBaseException, TablesException {
         // stables connection
         if (conexio()){
             try {
@@ -552,17 +539,15 @@ public class DatabaseConector {
                 }
                 if(rowCount == 0){
                     connection.close();
-                    return true;
                 }else{
                     connection.close();
-                    return false;
+                    throw new TablesException();
                 }
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
-        return false;
+
     }
 
     /***
@@ -570,7 +555,7 @@ public class DatabaseConector {
      * @param tableToDelete number of the table to delete
      * @return boolean if success true, if not false
      */
-    public boolean deleteReserveTable(int tableToDelete) {
+    public void deleteReserveTable(int tableToDelete) throws DataBaseException {
 
         // stables connection
         if (conexio()){
@@ -588,13 +573,10 @@ public class DatabaseConector {
 
                 // close connection and return the result
                 connection.close();
-                return true;
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException("Error al esborrar la taula!");
             }
         }
-        return false;
     }
 
     /***
@@ -604,7 +586,7 @@ public class DatabaseConector {
      * @param date Date with a reservation date
      * @return ArrayList of integers with the id of the available tables
      */
-    public ArrayList<Integer> isTableOcuped(int comensals, Object date) {
+    public ArrayList<Integer> isTableOcuped(int comensals, Object date) throws DataBaseException {
 
         // create recipient to fill
         ArrayList<Integer> taulesLliures = new ArrayList<Integer>();
@@ -665,8 +647,7 @@ public class DatabaseConector {
                 return taulesLliures;
 
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return taulesLliures;
@@ -681,7 +662,7 @@ public class DatabaseConector {
      * @param comensals integer with the number of people
      * @return String with the password
      */
-    public String addReserve(String nomReserva, Object date, String s, Integer integer, int comensals) {
+    public String addReserve(String nomReserva, Object date, String s, Integer integer, int comensals) throws DataBaseException {
 
         // stables connection
         if (conexio()){
@@ -709,8 +690,7 @@ public class DatabaseConector {
                 connection.close();
                 return s;
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return "Error al afegir la nova reserva!";
@@ -722,7 +702,7 @@ public class DatabaseConector {
      * @param cartaSelection CartaSelection with the info of the selected dish
      * @return boolean, true if there is more quantity than the demand, false if not
      */
-    public boolean checkQuantityPlat(CartaSelection cartaSelection){
+    public boolean checkQuantityPlat(CartaSelection cartaSelection) throws DataBaseException {
 
         // stables connection
         if (conexio()) {
@@ -755,8 +735,7 @@ public class DatabaseConector {
                 }
 
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return false;
@@ -764,7 +743,7 @@ public class DatabaseConector {
     }
 
 
-    public ArrayList<CartaStatus> getOrderStatus(int idtaula) {
+    public ArrayList<CartaStatus> getOrderStatus(int idtaula) throws DataBaseException {
         if (conexio()){
 
             try{
@@ -797,10 +776,11 @@ public class DatabaseConector {
 
                 }
 
+                // TODO: tancar connexió?
                 return resultat;
 
             } catch (SQLException e) {
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return null;
@@ -810,7 +790,7 @@ public class DatabaseConector {
      * This method disconnects from the database a given table
      * @param id_taula integer with the id of the table
      */
-    public void disconnect(int id_taula){
+    public void disconnect(int id_taula) throws DataBaseException {
 
         // stables connection
         if (conexio()){
@@ -825,8 +805,7 @@ public class DatabaseConector {
                 // close connection
                 connection.close();
             } catch (SQLException e) { // manage exceptions
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException("Error al desconectar la taula");
             }
 
         }
@@ -838,7 +817,7 @@ public class DatabaseConector {
      * @param cartaSelection ArrayList of CartaSelection with the order of the table
      * @param idtaula integer with the id of the table
      */
-    public void saveOrderUpdateStock(ArrayList<CartaSelection> cartaSelection, int idtaula) {
+    public void saveOrderUpdateStock(ArrayList<CartaSelection> cartaSelection, int idtaula) throws DataBaseException {
         // stables connection
         if (conexio()){
             try {
@@ -909,8 +888,7 @@ public class DatabaseConector {
                 // close connection
                 connection.close();
             } catch (SQLException e) { // manage exception
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
     }
@@ -920,7 +898,7 @@ public class DatabaseConector {
      * @param idtaula integer with the id of the table
      * @return float with the amount of cost of a table (-1 if error)
      */
-    public float getTotalPrice(int idtaula) {
+    public float getTotalPrice(int idtaula) throws DataBaseException {
 
         // stables connection
         if (conexio()){
@@ -948,8 +926,7 @@ public class DatabaseConector {
                 connection.close();
                 return total;
             } catch (SQLException e) { // manage exceptions
-                // TODO: GESTIONAR EXCEPCIO
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
         return -1;
@@ -959,7 +936,7 @@ public class DatabaseConector {
      * Retrieves reservation's id from DDBB
      * @return ArrayList containing all distinct id
      */
-    public ArrayList<Integer> getReservation() {
+    public ArrayList<Integer> getReservation() throws DataBaseException {
         if (conexio()){
             String query =  "SELECT DISTINCT (id_reserva) FROM Comanda;";
             PreparedStatement preparedStmt = null;
@@ -987,8 +964,10 @@ public class DatabaseConector {
                         }
                     }
                 }
+
+                //TODO: tancar connexió?
             } catch (SQLException e) {
-                e.printStackTrace();
+                throw new DataBaseException(ERROR_BBDD);
             }
             return comanda;
         }
@@ -1000,7 +979,7 @@ public class DatabaseConector {
      * @param idReserva id that specifies which reservation
      * @return ArrayList containing all necessary fields data from a reservation
      */
-    public ArrayList<Order> getOrderInfo(int idReserva) {
+    public ArrayList<Order> getOrderInfo(int idReserva) throws DataBaseException {
         if (conexio()){
             ArrayList<Order> orders = new ArrayList<>();
             String query = "SELECT id_plat, id_taula, hora, servit, id_comanda FROM Comanda WHERE id_reserva = ?";
@@ -1019,8 +998,11 @@ public class DatabaseConector {
                     rs2.next();
                     orders.add(new Order(rs.getInt("id_plat"), rs2.getString("nom_plat"), rs.getInt("id_taula"), new java.sql.Date(rs.getDate("hora").getTime()), rs.getBoolean("servit"), rs.getInt("id_comanda")));
                 }
+
+
+                //TODO: tancar la connexió?
             }catch (SQLException e){
-                e.printStackTrace();
+                throw new DataBaseException("Error amb la informació de l'ordre");
             }
             return orders;
         }
@@ -1032,7 +1014,7 @@ public class DatabaseConector {
      * @param order Order to be modifiec
      * @param reserva Reservation to which this order belongs
      */
-    public void setServed(int order, int reserva) {
+    public void setServed(int order, int reserva) throws DataBaseException {
         if (conexio()){
             String auxQuery = "SELECT id_comanda FROM Comanda WHERE id_reserva  = ? LIMIT 1 OFFSET ?;";
             String query = "UPDATE Comanda SET servit = TRUE WHERE id_reserva = ? AND id_comanda = ?;";
@@ -1051,8 +1033,9 @@ public class DatabaseConector {
                 preparedStmt.setInt(2, idComanda);
                 preparedStmt.execute();
 
-            }catch (SQLException e){
-                e.printStackTrace();
+                //TODO: tancar connexió?
+            }catch (SQLException e){ //manage exception
+                throw new DataBaseException(ERROR_BBDD);
             }
         }
     }

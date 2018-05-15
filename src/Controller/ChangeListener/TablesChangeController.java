@@ -2,6 +2,7 @@
 package Controller.ChangeListener;
 
 // import our classes
+import Exceptions.DataBaseException;
 import Model.DatabaseConector;
 import Model.Taula;
 import View.TablesView;
@@ -34,23 +35,28 @@ public class TablesChangeController implements ChangeListener {
      */
     @Override
     public void stateChanged(ChangeEvent e) {
-        switch (tablesView.getTabbedPaneWindow()){
-            case 1:
-                ArrayList<Taula> aux = databaseConector.getTaula();
-                tablesView.updateTables(aux);
-                break;
-            case 2:
-                tablesView.mostraReserves(databaseConector.getReserves());
-                break;
-            case 3:
-                ArrayList<Taula> auxDelete = databaseConector.getTaula();
-                int size = auxDelete.size();
-                ArrayList<Integer> ID = new ArrayList<>();
-                for (int i = 0; i < size; i++){
-                    ID.add(auxDelete.get(i).getIdTaula());
-                }
-                tablesView.loadTablesID(ID);
-                break;
+
+        try {
+            switch (tablesView.getTabbedPaneWindow()) {
+                case 1:
+                    ArrayList<Taula> aux = databaseConector.getTaula();
+                    tablesView.updateTables(aux);
+                    break;
+                case 2:
+                    tablesView.mostraReserves(databaseConector.getReserves());
+                    break;
+                case 3:
+                    ArrayList<Taula> auxDelete = databaseConector.getTaula();
+                    int size = auxDelete.size();
+                    ArrayList<Integer> ID = new ArrayList<>();
+                    for (int i = 0; i < size; i++) {
+                        ID.add(auxDelete.get(i).getIdTaula());
+                    }
+                    tablesView.loadTablesID(ID);
+                    break;
+            }
+        } catch (DataBaseException de) {
+            tablesView.mostraErrorServidor(de.getMessage());
         }
     }
 }

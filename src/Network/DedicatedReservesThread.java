@@ -4,6 +4,7 @@ package Network;
 // import our classes
 import Controller.ActionListener.MainController;
 //TODO: crec que no hauria de estar linkat amb el model
+import Exceptions.DataBaseException;
 import Model.Carta;
 import Model.CartaSelection;
 
@@ -81,15 +82,14 @@ public class DedicatedReservesThread extends Thread {
                 String user = diStream.readUTF();
                 String password = diStream.readUTF();
 
-                // look if the credentials are correct
-                idtaula = mainController.autenticar(user,password);
-
-                // send result to the client
-                if (idtaula == -1){
-                    doStream.writeBoolean(false);
-                }else{
+                // look if the credentials are correct and send result to the client
+                try {
+                    mainController.autenticar(user,password);
                     doStream.writeBoolean(true);
+                } catch (DataBaseException de) {
+                    doStream.writeBoolean(false);
                 }
+
                 break;
 
             case "SHOW_STATUS":

@@ -2,6 +2,7 @@
 package Controller.ActionListener;
 
 // import our classes
+import Exceptions.DataBaseException;
 import Model.Carta;
 import Model.DatabaseConector;
 import View.MenuView;
@@ -80,6 +81,8 @@ public class MenuController implements ActionListener {
         }catch (NumberFormatException e1){
             menuView.confirmEntry(4);
             e1.getMessage();
+        }catch (DataBaseException de){
+            menuView.showPopError(de.getMessage());
         }
     }
 
@@ -87,16 +90,20 @@ public class MenuController implements ActionListener {
      * Deletes a dish from the DDBB
      */
     private void deleteDish() {
-        if(databaseConector.deleteDish(menuView.getDeletedDishName())){
-            menuView.confirmEntry(5);
-            ArrayList<Carta> plats = databaseConector.getCarta();
-            String[] list = new String[plats.size()];
-            for(int i = 0; i < plats.size();i++){
-                list[i] = plats.get(i).getNomPlat();
+        try {
+            if(databaseConector.deleteDish(menuView.getDeletedDishName())){
+                menuView.confirmEntry(5);
+                ArrayList<Carta> plats = databaseConector.getCarta();
+                String[] list = new String[plats.size()];
+                for(int i = 0; i < plats.size();i++){
+                    list[i] = plats.get(i).getNomPlat();
+                }
+                menuView.populateDelete(list);
+            }else{
+                menuView.confirmEntry(6);
             }
-            menuView.populateDelete(list);
-        }else{
-            menuView.confirmEntry(6);
+        } catch (DataBaseException de) {
+            menuView.showPopError(de.getMessage());
         }
     }
 
@@ -105,35 +112,39 @@ public class MenuController implements ActionListener {
      * Method that adds a dish from window settings
      */
     private void addDish() {
-        ArrayList<Carta> aux = databaseConector.getCarta();
-        boolean found = false;
-        Pattern pattern = Pattern.compile("['\"*$]");
-        Matcher matcher = pattern.matcher(menuView.getNewDishName());
-        if (menuView.getNewDishName().contains("\"") || menuView.getNewDishName().equals(" ") || menuView.getNewDishName().equals("") || matcher.find()){
-            menuView.confirmEntry(9);
-        }else{
-            for (Carta c: aux){
-                if (c.getNomPlat().equals(menuView.getNewDishName())){
-                    found = true;
-                }
-            }
-            if (found == true){
-                menuView.confirmEntry(1);
-            }else{
-                try{
-                    double priceAux = menuView.getNewDishPrice();
-                    int stockAux = menuView.getNewDishStock();
 
-                    // if there isn't any error of entry add the dish
-                    databaseConector.addDish(menuView.getNewDishName(), priceAux, stockAux);
-                    menuView.confirmEntry(2);
-                }catch (NumberFormatException e1){
-                    menuView.confirmEntry(3);
-                    e1.getMessage();
+        try {
+            ArrayList<Carta> aux = databaseConector.getCarta();
+            boolean found = false;
+            Pattern pattern = Pattern.compile("['\"*$]");
+            Matcher matcher = pattern.matcher(menuView.getNewDishName());
+            if (menuView.getNewDishName().contains("\"") || menuView.getNewDishName().equals(" ") || menuView.getNewDishName().equals("") || matcher.find()) {
+                menuView.confirmEntry(9);
+            } else {
+                for (Carta c : aux) {
+                    if (c.getNomPlat().equals(menuView.getNewDishName())) {
+                        found = true;
+                    }
+                }
+                if (found == true) {
+                    menuView.confirmEntry(1);
+                } else {
+                    try {
+                        double priceAux = menuView.getNewDishPrice();
+                        int stockAux = menuView.getNewDishStock();
+
+                        // if there isn't any error of entry add the dish
+                        databaseConector.addDish(menuView.getNewDishName(), priceAux, stockAux);
+                        menuView.confirmEntry(2);
+                    } catch (NumberFormatException e1) {
+                        menuView.confirmEntry(3);
+                        e1.getMessage();
+                    }
                 }
             }
+        }catch (DataBaseException de){
+            menuView.showPopError(de.getMessage());
         }
-
         menuView.clearAddDish();
 
     }

@@ -9,15 +9,19 @@ import Controller.MouseController.SeatsSpinController;
 import Controller.WindowAdapter.MenuWindowClosing;
 import Controller.WindowAdapter.OrderWindowClosing;
 import Controller.WindowAdapter.TableWindowClosing;
+import Exceptions.DataBaseException;
 import Model.*;
 import Network.RecepcioSocketThread;
 import Network.ReservesSocketThread;
 import View.*;
+import jdk.management.resource.internal.inst.DatagramDispatcherRMHooks;
+import sun.util.resources.cldr.ta.CalendarData_ta_IN;
 
 // import java classes
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /***
  * Class that controls the main view implements action listener
@@ -142,36 +146,41 @@ public class MainController implements ActionListener{
     private void showGraphs() {
 
         // get database data
-        ArrayList<Carta> cartaTotal = databaseConector.getTopFiveTotals();
-        ArrayList<Carta> cartaSemanal = databaseConector.getTopFiveWeekly();
+        try {
+            ArrayList<Carta> cartaTotal = databaseConector.getTopFiveTotals();
+            ArrayList<Carta> cartaSemanal = databaseConector.getTopFiveWeekly();
+        
 
-        int[] comandesPlatsTotals = new int[cartaTotal.size()];
-        String[] nomPlatsTotals = new String[cartaTotal.size()];
-        int[] comandesPlatsSemanals = new int[cartaSemanal.size()];
-        String[] nomPlatsSemanals = new String[cartaSemanal.size()];
-
-
-        for (int i = 0; i < cartaTotal.size(); i++){
-            nomPlatsTotals[i] = cartaTotal.get(i).getNomPlat();
-            comandesPlatsTotals[i] = cartaTotal.get(i).getTotals();
+            int[] comandesPlatsTotals = new int[cartaTotal.size()];
+            String[] nomPlatsTotals = new String[cartaTotal.size()];
+            int[] comandesPlatsSemanals = new int[cartaSemanal.size()];
+            String[] nomPlatsSemanals = new String[cartaSemanal.size()];
+    
+    
+            for (int i = 0; i < cartaTotal.size(); i++){
+                nomPlatsTotals[i] = cartaTotal.get(i).getNomPlat();
+                comandesPlatsTotals[i] = cartaTotal.get(i).getTotals();
+            }
+    
+            for (int x = 0; x < cartaSemanal.size(); x++){
+                nomPlatsSemanals[x] = cartaSemanal.get(x).getNomPlat();
+                comandesPlatsSemanals[x] = cartaSemanal.get(x).getSemanals();
+            }
+    
+            // create view top five with the given parameters
+            TopFiveGraphView topFiveGraphView = new TopFiveGraphView(cartaTotal.get(0).getTotals(), comandesPlatsTotals, nomPlatsTotals);
+            topFiveGraphView.TopFiveGraph();
+            // show window
+            topFiveGraphView.setVisible(true);
+    
+            // create view top five week with the given parameters
+            TopFiveWeeklyGraphView topFiveWeeklyGraphView = new TopFiveWeeklyGraphView(cartaSemanal.get(0).getSemanals(), comandesPlatsSemanals, nomPlatsSemanals);
+            topFiveWeeklyGraphView.TopFiveGraph();
+            // show window
+            topFiveWeeklyGraphView.setVisible(true);
+        }catch (DataBaseException de){
+            mainView.showPopError(de.getMessage());
         }
-
-        for (int x = 0; x < cartaSemanal.size(); x++){
-            nomPlatsSemanals[x] = cartaSemanal.get(x).getNomPlat();
-            comandesPlatsSemanals[x] = cartaSemanal.get(x).getSemanals();
-        }
-
-        // create view top five with the given parameters
-        TopFiveGraphView topFiveGraphView = new TopFiveGraphView(cartaTotal.get(0).getTotals(), comandesPlatsTotals, nomPlatsTotals);
-        topFiveGraphView.TopFiveGraph();
-        // show window
-        topFiveGraphView.setVisible(true);
-
-        // create view top five week with the given parameters
-        TopFiveWeeklyGraphView topFiveWeeklyGraphView = new TopFiveWeeklyGraphView(cartaSemanal.get(0).getSemanals(), comandesPlatsSemanals, nomPlatsSemanals);
-        topFiveWeeklyGraphView.TopFiveGraph();
-        // show window
-        topFiveWeeklyGraphView.setVisible(true);
     }
 
 
@@ -185,14 +194,21 @@ public class MainController implements ActionListener{
 
 
     public String checkAndAddReserves(String nomReserva, int comensals, Object date) {
-        ArrayList<Integer> taules = databaseConector.isTableOcuped(comensals, date);
-         if(taules.size() == 0){
-             return "No hi ha taules disponibles!";
-         }else{
-             randomString = new RandomString();
-             return databaseConector.addReserve(nomReserva, date, randomString.nextString(), taules.get(0), comensals);
+        
+        try {
+            ArrayList<Integer> taules = databaseConector.isTableOcuped(comensals, date);
+            if(taules.size() == 0){
+                return "No hi ha taules disponibles!";
+            }else{
+                randomString = new RandomString();
+                return databaseConector.addReserve(nomReserva, date, randomString.nextString(), taules.get(0), comensals);
 
-         }
+            }
+        }catch (DataBaseException de){
+            mainView.showPopError(de.getMessage());
+        }
+        return "No hi ha taules disponibles!";
+        
     }
 
     /***
@@ -201,9 +217,8 @@ public class MainController implements ActionListener{
      * @param password String with the password
      * @return integer that's -1 if the user do not exits and 1 if it exists
      */
-    public int autenticar (String user, String password){
-        // TODO: canviar en contes de retornar un -1 trar una excepcio propia?
-        return databaseConector.autenticar(user,password);
+    public void autenticar (String user, String password) throws DataBaseException {
+        databaseConector.autenticar(user,password);
 
     }
 
@@ -214,8 +229,14 @@ public class MainController implements ActionListener{
      * @return amount to be payed
      */
     public double pay (int id_taula){
-        double totalPagar = databaseConector.getTotalPrice(id_taula);
-        databaseConector.deleteComanda(id_taula);
+        double totalPagar = 0;
+        try{
+            totalPagar = databaseConector.getTotalPrice(id_taula);
+            databaseConector.deleteComanda(id_taula);
+        }catch (DataBaseException de){
+            mainView.showPopError(de.getMessage());
+        }
+        
         return totalPagar;
     }
 
@@ -224,12 +245,24 @@ public class MainController implements ActionListener{
      * @return Arraylist of carta with the menu of the restaurant
      */
     public ArrayList<Carta> getMenu() {
-         return databaseConector.getCarta();
+        ArrayList<Carta> menu = null;
+        
+        try{
+            menu = databaseConector.getCarta();
+        }catch (DataBaseException de){
+            mainView.showPopError(de.getMessage());
+        }
+        return menu;
     }
 
 
     public ArrayList<CartaStatus> getOrderStatus(int idtaula) {
-       return databaseConector.getOrderStatus(idtaula);
+        try{
+            return databaseConector.getOrderStatus(idtaula);
+        }catch (DataBaseException de){
+            mainView.showPopError(de.getMessage());
+        }
+        return null;
     }
 
     /***
@@ -238,7 +271,12 @@ public class MainController implements ActionListener{
      * @param idtaula integer varaible with the id of the table
      */
     public void saveOrderUpdateStock(ArrayList<CartaSelection> cartaSelection, int idtaula) {
-        databaseConector.saveOrderUpdateStock(cartaSelection, idtaula);
+
+        try {
+            databaseConector.saveOrderUpdateStock(cartaSelection, idtaula);
+        } catch (DataBaseException de) {
+            mainView.showPopError(de.getMessage());
+        }
     }
 
     /**
@@ -246,7 +284,12 @@ public class MainController implements ActionListener{
      * @param id_taula id from the table to be disconnected
      */
     public void disconnect (int id_taula){
-        databaseConector.disconnect(id_taula);
+
+        try {
+            databaseConector.disconnect(id_taula);
+        } catch (DataBaseException de) {
+            mainView.showPopError(de.getMessage());
+        }
     }
 
     /**
@@ -255,10 +298,14 @@ public class MainController implements ActionListener{
      * @return true if there is enough quantity, false otherwise
      */
     public boolean checkQuantityOrder(ArrayList<CartaSelection> cartaSelection){
-        for(CartaSelection cartaSelect: cartaSelection){
-            if (!databaseConector.checkQuantityPlat(cartaSelect)){
-                return false;
+        try {
+            for (CartaSelection cartaSelect : cartaSelection) {
+                if (!databaseConector.checkQuantityPlat(cartaSelect)) {
+                    return false;
+                }
             }
+        }catch (DataBaseException de){
+            mainView.showPopError(de.getMessage());
         }
         return true;
     }

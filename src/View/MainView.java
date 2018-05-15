@@ -98,5 +98,9 @@ public class MainView extends JFrame {
         topFive.addActionListener(mainController);
         exit.addActionListener(mainController);
     }
+    public void showPopError(String message){
+        String[] options = { "OK" };
+        JOptionPane.showOptionDialog(this, message, "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+    }
 
 }

@@ -1,5 +1,6 @@
 package Controller.MouseController;
 
+import Exceptions.DataBaseException;
 import Model.DatabaseConector;
 import View.OrdersView;
 
@@ -19,9 +20,14 @@ public class OrdersMouseController implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-            reserva = ordersView.getSelectedReservation();
-            ordersView.populateEastTable(databaseConector.getOrderInfo(reserva));
-            ordersView.updateTableLabel(reserva);
+            try {
+                reserva = ordersView.getSelectedReservation();
+                ordersView.populateEastTable(databaseConector.getOrderInfo(reserva));
+                ordersView.updateTableLabel(reserva);
+            } catch (DataBaseException de) {
+                ordersView.showPopError(de.getMessage());
+            }
+
         }
     }
 
@@ -57,7 +63,16 @@ public class OrdersMouseController implements MouseListener {
      * Redraws view's table with new info
      */
     public void updateTables() {
-        ordersView.populateEastTable(databaseConector.getOrderInfo(reserva));
-        ordersView.populateWestTable(databaseConector.getReservation());
+
+        try {
+            ordersView.populateEastTable(databaseConector.getOrderInfo(reserva));
+        } catch (DataBaseException de) {
+            ordersView.showPopError(de.getMessage());
+        }
+        try {
+            ordersView.populateWestTable(databaseConector.getReservation());
+        } catch (DataBaseException de) {
+            ordersView.showPopError(de.getMessage());
+        }
     }
 }

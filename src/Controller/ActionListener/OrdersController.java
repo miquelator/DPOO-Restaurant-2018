@@ -4,6 +4,7 @@ package Controller.ActionListener;
 
 // import java classes
 import Controller.MouseController.OrdersMouseController;
+import Exceptions.DataBaseException;
 import Model.DatabaseConector;
 import View.OrdersView;
 
@@ -30,16 +31,25 @@ public class OrdersController implements ActionListener {
         this.ordersView = ordersView;
         this.databaseConector = databaseConector;
         this.ordersMouseController = ordersMouseController;
-        ordersView.populateWestTable(databaseConector.getReservation());
+        try {
+            ordersView.populateWestTable(databaseConector.getReservation());
+        } catch (DataBaseException de) {
+            ordersView.showPopError(de.getMessage());
+        }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case OrdersView.SERVE:
-                databaseConector.getOrderInfo(ordersMouseController.getIdReserva());
-                databaseConector.setServed(ordersView.getSelectedOrder(), ordersView.getSelectedReservation());
-                ordersView.populateEastTable(databaseConector.getOrderInfo(ordersMouseController.getIdReserva()));
+                try{
+                    databaseConector.getOrderInfo(ordersMouseController.getIdReserva());
+                    databaseConector.setServed(ordersView.getSelectedOrder(), ordersView.getSelectedReservation());
+                    ordersView.populateEastTable(databaseConector.getOrderInfo(ordersMouseController.getIdReserva()));
+                }catch (DataBaseException de){
+                    ordersView.showPopError(de.getMessage());
+                }
+
                 break;
         }
     }

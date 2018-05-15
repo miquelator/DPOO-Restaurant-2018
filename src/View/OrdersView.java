@@ -140,4 +140,10 @@ public class OrdersView extends JFrame{
     public void updateTableLabel(int reserva) {
         tableLabel.setText("Taula numero " + reserva);
     }
+
+    public void showPopError(String message) {
+        String[] options = { "OK" };
+        JOptionPane.showOptionDialog(this, message, "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+
+    }
 }

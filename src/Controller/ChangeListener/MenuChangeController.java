@@ -1,6 +1,7 @@
 package Controller.ChangeListener;
 
 // import our classes
+import Exceptions.DataBaseException;
 import Model.Carta;
 import Model.DatabaseConector;
 import View.MenuView;
@@ -35,29 +36,34 @@ public class MenuChangeController implements ChangeListener{
      */
     @Override
     public void stateChanged(ChangeEvent e) {
-        switch (menuView.getTabbedPaneWindow()){
-            case 0:
-                break;
-            case 1:
-                ArrayList<Carta> aux = databaseConector.getCarta();
-                menuView.updateMenu(aux);
-                break;
-            case 2:
-                ArrayList<Carta> plats = databaseConector.getCarta();
-                String[] list = new String[plats.size()];
-                for(int i = 0; i < plats.size();i++){
-                    list[i] = plats.get(i).getNomPlat();
-                }
-                menuView.populateDelete(list);
-                break;
-            case 3:
-                ArrayList<Carta> carta = databaseConector.getCarta();
-                String[] llista = new String[carta.size()];
-                for(int i = 0; i < carta.size();i++){
-                    llista[i] = carta.get(i).getNomPlat();
-                }
-                menuView.populateStock(llista);
-                break;
+        try {
+            switch (menuView.getTabbedPaneWindow()) {
+                case 0:
+                    break;
+                case 1:
+                    ArrayList<Carta> aux = databaseConector.getCarta();
+                    menuView.updateMenu(aux);
+                    break;
+                case 2:
+                    ArrayList<Carta> plats = databaseConector.getCarta();
+                    String[] list = new String[plats.size()];
+                    for (int i = 0; i < plats.size(); i++) {
+                        list[i] = plats.get(i).getNomPlat();
+                    }
+                    menuView.populateDelete(list);
+                    break;
+                case 3:
+                    ArrayList<Carta> carta = databaseConector.getCarta();
+                    String[] llista = new String[carta.size()];
+                    for (int i = 0; i < carta.size(); i++) {
+                        llista[i] = carta.get(i).getNomPlat();
+                    }
+                    menuView.populateStock(llista);
+                    break;
+            }
+        }catch (DataBaseException de){
+            menuView.showPopError(de.getMessage());
         }
     }
+
 }
