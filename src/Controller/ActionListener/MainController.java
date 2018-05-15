@@ -35,6 +35,7 @@ public class MainController implements ActionListener{
     private RecepcioSocketThread recepcioThread;
     private ReservesSocketThread reservesThread;
     private OrdersMouseController ordersMouseController;
+    private boolean orderViewed = false;
 
     /***
      * Constructor with parameters of the controller
@@ -89,6 +90,7 @@ public class MainController implements ActionListener{
      * Initialises order's view and controllers
      */
     private void manageOrders() {
+        orderViewed = true;
         OrdersView ordersView = new OrdersView();
         OrderWindowClosing windowClosing = new OrderWindowClosing(mainView, ordersView);
         ordersMouseController = new OrdersMouseController(ordersView, databaseConector);
@@ -218,7 +220,7 @@ public class MainController implements ActionListener{
      * @return integer that's -1 if the user do not exits and 1 if it exists
      */
     public int  autenticar (String user, String password) throws DataBaseException {
-        return databaseConector.autenticar(user,password);
+        return databaseConector.autenticar(user, password);
 
     }
 
@@ -315,6 +317,9 @@ public class MainController implements ActionListener{
      * Redraws the orders view
      */
     public void updateOrdersView() {
-        ordersMouseController.updateTables();
+        //TODO: SI EL SERVIDOR NO HA ENTRAT A MANAGEORDERS, AQUESTA VARIABLE NO ESTA INICIALITZADA I PETE
+        if (orderViewed){
+            ordersMouseController.updateTables();
+        }
     }
 }

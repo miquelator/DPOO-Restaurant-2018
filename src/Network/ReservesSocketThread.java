@@ -43,13 +43,11 @@ public class ReservesSocketThread extends Thread{
         }
     }
 
-    /***
+    /**
      * This function generates a new dedicated server
-     * @param sClient
+     * @param sClient Socket corresponding to the new user
      */
     private void generaNouServidorDedicat(Socket sClient){
-
-        System.out.println("Generant nou socket per a la recepcio");
         dedicatedReservesThread = new DedicatedReservesThread(sClient, mainController);
         // run the new thread
         dedicatedReservesThread.start();

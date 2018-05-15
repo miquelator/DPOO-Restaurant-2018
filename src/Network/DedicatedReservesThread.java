@@ -83,9 +83,11 @@ public class DedicatedReservesThread extends Thread {
                 String user = diStream.readUTF();
                 String password = diStream.readUTF();
 
+                System.out.println(user);
+                System.out.println(password);
                 // look if the credentials are correct and send result to the client
                 try {
-                    idtaula = mainController.autenticar(user,password);
+                    idtaula = mainController.autenticar(user, password);
                     doStream.writeBoolean(true);
                 } catch (DataBaseException de) {
                     doStream.writeBoolean(false);
@@ -113,8 +115,7 @@ public class DedicatedReservesThread extends Thread {
             case "ORDER":
                 try {
                     ArrayList<CartaSelection> cartaSelection = (ArrayList<CartaSelection>) oiStream.readObject();
-                    //classe primitiva de Boolean i no boolean??
-                    Boolean enoughItems = mainController.checkQuantityOrder(cartaSelection);
+                    boolean enoughItems = mainController.checkQuantityOrder(cartaSelection);
                     if (enoughItems){
                         mainController.saveOrderUpdateStock(cartaSelection, idtaula);
                         doStream.writeBoolean(true);

@@ -52,7 +52,6 @@ public class RecepcioSocketThread extends Thread {
      */
     private void generaNouServidorDedicat(Socket sClient){
 
-        System.out.println("Generant nou socket per a la recepcio");
         dedicatedRecepcioThread = new DedicatedRecepcioThread(sClient, controller);
         // run the new thread
         dedicatedRecepcioThread.start();

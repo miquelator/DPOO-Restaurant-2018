@@ -58,12 +58,14 @@ public class DatabaseConector {
                 s.executeQuery("SELECT * FROM Reserva");
                 ResultSet rs = s.getResultSet();
                 while (rs.next()) {
-                    if ( rs.getString("nom_reserva").equals(user)&&rs.getString("password_").equals(password)){
+                    if (rs.getString("nom_reserva").equals(user) && rs.getString("password_").equals(password)){
                         trobat = rs.getInt("id_taula");
                         updateConectedReserva(true, trobat);
-                    }else{
-                        throw new DataBaseException();
                     }
+                }
+
+                if (trobat == -1){
+                    throw new DataBaseException();
                 }
 
                 connection.close();
