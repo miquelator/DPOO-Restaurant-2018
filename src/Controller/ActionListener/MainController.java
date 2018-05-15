@@ -275,7 +275,7 @@ public class MainController implements ActionListener{
         try {
             databaseConector.saveOrderUpdateStock(cartaSelection, idtaula);
         } catch (DataBaseException de) {
-            mainView.showPopError(de.getMessage() + "Peto!");
+            mainView.showPopError(de.getMessage());
         }
     }
 
@@ -303,6 +303,7 @@ public class MainController implements ActionListener{
                 if (!databaseConector.checkQuantityPlat(cartaSelect)) {
                     return false;
                 }
+                System.out.println(cartaSelect.getNomPlat() + "   " + cartaSelect.getUnitatsDemanades());
             }
         }catch (DataBaseException de){
             mainView.showPopError(de.getMessage());

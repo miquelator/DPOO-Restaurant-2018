@@ -81,7 +81,7 @@ public class OrdersView extends JFrame{
         int size = orders.size();
         for (int i = 0; i < size; i++){
             Vector<String> preuPlat = new Vector(Arrays.asList(orders.get(i)));
-
+            System.out.println(orders.get(i));
             Vector<Object> row = new Vector<Object>();
             row.addElement("Comandes de la reserva nº " + String.valueOf(preuPlat.get(0)));
             model.addRow(row);
@@ -106,6 +106,7 @@ public class OrdersView extends JFrame{
     }
 
     public int getSelectedReservation() {
+
         return Integer.parseInt(westTable.getValueAt(westTable.getSelectedRow(), 0).toString().split("nº ")[1]);
     }
 

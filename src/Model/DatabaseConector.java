@@ -833,14 +833,11 @@ public class DatabaseConector {
                     preparedStmt.setInt(1, idtaula);
                     preparedStmt.execute();
                     ResultSet rs = preparedStmt.getResultSet();
-                    System.out.println("ID TAULA: " + idtaula);
                     int idreserva = -1;
                     while (rs.next()){
                         idreserva = rs.getInt("id_reserva");
-                        System.out.println("dewwe3ew "+idreserva);
                     }
 
-                    System.out.println("ID RESERVA:" + idreserva);
 
                     // create, set and execute the query command
                     query = "SELECT id_plat,quantitat FROM Carta WHERE nom_plat = ?";
@@ -859,8 +856,7 @@ public class DatabaseConector {
                         quantitat = rs.getInt("quantitat");
                     }
 
-                    System.out.println("ID PLAT:" + id);
-                    System.out.println("QUANTITAT:" + quantitat);
+
 
                     // add all the ordered units of a dish
                     for (int i = 0; i < c.getUnitatsDemanades(); i++){
@@ -876,19 +872,17 @@ public class DatabaseConector {
                         preparedStmt.execute();
                     }
 
-                    System.out.println("Comanda de plat generada");
 
                     // update the quantity weekly and total
                     query = "UPDATE Carta SET totals = totals + ?, semanals = semanals + ? WHERE id_plat=?";
-                    quantitat = c.getUnitatsDemanades();
+                    //quantitat = c.getUnitatsDemanades();
                     preparedStmt = connection.prepareStatement(query);
-                    preparedStmt.setInt(1, quantitat);
-                    preparedStmt.setInt(2, quantitat);
+                    preparedStmt.setInt(1, c.getUnitatsDemanades());
+                    preparedStmt.setInt(2, c.getUnitatsDemanades());
 
                     preparedStmt.setInt(3, id);
                     preparedStmt.execute();
 
-                    System.out.println("Quantitat setmanal i total aumentada");
 
                     // update the quantity of available dish stock
                     query = "UPDATE Carta SET quantitat=? WHERE id_plat=?";
@@ -898,7 +892,6 @@ public class DatabaseConector {
                     preparedStmt.setInt(2, id);
                     preparedStmt.execute();
 
-                    System.out.println("Quantitat de plat actualitzada");
                 }
 
                 // close connection
