@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="buggs de errors arreglats">
+    <list default="true" id="9322d821-b0d1-44ad-ad0e-ae391ffa8d63" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MenuView.java" afterPath="$PROJECT_DIR$/src/View/MenuView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/OrdersView.java" afterPath="$PROJECT_DIR$/src/View/OrdersView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -139,21 +139,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrdersView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OrdersView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/OrdersView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="110" column="5" lean-forward="false" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="396">
+              <caret line="134" column="42" lean-forward="false" selection-start-line="134" selection-start-column="42" selection-end-line="134" selection-end-column="42" />
+              <folding>
+                <element signature="e#4890#4891#0" expanded="true" />
+                <element signature="e#4951#4952#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/MenuView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="435" column="0" lean-forward="true" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="431" column="50" lean-forward="false" selection-start-line="431" selection-start-column="50" selection-end-line="431" selection-end-column="50" />
               <folding>
                 <element signature="e#15820#15821#0" expanded="true" />
                 <element signature="e#15900#15901#0" expanded="true" />
@@ -281,12 +284,12 @@
         <option value="$PROJECT_DIR$/src/Controller/ChangeListener/TablesChangeController.java" />
         <option value="$PROJECT_DIR$/src/Controller/ChangeListener/MenuChangeController.java" />
         <option value="$PROJECT_DIR$/src/Network/DedicatedReservesThread.java" />
-        <option value="$PROJECT_DIR$/src/View/OrdersView.java" />
         <option value="$PROJECT_DIR$/src/Controller/MouseController/OrdersMouseController.java" />
         <option value="$PROJECT_DIR$/src/Controller/ActionListener/OrdersController.java" />
         <option value="$PROJECT_DIR$/src/Controller/ActionListener/MainController.java" />
         <option value="$PROJECT_DIR$/src/Model/DatabaseConector.java" />
         <option value="$PROJECT_DIR$/src/View/MenuView.java" />
+        <option value="$PROJECT_DIR$/src/View/OrdersView.java" />
       </list>
     </option>
   </component>
@@ -814,7 +817,7 @@
       <workItem from="1526337131782" duration="1321000" />
       <workItem from="1526340436041" duration="676000" />
       <workItem from="1526377272382" duration="14282000" />
-      <workItem from="1526456552036" duration="2644000" />
+      <workItem from="1526456552036" duration="3956000" />
     </task>
     <task id="LOCAL-00001" summary="Pando version">
       <created>1522615397521</created>
@@ -1054,11 +1057,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526391552003</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="dish type">
+      <created>1526459223005</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1526459223005</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59728000" />
+    <option name="totallyTimeSpent" value="61040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1142,7 +1152,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Apartat de la carta &quot;majoritariament&quot; fet" />
     <MESSAGE value="Apartat de la carta totalment fet la espera de les comandes a la bbdd, la vista fot puto fastig" />
     <MESSAGE value="Llibreries actualitzades" />
     <MESSAGE value="Grafiques fetes i canvis a la bbdd" />
@@ -1167,7 +1176,8 @@
     <MESSAGE value="Excepcions Setejades" />
     <MESSAGE value="Excepcions establides en el projecte de server a mode de base de dades i de vistes a punters buits" />
     <MESSAGE value="buggs de errors arreglats" />
-    <option name="LAST_COMMIT_MESSAGE" value="buggs de errors arreglats" />
+    <MESSAGE value="dish type" />
+    <option name="LAST_COMMIT_MESSAGE" value="dish type" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1533,21 +1543,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/OrdersView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="110" column="5" lean-forward="false" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/MenuView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="435" column="0" lean-forward="true" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="431" column="50" lean-forward="false" selection-start-line="431" selection-start-column="50" selection-end-line="431" selection-end-column="50" />
           <folding>
             <element signature="e#15820#15821#0" expanded="true" />
             <element signature="e#15900#15901#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/OrdersView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="134" column="42" lean-forward="false" selection-start-line="134" selection-start-column="42" selection-end-line="134" selection-end-column="42" />
+          <folding>
+            <element signature="e#4890#4891#0" expanded="true" />
+            <element signature="e#4951#4952#0" expanded="true" />
           </folding>
         </state>
       </provider>

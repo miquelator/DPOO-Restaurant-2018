@@ -131,6 +131,11 @@ public class OrdersView extends JFrame{
             row.addElement(String.valueOf(served.get(0)));
 
             model.addRow(row);
+            if (ordersInfo.get(i).isServed()){
+                //posar a color verd fluix
+            }
+
+
         }
     }
 
