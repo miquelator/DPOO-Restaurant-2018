@@ -29,6 +29,7 @@ public class MenuView extends JFrame {
     private JSpinner spinPrice;
     private JSpinner spinAmount;
     private JSpinner spinNewAmount;
+    private ButtonGroup group;
 
 
     public final static String ADD_DISH = "Afegir un plat";
@@ -184,11 +185,44 @@ public class MenuView extends JFrame {
         constraints.insets = new Insets(5,0,5,50);
         addDishPanel.add(spinAmount, constraints);
 
+
+        JRadioButton primer = new JRadioButton("Primer");
+        primer.setSelected(true);
+        primer.setActionCommand("1");
+        JRadioButton segon = new JRadioButton("Segon");
+        segon.setActionCommand("2");
+        JRadioButton postre = new JRadioButton("Postre");
+        postre.setActionCommand("3");
+        JRadioButton beguda  = new JRadioButton("Beguda");
+        beguda.setActionCommand("4");
+        group = new ButtonGroup();
+        group.add(primer);
+        group.add(segon);
+        group.add(postre);
+        group.add(beguda);
+
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        constraints.gridheight = 1;
+        constraints.insets = new Insets(5,50,5,0);
+        addDishPanel.add(primer,constraints);
+        constraints.insets = new Insets(5,50,5,50);
+        constraints.gridx = 1;
+        addDishPanel.add(segon,constraints);
+        constraints.gridy = 4;
+        constraints.gridx = 0;
+        constraints.insets = new Insets(5,50,5,0);
+        addDishPanel.add(postre,constraints);
+        constraints.gridx = 1;
+        constraints.insets = new Insets(5,50,5,50);
+        addDishPanel.add(beguda, constraints);
+
+
         addDish = new JButton("            "
                 + ADD_DISH
                 + "            " );
         constraints.gridx = 0;
-        constraints.gridy = 3;
+        constraints.gridy = 5;
         constraints.gridwidth = 5;
         constraints.insets = new Insets(5,50,5,50);
         addDishPanel.add(addDish, constraints);
@@ -389,4 +423,13 @@ public class MenuView extends JFrame {
         String[] options = { "OK" };
         JOptionPane.showOptionDialog(this, message, "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
     }
+
+    /***
+     * This method returns the type of the dish
+     * @return int with the type of the dish
+     */
+    public int getDishType(){
+        return Integer.parseInt(group.getSelection().getActionCommand());
+    }
+
 }
