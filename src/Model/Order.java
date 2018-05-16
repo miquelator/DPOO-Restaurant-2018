@@ -1,17 +1,15 @@
 package Model;
 
 
-import java.sql.Date;
-
 public class Order {
     private int idPlat;
     private String nomPlat;
     private int idTaula;
-    private java.sql.Date hora;
+    private String hora;
     private boolean served;
     private int idComanda;
 
-    public Order(int idPlat, String nomPlat, int idTaula, Date hora, boolean served, int idComanda) {
+    public Order(int idPlat, String nomPlat, int idTaula, String hora, boolean served, int idComanda) {
         this.idPlat = idPlat;
         this.nomPlat = nomPlat;
         this.idTaula = idTaula;
@@ -36,11 +34,11 @@ public class Order {
         this.idTaula = idTaula;
     }
 
-    public Date getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(Date hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 

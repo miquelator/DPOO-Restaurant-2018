@@ -132,10 +132,8 @@ public class OrdersView extends JFrame{
 
             model.addRow(row);
             if (ordersInfo.get(i).isServed()){
-                //posar a color verd fluix
+                //TODO: CANVIAR A COLOR VERD (ENRIQUE)
             }
-
-
         }
     }
 

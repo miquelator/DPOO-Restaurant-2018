@@ -317,7 +317,6 @@ public class MainController implements ActionListener{
      * Redraws the orders view
      */
     public void updateOrdersView() {
-        //TODO: SI EL SERVIDOR NO HA ENTRAT A MANAGEORDERS, AQUESTA VARIABLE NO ESTA INICIALITZADA I PETE
         if (orderViewed){
             ordersMouseController.updateTables();
         }

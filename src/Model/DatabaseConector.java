@@ -976,7 +976,7 @@ public class DatabaseConector {
                     }
                 }
 
-                //TODO: tancar connexió?
+                connection.close();
             } catch (SQLException e) {
                 throw new DataBaseException(ERROR_BBDD);
             }
@@ -1007,11 +1007,13 @@ public class DatabaseConector {
                     preparedStmt.execute();
                     ResultSet rs2 = preparedStmt.getResultSet();
                     rs2.next();
-                    orders.add(new Order(rs.getInt("id_plat"), rs2.getString("nom_plat"), rs.getInt("id_taula"), new java.sql.Date(rs.getDate("hora").getTime()), rs.getBoolean("servit"), rs.getInt("id_comanda")));
+
+                    String time = String.valueOf(rs.getDate("hora"))+ " " + rs.getTime("hora");
+                    orders.add(new Order(rs.getInt("id_plat"), rs2.getString("nom_plat"), rs.getInt("id_taula"), time, rs.getBoolean("servit"), rs.getInt("id_comanda")));
                 }
 
 
-                //TODO: tancar la connexió?
+                connection.close();
             }catch (SQLException e){
                 throw new DataBaseException("Error amb la informació de l'ordre");
             }
@@ -1044,7 +1046,7 @@ public class DatabaseConector {
                 preparedStmt.setInt(2, idComanda);
                 preparedStmt.execute();
 
-                //TODO: tancar connexió?
+                connection.close();
             }catch (SQLException e){ //manage exception
                 throw new DataBaseException(ERROR_BBDD);
             }
