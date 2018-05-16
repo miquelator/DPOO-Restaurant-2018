@@ -33,7 +33,7 @@ public class OrdersController implements ActionListener {
         this.databaseConector = databaseConector;
         this.ordersMouseController = ordersMouseController;
         try {
-            ordersView.populateWestTable(databaseConector.getReservation());
+            ordersView.populateWestTable(databaseConector.getReservation(), -1);
         } catch (DataBaseException de) {
             ordersView.showPopError(de.getMessage());
         }

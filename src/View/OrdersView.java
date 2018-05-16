@@ -69,7 +69,7 @@ public class OrdersView extends JFrame{
         model.addColumn("Servit");
     }
 
-    public void populateWestTable(ArrayList<Integer> orders) {
+    public void populateWestTable(ArrayList<Integer> orders, int selected) {
         DefaultTableModel model = (DefaultTableModel) westTable.getModel();
         model.setRowCount(0);
         model.setColumnCount(0);
@@ -86,6 +86,7 @@ public class OrdersView extends JFrame{
             row.addElement("Comandes de la reserva nº " + String.valueOf(preuPlat.get(0)));
             model.addRow(row);
         }
+
     }
 
     /**
@@ -149,5 +150,18 @@ public class OrdersView extends JFrame{
         String[] options = { "OK" };
         JOptionPane.showOptionDialog(this, message, "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
 
+    }
+
+    public ArrayList<Integer> getViewedReservations() {
+        ArrayList viewedReservations = new ArrayList();
+        int size = westTable.getRowCount();
+        for (int i = 0; i < size; i++){
+            viewedReservations.add(westTable.getModel().getValueAt(i,0));
+        }
+        return viewedReservations;
+    }
+
+    public int getSelectedReservationIndex() {
+        return westTable.getSelectedRow();
     }
 }

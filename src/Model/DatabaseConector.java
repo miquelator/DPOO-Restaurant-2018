@@ -1012,7 +1012,6 @@ public class DatabaseConector {
                     orders.add(new Order(rs.getInt("id_plat"), rs2.getString("nom_plat"), rs.getInt("id_taula"), time, rs.getBoolean("servit"), rs.getInt("id_comanda")));
                 }
 
-
                 connection.close();
             }catch (SQLException e){
                 throw new DataBaseException("Error amb la informació de l'ordre");

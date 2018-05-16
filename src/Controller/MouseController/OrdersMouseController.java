@@ -6,6 +6,7 @@ import View.OrdersView;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 public class OrdersMouseController implements MouseListener {
     private OrdersView ordersView;
@@ -63,14 +64,15 @@ public class OrdersMouseController implements MouseListener {
      * Redraws view's table with new info
      */
     public void updateTables() {
-
         try {
             ordersView.populateEastTable(databaseConector.getOrderInfo(reserva));
         } catch (DataBaseException de) {
             ordersView.showPopError(de.getMessage());
         }
+
         try {
-            ordersView.populateWestTable(databaseConector.getReservation());
+            int selected = ordersView.getSelectedReservationIndex();
+            ordersView.populateWestTable(databaseConector.getReservation(), selected);
         } catch (DataBaseException de) {
             ordersView.showPopError(de.getMessage());
         }

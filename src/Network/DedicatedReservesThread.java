@@ -83,8 +83,6 @@ public class DedicatedReservesThread extends Thread {
                 String user = diStream.readUTF();
                 String password = diStream.readUTF();
 
-                System.out.println(user);
-                System.out.println(password);
                 // look if the credentials are correct and send result to the client
                 try {
                     idtaula = mainController.autenticar(user, password);
