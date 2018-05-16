@@ -7,11 +7,16 @@ import Model.JTableModel;
 import Model.Order;
 
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Vector;
+
+import static java.awt.Color.*;
 
 public class OrdersView extends JFrame{
     private JButton serve;
@@ -120,6 +125,11 @@ public class OrdersView extends JFrame{
         model.addColumn("Hora de comanda");
         model.addColumn("Servit");
 
+        // since we’re using values of floats and boolean here, we need
+        // to set the cell renderer for every column.
+
+        eastTable.setDefaultRenderer(eastTable.getColumnClass(1), new MenuCellRenderer());
+
         int size = ordersInfo.size();
         for (int i = 0; i < size; i++) {
             Vector<String> idPlat = new Vector(Arrays.asList(ordersInfo.get(i).getNomPlat()));
@@ -130,11 +140,14 @@ public class OrdersView extends JFrame{
             row.addElement(idPlat.get(0));
             row.addElement(hora.get(0));
             row.addElement(String.valueOf(served.get(0)));
-
             model.addRow(row);
+
             if (ordersInfo.get(i).isServed()){
                 //TODO: CANVIAR A COLOR VERD (ENRIQUE)
+                //eastTable.setDefaultRenderer(eastTable.getColumnClass(i), new MenuCellRenderer());
+
             }
+
         }
     }
 
