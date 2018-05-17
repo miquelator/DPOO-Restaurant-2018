@@ -275,6 +275,7 @@ public class MainController implements ActionListener{
     public void saveOrderUpdateStock(ArrayList<CartaSelection> cartaSelection, int idtaula) {
 
         try {
+
             databaseConector.saveOrderUpdateStock(cartaSelection, idtaula);
         } catch (DataBaseException de) {
             mainView.showPopError(de.getMessage());

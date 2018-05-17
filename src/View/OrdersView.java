@@ -177,4 +177,8 @@ public class OrdersView extends JFrame{
     public int getSelectedReservationIndex() {
         return westTable.getSelectedRow();
     }
+
+    public void setSelectedReservationIndex(int selection) {
+        westTable.setRowSelectionInterval(selection,selection);
+    }
 }

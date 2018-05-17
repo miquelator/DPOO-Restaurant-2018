@@ -73,6 +73,7 @@ public class OrdersMouseController implements MouseListener {
         try {
             int selected = ordersView.getSelectedReservationIndex();
             ordersView.populateWestTable(databaseConector.getReservation(), selected);
+            ordersView.setSelectedReservationIndex(selected);
         } catch (DataBaseException de) {
             ordersView.showPopError(de.getMessage());
         }
