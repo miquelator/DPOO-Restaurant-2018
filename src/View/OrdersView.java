@@ -139,11 +139,6 @@ public class OrdersView extends JFrame{
             row.addElement(String.valueOf(served.get(0)));
             model.addRow(row);
 
-            if (ordersInfo.get(i).isServed()){
-                //TODO: CANVIAR A COLOR VERD (ENRIQUE)
-                //eastTable.setDefaultRenderer(eastTable.getColumnClass(i), new MenuCellRenderer());
-
-            }
 
         }
     }
