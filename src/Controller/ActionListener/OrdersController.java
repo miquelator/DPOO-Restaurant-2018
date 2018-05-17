@@ -10,7 +10,7 @@ import View.OrdersView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+
 
 /***
  * This class controls the Orders
@@ -47,9 +47,7 @@ public class OrdersController implements ActionListener {
                     databaseConector.getOrderInfo(ordersMouseController.getIdReserva());
                     databaseConector.setServed(ordersView.getSelectedOrder(), ordersView.getSelectedReservation());
                     ordersView.populateEastTable(databaseConector.getOrderInfo(ordersMouseController.getIdReserva()));
-                }catch (DataBaseException de){
-                    ordersView.showPopError("No hi ha cap comanda seleccionada!");
-                }catch (ArrayIndexOutOfBoundsException e1){
+                }catch (DataBaseException | ArrayIndexOutOfBoundsException de){
                     ordersView.showPopError("No hi ha cap comanda seleccionada!");
                 }
 
