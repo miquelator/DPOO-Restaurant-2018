@@ -24,7 +24,6 @@ public class OrdersMouseController implements MouseListener {
             try {
                 reserva = ordersView.getSelectedReservation();
                 ordersView.populateEastTable(databaseConector.getOrderInfo(reserva));
-                ordersView.updateTableLabel(reserva);
             } catch (DataBaseException de) {
                 ordersView.showPopError(de.getMessage());
             }

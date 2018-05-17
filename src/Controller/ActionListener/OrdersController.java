@@ -48,7 +48,7 @@ public class OrdersController implements ActionListener {
                     databaseConector.setServed(ordersView.getSelectedOrder(), ordersView.getSelectedReservation());
                     ordersView.populateEastTable(databaseConector.getOrderInfo(ordersMouseController.getIdReserva()));
                 }catch (DataBaseException | ArrayIndexOutOfBoundsException de){
-                    ordersView.showPopError("No hi ha cap comanda seleccionada!");
+                    ordersView.showPopError("No hi ha cap plat de comanda seleccionada!");
                 }
 
                 break;

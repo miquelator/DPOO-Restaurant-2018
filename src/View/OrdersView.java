@@ -20,7 +20,6 @@ import static java.awt.Color.*;
 
 public class OrdersView extends JFrame{
     private JButton serve;
-    private JLabel tableLabel;
     private JTable eastTable;
     private JTable westTable;
 
@@ -45,12 +44,10 @@ public class OrdersView extends JFrame{
         createEmptyEastTable();
         JScrollPane eastScroll = new JScrollPane(eastTable);
         serve = new JButton(SERVE);
-        tableLabel = new JLabel("Taula numero -");
         east.add(eastScroll, BorderLayout.CENTER);
         JPanel southEast = new JPanel(new GridLayout(1,2));
         JPanel tableLabelAux = new JPanel();
         tableLabelAux.add(serve);
-        tableLabelAux.add(tableLabel);
         southEast.add(tableLabelAux);
         southEast.add(tableLabelAux);
         east.add(southEast, BorderLayout.SOUTH);
@@ -155,9 +152,6 @@ public class OrdersView extends JFrame{
         return eastTable.getSelectedRow() + 1;
     }
 
-    public void updateTableLabel(int reserva) {
-        tableLabel.setText("Taula numero " + reserva);
-    }
 
     public void showPopError(String message) {
         String[] options = { "OK" };
