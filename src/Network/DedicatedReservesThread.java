@@ -100,6 +100,7 @@ public class DedicatedReservesThread extends Thread {
             case "PAY":
                 double totalPagar = mainController.pay(idtaula);
                 doStream.writeDouble(totalPagar);
+                mainController.updateOrdersView();
                 break;
 
             case "SHOW_MENU":

@@ -167,7 +167,7 @@ public class OrdersView extends JFrame{
         return westTable.getSelectedRow();
     }
 
-    public void setSelectedReservationIndex(int selection) {
+    public void setSelectedReservationIndex(int selection) throws IllegalArgumentException{
         westTable.setRowSelectionInterval(selection,selection);
     }
 }

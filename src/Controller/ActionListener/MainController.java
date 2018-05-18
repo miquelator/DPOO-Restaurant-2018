@@ -319,6 +319,7 @@ public class MainController implements ActionListener{
     public void updateOrdersView() {
         if (orderViewed){
             ordersMouseController.updateTables();
+            //ordersMouseController.updateTables();
         }
     }
 }

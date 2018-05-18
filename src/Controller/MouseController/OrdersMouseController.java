@@ -64,15 +64,17 @@ public class OrdersMouseController implements MouseListener {
      */
     public void updateTables() {
         try {
-            ordersView.populateEastTable(databaseConector.getOrderInfo(reserva));
-        } catch (DataBaseException de) {
-            ordersView.showPopError(de.getMessage());
-        }
-
-        try {
             int selected = ordersView.getSelectedReservationIndex();
             ordersView.populateWestTable(databaseConector.getReservation(), selected);
             ordersView.setSelectedReservationIndex(selected);
+        } catch (DataBaseException de) {
+            ordersView.showPopError(de.getMessage());
+        }catch (IllegalArgumentException ignored){
+
+        }
+
+        try {
+            ordersView.populateEastTable(databaseConector.getOrderInfo(reserva));
         } catch (DataBaseException de) {
             ordersView.showPopError(de.getMessage());
         }
