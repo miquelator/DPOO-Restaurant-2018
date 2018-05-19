@@ -322,4 +322,12 @@ public class MainController implements ActionListener{
             //ordersMouseController.updateTables();
         }
     }
+
+    public void setTableOccupied(int idtaula, boolean occupied) {
+        try {
+            databaseConector.setTableOccupied(idtaula, occupied);
+        } catch (DataBaseException ignored) {
+
+        }
+    }
 }

@@ -85,6 +85,7 @@ public class DedicatedReservesThread extends Thread {
                 try {
                     idtaula = mainController.autenticar(user, password);
                     doStream.writeBoolean(true);
+                    mainController.setTableOccupied(idtaula, true);
                 } catch (DataBaseException de) {
                     doStream.writeBoolean(false);
                 }
@@ -99,6 +100,7 @@ public class DedicatedReservesThread extends Thread {
                 double totalPagar = mainController.pay(idtaula);
                 doStream.writeDouble(totalPagar);
                 mainController.updateOrdersView();
+                mainController.setTableOccupied(idtaula, false);
                 break;
 
             case "SHOW_MENU":

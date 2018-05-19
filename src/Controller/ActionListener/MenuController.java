@@ -134,7 +134,7 @@ public class MenuController implements ActionListener {
                         int stockAux = menuView.getNewDishStock();
 
                         // if there isn't any error of entry add the dish
-                        databaseConector.addDish(menuView.getNewDishName(), priceAux, stockAux);
+                        databaseConector.addDish(menuView.getNewDishName(), menuView.getDishType(), priceAux, stockAux);
                         menuView.confirmEntry(2);
                     } catch (NumberFormatException e1) {
                         menuView.confirmEntry(3);

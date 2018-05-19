@@ -52,13 +52,16 @@ public class DatabaseConector {
      * @return boolean whether the user exists.
      */
     public int autenticar(String user, String password) throws DataBaseException {
-
         int trobat = -1;
         if (conexio()){
             try {
-                Statement s = connection.createStatement();
-                s.executeQuery("SELECT * FROM Reserva");
-                ResultSet rs = s.getResultSet();
+                String query = "SELECT * FROM Reserva WHERE nom_reserva = ? AND password_ = ?;";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setString(1, user);
+                preparedStmt.setString(2, password);
+                preparedStmt.execute();
+                ResultSet rs = preparedStmt.getResultSet();
+
                 while (rs.next()) {
                     if (rs.getString("nom_reserva").equals(user) && rs.getString("password_").equals(password)){
                         trobat = rs.getInt("id_taula");
@@ -81,7 +84,6 @@ public class DatabaseConector {
                         }
                     }
                 }
-
 
                 if (trobat == -1){
                     throw new DataBaseException();
@@ -242,7 +244,6 @@ public class DatabaseConector {
                 String query = "UPDATE Reserva SET conectat = ? WHERE id_reserva = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
 
-
                 // fill the arguments
                 preparedStmt.setBoolean(1, b);
                 preparedStmt.setInt(2, id);
@@ -264,26 +265,27 @@ public class DatabaseConector {
     /***
      * This method adds a Dish information to the data base
      * @param nom String with the name of the dish
+     * @param dishType
      * @param preu double with the value of the price
      * @param quantitat integer with the quantity of available dishes
      * @return boolean if it's achieved or not
      */
-    public boolean addDish(String nom, double preu, int quantitat) throws DataBaseException {
-
+    public boolean addDish(String nom, int dishType, double preu, int quantitat) throws DataBaseException {
         // stables connection, end if it's not achieved
         if (conexio()){
             try {
 
                 // prepare the mysql order
-                String query = "INSERT INTO Carta(nom_plat, preu, quantitat, semanals, totals) VALUES (?,?,?,?,?)";
+                String query = "INSERT INTO Carta(nom_plat, tipus_plat, preu, quantitat, semanals, totals) VALUES (?,?,?,?,?,?);";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
 
                 // fill the msql order
                 preparedStmt.setString(1, nom);
-                preparedStmt.setDouble(2, preu);
-                preparedStmt.setInt(3, quantitat);
-                preparedStmt.setInt(4, 0);
+                preparedStmt.setInt(2, dishType);
+                preparedStmt.setDouble(3, preu);
+                preparedStmt.setInt(4, quantitat);
                 preparedStmt.setInt(5, 0);
+                preparedStmt.setInt(6, 0);
 
                 // execute the order
                 preparedStmt.execute();
@@ -641,7 +643,6 @@ public class DatabaseConector {
                     boolean found = false;
 
                     idTaulaaux = rs.getInt("id_taula");
-                    System.out.println(idTaulaaux);
 
                     // look if the table is occupied on the date
                     query =  "SELECT data_reserva FROM Reserva WHERE id_taula = ?";
@@ -654,8 +655,6 @@ public class DatabaseConector {
 
                         SimpleDateFormat mdyFormat = new SimpleDateFormat("yyyy-MM-dd");
                         String dmy = mdyFormat.format(date);
-                        System.out.println(dmy);
-                        System.out.println(rs2.getDate("data_reserva").toString());
                         if (rs2.getDate("data_reserva").toString().equals(dmy)){
                             found = true;
                         }
@@ -666,7 +665,6 @@ public class DatabaseConector {
                         taulesLliures.add(idTaulaaux);
                     }
                 }
-                System.out.println(taulesLliures);
 
                 // return the list of available tables
                 return taulesLliures;
@@ -719,7 +717,6 @@ public class DatabaseConector {
             }
         }
         return "Error al afegir la nova reserva!";
-
     }
 
     /***
@@ -732,7 +729,6 @@ public class DatabaseConector {
         // stables connection
         if (conexio()) {
             try {
-
                 // create the query command
                 String query = "SELECT * FROM Carta WHERE nom_plat = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
@@ -745,7 +741,6 @@ public class DatabaseConector {
 
                 // get the result of the query
                 ResultSet rs = preparedStmt.getResultSet();
-
 
                 // look if there is available stock
                 int quantitat = 0;
@@ -764,13 +759,11 @@ public class DatabaseConector {
             }
         }
         return false;
-
     }
 
 
     public ArrayList<CartaStatus> getOrderStatus(int idtaula) throws DataBaseException {
         if (conexio()){
-
             try{
                 String query =  "SELECT * FROM Comanda WHERE id_taula = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
@@ -788,7 +781,6 @@ public class DatabaseConector {
                 }
 
                 for (CartaStatus cartaStatus : resultat){
-
                     query =  "SELECT nom_plat FROM Carta WHERE id_plat = ?";
                     preparedStmt = connection.prepareStatement(query);
                     preparedStmt.setInt(1, cartaStatus.getIdPlat());
@@ -798,9 +790,7 @@ public class DatabaseConector {
                     while (rs.next()){
                         cartaStatus.setNomPlat(rs.getString("nom_plat"));
                     }
-
                 }
-
                 connection.close();
                 return resultat;
 
@@ -849,7 +839,6 @@ public class DatabaseConector {
                 //TODO: ACTUALITZAR SEMANALS I TOTALS - PANDO
                 // save into the database all the order information
                 for (CartaSelection c : cartaSelection) {
-
                     String query = "SELECT id_reserva FROM Reserva WHERE id_taula = ?;";
                     PreparedStatement preparedStmt = connection.prepareStatement(query);
                     preparedStmt.setInt(1, idtaula);
@@ -859,7 +848,6 @@ public class DatabaseConector {
                     while (rs.next()){
                         idreserva = rs.getInt("id_reserva");
                     }
-
 
                     // create, set and execute the query command
                     query = "SELECT id_plat,quantitat FROM Carta WHERE nom_plat = ?";
@@ -878,11 +866,8 @@ public class DatabaseConector {
                         quantitat = rs.getInt("quantitat");
                     }
 
-
-
                     // add all the ordered units of a dish
                     for (int i = 0; i < c.getUnitatsDemanades(); i++){
-
                         // create the set statement, fill it and execute it
                         query = "INSERT INTO Comanda (id_plat, id_taula, id_reserva, servit) VALUES (?, ?, ?, ?);";
                         preparedStmt = connection.prepareStatement(query);
@@ -894,7 +879,6 @@ public class DatabaseConector {
                         preparedStmt.execute();
                     }
 
-
                     // update the quantity weekly and total
                     query = "UPDATE Carta SET totals = totals + ?, semanals = semanals + ? WHERE id_plat=?";
                     //quantitat = c.getUnitatsDemanades();
@@ -905,7 +889,6 @@ public class DatabaseConector {
                     preparedStmt.setInt(3, id);
                     preparedStmt.execute();
 
-
                     // update the quantity of available dish stock
                     query = "UPDATE Carta SET quantitat=? WHERE id_plat=?";
                     quantitat = quantitat - c.getUnitatsDemanades();
@@ -913,7 +896,6 @@ public class DatabaseConector {
                     preparedStmt.setInt(1, quantitat);
                     preparedStmt.setInt(2, id);
                     preparedStmt.execute();
-
                 }
 
                 // close connection
@@ -1067,6 +1049,23 @@ public class DatabaseConector {
 
                 connection.close();
             }catch (SQLException e){ //manage exception
+                throw new DataBaseException(ERROR_BBDD);
+            }
+        }
+    }
+
+    public void setTableOccupied(int idtaula, boolean occupied) throws DataBaseException {
+        if (conexio()){
+            try {
+                String query = "UPDATE Taula SET ocupada = ? WHERE id_taula = ?;";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setBoolean(1, occupied);
+                preparedStmt.setInt(2, idtaula);
+
+                preparedStmt.execute();
+
+                connection.close();
+            } catch (SQLException e) { // manage exception
                 throw new DataBaseException(ERROR_BBDD);
             }
         }
