@@ -1,4 +1,4 @@
--- CREATE DATABASE DPOO_Restaurant;
+CREATE DATABASE IF NOT EXISTS DPOO_Restaurant;
 USE DPOO_Restaurant;
 
 DROP TABLE IF EXISTS Carta CASCADE;
@@ -24,12 +24,7 @@ CREATE TABLE Reserva(
     PRIMARY KEY (id_reserva),
     FOREIGN KEY (id_taula) REFERENCES Taula(id_taula)
 );
-/*
-SELECT * FROM Reserva WHERE nom_reserva = 'a' AND password_ = 'a';
-SELECT * FROM Reserva WHERE nom_reserva = 'q' AND password_ = 'q';
-UPDATE Taula SET ocupada = true WHERE id_taula = 2;
-SELECT * FROM Taula;
-*/
+
 CREATE TABLE Carta(
 	id_plat INT NOT NULL AUTO_INCREMENT,
 	tipus_plat INT,

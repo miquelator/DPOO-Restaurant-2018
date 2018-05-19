@@ -61,7 +61,10 @@ public class OrdersView extends JFrame{
         setContentPane(jSplitPane);
     }
 
-    private void createEmptyEastTable() {
+    /**
+     * Generates empty eastern side of view
+     */
+    public void createEmptyEastTable() {
         DefaultTableModel model = (DefaultTableModel) eastTable.getModel();
         model.setRowCount(0);
         model.setColumnCount(0);
@@ -71,7 +74,12 @@ public class OrdersView extends JFrame{
         model.addColumn("Servit");
     }
 
-    public void populateWestTable(ArrayList<Integer> orders, int selected) {
+    /**
+     * Fills west side of view
+     * @param servedOrders ArrayList Containing info from the servedOrders to fill the view with
+     * @param notServedOrders ArrayList Containing info from the non servedOrders to fill the view with
+     */
+    public void populateWestTable(ArrayList<Integer> servedOrders, ArrayList<Integer> notServedOrders) {
         DefaultTableModel model = (DefaultTableModel) westTable.getModel();
         model.setRowCount(0);
         model.setColumnCount(0);
@@ -80,15 +88,23 @@ public class OrdersView extends JFrame{
 
         model.addColumn("Comanda");
 
-        int size = orders.size();
-        for (int i = 0; i < size; i++){
-            Vector<String> preuPlat = new Vector(Arrays.asList(orders.get(i)));
-            System.out.println(orders.get(i));
+        int notServedOrdersSize = notServedOrders.size();
+        for (int i = 0; i < notServedOrdersSize; i++){
+            Vector<String> preuPlat = new Vector(Arrays.asList(notServedOrders.get(i)));
+            //Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: 0 >= 0 (sense indicacio de quina linia)
             Vector<Object> row = new Vector<Object>();
             row.addElement("Comandes de la reserva nº " + String.valueOf(preuPlat.get(0)));
             model.addRow(row);
         }
 
+        int servedOrdersSize = servedOrders.size();
+        for (int i = 0; i < servedOrdersSize; i++){
+            Vector<String> preuPlat = new Vector(Arrays.asList(servedOrders.get(i)));
+            //Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: 0 >= 0 (sense indicacio de quina linia)
+            Vector<Object> row = new Vector<Object>();
+            row.addElement("Comandes de la reserva nº " + String.valueOf(preuPlat.get(0)));
+            model.addRow(row);
+        }
     }
 
     /**
@@ -102,17 +118,30 @@ public class OrdersView extends JFrame{
         model.addColumn("Comanda");
     }
 
+    /**
+     * Adds controllers to this view
+     * @param controller instance of OrdersController
+     * @param ordersMouseController instance of OrdersMouseController
+     * @param windowListener instance of OrderWindowClosing
+     */
     public void registerListeners(OrdersController controller, OrdersMouseController ordersMouseController, OrderWindowClosing windowListener){
         serve.addActionListener(controller);
         westTable.addMouseListener(ordersMouseController);
         this.addWindowListener(windowListener);
     }
 
+    /**
+     * Gives selected reservation
+     * @return index from the reservation
+     */
     public int getSelectedReservation() {
-
         return Integer.parseInt(westTable.getValueAt(westTable.getSelectedRow(), 0).toString().split("nº ")[1]);
     }
 
+    /**
+     * Fills east side of view
+     * @param ordersInfo ArrayList containing all data to fill the view with
+     */
     public void populateEastTable(ArrayList<Order> ordersInfo) {
         DefaultTableModel model = (DefaultTableModel) eastTable.getModel();
         model.setRowCount(0);
@@ -138,22 +167,32 @@ public class OrdersView extends JFrame{
             row.addElement(hora.get(0));
             row.addElement(String.valueOf(served.get(0)));
             model.addRow(row);
-
-
         }
     }
 
+    /**
+     * Gives the selected order
+     * @return The selected order
+     */
     public int getSelectedOrder() {
         return eastTable.getSelectedRow() + 1;
     }
 
 
+    /**
+     * Displays error message
+     * @param message Error message to be shown
+     */
     public void showPopError(String message) {
         String[] options = { "OK" };
         JOptionPane.showOptionDialog(this, message, "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
 
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Integer> getViewedReservations() {
         ArrayList viewedReservations = new ArrayList();
         int size = westTable.getRowCount();
@@ -163,11 +202,20 @@ public class OrdersView extends JFrame{
         return viewedReservations;
     }
 
+    /**
+     * Gives selected reservation index from the JTable
+     * @return index from the JTable
+     */
     public int getSelectedReservationIndex() {
         return westTable.getSelectedRow();
     }
 
+    /**
+     * Sets specified input as the selected reservation index
+     * @param selection Integer to be set
+     * @throws IllegalArgumentException
+     */
     public void setSelectedReservationIndex(int selection) throws IllegalArgumentException{
-        westTable.setRowSelectionInterval(selection,selection);
+        westTable.setRowSelectionInterval(selection, selection);
     }
 }

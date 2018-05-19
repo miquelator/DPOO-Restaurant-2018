@@ -951,7 +951,7 @@ public class DatabaseConector {
      */
     public ArrayList<Integer> getReservation() throws DataBaseException {
         if (conexio()){
-            String query =  "SELECT DISTINCT (id_reserva) FROM Comanda;";
+            String query =  "SELECT DISTINCT (id_reserva) FROM Comanda ORDER BY hora ASC;";
             PreparedStatement preparedStmt = null;
             ArrayList<Integer> comanda = new ArrayList<>();
             try {
@@ -1054,6 +1054,12 @@ public class DatabaseConector {
         }
     }
 
+    /**
+     * Changes Table status in DDBB to specified input
+     * @param idtaula Id from table to which modify
+     * @param occupied input to be set
+     * @throws DataBaseException In case error connecting to DDBB
+     */
     public void setTableOccupied(int idtaula, boolean occupied) throws DataBaseException {
         if (conexio()){
             try {

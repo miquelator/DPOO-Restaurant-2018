@@ -23,7 +23,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="5ecf77cd-9aca-49f7-a0b8-d54cbfc32f06">
+        <schema name="dpoo_restaurant" object-types="column, function, table" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="5ecf77cd-9aca-49f7-a0b8-d54cbfc32f06">

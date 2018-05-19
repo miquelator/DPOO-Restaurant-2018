@@ -61,7 +61,6 @@ public class DedicatedRecepcioThread extends Thread {
             randomString = new RandomString();
 
             // wait client petition
-            System.out.println("esperant peticio del client");
             String request = diStream.readUTF();
 
             // read request
