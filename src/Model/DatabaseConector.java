@@ -67,9 +67,12 @@ public class DatabaseConector {
                         java.util.Date date = rs.getDate("data_reserva");
                         Calendar calendar = Calendar.getInstance();
                         java.util.Date date2 = calendar.getTime();
+                        Date date3 = new Date(date2.getTime());
 
-                        System.out.println("Data 1 "+date);
-                        System.out.println("Data 2 "+date2);
+                        if(!date.toString().equals(date3.toString())){
+                            trobat = -1;
+                        }
+
                         //date.compareTo(date2);
                         if(rs.getBoolean("conectat")){
                             trobat = -1;
