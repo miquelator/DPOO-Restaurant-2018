@@ -3,11 +3,9 @@ package Network;
 
 // import our classes
 import Controller.ActionListener.MainController;
-//TODO: crec que no hauria de estar linkat amb el model
 import Exceptions.DataBaseException;
 import Model.Carta;
 import Model.CartaSelection;
-import com.sun.org.apache.xpath.internal.SourceTree;
 
 // import java classes
 import java.io.*;

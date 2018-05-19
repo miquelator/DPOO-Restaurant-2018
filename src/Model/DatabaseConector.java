@@ -6,9 +6,11 @@ import Exceptions.DataBaseException;
 import Exceptions.TablesException;
 import com.sun.org.apache.regexp.internal.RE;
 
+import javax.xml.bind.DataBindingException;
 import java.sql.*;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.util.*;
 
 /***
  * This class has and manage the information with the database
@@ -60,9 +62,23 @@ public class DatabaseConector {
                 while (rs.next()) {
                     if (rs.getString("nom_reserva").equals(user) && rs.getString("password_").equals(password)){
                         trobat = rs.getInt("id_taula");
-                        updateConectedReserva(true, trobat);
+                        int trobat2 = rs.getInt("id_reserva");
+
+                        java.util.Date date = rs.getDate("data_reserva");
+                        Calendar calendar = Calendar.getInstance();
+                        java.util.Date date2 = calendar.getTime();
+
+                        System.out.println("Data 1 "+date);
+                        System.out.println("Data 2 "+date2);
+                        //date.compareTo(date2);
+                        if(rs.getBoolean("conectat")){
+                            trobat = -1;
+                        }else {
+                            updateConectedReserva(true, trobat2);
+                        }
                     }
                 }
+
 
                 if (trobat == -1){
                     throw new DataBaseException();
@@ -222,6 +238,7 @@ public class DatabaseConector {
                 // generate the new query string
                 String query = "UPDATE Reserva SET conectat = ? WHERE id_reserva = ?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
+
 
                 // fill the arguments
                 preparedStmt.setBoolean(1, b);
@@ -781,7 +798,7 @@ public class DatabaseConector {
 
                 }
 
-                // TODO: tancar connexió?
+                connection.close();
                 return resultat;
 
             } catch (SQLException e) {
