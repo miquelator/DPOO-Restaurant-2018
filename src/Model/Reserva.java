@@ -4,7 +4,7 @@ package Model;
 // import java packages
 import java.util.Date;
 
-/***
+/**
  * This class handles all the information that's related with the reservation
  */
 public class Reserva {
@@ -17,7 +17,7 @@ public class Reserva {
     private int numComensals;
     private boolean conectat;
 
-    /***
+    /**
      * Constructor of the class
      * @param idTaula integer with the id of the table
      * @param nomReserva String with the name of the reserve

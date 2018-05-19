@@ -4,7 +4,7 @@ package Model;
 // import java class
 import java.io.Serializable;
 
-/***
+/**
  * Class that has the carta selection information of a dish
  */
 public class CartaSelection implements Serializable{
@@ -13,7 +13,7 @@ public class CartaSelection implements Serializable{
     private int unitatsDemanades;
     private float preuTotal;
 
-    /***
+    /**
      *
      * @param nomPlat String variable with the name of the dish
      * @param preu float value of the price of the dish
@@ -61,7 +61,7 @@ public class CartaSelection implements Serializable{
         this.preuTotal = preuTotal;
     }
 
-    /***
+    /**
      * Method that overrides supper to string to create a custom string
      * @return String representation of the class
      */

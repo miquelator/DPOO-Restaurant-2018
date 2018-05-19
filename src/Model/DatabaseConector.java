@@ -12,7 +12,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/***
+/**
  * This class has and manage the information with the database
  */
 public class DatabaseConector {
@@ -22,7 +22,7 @@ public class DatabaseConector {
     private ConfigJson configJson;
     private String ERROR_BBDD = "Error en la base de dades";
 
-    /***
+    /**
      * Constructor of the class
      * @param configJson ConfigJson variable with the information of the JSON file
      */
@@ -132,7 +132,7 @@ public class DatabaseConector {
     }
 
 
-    /***
+    /**
      * Method that returns the name representation for a dish with a given value
      * @param tipus integer variable with the number of the dish
      * @return String varaible with the name representation of the dish
@@ -228,7 +228,7 @@ public class DatabaseConector {
 
 
 
-    /***
+    /**
      * This method updates the state of the connected value on the data base, with given values
      * @param b boolean with the state of the connexion
      * @param id integer with the value of the table id
@@ -262,7 +262,7 @@ public class DatabaseConector {
 
     }
 
-    /***
+    /**
      * This method adds a Dish information to the data base
      * @param nom String with the name of the dish
      * @param dishType
@@ -301,7 +301,7 @@ public class DatabaseConector {
 
     }
 
-    /***
+    /**
      * This method updates the stock of a given dish
      * @param updatedDishName String with the name of the dish
      * @param newStock integer with the value of the stock
@@ -336,7 +336,7 @@ public class DatabaseConector {
     }
 
 
-    /***
+    /**
      * This method deletes a command form the data base with a given name
      * @param id_taula integer with the table id to delete
      * @return boolean if success true, otherwise false
@@ -367,7 +367,7 @@ public class DatabaseConector {
         return false;
     }
 
-    /***
+    /**
      * This method deletes a given dish from the data base
      * @param deletedDishName String with the dish name
      * @return boolean if success true, if not false
@@ -399,7 +399,7 @@ public class DatabaseConector {
     }
 
 
-    /***
+    /**
      * This method adds a table with a given number of seats
      * @param numSeients integer with the number of seats
      * @return boolean if success true, if not false
@@ -429,7 +429,7 @@ public class DatabaseConector {
         }
     }
 
-    /***
+    /**
      * This method look for the top five dishes
      * @return ArrayList of Carta with the top 5 global
      */
@@ -462,7 +462,7 @@ public class DatabaseConector {
         return null;
     }
 
-    /***
+    /**
      * This method look for the top five dishes
      * @return ArrayList of Carta with the top 5 weekly
      */
@@ -495,7 +495,7 @@ public class DatabaseConector {
         return null;
     }
 
-    /***
+    /**
      * This method fills a Carta item with a given result set variable
      * @param rs ResultSet variable with the information to fill
      * @return Carta object with the data filled
@@ -516,7 +516,7 @@ public class DatabaseConector {
         return new Carta(idPlat, tipusDefinition(tipus), nomPlat, preu, quantitat, semanals, totals);
     }
 
-    /***
+    /**
      * This method deletes a table with a given number
      * @param tableToDelete integer with the table to delete
      * @return boolean if success true, if not false
@@ -577,7 +577,7 @@ public class DatabaseConector {
 
     }
 
-    /***
+    /**
      * This method delates a reserve table form a given number
      * @param tableToDelete number of the table to delete
      * @return boolean if success true, if not false
@@ -606,7 +606,7 @@ public class DatabaseConector {
         }
     }
 
-    /***
+    /**
      * Method that looks if there is a available table for a given number of people
      * and a given date. And returns an array list of integer with the id of the available tables.
      * @param comensals integer with the number of people
@@ -676,7 +676,7 @@ public class DatabaseConector {
         return taulesLliures;
     }
 
-    /***
+    /**
      * This method adds a reserve to the data base with a given values
      * @param nomReserva String with the name of the reservation
      * @param date Date where the reservation will be held
@@ -719,7 +719,7 @@ public class DatabaseConector {
         return "Error al afegir la nova reserva!";
     }
 
-    /***
+    /**
      * This method looks if there is available stock from a dish
      * @param cartaSelection CartaSelection with the info of the selected dish
      * @return boolean, true if there is more quantity than the demand, false if not
@@ -801,7 +801,7 @@ public class DatabaseConector {
         return null;
     }
 
-    /***
+    /**
      * This method disconnects from the database a given table
      * @param id_taula integer with the id of the table
      */
@@ -827,7 +827,7 @@ public class DatabaseConector {
 
     }
 
-    /***
+    /**
      * This method saves a order of a given table, it's command and updates available units
      * @param cartaSelection ArrayList of CartaSelection with the order of the table
      * @param idtaula integer with the id of the table
@@ -836,7 +836,6 @@ public class DatabaseConector {
         // stables connection
         if (conexio()){
             try {
-                //TODO: ACTUALITZAR SEMANALS I TOTALS - PANDO
                 // save into the database all the order information
                 for (CartaSelection c : cartaSelection) {
                     String query = "SELECT id_reserva FROM Reserva WHERE id_taula = ?;";
@@ -906,7 +905,7 @@ public class DatabaseConector {
         }
     }
 
-    /***
+    /**
      * This method gets the total price to pay with a given table id
      * @param idtaula integer with the id of the table
      * @return float with the amount of cost of a table (-1 if error)

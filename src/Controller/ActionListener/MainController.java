@@ -23,7 +23,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/***
+/**
  * Class that controls the main view implements action listener
  */
 public class MainController implements ActionListener{
@@ -37,7 +37,7 @@ public class MainController implements ActionListener{
     private OrdersMouseController ordersMouseController;
     private boolean orderViewed = false;
 
-    /***
+    /**
      * Constructor with parameters of the controller
      * @param mainView Main
      * @param configJson
@@ -100,7 +100,7 @@ public class MainController implements ActionListener{
         ordersView.setVisible(true);
     }
 
-    /***
+    /**
      * This method creates the tables view and the controllers that manages those classes
      */
     private void manageTables() {
@@ -121,7 +121,7 @@ public class MainController implements ActionListener{
         tablesView.setVisible(true);
     }
 
-    /***
+    /**
      * This method creates the views and the controllers of the menu tab
      */
     private void manageMenu() {
@@ -142,7 +142,7 @@ public class MainController implements ActionListener{
         menuView.setVisible(true);
     }
 
-    /***
+    /**
      * This method create the view graphs
      */
     private void showGraphs() {
@@ -186,7 +186,7 @@ public class MainController implements ActionListener{
     }
 
 
-    /***
+    /**
      * Method that shows the main view
      * @param visible
      */
@@ -213,7 +213,7 @@ public class MainController implements ActionListener{
         
     }
 
-    /***
+    /**
      * Method that autenticates a user with a given user and pasword returns if it de user exists
      * @param user String with the username
      * @param password String with the password
@@ -242,7 +242,7 @@ public class MainController implements ActionListener{
         return totalPagar;
     }
 
-    /***
+    /**
      * Method that gets the menu of the restaurant
      * @return Arraylist of carta with the menu of the restaurant
      */
@@ -257,7 +257,11 @@ public class MainController implements ActionListener{
         return menu;
     }
 
-
+    /**
+     * Method that gets the status of an order
+     * @param idtaula
+     * @return
+     */
     public ArrayList<CartaStatus> getOrderStatus(int idtaula) {
         try{
             return databaseConector.getOrderStatus(idtaula);
@@ -267,7 +271,7 @@ public class MainController implements ActionListener{
         return null;
     }
 
-    /***
+    /**
      * Method that saves the order into the database and updates available stock
      * @param cartaSelection Arraylist of cartaSelection with a selection of dishes
      * @param idtaula integer varaible with the id of the table

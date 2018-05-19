@@ -85,6 +85,10 @@ public class TablesView extends JFrame {
         setContentPane(principal);
     }
 
+    /**
+     * Function that creates the spinner to select the number of seats of a new table
+     * @return Panel with the spinner and its label
+     */
     private JPanel spinnerNumberSample() {
         JPanel addTablePanel = new JPanel(new GridLayout(1,2));
         JPanel panel = new JPanel();
@@ -116,6 +120,10 @@ public class TablesView extends JFrame {
     }
 
 
+    /**
+     * Function that creates the combobox with the tables available to delete
+     * @return Panel with the combobox
+     */
     private JPanel deleteTable() {
         JPanel deleteTablePanel = new JPanel(new FlowLayout());
         idABorrar = new JComboBox<>();
@@ -126,6 +134,9 @@ public class TablesView extends JFrame {
         return deleteTablePanel;
     }
 
+    /**
+     * Function that creates the table for the reservations
+     */
     private void showReservations() {
         jTableModel = new JTableModel();
         listOfReserves = new JTable(jTableModel);
@@ -134,6 +145,9 @@ public class TablesView extends JFrame {
         tabbedPane.setComponentAt(2, scrollPane);
     }
 
+    /**
+     * Function that creates the table available
+     */
     private void listTable() {
         jTableModel = new JTableModel();
         listOfTables = new JTable(jTableModel);
@@ -147,6 +161,10 @@ public class TablesView extends JFrame {
         return tabbedPane.getSelectedIndex();
     }
 
+    /**
+     * Method that updates the list and status of the available tables
+     * @param aux array with the information of the tables
+     */
     public void updateTables(ArrayList<Taula> aux) {
         DefaultTableModel model = (DefaultTableModel) listOfTables.getModel();
         model.setRowCount(0);
@@ -169,6 +187,10 @@ public class TablesView extends JFrame {
         }
     }
 
+    /**
+     * Method that inserts on the table the reserves and its information
+     * @param reserves arraylist de reserves
+     */
     public void mostraReserves(ArrayList<Reserva> reserves) {
         DefaultTableModel model = (DefaultTableModel) listOfReserves.getModel();
         model.setRowCount(0);
@@ -200,7 +222,6 @@ public class TablesView extends JFrame {
     /**
      * Displays error message on view
      * @param message Error message to be displayed
-     * @param title Error title to be displayed
      */
     public void mostraErrorServidor(String message) {
         String[] options = { "OK" };
@@ -212,7 +233,6 @@ public class TablesView extends JFrame {
     /**
      * Displays information message on view
      * @param message Information message to be displayed
-     * @param title Information title to be displayed
      */
     public void mostraInformacioServidor(String message) {
         String[] options = { "OK" };
@@ -221,14 +241,22 @@ public class TablesView extends JFrame {
                 null, options, options[0]);
     }
 
+    /**
+     * Reseteja el nobre de seients del spinner
+     */
     public void resetNumSeients() {
         spinner.setValue(1);
     }
+
 
     public int getNumSeients(){
         return (int) spinner.getValue();
     }
 
+    /**
+     * Actualitza els id de les taules
+     * @param id
+     */
     public void loadTablesID(ArrayList<Integer> id) {
         int size = id.size();
         idABorrar.removeAllItems();
@@ -280,6 +308,7 @@ public class TablesView extends JFrame {
         spinner.addMouseWheelListener(seatsSpinController);
         this.addWindowListener(windowListener);
     }
+
 
     public void addSeients(int i) {
         int old = (int) spinner.getValue();

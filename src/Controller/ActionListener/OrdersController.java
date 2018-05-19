@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 
-/***
+/**
  * This class controls the Orders
  */
 public class OrdersController implements ActionListener {
@@ -24,7 +24,7 @@ public class OrdersController implements ActionListener {
     private DatabaseConector databaseConector;
     private OrdersMouseController ordersMouseController;
 
-    /***
+    /**
      * Constructor of the class
      * @param ordersView instance of OrdersView
      * @param databaseConector instance of DatabaseConector

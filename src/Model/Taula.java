@@ -14,7 +14,7 @@ public class Taula extends ArrayList {
     private int numSeients;
     private boolean ocupada;
 
-    /***
+    /**
      * Constructor with parameters of the class
      * @param idTaula integer with the id of the table
      * @param numSeients intger with the number of seats of a table

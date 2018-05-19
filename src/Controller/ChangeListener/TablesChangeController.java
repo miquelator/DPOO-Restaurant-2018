@@ -12,7 +12,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.util.ArrayList;
 
-/***
+/**
  * This class controls the changing of tables view
  */
 public class TablesChangeController implements ChangeListener {

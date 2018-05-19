@@ -123,6 +123,9 @@ public class MenuView extends JFrame {
         return updateStockPanel;
     }
 
+    /**
+     * Creates the jtable that will contain the menu
+     */
     private void listDish() {
         listOfDishes = new JTable(new JTableModel());
         listOfDishes.getTableHeader().setReorderingAllowed(false);
@@ -130,6 +133,10 @@ public class MenuView extends JFrame {
         tabbedPane.setComponentAt(1, scrollPane);
     }
 
+    /**
+     * Function that creates the structure of the tab that let the user add a new dish
+     * @return JPanel with all the structure
+     */
     private JPanel addDish() {
         JPanel addDishPanel = new JPanel();
 
@@ -234,6 +241,10 @@ public class MenuView extends JFrame {
         return tabbedPane.getSelectedIndex();
     }
 
+    /**
+     * Method that allows the updating of the menu
+     * @param aux Array with the updated menu
+     */
     public void updateMenu(ArrayList<Carta> aux) {
         DefaultTableModel model = (DefaultTableModel) listOfDishes.getModel();
         model.setRowCount(0);
@@ -264,6 +275,10 @@ public class MenuView extends JFrame {
         }
     }
 
+    /**
+     * Method that populates the tab wich allows the update of the available stock
+     * @param list array of Strings that contain the id of the dishes
+     */
     public void populateStock(String[] list) {
         // create panel type
         JPanel updateStockPanel = new JPanel(new BorderLayout());
@@ -313,6 +328,10 @@ public class MenuView extends JFrame {
         tabbedPane.setComponentAt(3, updateStockPanel);
     }
 
+    /**
+     * Method that populates the tab that
+     * @param list
+     */
     public void populateDelete(String[] list) {
 
         // set the panel and the layout and it's constraints
@@ -328,6 +347,11 @@ public class MenuView extends JFrame {
         // add to the tabbed pane
         tabbedPane.setComponentAt(2, deleteDishPanel);
     }
+
+    /**
+     * Getters and setters
+     */
+
 
     public String getUpdatedDishName() {
         return idStock.getSelectedItem().toString();
@@ -353,6 +377,10 @@ public class MenuView extends JFrame {
         return Integer.parseInt(spinAmount.getValue().toString());
     }
 
+    /**
+     * Method that displays the selected error
+     * @param error integer with the selected error
+     */
     public void confirmEntry(int error){
         String[] options = { "OK" };
         switch (error){
@@ -410,7 +438,7 @@ public class MenuView extends JFrame {
         this.addWindowListener(windowListener);
     }
 
-    /***
+    /**
      * This method clears the enter of a dish data
      */
     public void clearAddDish(){
@@ -424,7 +452,7 @@ public class MenuView extends JFrame {
         JOptionPane.showOptionDialog(this, message, "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
     }
 
-    /***
+    /**
      * This method returns the type of the dish
      * @return int with the type of the dish
      */

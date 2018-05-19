@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-/***
+/**
  * Class that manages the tables view and data
  */
 public class TablesController implements ActionListener {
@@ -56,7 +56,7 @@ public class TablesController implements ActionListener {
         }
     }
 
-    /***
+    /**
      * Method that deletes a selected table
      */
     private void deleteTable() {
@@ -87,7 +87,7 @@ public class TablesController implements ActionListener {
     }
 
 
-    /***
+    /**
      * Method that updates the delate tables
      */
     private void updateDeleteTables() {
@@ -106,7 +106,7 @@ public class TablesController implements ActionListener {
 
     }
 
-    /***
+    /**
      * Method that adds a table
      */
     private void addTable() {

@@ -9,7 +9,7 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 
 
-/***
+/**
  * This class control the spinner of the seats
  */
 public class SeatsSpinController implements MouseWheelListener {
@@ -17,7 +17,7 @@ public class SeatsSpinController implements MouseWheelListener {
     // get a view instance
     private TablesView tView;
 
-    /***
+    /**
      * Constructor of the class with view parameter
      * @param tView instance of TablesView
      */
@@ -25,7 +25,7 @@ public class SeatsSpinController implements MouseWheelListener {
         this.tView = tView;
     }
 
-    /***
+    /**
      * Method that manages the increment or decrement of the spinner number
      * @param e MouseWheelEvent that's raised
      */

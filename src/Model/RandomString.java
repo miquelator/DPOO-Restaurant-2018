@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.Random;
 
-/***
+/**
  * This class has utilities about creating random strings
  */
 public class RandomString {

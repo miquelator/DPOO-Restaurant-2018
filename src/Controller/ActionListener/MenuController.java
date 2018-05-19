@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/***
+/**
  * This class controls the menu
  */
 public class MenuController implements ActionListener {
@@ -59,7 +59,7 @@ public class MenuController implements ActionListener {
         }
     }
 
-    /***
+    /**
      * This method updates the stock of the dishes
      */
     private void updateStock() {
@@ -108,7 +108,7 @@ public class MenuController implements ActionListener {
     }
 
 
-    /***
+    /**
      * Method that adds a dish from window settings
      */
     private void addDish() {

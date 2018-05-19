@@ -12,7 +12,7 @@ import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 
-/***
+/**
  * This class manages the network specifies of the reservation
  */
 public class DedicatedReservesThread extends Thread {
@@ -30,7 +30,7 @@ public class DedicatedReservesThread extends Thread {
     // utilities attributes
     private int idtaula;
 
-    /***
+    /**
      * Constructor of the class with parameters
      * @param sClient Socket with the client socket
      * @param mainController MainController instance variable
@@ -65,7 +65,7 @@ public class DedicatedReservesThread extends Thread {
         }
     }
 
-    /***
+    /**
      * This function manages the read request
      * @param request String with the request
      * @throws IOException Exception that's throwed
@@ -130,6 +130,11 @@ public class DedicatedReservesThread extends Thread {
         }
     }
 
+    /**
+     * Returns the dishes that have been selected
+     * @param seleccio
+     * @throws IOException
+     */
     private void returnSelection(int seleccio) throws IOException {
         ArrayList<Carta> menu = mainController.getMenu();
         ArrayList<Carta> peticio = new ArrayList<>();

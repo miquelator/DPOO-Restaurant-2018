@@ -74,6 +74,9 @@ public class TopFiveWeeklyGraphView extends JPanel{
         }
     }
 
+    /**
+     * Shows the top 5 dishes from the start of each week
+     */
     public void TopFiveGraph() {
         JFrame f = new JFrame();
         f.getContentPane().add(new TopFiveGraphView(maxComands, data, nomPlats));

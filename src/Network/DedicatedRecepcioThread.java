@@ -18,7 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-/***
+/**
  * This class manages the network service of the reception program
  */
 public class DedicatedRecepcioThread extends Thread {
@@ -35,7 +35,7 @@ public class DedicatedRecepcioThread extends Thread {
     // utilities attributes
     private RandomString randomString;
 
-    /***
+    /**
      * Constructor with parameters of the class
      * @param sClient Socket of the client
      * @param mainController MainController instance that manages the server
@@ -45,7 +45,7 @@ public class DedicatedRecepcioThread extends Thread {
         this.mainController = mainController;
     }
 
-    /***
+    /**
      * This method is triggered when start the tread
      */
     @Override
@@ -71,7 +71,7 @@ public class DedicatedRecepcioThread extends Thread {
         }
     }
 
-    /***
+    /**
      * This function manages the received request and sends the answer
      * @param request String with the request
      * @throws IOException Exception that's raised

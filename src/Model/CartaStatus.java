@@ -4,7 +4,7 @@ package Model;
 // import java class
 import java.io.Serializable;
 
-/***
+/**
  * Class that has the information of every dish ordered to show in the status window
  */
 public class CartaStatus implements Serializable {

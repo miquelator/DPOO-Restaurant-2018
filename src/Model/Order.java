@@ -1,6 +1,8 @@
 package Model;
 
-
+/**
+ * This class contains all the information of an order
+ */
 public class Order {
     private int idPlat;
     private String nomPlat;
@@ -9,6 +11,15 @@ public class Order {
     private boolean served;
     private int idComanda;
 
+    /**
+     * Constructor of the class
+     * @param idPlat integer with id of the dish
+     * @param nomPlat name of the dish
+     * @param idTaula string with the integer with id from the table
+     * @param hora string with the hour of the order
+     * @param served boolean with the status of the order (served or not)
+     * @param idComanda integer with id of the order
+     */
     public Order(int idPlat, String nomPlat, int idTaula, String hora, boolean served, int idComanda) {
         this.idPlat = idPlat;
         this.nomPlat = nomPlat;

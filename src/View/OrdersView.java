@@ -189,10 +189,7 @@ public class OrdersView extends JFrame{
 
     }
 
-    /**
-     *
-     * @return
-     */
+
     public ArrayList<Integer> getViewedReservations() {
         ArrayList viewedReservations = new ArrayList();
         int size = westTable.getRowCount();

@@ -4,7 +4,7 @@ package Model;
 // import java classes
 import java.io.Serializable;
 
-/***
+/**
  * This class contains the carta info
  */
 public class Carta implements Serializable{
@@ -95,7 +95,7 @@ public class Carta implements Serializable{
         this.totals = totals;
     }
 
-    /***
+    /**
      * Method that overrides supper to string to create a custom string
      * @return String representation of the class
      */
