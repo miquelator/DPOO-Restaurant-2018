@@ -60,7 +60,7 @@ DELIMITER ;
         
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(1, 'Sopa', 8.50, 50, 0 ,0);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(1, 'Amanida', 7.50, 50, 0, 0);
-INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(1, 'Cargols a la llauna', 10.50, 10, 0, 0);
+INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(1, 'Cargols a la llauna', 10.50, 50, 0, 0);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(1, 'Macarrons', 6.00, 50, 0, 0);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(1, 'Canalons de la iaia', 6.00, 50, 0, 0);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(1, 'Sorpresa del chef', 9.00, 50, 0, 0);
@@ -90,7 +90,7 @@ INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALU
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(3, 'Trufes', 4.00, 50, 0, 0);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(3, 'Macedónia', 3.50, 50, 0, 0);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(3, 'Coco', 3.50, 50, 0, 0);
-INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(3, 'Gelat multisabor', 2.00, 50, 0, 0);
+INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(3, 'Maduxes amb nata', 2.00, 50, 0, 0);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(3, 'Cheesecake', 5.00, 50, 0, 0);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(3, 'Pastis de pastanaga', 2.00, 50, 0, 0);
 INSERT INTO Carta (tipus_plat, nom_plat, preu, quantitat, semanals, totals) VALUES(3, 'Pastis de chcolata', 2.50, 50, 0, 0);
