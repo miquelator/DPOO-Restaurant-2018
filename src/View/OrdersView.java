@@ -18,6 +18,9 @@ import java.util.Vector;
 
 import static java.awt.Color.*;
 
+/**
+ * Window to show the current orders that need serving
+ */
 public class OrdersView extends JFrame{
     private JButton serve;
     private JTable eastTable;

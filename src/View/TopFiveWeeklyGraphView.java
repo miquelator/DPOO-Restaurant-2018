@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 
 /**
- * Created by oriol on 4/4/2018.
+ * Window to show statistics about the best weekly selling products
  */
 public class TopFiveWeeklyGraphView extends JPanel{
     final int PAD = 70;

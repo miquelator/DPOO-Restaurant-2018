@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Vector;
 
+/**
+ * Window to allows the user to manage the restaurant's products
+ */
 public class MenuView extends JFrame {
 
 

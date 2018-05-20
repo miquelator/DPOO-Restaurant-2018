@@ -16,6 +16,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Vector;
 
+/**
+ * Window class for the controlling tables section
+ */
+
 public class TablesView extends JFrame {
     private JTabbedPane tabbedPane;
     private JButton addTable;
@@ -274,7 +278,8 @@ public class TablesView extends JFrame {
         }
     }
     /**
-     * Displays initial settings window
+     * Displays warning about deleting tables when they are occupied
+     * @return Boolean whether the user actually deletes them
      */
     public boolean showDeleteWarning() {
             Object[] options1 = { "Esborrar igualment", "Cancelar"};

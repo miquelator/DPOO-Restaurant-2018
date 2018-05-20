@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 
+/**
+ * Window to show statistics about the best selling products
+ */
 public class TopFiveGraphView extends JPanel {
     final int PAD = 70;
     private double maxComands;

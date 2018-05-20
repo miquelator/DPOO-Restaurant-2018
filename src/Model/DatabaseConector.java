@@ -76,10 +76,11 @@ public class DatabaseConector {
                             trobat = -1;
                         }
 
-                        //date.compareTo(date2);
-                        if(rs.getBoolean("conectat")){
+                        if(!rs.getBoolean("conectat")){
                             trobat = -1;
-                        }else {
+                        }
+
+                        if(trobat != -1) {
                             updateConectedReserva(true, trobat2);
                         }
                     }
@@ -101,7 +102,7 @@ public class DatabaseConector {
 
     /**
      * Gets menu list from DDBB.
-     * @return ArrayList<Carta> containing all items from the menu.
+     * @return ArrayList containing all items from the menu.
      */
     public ArrayList<Carta> getCarta() throws DataBaseException {
         if (conexio()){
@@ -153,7 +154,7 @@ public class DatabaseConector {
 
     /**
      * Gets Table's info from DDBB.
-     * @return ArrayList<Taula> containing all items from Taula.
+     * @return ArrayList containing all items from Taula.
      */
     public ArrayList<Taula> getTaula() throws DataBaseException {
 
@@ -188,7 +189,7 @@ public class DatabaseConector {
 
     /**
      * Gets Reserve's info from DDBB.
-     * @return ArrayList<Reserva> containing all items from Reserva.
+     * @return ArrayList containing all items from Reserva.
      */
     public ArrayList<Reserva> getReserves() throws DataBaseException {
 
@@ -402,7 +403,6 @@ public class DatabaseConector {
     /**
      * This method adds a table with a given number of seats
      * @param numSeients integer with the number of seats
-     * @return boolean if success true, if not false
      */
     public void addTable(int numSeients) throws DataBaseException {
 
@@ -519,7 +519,6 @@ public class DatabaseConector {
     /**
      * This method deletes a table with a given number
      * @param tableToDelete integer with the table to delete
-     * @return boolean if success true, if not false
      */
     public void deleteTable(int tableToDelete) throws DataBaseException {
 
@@ -580,7 +579,6 @@ public class DatabaseConector {
     /**
      * This method delates a reserve table form a given number
      * @param tableToDelete number of the table to delete
-     * @return boolean if success true, if not false
      */
     public void deleteReserveTable(int tableToDelete) throws DataBaseException {
 
