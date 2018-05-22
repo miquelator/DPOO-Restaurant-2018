@@ -76,11 +76,12 @@ public class DatabaseConector {
                             trobat = -1;
                         }
 
-                        if(!rs.getBoolean("conectat")){
+                        if(rs.getBoolean("conectat")){
                             trobat = -1;
                         }
 
                         if(trobat != -1) {
+
                             updateConectedReserva(true, trobat2);
                         }
                     }
